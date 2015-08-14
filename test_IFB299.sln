@@ -1,0 +1,19 @@
+// This code has been made for test
+// displaying "Hello World" using C#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsolePractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World");
+        }
+    }
+           
+}
