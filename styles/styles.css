@@ -1,0 +1,113 @@
+/*Contains the webpage within an 80% width of the screen*/
+
+
+body {
+	background-color: white;
+	font-size: 18px;
+	font-family: sans-serif;
+}
+
+/*Header formatting*/
+header {
+	display: block;
+	width: 80%;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer {
+	display: block;
+	width: 100%;
+	float: left;
+}
+
+
+nav {
+	display: inline-block;
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+#menu-icon {
+
+	
+	width: 40px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: white;
+
+}
+
+a:hover#menu-icon {
+
+	background-color: #444;
+	
+
+}
+
+/*navigation menu*/
+
+nav li {
+	list-style-position: inside;
+	display: inline;
+	padding: 0em;
+}
+
+nav ul li a {	
+	margin-right: 7%;
+	font-size: 25px;
+	font-family: sans-serif;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	}
+
+/*nav menu link highlighter*/
+nav ul li a:hover {
+	color: rgb(167,85,69);
+    }
+	
+.Title{
+	margin: 0;
+	display: inline-block;
+	width: 33%;
+	float: left;
+	margin-left: 5px;
+	margin-top: 15px;
+	color: black;		
+}
+
+.main_pic {
+	display: block;
+	width: 100%;
+	height: 600px;
+}
+
+
+footer a, small {
+display: inline-block;
+width: 45%;
+margin: 0;
+margin-left: auto;
+margin-right: auto;
+font-size: 25px;
+font-size: 25px;
+font-family: museo-300;
+line-height: 44px;
+text-align: center;
+text-decoration: none;
+color: black;
+}
+
+.footer_nav {
+width: 100%;
+
+}
+
+.background_picture {
+	margin: 0;
+    background: url("../graphics/main.jpg");
+	background-size: 100%;
+}
