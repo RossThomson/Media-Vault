@@ -180,7 +180,7 @@ display:inline;
 				
 				<div id="jae_content">
 					<h1>Welcom to Media Lynx</h1>
-					<IMG src="/graphics/photo.jpg" width = "100%" height="50%"><br>
+					<IMG src="./graphics/Photo.jpg" width = "100%" height="50%"><br>
 					<h1>About us</h1>
 					<p>MediaLinx is the best service provider of<br>
 					persnal media storage.<br><br>
