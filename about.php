@@ -175,12 +175,12 @@ display:inline;
 		</ul>
 	</div>
 		<A href="index.php">
-			<IMG src="./graphics/logo.jpg" width = "20%" height="20%"><br>
+			<IMG src="/graphics/logo.jpg" width = "20%" height="20%"><br>
 		</A>
 				
 				<div id="jae_content">
 					<h1>Welcom to Media Lynx</h1>
-					<IMG src="./graphics/photo.jpg" width = "100%" height="50%"><br>
+					<IMG src="/graphics/photo.jpg" width = "100%" height="50%"><br>
 					<h1>About us</h1>
 					<p>MediaLinx is the best service provider of<br>
 					persnal media storage.<br><br>
