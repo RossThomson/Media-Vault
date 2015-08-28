@@ -175,7 +175,7 @@ display:inline;
 		</ul>
 	</div>
 		<A href="index.php">
-			<IMG src="/graphics/logo.jpg" width = "20%" height="20%"><br>
+			<IMG src="./graphics/logo.jpg" width = "20%" height="20%"><br>
 		</A>
 				
 				<div id="jae_content">
