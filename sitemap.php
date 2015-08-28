@@ -175,12 +175,12 @@ display:inline;
 		</ul>
 	</div>
 		<A href="index.php">
-			<IMG src="./images/logo.jpg" width = "20%" height="20%"><br>
+			<IMG src="./graphics/logo.jpg" width = "20%" height="20%"><br>
 		</A>
 				
 				<div id="jae_content">
 					<h1>Site map</h1>
-					<IMG src="./images/sitemap.jpg" width = "100%" height="50%"><br>
+					<IMG src="./graphics/sitemap.jpg" width = "100%" height="50%"><br>
 				</div>				
 
 <div id="jae_footer">
