@@ -2,15 +2,23 @@
 
 
 body {
-	background-color: white;
+	
 	font-size: 18px;
-	font-family: sans-serif;
+	font-family: cursive;
+}
+
+html {  
+	background: url("../graphics/main.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /*Header formatting*/
 header {
 	display: block;
-	width: 80%;
+	width: 100%;
 	margin: 0;
 	margin-left: auto;
 	margin-right: auto;
@@ -20,27 +28,29 @@ footer {
 	display: block;
 	width: 100%;
 	float: left;
+	position: absolute;
+	bottom:0;
 }
 
 
 nav {
 	display: inline-block;
-	float: right;
-	margin-top: 10px;
+	width: 100%;
 	margin-right: 10px;
+	background-color: rgba(15, 13, 6, 0.5);
 }
 
-#menu-icon {
-
-	
-	width: 40px;
-	height: 30px;
-	border-radius: 5px;
-	background-color: white;
+header nav ul {
+display: inline;
+width: 80%;
+float: right;
+margin: 0;
+margin-top: 45px;
 
 }
 
-a:hover#menu-icon {
+
+a:hover{
 
 	background-color: #444;
 	
@@ -55,13 +65,15 @@ nav li {
 	padding: 0em;
 }
 
-nav ul li a {	
-	margin-right: 7%;
+nav ul li a {
+
+	margin-left: 10%;
 	font-size: 25px;
-	font-family: sans-serif;
+	font-family: cursive;
+	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
-	color: black;
+	color: white;
 	}
 
 /*nav menu link highlighter*/
@@ -69,45 +81,46 @@ nav ul li a:hover {
 	color: rgb(167,85,69);
     }
 	
-.Title{
-	margin: 0;
-	display: inline-block;
-	width: 33%;
-	float: left;
-	margin-left: 5px;
-	margin-top: 15px;
-	color: black;		
-}
 
-.main_pic {
-	display: block;
-	width: 100%;
-	height: 600px;
+header img {
+	height: 150px;
 }
 
 
-footer a, small {
+header a {
 display: inline-block;
-width: 45%;
+width: 15%;
 margin: 0;
 margin-left: auto;
 margin-right: auto;
 font-size: 25px;
 font-size: 25px;
 font-family: museo-300;
-line-height: 44px;
+line-height: 20px;
 text-align: center;
 text-decoration: none;
 color: black;
 }
 
-.footer_nav {
-width: 100%;
+#register {
+display: block;
+float: left;
+text-align: center;
+width: 20%;
+margin-top: 100px;
+margin-left: 10%;
 
 }
 
-.background_picture {
-	margin: 0;
-    background: url("../graphics/main.jpg");
-	background-size: 100%;
+
+.btn {
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0;
+}
+.btn-alt {
+  border: 5px solid black;
+  padding: 10px 30px;
+  color: white;
+  background-color: black;
 }
