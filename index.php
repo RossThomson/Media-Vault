@@ -10,26 +10,27 @@
 	<body>
 			
 			<header>
-			<h1 class="Title">
-			<a href="index.php"><img src="graphics/logo.jpg"></a>
-			</h1>
+	
 				<nav>
 					
+					<a href="index.php"><img src="graphics/logo.jpg"></a>
+			
 					<ul>
+						
 						<li><a href="login.php">Login</a></li>
+						<li><a href="about.php">About</a></li>
+						<li><a href="help.php">Help</a></li>
 					</ul>			
 				</nav>
 			</header>
-			<div>
-			<img class="main_pic" src="graphics/main.jpg" alt="Man wearing headphones"/>
+
+			<div id = "register">
+			<h2> "Your own online Media Vault"</h2>
+			<a class="btn btn-alt" href="register.html">Register Now</a>
 			</div>
 					<footer>
-					<nav class= "footer_nav">
-		
-						<a href="about.php">About</a>
-						<a href="help.php">Help</a>
-					
-					</nav>
+					<span id="jae_design-by">Design by Media lynx</span> 
+						Copyright &copy; Media Lynx 2015.
 					</footer>
 	
 	</body>
