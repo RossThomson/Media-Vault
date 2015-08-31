@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html id="Homepage_pic">
     <head>
         <meta charset="utf-8">
 		<meta http-equiv="refresh" content="60">
@@ -8,6 +8,7 @@
 		<title>Media Lynx</title>
 	</head>
 	<body>
+	<div class="wrapper">
 			
 			<header>
 	
@@ -28,10 +29,11 @@
 			<h2> "Your own online Media Vault"</h2>
 			<a class="btn btn-alt" href="register.html">Register Now</a>
 			</div>
-					<footer>
+					<footer class="footer_absolute">
 					<span id="jae_design-by">Design by Media lynx</span> 
 						Copyright &copy; Media Lynx 2015.
 					</footer>
 	
+	</div>
 	</body>
 	</html>

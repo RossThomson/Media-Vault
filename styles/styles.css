@@ -5,14 +5,32 @@ body {
 	
 	font-size: 18px;
 	font-family: cursive;
+	margin: 0;
+	padding: 0;
 }
 
-html {  
+#Homepage_pic {  
 	background: url("../graphics/main.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+#aboutus_img {
+height: 400px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+#jae_design-by {
+float: right;
+display:inline;
+}
+
+.aboutus_Headings {
+text-align: center;
 }
 
 /*Header formatting*/
@@ -24,12 +42,30 @@ header {
 	margin-right: auto;
 }
 
-footer {
+.footer_absolute {
 	display: block;
 	width: 100%;
 	float: left;
 	position: absolute;
 	bottom:0;
+}
+
+.footer_relative {
+	display: block;
+	width: 100%;
+	float: left;
+	position: relative;
+	bottom:0;
+}
+
+#aboutus_content {
+display: block;
+width: 80%;
+margin: 0;
+margin-bottom: 30px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
 }
 
 
