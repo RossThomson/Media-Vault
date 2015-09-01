@@ -40,7 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					}
 					else
 					{ 
-						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWER, PASSWORD) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer', SHA2(CONCAT('$password', '4b3403665fea6'), 0),'4b3403665fea6')";				
+						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWER, PASSWORD) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer', SHA2(CONCAT('$password', '4b3403665fea6'),384))";
+						
 						$pdo->exec($sql);
 					header("location: http://{$_SERVER['HTTP_HOST']}/register_success.php");
 						
