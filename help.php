@@ -18,7 +18,8 @@
 			</ul>			
 		</nav>
 	</header>
-				
+	
+	<div id="aboutus_content">			
 	<h2 class="aboutus_Headings">FAQ</h2><br>
 		<h2>1. How can I upload media files?</h2>
 		<p>   Users can upload media files through.............................................</p>
