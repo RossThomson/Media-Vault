@@ -38,18 +38,7 @@
        <li><a href="#">Upload</a></li> 
        </ul>
     </div>
-                
-    <div id="media_main_media">
-       <h2>Click the menu on the left</h2>
-       <p>Click the menu on the left to see, watch and modify your media files </p>
-     
-       <h2>Click the upload button</h2>
-       <p>You can upload your media files into your personal storage conveniently</p> 
-                
-       <h2>Automatic classification</h2>
-       <p>Uploaded media files are classified automatically depending on the file type</p>      
-                       
-    </div>
+	
        <footer class="footer_relative">
 	   <span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
