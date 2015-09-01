@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$secretanswer = validate_form($_POST["secretanswer"]);
 	
 	
-	$dbhost = "LocalHost:54.79.17.142";
+	$dbhost = "54.79.17.142";
 	$dbname	= "Media_Lynx";
 	$dbuser	= "root";
 	$dbpass	= "root";
