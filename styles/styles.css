@@ -29,7 +29,7 @@ float: right;
 display:inline;
 }
 
-.aboutus_Headings {
+.aboutus_Headings, h1 {
 text-align: center;
 }
 
@@ -148,6 +148,11 @@ margin-left: 10%;
 
 }
 
+input.btn.btn-alt {
+	margin-left: 35%;
+}
+
+
 
 .btn {
   border-radius: 5px;
@@ -229,3 +234,20 @@ margin-left: 10%;
 #media_main_media p a:hover {
     color: gray;
 }
+
+#regform, #loginform{
+display: block;
+width: 30%;
+margin-top: 5%;
+margin-left: 35%;
+margin-right: auto;
+background-color: rgba(15, 13, 6, 0.5);
+border-radius: 22px;
+padding: 30px;
+}
+
+ label {
+	 margin-left: 10px;
+	 color: white;
+ }
+ 
