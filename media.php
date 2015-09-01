@@ -15,6 +15,9 @@
     </head>
 
     <body>
+	<div class="top_bar">
+	
+	
 	<div class="wrapper">
 	<header>
 		<nav>
@@ -26,9 +29,13 @@
 			</ul>			
 		</nav>
 	</header>
-
-    <div id="media_main_wrapper">
-    <div id="media_main_body">
+	<br><br><br>
+	<div class="search_container">
+	<input class="search" thpe="search" placeholder="Search">
+	</div>
+    
+	<br><br>
+	
     <div id="media_main_gMenu">
        <ul>
        <li><a href="#">Movie</a></li>
@@ -37,11 +44,12 @@
        <li><a href="#">Music</a></li><br><br><br>
        <li><a href="#">Upload</a></li> 
        </ul>
-    </div>
-	
+	</div>
+		<br><br><br>
        <footer class="footer_relative">
 	   <span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
 		</footer>
+		
     </body>
 </html>
