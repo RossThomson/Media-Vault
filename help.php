@@ -14,7 +14,7 @@
 			<ul>
 				<li><a href="login.php">Login</a></li>
 				<li><a href="about.php">About</a></li>
-				<li><a href="sitemap.php">Site Map</a></li>
+				<li><a href="help.php">Help</a></li>
 			</ul>			
 		</nav>
 	</header>
