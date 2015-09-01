@@ -176,9 +176,12 @@ input.btn.btn-alt {
 
 #media_main_gMenu {
     width: 200px;
-    float: left;
+    float: center;
     margin-left: -16px;
     margin-right: 10px;
+	display:table;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 #media_main_gMenu ul {
@@ -251,3 +254,32 @@ padding: 30px;
 	 color: white;
  }
  
+
+.top_bar{
+	height: 20%;
+	width: 100%;
+	padding-top: 5px;
+}
+
+.search_container{
+	width: 61%;
+	margin-left: auto;
+	margin-right: auto;
+	float: left;
+}
+
+.search{
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	width: 40%;
+	-webkit-transition: all.5s ease;
+	-moz-transition: all.5s ease;
+	transition: all.5s ease;
+	float: right;
+}
+
+.search:focus{
+	width: 200px;
+}
+

@@ -15,6 +15,9 @@
     </head>
 
     <body>
+	<div class="top_bar">
+	
+	
 	<div class="wrapper">
 	<header>
 		<nav>
@@ -26,9 +29,13 @@
 			</ul>			
 		</nav>
 	</header>
-
-    <div id="media_main_wrapper">
-    <div id="media_main_body">
+	<br><br><br>
+	<div class="search_container">
+	<input class="search" thpe="search" placeholder="Search">
+	</div>
+    
+	<br><br>
+	
     <div id="media_main_gMenu">
        <ul>
        <li><a href="#">Movie</a></li>
@@ -37,22 +44,12 @@
        <li><a href="#">Music</a></li><br><br><br>
        <li><a href="#">Upload</a></li> 
        </ul>
-    </div>
-                
-    <div id="media_main_media">
-       <h2>Click the menu on the left</h2>
-       <p>Click the menu on the left to see, watch and modify your media files </p>
-     
-       <h2>Click the upload button</h2>
-       <p>You can upload your media files into your personal storage conveniently</p> 
-                
-       <h2>Automatic classification</h2>
-       <p>Uploaded media files are classified automatically depending on the file type</p>      
-                       
-    </div>
+	</div>
+		<br><br><br>
        <footer class="footer_relative">
 	   <span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
 		</footer>
+		
     </body>
 </html>
