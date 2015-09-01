@@ -27,7 +27,7 @@
 
 			<div id = "register">
 			<h2> "Your own online Media Vault"</h2>
-			<a class="btn btn-alt" href="register.html">Register Now</a>
+			<a class="btn btn-alt" href="register.php">Register Now</a>
 			</div>
 					<footer class="footer_absolute">
 					<span id="jae_design-by">Design by Media lynx</span> 

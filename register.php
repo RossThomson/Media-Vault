@@ -30,7 +30,7 @@
 	<div id="register_form">
 	
 	<h1>Register For An Account</h1>
-	<form id="regform" name="Register_form" onsubmit="Register_Success.php" action="register_val.php"  method="post">
+	<form id="regform" name="Register_form" onsubmit="Register_Success.php" action="scripts/register_val.php"  method="post">
 	
 		<label>First Name: </label><input type="text" name="firstname" id="Fname" onkeyup ="checkvalue('Fname', 'MissingFirstName');"><span id="MissingFirstName">*</span><p>
 		<label>Last name: </label><input type="text" name="lastname" id="Lname" onkeyup ="checkvalue('Lname', 'MissingLastName');"><span id="MissingLastName">*</span><p>
