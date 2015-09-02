@@ -31,8 +31,10 @@
 		
 
 		}
+		
 		else{
-			$loginStatus = "Invalid email or password";
+			echo "Invalid email or password";
+			header("location: login.php");
 		
 			
 
