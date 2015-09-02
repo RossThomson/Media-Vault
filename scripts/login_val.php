@@ -27,14 +27,14 @@
 		if($rows > 0) {
 		session_start(); $_SESSION['isAdmin'] = true;
 		$_SESSION['email'] = $email;
-		header("location: media.php");
+		header("location: ./media.php");
 		
 
 		}
 		
 		else{
 			echo "Invalid email or password";
-			header("location: login.php");
+			header("location: ./login.php");
 		
 			
 
