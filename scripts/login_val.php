@@ -21,20 +21,20 @@
 		
 		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
 	
-		$result = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$email'  AND PASSWORD = '$password' ");
+		$result = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$email'  AND PASSWORD = SHA2(CONCAT('$password', '4b3403665fea6'),384))";
 
 		$rows = $result->fetch(PDO::FETCH_NUM);
 		if($rows > 0) {
 		session_start(); $_SESSION['isAdmin'] = true;
 		$_SESSION['email'] = $email;
-		header("location: media.php");
+		header("location: ./media.php");
 		
 
 		}
 		
 		else{
 			echo "Invalid email or password";
-			header("location: login.php");
+			header("location: ./login.php");
 		
 			
 
