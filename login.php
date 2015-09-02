@@ -30,7 +30,8 @@
 	<div id="login_form">
 	
 	<h1>Login To Your Account</h1>
-	<form id="loginform" name="login_form" onsubmit="media.php" action="login_val.php"  method="post">
+	<form id="loginform" name="login_form" onsubmit="media.php" action="scripts/login_val.php"  method="post">
+	
 	
 		<label>Email Address: </label><input type="text" name="email" required onchange ="validate_email(this,'MissingEmail');"><span id="MissingEmail">*</span><span id="invalid_email">Invalid email</span><p><p>
 		<label>Password: </label><input type="password" min = "6" id="pass" name="password" required onkeyup ="checkvalue('pass', 'MissingPassword');"><span id="MissingPassword">*</span><p>
