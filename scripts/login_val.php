@@ -20,8 +20,8 @@
 		$password = test_input($_POST['password']);
 		
 		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
-	
-		$result = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$email'  AND PASSWORD = '$password' ");
+		$salt = "SHA2(CONCAT('$password', '4b3403665fea6'),384))";
+		$result = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$email'  AND PASSWORD = '$salt' ");
 
 		$rows = $result->fetch(PDO::FETCH_NUM);
 		if($rows > 0) {
