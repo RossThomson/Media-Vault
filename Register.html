@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Register MediaLynx</title>
+	<meta charset = "utf-8">
+	<style>
+	<!--Stuff for the background image-->
+	body {
+		background-image: url(MediaLynxLogo.jpg); 
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	</style>
+	</head>
+	<body>
+	<!--FORM FOR THE USER TO FILL OUT-->
+	<form name = "formReg" action = "Logon.html" method = "POST" onsubmit = "return validateForm(this);">
+	<fieldset>
+	<legend>Register MediaLynx</legend>
+	Username:<br>
+	<input type = "text" name = "username">
+	<br>
+	E-mail<br>
+	<input type="email" name="email">
+	<br>
+	Password:<br>
+	<input type = "password" name = "password" min = "6">
+	<br>
+	Confirm Password:<br>
+	<input type = "password" name = "conPassword">
+	<br><br>
+	<input type = "submit" name = "submit" value = "Submit">
+	</fieldset>
+	</form>
+	<!--SCRIPT THAT CHECKS TO MAKE SURE ALL THE FIELDS ARE VALID-->
+	<script type = "text/javascript">
+		function validateForm(formElement) {
+			var username = formElement.elements['username'];
+			if(username.value == "") {
+				alert("Please Enter a Username");
+				username.focus();
+				return false;
+			}
+			
+			var password = formElement.elements['password'];
+			var conPassword = formElement.elements['conPassword'];
+			if(password.value != conPassword.value) {
+				alert("Passwords are not equal");
+				password.focus();
+				password.value = "";
+				conPassword.value = "";
+				return false;
+			}
+			
+			if(password.value == username.value) {
+				alert("Password and username are equal.\nPlease make sure they are different");
+				password.focus();
+				password.value = "";
+				conPassword.value = "";
+				return false;
+			}
+			return true;
+		}
+	</script>
+	<!--  PHP CONNECTION   -->
+	<?php
+		$dbname = "DATABASE"
+		$conn = mysqli_connect("54.79.17.142","root","root",$dbname);
+		if(!$conn -> connect_error) {
+			die("Connection failed:" . $conn -> connect_error);
+		}
+		$insert = $conn -> prepare("INSERT INTO users(username, password, email) VALUES (?,?,?)");
+		$insert -> bind_param("sss",$username,$password,$email);
+		
+		$username = $_POST['username'];
+		$password = $_POST['email'];
+		$email = $_POST['password'];
+		$insert -> execute();
+		
+		
+	$insert -> close();
+	$conn -> close();
+	?>
+	</body>
+</html>
+	

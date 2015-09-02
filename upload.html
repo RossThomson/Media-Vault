@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Upload MediaLynx</title>
+	<meta charset = "utf-8">
+	<style>
+	<!--Stuff for the background image-->
+	body {
+		background-image: url(MediaLynxLogo.jpg); 
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	</style>
+	</head>
+	<body>
+	<form enctype = "multipart/form-data" action = "action.php" method = "POST">
+	<fieldset>
+	<legend>Upload your file</legend>
+	<input type = "hidden" name = "max_file_size" value = "5000000000">
+	Select the file you would like to upload:<br>
+	<input name = "upload" type = "file"><br>
+	<input type = "submit" value = "Upload File">
+	</form>
+	</body>
+</html>
