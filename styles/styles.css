@@ -151,7 +151,9 @@ margin-left: 10%;
 }
 
 
-
+#sign_in_info {
+float: right;
+}
 
 
 input.btn.btn-alt {
