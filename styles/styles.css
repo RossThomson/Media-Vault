@@ -140,7 +140,7 @@ text-decoration: none;
 color: black;
 }
 
-#register {
+#register, #register_success  {
 display: block;
 float: left;
 text-align: center;
@@ -151,16 +151,8 @@ margin-left: 10%;
 }
 
 
-#register_success {
-display: block;
-float: left;
-text-align: center;
-width: 80%;
-margin-top: 100px;
-margin-left: auto;
-margin-right: auto;
 
-}
+
 
 input.btn.btn-alt {
 	margin-left: 35%;

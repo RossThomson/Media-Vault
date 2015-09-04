@@ -1,3 +1,13 @@
+
+<?php
+
+
+if(!isset($_SESSION['email'])){
+header("location: index.php");
+}
+?>
+
+
 <!DOCTYPE html>
 
 <html id="Homepage_pic">
@@ -21,7 +31,7 @@
 					<span id="jae_design-by">Design by Media lynx</span> 
 						Copyright &copy; Media Lynx 2015.
 					</footer>
-		<?php  header('Refresh: 2; URL=media.php'); ?>	
+		<?php  header('Refresh: 2; URL= media.php'); ?>	
 	</div>
 	</body>
 	</html>
