@@ -10,11 +10,12 @@ header("location: Login.php");
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="styles/styles.css">
 <!--<meta charset="utf-8">-->
 <title>Watching</title>
-<link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+<div class="top_bar">
 
 <div class="wrapper">
 	<header>
