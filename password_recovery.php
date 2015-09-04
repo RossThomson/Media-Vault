@@ -1,10 +1,10 @@
-<?php
+/*<?php
 session_start();
 
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
 }
-?>
+?>*/
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
@@ -33,7 +33,7 @@ header("location: Login.php");
 	</form>
 	
 	<?php
-		$dbname = "Media_Lynx";
+		$dbname = "MediaLynx";
 		$conn = mysqli_connect("54.79.17.142","root","root",$dbname);
 		if(!$conn -> connect_error) {
 			die("Connection failed:");
