@@ -99,14 +99,13 @@ nav li {
 	list-style-position: inside;
 	display: inline;
 	padding: 0em;
-	margin-left: 10%;
 	color: white;
 	font-family: cursive;
 	font-weight: bold;
 }
 
 nav ul li a {
-	margin-left: 10%;
+	margin-left: 8%;
 	font-size: 25px;
 	font-family: cursive;
 	font-weight: bold;
