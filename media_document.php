@@ -23,6 +23,7 @@
 	<div id="aboutus_content">	
 	<br><br>	
 	<h2 class="aboutus_Headings">Your document files</h2><br>
+	<a href="media_movie.php">movie</a> &nbsp <a href="media_document.php">document</a> &nbsp <a href="media_photo.php">photo</a> &nbsp <a href="media_music.php">music</a>
 	</div>
 
 	<div class="media_divider"></div>
