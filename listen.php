@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Watching</title>
+<title>Listening</title>
 </head>
 
 <body>
-<video align="center" src="epl.mp4" width="500" height="350" controls>
-</video>
+<audio src="test.mp3" controls>
+</audio>
 <br><br>
 <footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
