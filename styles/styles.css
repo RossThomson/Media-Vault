@@ -100,15 +100,20 @@ nav li {
 	display: inline;
 	padding: 0em;
 	margin-left: 10%;
+	color: white;
+	font-family: cursive;
+	font-weight: bold;
+}
+
+nav ul li a {
+	margin-left: 10%;
 	font-size: 25px;
 	font-family: cursive;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
 	color: white;
-}
-
-
+	}
 
 /*nav menu link highlighter*/
 nav ul li a:hover {
