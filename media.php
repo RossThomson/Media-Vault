@@ -27,7 +27,7 @@ echo $_SESSION['email'];
 	
 	<div class="wrapper">
 	<header>
-		<?php include 'scripts/header.php'; ?>
+		<?php include 'inc/header.php'; ?>
 	</header>
 	<br><br><br>
 	<div class="search_container">
