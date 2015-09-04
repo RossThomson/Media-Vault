@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<meta charset="utf-8">
 <title>Watching</title>
-
-<link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-
-<EMBED src="epl.mp4" width="380" height="328"
-type=video/mpeg volume="1" loop="false" autostart="true">
-
+<video src="epl.mp4" width="500" height="350" controls>
+</video>
+<br><br>
 <footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
