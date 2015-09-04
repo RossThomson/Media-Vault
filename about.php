@@ -9,19 +9,8 @@
 <body>
 <div class="wrapper">
 	<header>
-	
-				<nav>
-					
-					<a href="index.php"><img src="graphics/logo.jpg"></a>
-			
-					<ul>
-						
-						<li><a href="login.php">Login</a></li>
-						<li><a href="about.php">About</a></li>
-						<li><a href="help.php">Help</a></li>
-					</ul>			
-				</nav>
-			</header>
+		<?php include 'header.php'; ?>
+	</header>
 				
 					
 					<h1 class="aboutus_Headings">Welcome to Media Lynx</h1>
