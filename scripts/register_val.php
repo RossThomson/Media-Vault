@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWER, PASSWORD) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer', '$password')";
 						
 						$pdo->exec($sql);
-					
+					session_start();
 						$_SESSION['email'] = $email;
 					header("location: ../register_success.php");
 						
