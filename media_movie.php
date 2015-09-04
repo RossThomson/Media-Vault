@@ -40,7 +40,7 @@
 					<td class="media_first"><span class="media_date">09.02.2015</span></td>
 					<td>2.8GB</td>
 					<td>Test.avi</td>
-					<td><a href="#">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
+					<td><a href="watch.php">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
 				</tr>
 				<tr class="media_rowB">
 					<td class="media_first"><span class="media_date">N/A</span></td>
