@@ -12,6 +12,7 @@ header("location: Login.php");
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 <meta charset="utf-8">
 <title>Watching</title>
+<link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
