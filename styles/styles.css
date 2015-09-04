@@ -99,10 +99,6 @@ nav li {
 	list-style-position: inside;
 	display: inline;
 	padding: 0em;
-}
-
-nav ul li a {
-
 	margin-left: 10%;
 	font-size: 25px;
 	font-family: cursive;
@@ -110,7 +106,9 @@ nav ul li a {
 	text-align: center;
 	text-decoration: none;
 	color: white;
-	}
+}
+
+
 
 /*nav menu link highlighter*/
 nav ul li a:hover {
