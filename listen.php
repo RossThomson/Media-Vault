@@ -28,6 +28,7 @@ header("location: Login.php");
 	<audio src="test.mp3" controls>
 	</audio>
 	<br><br>
+	</div>
 <footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
