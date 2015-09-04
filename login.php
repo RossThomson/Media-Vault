@@ -1,3 +1,14 @@
+
+<?php
+include 'scripts/login_val.php'; // Includes Login Script
+
+if(isset($_SESSION['email'])){
+header("location: media.php");
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -5,7 +16,7 @@
 	<meta charset = "utf-8">
 	<link rel="stylesheet" href="styles/styles.css">
 	<script type="text/javascript" src="scripts/login_val.js"></script>
-	<?php include 'scripts/login_val.php';?>
+	
 	</head>
 	
 	<body>

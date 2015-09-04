@@ -1,3 +1,10 @@
+
+<?php
+session_start();
+echo $_SESSION['email'];
+?>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
@@ -20,14 +27,7 @@
 	
 	<div class="wrapper">
 	<header>
-		<nav>
-			<a href="index.php"><img src="graphics/logo.jpg"></a>
-			<ul>
-				<li><a href="login.php">Login</a></li>
-				<li><a href="about.php">About</a></li>
-				<li><a href="help.php">Help</a></li>
-			</ul>			
-		</nav>
+		<?php include 'scripts/header.php'; ?>
 	</header>
 	<br><br><br>
 	<div class="search_container">

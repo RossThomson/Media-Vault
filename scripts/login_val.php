@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 	$email = $password = '';
 
 	
@@ -33,12 +35,9 @@
 		}
 		
 		else{
-			echo "Invalid email or password";
+			$error = "Invalid email or password";
 			header("location: ../login.php");
 		
-			
-
-			
 		}
 	}
 
