@@ -26,7 +26,7 @@ session_start();
 	
 	<div class="wrapper">
 	<header>
-		<?php include 'inc/header.php'; ?>
+		<?php include 'header.php'; ?>
 	</header>
 	<br><br><br>
 	<div class="search_container">
