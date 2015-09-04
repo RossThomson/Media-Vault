@@ -27,7 +27,7 @@ session_start();
 
 		$rows = $result->fetch(PDO::FETCH_NUM);
 		if($rows > 0) {
-		session_start(); $_SESSION['isAdmin'] = true;
+		session_start(); 
 		$_SESSION['email'] = $email;
 		header("location: ../media.php");
 		
