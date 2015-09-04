@@ -1,8 +1,3 @@
-<?php
-
-
-
-
 	
 <?php	
 
@@ -29,6 +24,7 @@
 				<li><a href="<?php echo $login?>.php"><?php echo $login;?></a></li>
 				<li><a href="about.php">About</a></li>
 				<li><a href="help.php">Help</a></li>
+				<li><?php echo $_SESSION['email']?></li>
 			</ul>			
 	</nav>
 
