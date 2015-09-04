@@ -1,10 +1,3 @@
-<?php//
-//session_start();
-//
-//if(!isset($_SESSION['email'])){
-//header("location: Login.php");
-//}
-//?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
@@ -25,7 +18,6 @@
 	<header>
 		<?php include 'header.php'; ?>
 	</header>
-	<body>
 	<form>
 		Email:<br>
 		<input type = "email" name = "email"><br>
