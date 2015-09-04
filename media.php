@@ -10,11 +10,6 @@ session_start();
         
         <title>Media</title>
         
-        <meta name="Author" content="Mike Ruckman" />
-        <meta name="About" content="A free design for OSWD.org" />
-        <meta name="Copy-Up" content="Mike Ruckman" />
-        <meta name="Designed By" content="Theruckman.com" />
-        
         <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
      	<link rel="stylesheet" href="styles/styles.css">
         
@@ -37,10 +32,10 @@ session_start();
 	
     <div id="media_main_gMenu">
        <ul>
-       <li><a href="#">Movie</a></li>
-       <li><a href="#">Photo</a></li>
-       <li><a href="#">Document</a></li>
-       <li><a href="#">Music</a></li><br><br><br>
+       <li><a href="media_movie.php">Movie</a></li>
+       <li><a href="media_photo.php">Photo</a></li>
+       <li><a href="media_document.php">Document</a></li>
+       <li><a href="media_music.php">Music</a></li><br><br><br>
        <li><a href="#">Upload</a></li> 
        </ul>
 	</div>
