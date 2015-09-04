@@ -1,13 +1,18 @@
+
+<?php
+session_start();
+
+if(!isset($_SESSION['email'])){
+header("location: Login.php");
+}
+?>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
         
         <title>Media</title>
-        
-        <meta name="Author" content="Mike Ruckman" />
-        <meta name="About" content="A free design for OSWD.org" />
-        <meta name="Copy-Up" content="Mike Ruckman" />
-        <meta name="Designed By" content="Theruckman.com" />
         
         <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
      	<link rel="stylesheet" href="styles/styles.css">
@@ -20,14 +25,7 @@
 	
 	<div class="wrapper">
 	<header>
-		<nav>
-			<a href="index.php"><img src="graphics/logo.jpg"></a>
-			<ul>
-				<li><a href="login.php">Login</a></li>
-				<li><a href="about.php">About</a></li>
-				<li><a href="help.php">Help</a></li>
-			</ul>			
-		</nav>
+		<?php include 'header.php'; ?>
 	</header>
 	<br><br><br>
 	<div class="search_container">
@@ -38,10 +36,10 @@
 	
     <div id="media_main_gMenu">
        <ul>
-       <li><a href="#">Movie</a></li>
-       <li><a href="#">Photo</a></li>
-       <li><a href="#">Document</a></li>
-       <li><a href="#">Music</a></li><br><br><br>
+       <li><a href="media_movie.php">Movie</a></li>
+       <li><a href="media_photo.php">Photo</a></li>
+       <li><a href="media_document.php">Document</a></li>
+       <li><a href="media_music.php">Music</a></li><br><br><br>
        <li><a href="#">Upload</a></li> 
        </ul>
 	</div>

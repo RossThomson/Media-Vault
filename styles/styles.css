@@ -99,11 +99,13 @@ nav li {
 	list-style-position: inside;
 	display: inline;
 	padding: 0em;
+	color: white;
+	font-family: cursive;
+	font-weight: bold;
 }
 
 nav ul li a {
-
-	margin-left: 10%;
+	margin-left: 8%;
 	font-size: 25px;
 	font-family: cursive;
 	font-weight: bold;
@@ -138,7 +140,7 @@ text-decoration: none;
 color: black;
 }
 
-#register {
+#register, #register_success  {
 display: block;
 float: left;
 text-align: center;
@@ -147,6 +149,10 @@ margin-top: 100px;
 margin-left: 10%;
 
 }
+
+
+
+
 
 input.btn.btn-alt {
 	margin-left: 35%;
@@ -281,5 +287,37 @@ padding: 30px;
 
 .search:focus{
 	width: 200px;
+}
+
+.media_divider
+{
+border-bottom: solid 1px #F6F3F1;
+}
+
+.media_content
+{
+position: relative;
+padding-left: 22px;
+}
+
+td.media_first,th.media_first
+{
+border-left: 0px;
+}
+
+tr.media_rowA
+{
+background: #FFF0DE url('images/trbg1.gif') repeat-x;
+}
+
+tr.media_rowB
+{
+background: #FFFAF4 url('images/trbg2.gif') repeat-x;
+}
+
+.media_date
+{
+font-family: georgia, "times new roman", serif;
+font-size: 20px;
 }
 
