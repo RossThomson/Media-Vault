@@ -4,13 +4,13 @@
 	if(isset($_SESSION['email'])) 
 	
 	{
-		$login = "Logout";
+		$login = "logout";
 	
 	}
 	
 	else 
 	{
-		$login = "Login";
+		$login = "login";
 		
 	}
 
