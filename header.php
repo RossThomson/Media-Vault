@@ -24,7 +24,8 @@
 				<li><a href="<?php echo $login?>.php"><?php echo $login;?></a></li>
 				<li><a href="about.php">About</a></li>
 				<li><a href="help.php">Help</a></li>
-			</ul>			
+			</ul>	
+			<span> Signed in as <?php echo $email; ?><span>
 	</nav>
 
 
