@@ -26,7 +26,7 @@ header("location: Login.php");
 		<?php include 'header.php'; ?>
 	</header>
 	<body>
-	<form action = >
+	<form>
 		Email:<br>
 		<input type = "email" name = "email"><br>
 		<input type = "submit" name = "Submit"><br><br>
@@ -42,33 +42,18 @@ header("location: Login.php");
 		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM user WHERE email = ".$email;
 		$result = $conn -> query($sql);
 		
-		$json = json_encode($result);
-		
 		if($result -> num_rows > 0) {
-			echo "<form action = change_password.php onsubmit = check_answer()>Secret question<br>"
+			echo '<form action = "change_password.php" method = "POST">Secret question<br>'
 			$row = $result -> fetch_assoc();
 			echo $row["SECRETQUESTION"];
-			echo "Secret Answer<br><input type = 'password' name = 'answer'><br>";
-			echo "<input type = 'submit' name = 'submit'>"
+			echo 'Secret Answer<br><input type = "password" name = "answer"><br>';
+			echo '<input type = "submit" name = "submit">';
+			$answer = $_POST["answer"];
+			if($answer !== $row["SECRETANSWER"]) {
+				echo "Not the correct answer";
+			}
 		}
 		$conn -> close();
 	?>
-	<script type = "text/javascript">
-	function check_answer(form) {
-		var answer = form.elements['answer'];
-		var trueAnswer = <?php $json ?>;
-		if(answer.value == "") {
-			alert("Please enter an answer");
-			answer.focus();
-			return false;
-		}
-		if(answer.value != trueAnswer) {
-			alert("Answer is not correct.");
-			answer.focus();
-			return false;
-		}
-		return true;
-	}	
-	</script>	
 	</body>
 </html>
