@@ -1,14 +1,3 @@
-
-<?php
-include 'scripts/login_val.php'; // Includes Login Script
-
-if(isset($_SESSION['email'])){
-header("location: media.php");
-}
-?>
-
-
-
 <!DOCTYPE html>
 
 <html id="Homepage_pic">
@@ -25,17 +14,14 @@ header("location: media.php");
 				<?php include 'header.php'; ?>
 			</header>
 
-			<div id = "register">
-			<h2> "Your own online Media Vault"</h2>
-			<a class="btn btn-alt" href="register.php">Register Now</a>
+			<div id = "register_success">
+			<h2> Congratulations, you are now a member of MediaLynx</h2>
 			</div>
 					<footer class="footer_absolute">
 					<span id="jae_design-by">Design by Media lynx</span> 
 						Copyright &copy; Media Lynx 2015.
 					</footer>
-					
-				
-	
+		<?php  header('Refresh: 2; URL=media.php'); ?>	
 	</div>
 	</body>
 	</html>
