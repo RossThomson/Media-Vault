@@ -6,6 +6,10 @@
 </head>
 
 <body>
+<div id="aboutus_content">	
+	<br><br>
+	<a href="media_movie.php">movie</a> &nbsp <a href="media_document.php">document</a> &nbsp <a href="media_photo.php">photo</a> &nbsp <a href="media_music.php">music</a>
+</div>
 <video align="center" src="epl.mp4" width="500" height="350" controls>
 </video>
 <br><br>
