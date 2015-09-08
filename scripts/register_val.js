@@ -41,12 +41,30 @@ function checkEmail() {
 	var goodColor = "#66cc66";
     var badColor = "#ff6666";
     if (!filter.test(email.value)) {
+	  email.style.backgroundColor = badColor;
      message.innerHTML = "Invalid email address";
 	  message.style.color = badColor;
  }
  
  else {
+	 email.style.backgroundColor = goodColor;
 	  message.innerHTML = "Valid email address";
 	  message.style.color = goodColor;
  }
+}
+
+
+
+function inputAlphabet(){
+	var name = document.getElementById("name");
+	var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+	var message = document.getElementById("namemessage");
+	var alphaExp = /^[a-zA-Z]+$/;
+	if(inputtext.value.match(alphaExp)){
+		  message.innerHTML = "";
+	}else{
+	  message.innerHTML = "Alphabetic characters only";
+	  message.style.color = badColor;
+	}
 }
