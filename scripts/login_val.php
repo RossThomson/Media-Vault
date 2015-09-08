@@ -35,7 +35,8 @@ session_start();
 		}
 		
 		else{
-			$error = "Invalid email or password";
+			session_start(); 
+			$_SESSION['error'] = "Invalid email or password";
 			header("location: ../Login.php");
 		
 		}
