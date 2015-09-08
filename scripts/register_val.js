@@ -61,7 +61,7 @@ function inputAlphabet(){
     var badColor = "#ff6666";
 	var message = document.getElementById("namemessage");
 	var alphaExp = /^[a-zA-Z]+$/;
-	if(inputtext.value.match(alphaExp)){
+	if(name.value.match(alphaExp)){
 		  message.innerHTML = "";
 	}else{
 	  message.innerHTML = "Alphabetic characters only";
