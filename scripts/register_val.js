@@ -9,23 +9,20 @@
     var goodColor = "#66cc66";
     var badColor = "#ff6666";
 	
-    if(password.value == cPassword.value){
+    if( password.value && cPassword.value != null && password.value == cPassword.value){
       	cPassword.style.backgroundColor = goodColor;
         message.style.color = goodColor;
         message.innerHTML = "Passwords Match!"
 		document.getElementById("submit").disabled = false;
     }
-	else if (password.value != cPassword.value) {
-        //The passwords do not match.
-        //Set the color to the bad color and
-        //notify the user.
+	else if ( password.value && cPassword.value != null && password.value != cPassword.value) {
         cPassword.style.backgroundColor = badColor;
         message.style.color = badColor;
         message.innerHTML = "Passwords Do Not Match!"
 		 document.getElementById("submit").disabled = true;
     }
 	
-	else if (password.value || cPassword.value == null) {
+	else {
 		 message.style.color = white;
 			message.innerHTML = "";
 		
