@@ -248,7 +248,7 @@ input.btn.btn-alt {
 
 #regform, #loginform{
 display: block;
-width: 40%;
+width: 30%;
 margin-top: 5%;
 margin-left: 35%;
 margin-right: auto;
@@ -325,6 +325,22 @@ background: #FFFAF4 url('images/trbg2.gif') repeat-x;
 {
 font-family: georgia, "times new roman", serif;
 font-size: 20px;
+}
+
+label.field {
+text-align: right;
+width: 100px;
+float: left;
+}
+
+input.textbox-300 {
+width: 300px;
+float: left;
+}
+
+fieldset p {
+clear: both;
+padding: 5px;
 }
 
 
