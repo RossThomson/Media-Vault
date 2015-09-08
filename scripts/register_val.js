@@ -40,12 +40,14 @@ function checkEmail() {
 	  email.style.backgroundColor = badColor;
      message.innerHTML = "Invalid email address";
 	  message.style.color = badColor;
+	  document.getElementById("submit").disabled = true;
  }
  
  else {
 	 email.style.backgroundColor = goodColor;
 	  message.innerHTML = "Valid email address";
 	  message.style.color = goodColor;
+	  document.getElementById("submit").disabled = false;
  }
 }
 
