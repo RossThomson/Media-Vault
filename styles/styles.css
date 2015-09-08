@@ -250,7 +250,7 @@ input.btn.btn-alt {
 display: block;
 width: 40%;
 margin-top: 5%;
-margin-left: 35%;
+margin-left: 30%;
 margin-right: auto;
 background-color: rgba(15, 13, 6, 0.5);
 border-radius: 22px;
@@ -329,7 +329,7 @@ font-size: 20px;
 
 label{
 text-align: right;
-width: 200px;
+width: 150px;
 float: left;
 }
 
