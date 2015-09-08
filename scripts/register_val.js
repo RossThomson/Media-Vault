@@ -25,7 +25,6 @@
 	else {
 		 message.style.color = white;
 			message.innerHTML = "";
-		
 	}
 }  
 
