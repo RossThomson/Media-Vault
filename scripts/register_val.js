@@ -20,7 +20,7 @@
         cPassword.style.backgroundColor = goodColor;
         message.style.color = goodColor;
         message.innerHTML = "Passwords Match!"
-		document.getElementById("mySubmit").enabled = true;
+		document.getElementById("mySubmit").disabled = false;
     }else{
         //The passwords do not match.
         //Set the color to the bad color and
