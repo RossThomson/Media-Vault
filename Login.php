@@ -31,12 +31,13 @@ header("location: media.php");
 	
 	<h1>Login To Your Account</h1>
 	<form id="loginform" name="login_form" onsubmit="scripts/login_val.js" action="scripts/login_val.php"  method="post">
-	
-		<span><?php session_start(); echo $_SESSION['error'];?></span>
-		<label>Email Address: </label><input type="text" name="email" id="email" required onkeyup ="checkEmail();">*<span id ="emailmessage"></span></p>
-		<label>Password: </label><input type="password" min = "6" max = "15" id="pass" name="password" required>*</p>
-		<label><a href="password_recovery.php">Retrieve Password</a></label><br><br>
+		<fieldset>
+		<p><span><?php session_start(); echo $_SESSION['error'];?></span></p>
+		<p><label>Email Address: </label><input type="text" name="email" id="email" required onkeyup ="checkEmail();">*<span id ="emailmessage"></span></p>
+		<p><label>Password: </label><input type="password" min = "6" max = "15" id="pass" name="password" required>*</p>
+		<p><label><a href="password_recovery.php">Retrieve Password</a></label><br><br></p>
 		<input class="btn btn-alt" type = "submit" name = "submit" id="submit" value = "Submit">
+		</fieldset>
 	</form>
 	</div>
 	
