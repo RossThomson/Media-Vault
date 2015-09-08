@@ -13,7 +13,7 @@
       	cPassword.style.backgroundColor = goodColor;
         message.style.color = goodColor;
         message.innerHTML = "Passwords Match!"
-		document.getElementById("mySubmit").disabled = false;
+		document.getElementById("submit").disabled = false;
     }
 	else if (password.value != cPassword.value) {
         //The passwords do not match.
