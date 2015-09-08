@@ -40,6 +40,5 @@ function checkEmail() {
 	var message = document.getElementById("emailmessage");
     if (!filter.test(email.value)) {
      message.innerHTML = "Invalid email address"
-    email.focus;
-    return false;
  }
+}
