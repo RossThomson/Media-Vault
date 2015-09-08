@@ -1,4 +1,11 @@
 
+<?php
+include 'scripts/recov_val.php'; // Includes Recovery Script
+
+if(isset($_SESSION['email'])){
+header("location: media.php");
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
@@ -7,6 +14,7 @@
         
         <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
      	<link rel="stylesheet" href="styles/styles.css">
+		<script type="text/javascript" src="scripts/login_val.js"></script>
         
     </head>
 
@@ -18,34 +26,11 @@
 	<header>
 		<?php include 'header.php'; ?>
 	</header>
-	<form>
-		Email:<br>
-		<input type = "email" name = "email"><br>
-		<input type = "submit" name = "Submit"><br><br>
+	<form id = "RecoverForm" name = "recover_form" action = "scripts/recov_val.php" method = "POST">
+		<label>Email:</label><input type = "text" name = "email" required onchange = "validate_email(this, 'MissingEmail');"><span id = "MissingEmail">*</span><span id = "InvalidEmail">Invalid Email</span>
+		<input input class="btn btn-alt" type = "submit" name = "submit" value = "Submit"><br><br>
 	</form>
 	
-	<?php
-		$dbname = "MediaLynx";
-		$conn = mysqli_connect("54.79.17.142","root","root",$dbname);
-		if(!$conn -> connect_error) {
-			die("Connection failed:");
-		}
-		$email = $_POST['email'];
-		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM user WHERE email = ".$email;
-		$result = $conn -> query($sql);
-		
-		if($result -> num_rows > 0) {
-			echo '<form action = "change_password.php" method = "POST">Secret question<br>'
-			$row = $result -> fetch_assoc();
-			echo $row["SECRETQUESTION"];
-			echo 'Secret Answer<br><input type = "password" name = "answer"><br>';
-			echo '<input type = "submit" name = "submit">';
-			$answer = $_POST["answer"];
-			if($answer !== $row["SECRETANSWER"]) {
-				echo "Not the correct answer";
-			}
-		}
-		$conn -> close();
-	?>
+	
 	</body>
 </html>
