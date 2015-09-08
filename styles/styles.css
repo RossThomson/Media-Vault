@@ -327,7 +327,7 @@ font-family: georgia, "times new roman", serif;
 font-size: 20px;
 }
 
-label.field {
+label{
 text-align: right;
 width: 100px;
 float: left;
