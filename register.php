@@ -30,15 +30,15 @@
 	<div id="register_form">
 	
 	<h1>Register For An Account</h1>
-	<form id="regform" name="Register_form" onsubmit="Register_Success.php" action="scripts/register_val.php"  method="post">
+	<form id="regform" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
 	
 		<label>First Name: </label><input type="text" name="firstname" required id="Fname" onkeyup ="checkvalue('Fname', 'MissingFirstName');"><span id="MissingFirstName">*</span><p>
 		<label>Last name: </label><input type="text" name="lastname" required id="Lname" onkeyup ="checkvalue('Lname', 'MissingLastName');"><span id="MissingLastName">*</span><p>
 		<label>Email Address: </label><input type="text" name="email" required onchange ="validate_email(this,'MissingEmail');"><span id="MissingEmail">*</span><span id="invalid_email">Invalid email</span><p><p>
 		<label>Secret Question: </label><input type="text" name="secretquestion" required id="squestion" onkeyup ="checkvalue('squestion', 'Missingsecretquestion');"><span id="Missingsecretquestion">*</span><p>
 		<label>Secret Answer: </label><input type="text" name="secretanswer" required id="sanswer" onkeyup ="checkvalue('sanswer', 'Missingsecretanswer');"><span id="Missingsecretanswer">*</span>
-		<label for="password">Password: </label><input type="password" min = "6" max = "15" id="password" name="password" required>
-		<label for="cPassword">Confirm Password: </label><input type="password" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;"><span id="confirmMessage" class="confirmMessage"></span>
+		<label for="password">Password:</label><input type="password" min = "6" max = "15" id="password" name="password" required>
+		<label for="cPassword">Confirm Password:</label><input type="password" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;"><span id="confirmMessage" class="confirmMessage"></span>
 		<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">
 	</form>
 	</div>

@@ -1,18 +1,4 @@
 
-function checkvalue(id, errortag){
-	var result = true;
-	
-	var nameValue = document.getElementById(id).value;
-	if (nameValue == "") {
-		
-		 document.getElementById(errortag).style.visibility = "visible";
-		 document.getElementById('required').style.visibility = "visible";
-		 result = false;
-	}
-	else
-	{
-		document.getElementById(errortag).style.visibility = "hidden";
-	}
 	
 	
 	function checkPass()
