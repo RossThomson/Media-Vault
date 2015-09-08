@@ -24,6 +24,12 @@
         message.innerHTML = "Passwords Do Not Match!"
 		 document.getElementById("submit").disabled = true;
     }
+	
+	else if (password.value || cPassword.value == null) {
+		 message.style.color = white;
+			message.innerHTML = "";
+		
+	}
 }  
 
 
