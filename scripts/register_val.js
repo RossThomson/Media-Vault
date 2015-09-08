@@ -55,13 +55,27 @@ function checkEmail() {
 
 
 
-function inputAlphabet(){
+function firstNameVal(){
 	var name = document.getElementById("name");
 	var goodColor = "#66cc66";
     var badColor = "#ff6666";
 	var message = document.getElementById("namemessage");
 	var alphaExp = /^[a-zA-Z]+$/;
 	if(name.value.match(alphaExp)){
+		  message.innerHTML = "";
+	}else{
+	  message.innerHTML = "Alphabetic characters only";
+	  message.style.color = badColor;
+	}
+}
+
+function surnameVal(){
+	var name = document.getElementById("surname");
+	var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+	var message = document.getElementById("surnamemessage");
+	var alphaExp = /^[a-zA-Z]+$/;
+	if(surname.value.match(alphaExp)){
 		  message.innerHTML = "";
 	}else{
 	  message.innerHTML = "Alphabetic characters only";
