@@ -20,6 +20,7 @@
         cPassword.style.backgroundColor = goodColor;
         message.style.color = goodColor;
         message.innerHTML = "Passwords Match!"
+		document.getElementById("mySubmit").enabled = true;
     }else{
         //The passwords do not match.
         //Set the color to the bad color and
@@ -27,20 +28,18 @@
         cPassword.style.backgroundColor = badColor;
         message.style.color = badColor;
         message.innerHTML = "Passwords Do Not Match!"
+		 document.getElementById("submit").disabled = true;
     }
 }  
 
 
-function validate_email(form, the_item)
-{
-	var str = document.getElementById("regform").elements["email"].value;
-	var test = str.match(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/)
-	if (test == "" || test == null)
-	{
-		document.getElementById("invalid_email").style.visibility = "visible";
-		document.getElementById("required").style.visibility = "visible";
-	} 
-	else{
-		document.getElementById("invalid_email").style.visibility = "hidden";
-	}
-}
+function checkEmail() {
+
+    var email = document.getElementById("email");
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	var message = document.getElementById("emailmessage");
+    if (!filter.test(email.value)) {
+     message.innerHTML = "Invalid email address"
+    email.focus;
+    return false;
+ }
