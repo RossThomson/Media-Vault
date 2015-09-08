@@ -2,7 +2,7 @@
 
 session_start();
 
-	$email = $password = '';
+	$email = $password = $error = '';
 
 	
 	function test_input($data) {
