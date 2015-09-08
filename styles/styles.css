@@ -248,7 +248,7 @@ input.btn.btn-alt {
 
 #regform, #loginform{
 display: block;
-width: 30%;
+width: 40%;
 margin-top: 5%;
 margin-left: 35%;
 margin-right: auto;
@@ -260,6 +260,10 @@ padding: 30px;
  label {
 	 margin-left: 10px;
 	 color: white;
+ }
+ 
+ span {
+ font-size: 12px;
  }
  
 
@@ -322,4 +326,6 @@ background: #FFFAF4 url('images/trbg2.gif') repeat-x;
 font-family: georgia, "times new roman", serif;
 font-size: 20px;
 }
+
+
 

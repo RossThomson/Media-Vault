@@ -64,7 +64,7 @@ function firstNameVal(){
 	if(name.value.match(alphaExp)){
 		  message.innerHTML = "";
 	}else{
-	  message.innerHTML = "Alphabetic characters only";
+	  message.innerHTML = "Letters only";
 	  message.style.color = badColor;
 	}
 }
@@ -78,7 +78,7 @@ function surnameVal(){
 	if(surname.value.match(alphaExp)){
 		  message.innerHTML = "";
 	}else{
-	  message.innerHTML = "Alphabetic characters only";
+	  message.innerHTML = "Letters only";
 	  message.style.color = badColor;
 	}
 }
