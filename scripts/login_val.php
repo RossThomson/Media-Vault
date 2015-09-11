@@ -37,7 +37,7 @@ session_start();
 		
 		else{
 			session_start(); 
-			$_SESSION['error'] = '$hash';
+			$_SESSION['error'] = '$hash[HASH]';
 			header("location: ../Login.php");
 		
 		}
