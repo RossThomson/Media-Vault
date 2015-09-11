@@ -25,9 +25,7 @@ session_start();
 	
 		$sql = "SELECT HASH FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql);
-		
-		if ($result->num_rows > 0) {
-
+	
 		$row = $result->fetch_assoc());
 
 		if(password_verify('$password', $row["HASH"])) {
