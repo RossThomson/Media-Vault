@@ -44,9 +44,9 @@ header("location: Login.php");
 				<img src="graphics/logo.jpg">
 			</a> -->
 			<ul>
-				<li><a href="media_doc.php">Doc</a></li>
+				<li><a class="active" href="media_doc.php">Doc</a></li>
 				<li><a href="media_photo.php">Photo</a></li>
-				<li><a class="active" href="media_music.php">Music</a></li>
+				<li><a href="media_music.php">Music</a></li>
 				<li><a href="media_video.php">Video</a></li>
 			</ul>		
 		</div>
@@ -65,9 +65,9 @@ header("location: Login.php");
 				</tr>
 				<tr class="media_rowA">
 					<td class="media_first"><span class="media_date">09.02.2015</span></td>
-					<td>4.8MB</td>
-					<td>Test.mp3</td>
-					<td><a href="listen.php">listen</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
+					<td>1.2MB</td>
+					<td>Test.txt</td>
+					<td><a href="#">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
 				</tr>
 				<tr class="media_rowB">
 					<td class="media_first"><span class="media_date">N/A</span></td>
