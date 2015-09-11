@@ -24,11 +24,10 @@ session_start();
 		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
 	
 		$stmt = $conn->prepare("SELECT HASH FROM USERS WHERE EMAIL = '$email' ");
-		$stmt->execute();
-		$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+		$hash = $stmt->fetch(); 
+		
 
-
-		if(password_verify('$password', $result["HASH"])) {
+		if(password_verify('$password', $hash[HASH])) {
 		session_start(); 
 		$_SESSION['email'] = $email;
 		header("location: ../media.php");
