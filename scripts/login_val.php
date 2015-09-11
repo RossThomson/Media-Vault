@@ -29,7 +29,7 @@ session_start();
 
 		
 
-		if(password_verify('$password', '$hash') {
+		if(password_verify($password, $hash) {
 		session_start(); 
 		$_SESSION['email'] = $email;
 		header("location: ../media.php");
@@ -39,7 +39,7 @@ session_start();
 		
 		else{
 			session_start(); 
-			$_SESSION['error'] = '$hash';
+			$_SESSION['error'] = $hash;
 			header("location: ../Login.php");
 		
 		}
