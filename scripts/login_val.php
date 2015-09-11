@@ -26,10 +26,10 @@ session_start();
 		$q1 = $conn->query("SELECT HASH FROM USERS WHERE EMAIL = '$email'");
 		$q2 = $q1->fetch(); 
 		$hash = $q2['HASH'];
-
+		$hash1 = password_hash('$password', CRYPT_BLOWFISH);
 		
 
-		if(password_verify('$password', $hash)) {
+		if('$hash1 == $hash)) {
 		session_start(); 
 		$_SESSION['email'] = $email;
 		header("location: ../media.php");
