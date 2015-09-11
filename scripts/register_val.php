@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$secretquestion = validate_form($_POST["secretquestion"]);
 	$secretanswer = validate_form($_POST["secretanswer"]);
 	
+	$hash = password_hash($password, CRYPT_BLOWFISH);
 	
 	$dbhost = "localhost";
 	$dbname	= "Media_Lynx";
@@ -40,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					}
 					else
 					{ 
-						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWER, PASSWORD) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer', '$password')";
+						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWER, PASSWORD, HASH) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer', '$password', '$hash')";
 						
 						$pdo->exec($sql);
 					session_start();
