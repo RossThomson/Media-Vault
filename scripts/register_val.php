@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$secretquestion = validate_form($_POST["secretquestion"]);
 	$secretanswer = validate_form($_POST["secretanswer"]);
 	
-	$hash = password_hash($password, CRYPT_BLOWFISH);
+	$hash = password_hash('$password', CRYPT_BLOWFISH);
 	
 	$dbhost = "localhost";
 	$dbname	= "Media_Lynx";
