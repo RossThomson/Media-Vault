@@ -29,7 +29,7 @@ session_start();
 		$hash1 = password_hash('$password', CRYPT_BLOWFISH);
 		
 
-		if('$hash1 == $hash)) {
+		if($hash1 == $hash) {
 		session_start(); 
 		$_SESSION['email'] = $email;
 		header("location: ../media.php");
