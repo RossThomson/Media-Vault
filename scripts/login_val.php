@@ -24,6 +24,7 @@ session_start();
 		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
 	
 		$hash = $conn->prepare("SELECT HASH FROM USERS WHERE EMAIL = '$email' ");
+		
 
 		if(password_verify('$password', '$hash')) {
 		session_start(); 
@@ -35,7 +36,7 @@ session_start();
 		
 		else{
 			session_start(); 
-			$_SESSION['error'] = "Incorrect email or password";
+			$_SESSION['error'] = $hash;
 			header("location: ../Login.php");
 		
 		}
