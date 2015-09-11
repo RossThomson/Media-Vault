@@ -31,7 +31,7 @@ session_start();
 
 		if(password_verify('$password', $hash)) {
 		session_start(); 
-		$_SESSION['email'] = "Welcome "$q2['FIRSTNAME'];
+		$_SESSION['email'] = $q2['FIRSTNAME'];
 		header("location: ../media.php");
 		
 
