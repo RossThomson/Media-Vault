@@ -256,19 +256,33 @@ input.btn.btn-alt {
 
 #regform, #loginform{
 display: block;
-width: 30%;
+width: 40%;
 margin-top: 5%;
-margin-left: 35%;
+margin-left: 30%;
 margin-right: auto;
 background-color: rgba(15, 13, 6, 0.5);
 border-radius: 22px;
 padding: 30px;
 }
 
- label {
-	 margin-left: 10px;
-	 color: white;
+label{
+text-align: right;
+width: 150px;
+float: left;
+}
+
+
+
+fieldset p {
+clear: both;
+padding: 5px;
+
+}
+
+ span {
+ font-size: 12px;
  }
+ 
  
 .top_bar{
 	height: 20%;
