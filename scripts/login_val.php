@@ -23,7 +23,7 @@ session_start();
 		
 		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
 	
-		$q1 = $conn->query("SELECT HASH FROM USERS WHERE EMAIL = '$email'");
+		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$email'");
 		$q2 = $q1->fetch(); 
 		$hash = $q2['HASH'];
 
@@ -31,7 +31,7 @@ session_start();
 
 		if(password_verify('$password', $hash)) {
 		session_start(); 
-		$_SESSION['email'] = $email;
+		$_SESSION['email'] = $q2['FIRSTNAME'];
 		header("location: ../media.php");
 		
 
