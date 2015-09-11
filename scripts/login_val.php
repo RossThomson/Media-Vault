@@ -29,7 +29,7 @@ session_start();
 
 		
 
-		if(password_verify('$password', '$hash') {
+		if(password_verify('$password', '$hash')) {
 		session_start(); 
 		$_SESSION['email'] = $email;
 		header("location: ../media.php");
