@@ -20,25 +20,8 @@ header("location: Login.php");
 <body>
 <div class="wrapper">
 	<header>
-	<!-- <div id="media2_header"> -->
-		<nav>
-		<?php include 'header.php'; ?>
-		<a href="index.php">
-			<img src="graphics/logo.jpg">
-		</a>
-		<ul>
-			<li>
-				<a href="Login.php">Login</a>
-			</li>
-			<li>
-				<a href="about.php">About</a>
-			</li>
-			<li>
-				<a href="help.php">Help</a>
-			</li>
-		</ul>
+		<?php include 'header.php'; ?>/
 		<span id="sign_in_info"></span>
-		</nav>
 		<div id="media2_header_inside">
 			<!-- <a href="index.php">
 				<img src="graphics/logo.jpg">
