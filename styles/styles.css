@@ -161,10 +161,15 @@ margin-left: 10%;
 
 #sign_in_info {
 float: right;
-font-size: 25px;
-font-size: 25px;
+font-size: 20px;
+font-size: 20px;
 font-family: cursive;
 margin-right: 5%;
+color: white;
+}
+
+#retrieve_password {
+	text-align: center;
 }
 
 
@@ -289,6 +294,10 @@ width: 500px;
 
  span {
  font-size: 12px;
+ }
+ 
+ a {
+ text-decoration: none;
  }
  
  
