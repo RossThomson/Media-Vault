@@ -25,13 +25,13 @@ header("location: index.php");
 			</header>
 
 			<div id = "register_success">
-			<h2> Congratulations, you are now a member of MediaLynx</h2>
+			<h2> Success!, you are being redirected to your media page</h2>
 			</div>
 					<footer class="footer_absolute">
 					<span id="jae_design-by">Design by Media lynx</span> 
 						Copyright &copy; Media Lynx 2015.
 					</footer>
-		<?php  header('Refresh: 2; URL= media.php'); ?>	
+		<?php  header('Refresh: 6; URL= media.php'); ?>	
 	</div>
 	</body>
 	</html>
