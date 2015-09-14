@@ -32,8 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$result = $pdo->query("SELECT EMAIL FROM  USERS WHERE EMAIL = '$email'");
 					
 					if ($result->rowCount() > 0)
-					{
+					{	session_start();
 						$_SESSION['error'] = "Email already registered";
+						header("location: ../register.php");
 					}
 					
 					else
