@@ -35,7 +35,7 @@ header("location: media.php");
 		<p><span><?php session_start(); echo $_SESSION['error'];?></span></p>
 		<p><label>Email Address: </label><input type="text" name="email" id="email" required onkeyup ="checkEmail();">*<span id ="emailmessage"></span></p>
 		<p><label>Password: </label><input type="password" min = "6" max = "15" id="pass" name="password" required>*</p>
-		<p><a id="retrieve_password" href="password_recovery.php">Retrieve Password</a><br><br></p>
+		<a id="retrieve_password" href="password_recovery.php">Retrieve Password</a><br><br>
 		<input class="btn btn-alt" type = "submit" name = "submit" id="submit" value = "Submit">
 		</fieldset>
 	</form>
