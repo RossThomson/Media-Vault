@@ -175,6 +175,11 @@ color: white;
 	color: black;
 }
 
+#error_message {
+font-size: 15px;
+color: red;
+}
+
 
 input.btn.btn-alt {
 	margin-left: 35%;

@@ -32,8 +32,8 @@ header("location: media.php");
 	<h1>Login To Your Account</h1>
 	<form id="loginform" name="login_form" onsubmit="scripts/login_val.js" action="scripts/login_val.php"  method="post">
 		<fieldset>
-		<p><span><?php session_start(); echo $_SESSION['error'];?></span></p>
-		<p><label>Email Address: </label><input type="text" name="email" id="email" required onkeyup ="checkEmail();">*<span id ="emailmessage"></span></p>
+		<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
+		<p><label>Email Address: </label><input type="text" name="email" id="email" required onchange ="checkEmail();">*<span id ="emailmessage"></span></p>
 		<p><label>Password: </label><input type="password" min = "6" max = "15" id="pass" name="password" required>*</p>
 		<a id="retrieve_password" href="password_recovery.php">Retrieve Password</a><br>
 		<input class="btn btn-alt" type = "submit" name = "submit" id="submit" value = "Submit">
