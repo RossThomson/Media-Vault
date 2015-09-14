@@ -15,7 +15,8 @@
     }
     
     $date = date("YmdHis", time());
-    $dir = "./files/";
+    //$dir = "./files/";
+	$dir = "CONTENT";
     $file_hash = $date.$_FILES['file']['name'];
     $file_hash = md5($file_hash);
     $upfile = $dir.$file_hash;

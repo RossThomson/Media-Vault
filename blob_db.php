@@ -29,7 +29,8 @@
 
 
 	$name = $clear['name'];
-	$upload_dir = $_SERVER['DOCUMENT_ROOT'].'/upload';
+	$upload_dir = $_SERVER['CONTENT'].'/upload';
+	//$upload_dir = $_SERVER['DOCUMENT_ROOT'].'/upload';
 	//echo $upload_dir.'/'.$name.'<br />';
 	//echo nl2br(`ls /tmp -al`);
 
