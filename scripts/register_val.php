@@ -33,12 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					
 					if ($result->rowCount() > 0)
 					{
-						echo '<style type="text/css">
-						#EmailExists{
-						visibility: visible;
-						}
-						</style>';
+						$_SESSION['error'] = "Email already registered";
 					}
+					
 					else
 					{ 
 						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWER, HASH) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer','$hash')";
