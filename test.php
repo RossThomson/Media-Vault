@@ -77,7 +77,7 @@ header("location: Login.php");
 	</div>
 	<br><br>
 <div id="aboutus_content">	
-	<form action="./upload_test.php" method="POST" enctype="multipart/form-data" />
+	<form action="upload_test.php" method="POST" enctype="multipart/form-data" />
 		<input type="file" id="file" name="file" required />
 		<input type="submit" value="UPLOAD" />
 	</form>
