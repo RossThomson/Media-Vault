@@ -1,95 +1,56 @@
-<?php
-session_start();
+<?
+	$clear = array();
+	$clear['tmp_name'] = $_FILES['userfile']['tmp_name'];
+	$clear['name'] = $_FILES['userfile']['name'];
+	$clear['size'] = $_FILES['userfile']['size'];
+	$clear['type'] = $_FILES['userfile']['type'];
+	$clear['error'] = $_FILES['userfile']['error'];
 
-if(!isset($_SESSION['email'])){
-header("location: Login.php");
-}
+
+	if( basename($clear['name']) != $clear['name'] ){
+		echo "fatal error. forbidden file name <br />";
+		exit;
+	}
+
+	echo $clear['tmp_name'].'<br />';
+	echo $clear['name'].'<br />';
+	echo $clear['size'].'<br />';
+	echo $clear['type'].'<br />';
+
+	if( $clear['error'] > 0 ){
+		echo "error code = [".$clear['error']."]<br />";
+	}
+
+	$db = mysqli_connect('localhost', 'root', 'root', 'Media_Lynx');
+	if (!$db) {
+		echo "Connect failed: " . mysqli_connect_error();
+		exit();
+	}
+
+
+	$name = $clear['name'];
+	$upload_dir = $_SERVER['DOCUMENT_ROOT'].'/upload';
+	//echo $upload_dir.'/'.$name.'<br />';
+	//echo nl2br(`ls /tmp -al`);
+
+	if( is_uploaded_file($clear['tmp_name'])){
+		if( move_uploaded_file($clear['tmp_name'], "$upload_dir/$name") ){
+			echo 'move_uploaded_file succeed <br />';
+		}
+		else{
+			echo 'move_uploaded_file fail <br />';
+		}
+	}
+
+	//$fp = fopen("$upload_dir/$name", "rb");
+	//$content = addslashes(fread($fp, filesize("$upload_dir/$name")));
+	$fname = $upload_dir.'/'.$name;
+	//fclose($fp);
+
+	$query = "INSERT INTO blob_test(name, content) VALUES('$name', '". mysql_escape_string(file_get_contents($fname)) ."');";
+	$result = mysqli_query($db, $query) or die('fail to query');
+
+	mysqli_free_result($result);
+	mysqli_close($db);
+
 ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<head>
-	<title>Media</title>	
-	<!-- <link rel="shortcut icon" href="graphics/favicon.ico" />
-	<link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen" />
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> -->
-	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-
-<body>
-<div class="wrapper">
-	<header>
-		<?php include 'header.php'; ?>/
-		<span id="sign_in_info"></span>
-		<div id="media2_header_inside">
-			<!-- <a href="index.php">
-				<img src="graphics/logo.jpg">
-			</a> -->
-			<ul>
-				<li><a href="media_doc.html">Doc</a></li>
-				<li><a href="media_photo.html">Photo</a></li>
-				<li><a href="media_music.html">Music</a></li>
-				<li><a class="active" href="media_video.html">Video</a></li>
-			</ul>		
-		</div>
-	</header>
-</div>
-	<!-- </div> -->
-	<div class="media_divider"></div>
-		<div class="media_content">
-			<br><br><br><br>		
-			<table align="center">
-				<tr>
-					<th class="media_first"><strong>upload</strong> date</th>
-					<th><strong>size</strong></th>
-					<th><strong>file</strong> name</th>
-					<th><strong>function</strong></th>
-				</tr>
-				<tr class="media_rowA">
-					<td class="media_first"><span class="media_date">09.02.2015</span></td>
-					<td>2.8GB</td>
-					<td>Test.avi</td>
-					<td><a href="watch.php">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
-				</tr>
-				<tr class="media_rowB">
-					<td class="media_first"><span class="media_date">N/A</span></td>
-					<td>N/A</td>
-					<td>N/A</td>
-					<td><a href="#">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
-				</tr>
-				<tr class="media_rowA">
-					<td class="media_first"><span class="media_date">N/A</span></td>
-					<td>N/A</td>
-					<td>N/A</td>
-					<td><a href="#">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
-				</tr>
-				<tr class="media_rowB">
-					<td class="media_first"><span class="media_date">N/A</span></td>
-					<td>N/A</td>
-					<td>N/A</td>
-					<td><a href="#">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
-				</tr>
-			</table>			
-		</div>
-	</div>
-	<div class="media_divider"></div>
-	</div>
-	<br><br>
-<div id="aboutus_content">	
-	<form action="blob_db.php" method="post" enctype="multipart/form-data">
-	<div>
-		<input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
-		<label for="userfile">Upload a file:</label>
-		<input type="file" name="userfile" id="userfile" />
-		<input type="submit" value="Send File" />
-	</div>
-	</form>
-</div>	
-	<br><br><br>
-	<footer class="footer_relative">
-	<span id="jae_design-by">Design by Media lynx</span> 
-		Copyright &copy; Media Lynx 2015.
-	</footer>
-</body>
-</html>

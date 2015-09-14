@@ -29,7 +29,7 @@
             }
     }
     
-    @ $db = new mysqli('localhost', 'root', 'root', 'Media-Lynx');
+    @ $db = new mysqli('localhost', 'root', 'root', 'Media_Lynx');
     if(mysqli_connect_errno())
     {
         echo "DB error";
