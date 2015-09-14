@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						
 						$pdo->exec($sql);
 					session_start();
-					$_SESSION['email'] = '$firstname';
+					$_SESSION['email'] = $firstname;
 					header("location: ../register_success.php");
 						
 					} 
