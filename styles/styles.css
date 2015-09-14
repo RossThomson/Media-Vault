@@ -169,6 +169,7 @@ color: white;
 }
 
 #retrieve_password {
+	display: block;
 	text-align: center;
 	text-decoration: none;
 	color: black;
