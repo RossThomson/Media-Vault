@@ -80,6 +80,8 @@ header("location: Login.php");
 	<form enctype="multipart/form-data" action="upload.php" method="post">
 	Choose your file to upload!
 	<input name="uploadedfile" type="file" />
+	<br />
+	And what would you like to call it? <input name="title" type="text" />
 	<input type="submit" value="upload file" />
 	</form>
 </div>	
