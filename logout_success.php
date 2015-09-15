@@ -19,13 +19,13 @@
 			</header>
 
 			<div id = "register_success">
-			<h2> Success!, you are being redirected to the login page</h2>
+			<h2> Logged out, See you next time!</h2>
 			</div>
 					<footer class="footer_absolute">
 					<span id="jae_design-by">Design by Media lynx</span> 
 						Copyright &copy; Media Lynx 2015.
 					</footer>
-		<?php  header('Refresh: 6; URL= Login.php'); ?>	
+		<?php  header('Refresh: 6; URL= index.php'); ?>	
 	</div>
 	</body>
 	</html>

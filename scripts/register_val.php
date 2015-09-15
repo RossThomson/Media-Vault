@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$secretquestion = validate_form($_POST["secretquestion"]);
 	$secretanswer = validate_form($_POST["secretanswer"]);
 	
+	$hash = password_hash('$password', PASSWORD_DEFAULT);
 	
 	$dbhost = "localhost";
 	$dbname	= "Media_Lynx";
@@ -31,20 +32,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$result = $pdo->query("SELECT EMAIL FROM  USERS WHERE EMAIL = '$email'");
 					
 					if ($result->rowCount() > 0)
-					{
-						echo '<style type="text/css">
-						#EmailExists{
-						visibility: visible;
-						}
-						</style>';
+					{	session_start();
+						$_SESSION['error'] = "Email already registered";
+						header("location: ../register.php");
 					}
+					
 					else
 					{ 
-						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWER, PASSWORD) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer', '$password')";
+						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWER, HASH) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer','$hash')";
 						
-						$pdo->exec($sql);
+					$pdo->exec($sql);
 					session_start();
-						$_SESSION['email'] = $email;
+					$_SESSION['error'] = "";
 					header("location: ../register_success.php");
 						
 					} 

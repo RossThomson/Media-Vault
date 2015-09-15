@@ -2,7 +2,7 @@
 
 session_start();
 
-	$email = $password = '';
+	$email = $password = $error = '';
 
 	
 	function test_input($data) {
@@ -23,19 +23,24 @@ session_start();
 		
 		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
 	
-		$result = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$email'  AND PASSWORD = '$password' ");
+		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$email'");
+		$q2 = $q1->fetch(); 
+		$hash = $q2['HASH'];
 
-		$rows = $result->fetch(PDO::FETCH_NUM);
-		if($rows > 0) {
+		
+
+		if(password_verify('$password', $hash)) {
 		session_start(); 
-		$_SESSION['email'] = $email;
+		$_SESSION['email'] = $q2['FIRSTNAME'];
+		$_SESSION['error'] = "";
 		header("location: ../media.php");
 		
 
 		}
 		
 		else{
-			$error = "Invalid email or password";
+			session_start(); 
+			$_SESSION['error'] = "Incorrect username or password";
 			header("location: ../Login.php");
 		
 		}

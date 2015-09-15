@@ -1,24 +1,23 @@
 <?php
-session_start();
+if(!is_dir("uploads")){
+	mkdir("uploads");
+}
 
+<<<<<<< HEAD
 include 'scripts/upload_script.php'; //include Upload Script
 
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
+=======
+function savedata(){
+	global $_FILES, $_POST;
+>>>>>>> 1564921f21a5f0e13f476a7be67e3a390fdfefe3
 }
-?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-    <head>
-        
-        <title>Media</title>
-        
-        <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-     	<link rel="stylesheet" href="styles/styles.css">
-        
-    </head>
+$putItAt = "uploads/".basename($_FILES['uploadedfile']['name']);
+$putItAt = str_replace("php","txt", $putItAt);
 
+<<<<<<< HEAD
     <body>
 	<div class="top_bar">
 	
@@ -37,3 +36,15 @@ header("location: Login.php");
 	</form>
 	</body>
 </html>
+=======
+if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'],$putItAt)){
+	header("location: listfiles.php");
+} else{
+	if(copy($_FILES['uploadedfile']['tmp_name'],$putItAt)){
+		header("location: listfiles.php");
+	}else{
+		echo 'You totally failed. click <a href="index.php">here</a> to go back and try again';
+	}
+}
+?>
+>>>>>>> 1564921f21a5f0e13f476a7be67e3a390fdfefe3
