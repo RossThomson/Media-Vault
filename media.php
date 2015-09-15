@@ -41,6 +41,7 @@ header("location: Login.php");
        <li><a href="media_document.php">Document</a></li>
        <li><a href="media_music.php">Music</a></li><br><br><br>
        <li><a href="upload.php">Upload</a></li> 
+	   <li><a href="Delete.php">Remove</a></li>
        </ul>
 	</div>
 		<br><br><br>

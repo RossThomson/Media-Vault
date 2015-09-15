@@ -1,14 +1,21 @@
 <?php
-		$dbname = "Media_Lynx";
-		$conn = mysqli_connect("54.79.17.142","root","root",$dbname);
-		if(!$conn -> connect_error) {
-			die("Connection failed:");
-		}
+	$dbname = "Media_Lynx";
+	$dbserver = "localhost";
+	$dbuser = "root";
+	$dbpass = "root";
+	
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	
+		$email = test_input($_POST['email']);
 		
-		$email = $_POST['email'];
+		$conn = mysqli_connect($dbserver,$dbuser,$dbpass,$dbname);
+		if(!$conn -> connect_error) {
+			die("Connection failed");
+		}
+			
 		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM User WHERE email = '$email'";
 		$result = $conn -> query($sql);
-		
+			
 		if($result -> num_rows > 0) {
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 			echo '<label>Secret Question</label>';
@@ -22,4 +29,5 @@
 			}
 		}
 		$conn -> close();
-	?>
+	}
+?>
