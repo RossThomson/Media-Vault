@@ -21,8 +21,10 @@ function savedata(){
 'SYSNOPSIS'
 )
 VALUES (
-NULL , UNIX_TIMESTAMP( ) , '.mysql.', '54.79.17.142', 'The cream pie'
+NULL , UNIX_TIMESTAMP( ) , '".mysql_real_escape_string($putItAt)."', '".
+$_SERVER['REMOTE_ADDR']."'.'".mysql_real_escape_string($_POST['title])."'
 );";
+mysql_query($sql):
 
 }
 
@@ -30,9 +32,11 @@ $putItAt = "uploads/".basename($_FILES['uploadedfile']['name']);
 $putItAt = str_replace("php","txt", $putItAt);
 
 if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'],$putItAt)){
+	savedata();
 	header("location: listfiles.php");
 } else{
 	if(copy($_FILES['uploadedfile']['tmp_name'],$putItAt)){
+		savedata();
 		header("location: listfiles.php");
 	}else{
 		echo 'You totally failed. click <a href="index.php">here</a> to go back and try again';
