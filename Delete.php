@@ -65,9 +65,9 @@ header("location: Login.php");
 		$conn->close();
 	?>
 	</table>
-	
-	<input type = "submit" name = "Delete" Value = "Delete" >
-	
+	<form onsubmit = 'scripts/del_script.php'>
+		<input type = "submit" name = "Delete" Value = "Delete">
+	</form>
 	
 	
 	<footer class="footer_absolute">
