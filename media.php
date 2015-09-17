@@ -36,9 +36,9 @@ header("location: Login.php");
 	
     <div id="media_main_gMenu">
        <ul>
-       <li><a href="media_movie.php">Movie</a></li>
+       <li><a href="media_video.php">Movie</a></li>
        <li><a href="media_photo.php">Photo</a></li>
-       <li><a href="media_document.php">Document</a></li>
+       <li><a href="media_doc.php">Document</a></li>
        <li><a href="media_music.php">Music</a></li><br><br><br>
        <li><a href="upload.php">Upload</a></li> 
 	   <li><a href="Delete.php">Remove</a></li>

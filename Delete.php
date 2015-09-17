@@ -51,7 +51,12 @@ form { margin:0 auto; width:500px; }
 		
 		echo"<td>$user</td>";
 		
-		$newSql = "SELECT * FROM CONTENT WHERE USERID = '$user'";
+		$trySql = "SELECT EMAIL FROM USER WHERE FIRSTNAME = '$Email'";
+		$try = $conn->query($trySql);
+		echo"<td>$try</td>";
+		
+		
+		$newSql = "SELECT * FROM CONTENT WHERE EMAIL = '$Email'";
 		$result = $conn->query($newSql);
 		
 		if($result->num_rows > 0) {
