@@ -27,6 +27,7 @@ header("location: Login.php");
 	<h2 class="aboutus_Headings">Your Files</h2><br>
 	
 	<form onsubmit = 'scripts/del_script.php' method = "POST">
+	form { margin:0 auto; width:500px; }
 		<fieldset>
 	<?php
 		$dbname = "Media_Lynx";
