@@ -42,7 +42,7 @@ header("location: Login.php");
 		echo"<tr>
 				<th>File</th>
 			</tr>";
-			
+		echo"<td><input type = 'checkbox'> $Email</td>";	
 		$sql = "SELECT USERID FROM User WHERE email = '$Email'";
 		$user = $conn->query($sql);
 		
