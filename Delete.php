@@ -14,9 +14,6 @@ header("location: Login.php");
 
 <link rel="stylesheet" href="styles/styles.css">
 
-<style media = "screen" type = "text/css">
-form { margin:0 auto; width:500px; }
-</style>
 </head>
 <body>
 
@@ -77,7 +74,7 @@ form { margin:0 auto; width:500px; }
 		
 		$conn->close();
 	?>
-		<input type = "submit" name = "Delete" Value = "Delete">
+		<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">
 		</fieldset>
 	</form>
 	
