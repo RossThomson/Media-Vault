@@ -49,11 +49,12 @@ form { margin:0 auto; width:500px; }
 		$sql = "SELECT USERID FROM User WHERE email = '$Email'";
 		$user = $conn->query($sql);
 		
-		echo"<td>$user</td>";
+		echo"<ul><li>$user</li></ul>";
 		
 		$trySql = "SELECT EMAIL FROM USER WHERE FIRSTNAME = '$Email'";
 		$try = $conn->query($trySql);
-		echo"<td>$try</td>";
+		
+		echo"<ul><li>$try</li></ul>";
 		
 		
 		$newSql = "SELECT * FROM CONTENT WHERE EMAIL = '$Email'";
@@ -63,11 +64,14 @@ form { margin:0 auto; width:500px; }
 			
 			while($row = $result->fetch_assoc()) {
 				$id = $row["CONTENTID"];
-				echo '<ul style="lsit-style-type:none">';
+				echo '<ul style="list-style-type:none">';
 				echo '	<li><input type = "checkbox" name = "$id"><label>'.$row["CONTENTTITLE"].'</label></li>';
 				echo '	<li>'.$row["SYNOPSIS"].'</li>';
 				echo '</ul>';
-			} 
+			} else {
+				echo '<ul style="list-style-type:none">';
+				echo '	<li><label>No available content. Please <a href="upload.php">upload</a> files.</label></li>';
+				echo '</ul>';
 		}
 		
 		$conn->close();
