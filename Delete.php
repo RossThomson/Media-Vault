@@ -26,7 +26,8 @@ header("location: Login.php");
 	
 	<h2 class="aboutus_Headings">Your Files</h2><br>
 	
-	<table>	
+	<form onsubmit = 'scripts/del_script.php' method = "POST">
+		<fieldset>
 	<?php
 		$dbname = "Media_Lynx";
 		$dbserver = "54.79.17.142";
@@ -39,10 +40,8 @@ header("location: Login.php");
 			die("Connection failed".$conn->connect_error);
 		}
 		
-		echo"<tr>
-				<th>File</th>
-			</tr>";
-		echo"<td><input type = 'checkbox'> $Email</td>";	
+		echo"<legend>Your Files, ".$Email."</legend>";
+		
 		$sql = "SELECT USERID FROM User WHERE email = '$Email'";
 		$user = $conn->query($sql);
 		
@@ -55,18 +54,17 @@ header("location: Login.php");
 			
 			while($row = $result->fetch_assoc()) {
 				$id = $row["CONTENTID"];
-				echo "<tr>";
-				echo '	<td><input type = "checkbox" name = "$id">'.$row["CONTENTTITLE"].'</td>';
-				echo '	<td>'.$row["SYNOPSIS"].'</td>';
-				echo '</tr>';
+				echo '<ul style="lsit-style-type:none">';
+				echo '	<li><input type = "checkbox" name = "$id"><label>'.$row["CONTENTTITLE"].'</label></li>';
+				echo '	<li>'.$row["SYNOPSIS"].'</li>';
+				echo '</ul>';
 			} 
 		}
 		
 		$conn->close();
 	?>
-	</table>
-	<form onsubmit = 'scripts/del_script.php' method = "POST">
 		<input type = "submit" name = "Delete" Value = "Delete">
+		</fieldset>
 	</form>
 	
 	
