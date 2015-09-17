@@ -68,7 +68,8 @@ form { margin:0 auto; width:500px; }
 				echo '	<li><input type = "checkbox" name = "$id"><label>'.$row["CONTENTTITLE"].'</label></li>';
 				echo '	<li>'.$row["SYNOPSIS"].'</li>';
 				echo '</ul>';
-			} else {
+			}
+		} else {
 				echo '<ul style="list-style-type:none">';
 				echo '	<li><label>No available content. Please <a href="upload.php">upload</a> files.</label></li>';
 				echo '</ul>';
