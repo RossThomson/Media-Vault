@@ -13,6 +13,10 @@ header("location: Login.php");
 <title>Delete files</title>
 
 <link rel="stylesheet" href="styles/styles.css">
+
+<style media = "screen" type = "text/css">
+form { margin:0 auto; width:500px; }
+</style>
 </head>
 <body>
 
@@ -27,7 +31,6 @@ header("location: Login.php");
 	<h2 class="aboutus_Headings">Your Files</h2><br>
 	
 	<form onsubmit = 'scripts/del_script.php' method = "POST">
-	form { margin:0 auto; width:500px; }
 		<fieldset>
 	<?php
 		$dbname = "Media_Lynx";
