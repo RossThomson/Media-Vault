@@ -46,6 +46,8 @@ header("location: Login.php");
 		$sql = "SELECT USERID FROM User WHERE email = '$Email'";
 		$user = $conn->query($sql);
 		
+		echo"<td>$user</td>";
+		
 		$newSql = "SELECT * FROM CONTENT WHERE USERID = '$user'";
 		$result = $conn->query($newSql);
 		
@@ -63,6 +65,8 @@ header("location: Login.php");
 		$conn->close();
 	?>
 	</table>
+	
+	
 	
 	
 	
