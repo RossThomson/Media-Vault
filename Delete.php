@@ -30,7 +30,7 @@ form { margin:0 auto; width:500px; }
 	
 	<h2 class="aboutus_Headings">Your Files</h2><br>
 	
-	<form onsubmit = 'scripts/del_script.php' method = "POST">
+	<form id = "delform" name = "Delete Form" onsubmit = 'scripts/del_script.php' method = "POST">
 		<fieldset>
 	<?php
 		$dbname = "Media_Lynx";
@@ -49,12 +49,12 @@ form { margin:0 auto; width:500px; }
 		$sql = "SELECT USERID FROM User WHERE email = '$Email'";
 		$user = $conn->query($sql);
 		
-		echo"<ul><li>$user</li></ul>";
+		echo '<ul style="list-style-type:none"><li>'.$user["USERID"].'</li></ul>';
 		
 		$trySql = "SELECT EMAIL FROM USER WHERE FIRSTNAME = '$Email'";
 		$try = $conn->query($trySql);
 		
-		echo"<ul><li>$try</li></ul>";
+		echo '<ul style="list-style-type:none"><li>'.$try["EMAIL"].'</li></ul>';
 		
 		
 		$newSql = "SELECT * FROM CONTENT WHERE EMAIL = '$Email'";
