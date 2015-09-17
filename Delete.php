@@ -26,15 +26,10 @@ header("location: Login.php");
 	
 	<h2 class="aboutus_Headings">Your Files</h2><br>
 	
-	<table>
-	
-	<tr>
-		<th>File</th>
-	</tr>
-	
+	<table>	
 	<?php
 		$dbname = "Media_Lynx";
-		$dbserver = "localhost";
+		$dbserver = "54.79.17.142";
 		$dbuser = "root";
 		$dbpass = "root";
 		$Email = $_SESSION['email'];
@@ -43,6 +38,10 @@ header("location: Login.php");
 		if(!$conn->connect_error) {
 			die("Connection failed".$conn->connect_error);
 		}
+		
+		echo"<tr>
+				<th>File</th>
+			</tr>";
 			
 		$sql = "SELECT USERID FROM User WHERE email = '$Email'";
 		$user = $conn->query($sql);
