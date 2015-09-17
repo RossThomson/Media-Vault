@@ -66,7 +66,7 @@ header("location: Login.php");
 	?>
 	</table>
 	
-	
+	<input type = "submit" name = "Delete" Value = "Delete" >
 	
 	
 	
