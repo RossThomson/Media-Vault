@@ -1,5 +1,5 @@
 <?php
-	$dbname = "Media_Lynx";
+	$dbname = "MEDIALYNX";
 	$dbserver = "54.79.17.142";
 	$dbuser = "root";
 	$dbpass = "root";
@@ -22,9 +22,11 @@
 		$sql = "SELECT * FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
 		
-		echo '<p>'.$result.'</p>';
+		echo '<p>Ok, this is the result'.$result.'</p>';
+		echo '<p>Also, the email is '.$email.'</p>';
+		echo '<p>AND sql thingy too '.$sql.'</p>';
 		
-		if($result->num_rows == 1) {
+		if($result->num_rows > 0) {
 			$row = $result->fetch_array();
 			echo '<p>It is working</p>';
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
