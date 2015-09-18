@@ -1,5 +1,5 @@
 <?php
-	$dbname = "Media_Lynx";
+	$dbname = "MEDIALYNX";
 	$dbserver = "54.79.17.142";
 	$dbuser = "root";
 	$dbpass = "root";
@@ -19,7 +19,7 @@
 		
 		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
 		
-		$sql = "SELECT * FROM USERS WHERE EMAIL = $email";
+		$sql = "SELECT * FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
 		
 		echo '<p>Ok, this is the result'.$result.'</p>';
