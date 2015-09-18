@@ -18,16 +18,12 @@
 		$email = $_POST['email'];
 		
 		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
-		if(!$conn->connect_error) {
-			die("Connection failed").$conn->connect_error;	
-		}
-
-		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM USERS WHERE EMAIL = '$email'";
-		$result = $conn->query($sql);
 		
-		$row = $result->fetch_assoc();
-				
-		if($row->num_rows > 0) {
+		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM USERS WHERE EMAIL = '$email'";
+		$result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
+		
+		if($result->num_rows == 1) {
+			$row = $result->fetch_array();
 			echo '<p>It is working</p>';
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 			echo '<label>Secret Question</label>';
@@ -41,6 +37,6 @@
 		} else {
 			echo '<p>You are not a user. Please <a href = "../register.php"> Register </a>to use our services.</p>';
 		}
-		$conn -> close();
+		$conn->close();
 	}
 ?>
