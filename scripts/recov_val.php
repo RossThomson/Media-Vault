@@ -10,10 +10,17 @@
 	
 		$email = $_POST['email'];
 		
-		$conn = new PDO("mysql:host=$dbserver;dbname=$dbname",$dbuser,$dbpass);
+		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+	
+		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$email'");
+		$q2 = $q1->fetch(); 
+		
+		echo "<p> working here </p>"
+		
+		/*$conn = new PDO("mysql:host=$dbserver;dbname=$dbname",$dbuser,$dbpass);
 		/*if($conn->connect_error) {
 			 trigger_error($conn->connect_error);
-		}*/
+		}
 		
 		$sql = "SELECT * FROM 'USERS' WHERE EMAIL = '$email'";
 		$result = $conn->query($sql);
@@ -23,7 +30,7 @@
 		
 		echo '<p>'.$result2.'</p>';
 		
-		/*if($result === null) {
+		if($result === null) {
 			echo'<p> this explains everything</p>';
 		}else{
 		//$result2 = $result->fetch_array();
