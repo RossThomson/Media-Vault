@@ -45,7 +45,7 @@
 		<h2>How do I upload files?</h2>
 		<p>Once logged in, users can upload their own content <a href="upload.php">here</a></p>
 		<h2>How can I view and remove the files I have uploaded?</h2>
-		<p>Once logged in, users can view a list of their uploaded files and remove items <a href="Delete.php">here</a</p><br>
+		<p>Once logged in, users can view a list of their uploaded files and remove items <a href="Delete.php">here</a></p><br>
 	<h2 class="aboutus_Headings">Connectivity Issues</h2><br>
 		<h2>Why can't I connect to Media Lynx?</h2>
 		<p>To use Media Lynx, you must have an internet connection, data and a compatible device</p>
