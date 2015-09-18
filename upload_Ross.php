@@ -26,12 +26,13 @@ if(isset($_POST["submit"])) {
 			
 			
 					$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
-					$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					//$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			
 					
 					
 					 
-						$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$_SESSION['userid']','Test','IMAGE','$check','synopsisdffee')";
+					//	$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$_SESSION['userid']','Test','IMAGE','$check','synopsisdffee')";
+					$sql = "INSERT INTO CONTENT(USERID,CONTENTTYPE) VALUES ('$_SESSION['userid']','IMAGE')";
 						
 					$pdo->exec($sql);
 					session_start();
