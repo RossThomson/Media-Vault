@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 
 if ($_FILES["uploadedFile"]["size"] < 10000)
 {
@@ -33,4 +33,6 @@ else
 {
  echo "Your file exceeds the maximum size of 10KB.";
 }
+
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ?> 
