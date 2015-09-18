@@ -35,6 +35,7 @@ header("location: Login.php");
 		$dbuser = "root";
 		$dbpass = "root";
 		$Email = $_SESSION['email'];
+		$id = array();
 		
 		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
 		if(!$conn->connect_error) {
@@ -59,7 +60,7 @@ header("location: Login.php");
 		
 		if($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$id = $row["CONTENTID"];
+				$id[] = $row["CONTENTID"];
 				echo '<ul style="list-style-type:none">';
 				echo '	<li><input type = "checkbox" name = "$id"><label>'.$row["CONTENTTITLE"].'</label></li>';
 				echo '	<li>'.$row["SYNOPSIS"].'</li>';
@@ -76,8 +77,6 @@ header("location: Login.php");
 		<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">
 		</fieldset>
 	</form>
-	
-	
 	<footer class="footer_absolute">
 		<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
