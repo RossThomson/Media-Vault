@@ -24,11 +24,12 @@
 
 		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql);
+		
+		$row = $result->fetch_assoc();
 				
-		if($result->num_rows > 0) {
+		if($row->num_rows > 0) {
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 			echo '<label>Secret Question</label>';
-			$row = $result -> fetch_assoc();
 			echo $row["SECRETQUESTION"];
 			echo '<label>Secret Answer</label><input type = "password" id = "newpass" name = "answer"><br>';
 			echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
