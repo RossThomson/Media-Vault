@@ -14,7 +14,11 @@
 	
 	<div id="aboutus_content">			
 	<h2 class="aboutus_Headings">FAQ</h2><br>
-		<h2>1. How can I upload media files?</h2>
+		<h2>How do I create an account on Media Lynx?</h2>
+		<p>New users can create an account through the <a href="register.php">registration</a> page</p>
+		<h2>I've forgotten my password! What can I do?</h2>
+		<p>Registered users can recover their password <a href="password_recovery.php">here</a></p>
+		<h2>How can I upload media files?</h2>
 		<p>   Users can upload media files through.............................................</p>
 		<h2>2. I want to change my password.</h2>
 		<p>   Users can change passwords through.............................................</p>
