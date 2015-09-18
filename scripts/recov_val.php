@@ -21,12 +21,13 @@
 		if($result === null) {
 			echo'<p> this explains everything</p>';
 		}else{
-		echo '<p>Ok, this is the result: '.$result.'...stuff</p>';
+		$result2 = $result->fetch();
+		echo '<p>Ok, this is the result: '.$result2["SECRETQUESTION"].'...stuff</p>';
 		echo '<p>Also, the email is: '.$email.'</p>';
 		echo '<p>AND sql thingy too: '.$sql.'</p>';
 		}
 		
-		$result2 = $result->fetch();
+		
 		
 		if($result->num_rows > 0) {
 			//$row = $result->fetch_array();
