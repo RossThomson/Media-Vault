@@ -1,6 +1,6 @@
 
 	
-	
+	//Checks that passwords match
 	function checkPass()
 {
     var password = document.getElementById('password');
@@ -28,7 +28,7 @@
 	}
 }  
 
-
+//Checks that email is int correct format
 function checkEmail() {
 
     var email = document.getElementById("email");
@@ -52,7 +52,7 @@ function checkEmail() {
 }
 
 
-
+//Checks that there are only letters present
 function firstNameVal(){
 	var name = document.getElementById("name");
 	var goodColor = "#66cc66";
@@ -67,6 +67,7 @@ function firstNameVal(){
 	}
 }
 
+//Checks that there are only letters present
 function surnameVal(){
 	var name = document.getElementById("surname");
 	var goodColor = "#66cc66";

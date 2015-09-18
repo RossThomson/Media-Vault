@@ -1,6 +1,6 @@
 
 <?php
-include 'scripts/login_val.php'; // Includes Login Script
+include 'scripts/login_val.php'; // Includes Login Validation Script
 
 if(isset($_SESSION['email'])){
 header("location: media.php");
