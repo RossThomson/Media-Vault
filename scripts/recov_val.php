@@ -1,6 +1,6 @@
 <?php
 	$dbname = "MEDIALYNX";
-	$dbserver = "54.79.17.142";
+	$dbserver = "localhost";
 	$dbuser = "root";
 	$dbpass = "root";
 	
