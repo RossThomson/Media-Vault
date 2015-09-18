@@ -19,7 +19,11 @@
 		$result = $conn->query($sql);
 		$result2 = $result->fetch();
 		
-		if($result === null) {
+		echo '<p>'.$sql.'</p>';
+		
+		echo '<p>'.$result2.'</p>';
+		
+		/*if($result === null) {
 			echo'<p> this explains everything</p>';
 		}else{
 		//$result2 = $result->fetch_array();
@@ -28,7 +32,7 @@
 		echo '<p>AND sql thingy too: '.$sql.'</p>';
 		$test = $result->fetch();
 		//echo '<p>'.test['SECRETQUESTION'].'</p>';
-		}
+		}*/
 		
 		
 		
