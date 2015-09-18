@@ -25,8 +25,8 @@
 		echo '<p>Ok, this is the result: '.$result.'...stuff</p>';
 		echo '<p>Also, the email is: '.$email.'</p>';
 		echo '<p>AND sql thingy too: '.$sql.'</p>';
-		$test = $result->fetch();
-		echo '<p>'.test['SECRETQUESTION'].'</p>';
+		//$test = $result->fetch();
+		//echo '<p>'.test['SECRETQUESTION'].'</p>';
 		}
 		
 		
