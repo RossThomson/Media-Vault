@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 if ($_FILES["uploadedFile"]["size"] < 10000)
 {
  //if ($_FILES["uploadedFile"]["type"] == "gif")
