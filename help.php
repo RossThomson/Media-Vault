@@ -13,7 +13,7 @@
 	</header>
 	
 	<div id="aboutus_content">			
-	<h2 class="aboutus_Headings">FAQ</h2><br>
+	<h2 class="aboutus_Headings">Frequently Asked Questions</h2><br>
 		<h2>How do I create an account on Media Lynx?</h2>
 		<p>New users can create an account through the <a href="register.php">registration</a> page</p>
 		<h2>I've forgotten my password! What can I do?</h2>
@@ -43,19 +43,19 @@
 			</tr>
 		</table>
 		<h2>How do I upload files?</h2>
-		<p>Once logged in, users can upload their own content (</p>
-		<h2>2. I want to change my password.</h2>
-		<p>   Users can change passwords through.............................................</p>
-		<h2>3. How can I withdraw?</h2>
-		<p>   Users can withdraw through.............................................</p><br>
-	<h2 class="aboutus_Headings">Resolved issues</h2><br>
-		<h2>1. Why can't I connect to Media Lynx?</h2>
-		<p>You may be experiencing an Internet connectivity problem that...........</p>
-		<h2>2. Media Lynx says my account is already in use when I try to watch.</h2>
-		<p>There are two common causes for this:..........</p><br>
-	<h2 class="aboutus_Headings">Contact us</h2><br>
-		<p>E-mail: xxxx@gmail.com</p>
-		<p>Phone: 180 xxx xxx </p>
+		<p>Once logged in, users can upload their own content <a href="upload.php">here</a></p>
+		<h2>How can I view and remove the files I have uploaded?</h2>
+		<p>Once logged in, users can view a list of their uploaded files and remove items <a href="Delete.php">here</a</p><br>
+	<h2 class="aboutus_Headings">Connectivity Issues</h2><br>
+		<h2>Why can't I connect to Media Lynx?</h2>
+		<p>To use Media Lynx, you must have an internet connection, data and a compatible device</p>
+		<h2>Media Lynx says my account is already in use when I try to open my content</h2>
+		<p>Unfortunately, Media Lynx only supports one screen per user at this time. 
+		Watch this space, as multiple screens and sharing content with friends is coming soon!</p><br>
+	<h2 class="aboutus_Headings">Contact Us</h2><br>
+		<p>We are here to help and would appreciate your feedback</p>
+		<p>Email us at <a href="mailto:support@medialynx.com?Subject=Help%20page" target"_top">support@medialynx.com</a></p>
+		<p>Or give us a call on 0731380000</p>
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
