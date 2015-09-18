@@ -26,7 +26,7 @@
 				<li><a href="about.php">About</a></li>
 				<li><a href="help.php">Help</a></li>
 			</ul>	
-			<span id = "sign_in_info"><?php echo $welcome;?> <?php echo $_SESSION['email'];?></span>
+			<span id = "sign_in_info"><?php echo $welcome;?> <?php echo $_SESSION['first'];?></span>
 	</nav>
 
 
