@@ -1,39 +1,17 @@
 <?php
-
-
-
-if ($_FILES["uploadedFile"]["size"] < 10000)
-{
-  if ($_FILES["uploadedFile"]["type"] == "image/jpg")
-
-{
- if ($_FILES["uploadedFile"]["error"] == 0)
-{
- $filePath = "testFolder/";
-$filePath = $filePath . basename( $_FILES['uploadedFile']['name']); 
-if(move_uploaded_file($_FILES['uploadedFile']['tmp_name'], $filePath)) 
-{
- echo "The file ". basename( $_FILES['uploadedFile']['name'])." was uploaded successfully.";
-} 
-else
-{
- echo "A problem occurred while uploading your file, please try again.";
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
 }
-} 
-else
-{
- echo "Something went wrong...";
-}
-}
-else
-{
- echo "Your file is not a gif filetype..";
-}
-}
-else
-{
- echo "Your file exceeds the maximum size of 10KB.";
-}
-
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-?> 
+?>
