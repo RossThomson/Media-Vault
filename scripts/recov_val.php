@@ -15,9 +15,9 @@
 	
 		$email = test_input($_POST['email']);
 		
-		$conn = mysqli_connect($dbserver,$dbuser,$dbpass,$dbname);
+		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
 		if(!$conn -> connect_error) {
-			die("Connection failed");
+			die("Connection failed").$conn->connect_error;	
 		}
 			
 		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM User WHERE email = '$email'";
