@@ -1,6 +1,6 @@
 <?php
 	$dbname = "Media_Lynx";
-	$dbserver = "localhost";
+	$dbserver = "54.79.17.142";
 	$dbuser = "root";
 	$dbpass = "root";
 	
@@ -22,7 +22,7 @@
 			$row = $result -> fetch_assoc();
 			echo $row["SECRETQUESTION"];
 			echo '<label>Secret Answer</label><input type = "password" id = "newpass" name = "answer"><br>';
-			echo '<input type = "submit" name = "submit">';
+			echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
 			$answer = $_POST["answer"];
 			if($answer !== $row["SECRETANSWER"]) {
 				echo "Not the correct answer";
