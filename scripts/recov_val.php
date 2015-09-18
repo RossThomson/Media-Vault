@@ -4,6 +4,8 @@
 	$dbuser = "root";
 	$dbpass = "root";
 	
+	$email = "";
+	
 	function test_input($data) {
 	$data = trim($data);
 	$data = stripslashes($data);
@@ -16,36 +18,14 @@
 		$email = test_input($_POST['email']);
 		
 		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
-		if(!$conn -> connect_error) {
+		if(!$conn->connect_error) {
 			die("Connection failed").$conn->connect_error;	
 		}
-		
-		echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-				<html>
-					<head>
-					
-					<title>Password recovery</title>
-					
-					<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-					<link rel="stylesheet" href="styles/styles.css">
-					<script type="text/javascript" src="scripts/login_val.js"></script>
-					
-				</head>
 
-				<body>
-				<div class="top_bar">
-				
-				
-				<div class="wrapper">
-				<header>
-					<?php include "header.php"; ?>
-				</header>'
-					
-		
 		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM USER WHERE EMAIL = '$email'";
-		$result = $conn -> query($sql);
+		$result = $conn->query($sql);
 			
-		if($result -> num_rows > 0) {
+		if($result->num_rows > 0) {
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 			echo '<label>Secret Question</label>';
 			$row = $result -> fetch_assoc();
@@ -56,6 +36,8 @@
 			if($answer !== $row["SECRETANSWER"]) {
 				echo "Not the correct answer";
 			}
+		} else {
+			echo '<p>You are not a user. Please <a href = "register.php"> Register </a>to use our services.</p>';
 		}
 		$conn -> close();
 	}
