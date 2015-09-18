@@ -37,7 +37,7 @@
 				echo "Not the correct answer";
 			}
 		} else {
-			echo '<p>You are not a user. Please <a href = "../Media-Vault/register.php"> Register </a>to use our services.</p>';
+			echo '<p>You are not a user. Please <a href = "../register.php"> Register </a>to use our services.</p>';
 		}
 		$conn -> close();
 	}
