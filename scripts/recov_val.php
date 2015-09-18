@@ -17,6 +17,7 @@
 		
 		$sql = "SELECT * FROM 'USERS' WHERE EMAIL = '$email'";
 		$result = $conn->query($sql);
+		$result2 = $result->fetch();
 		
 		if($result === null) {
 			echo'<p> this explains everything</p>';
@@ -31,7 +32,7 @@
 		
 		
 		
-		if($result->num_rows > 0) {
+		/*if($result->num_rows > 0) {
 			//$row = $result->fetch_array();
 			echo '<p>It is working</p>';
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
@@ -45,7 +46,7 @@
 			}
 		} else {
 			echo '<p>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</p>';
-		}
+		}*/
 		$conn->close();
 	}
 ?>

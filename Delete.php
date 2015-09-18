@@ -34,6 +34,7 @@ header("location: Login.php");
 		$dbserver = "54.79.17.142";
 		$dbuser = "root";
 		$dbpass = "root";
+		$name = $_SESSION['first_name'];
 		$Email = $_SESSION['email'];
 		$id = array();
 		
@@ -42,7 +43,7 @@ header("location: Login.php");
 			die("Connection failed".$conn->connect_error);
 		}
 		
-		echo"<legend>Your Files, ".$Email."</legend>";
+		echo"<legend>Your Files, ".$name."</legend>";
 		
 		$sql = "SELECT USERID FROM 'USERS' WHERE EMAIL = '$Email'";
 		$user = $conn->query($sql);
