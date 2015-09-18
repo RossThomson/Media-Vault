@@ -22,6 +22,8 @@
 		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
 		
+		echo '<p>$result</p>';
+		
 		if($result->num_rows == 1) {
 			$row = $result->fetch_array();
 			echo '<p>It is working</p>';
