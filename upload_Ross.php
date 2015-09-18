@@ -4,7 +4,7 @@
 
 if ($_FILES["uploadedFile"]["size"] < 10000)
 {
-  if ($_FILES["uploadedFile"]["type"] == "image")
+  if ($_FILES["uploadedFile"]["type"] == "image/jpg")
 
 {
  if ($_FILES["uploadedFile"]["error"] == 0)
