@@ -11,13 +11,12 @@
 		$email = $_POST['email'];
 		
 		$conn = new PDO("mysql:host=$dbserver;dbname=$dbname",$dbuser,$dbpass);
-		if($conn->connect_error) {
+		/*if($conn->connect_error) {
 			 trigger_error($conn->connect_error);
-		}
+		}*/
 		
 		$sql = "SELECT * FROM 'USERS' WHERE EMAIL = '$email'";
 		$result = $conn->query($sql);
-		$result2 = $result->fetch();
 		
 		if($result === null) {
 			echo'<p> this explains everything</p>';
@@ -27,8 +26,10 @@
 		echo '<p>AND sql thingy too: '.$sql.'</p>';
 		}
 		
+		$result2 = $result->fetch();
+		
 		if($result->num_rows > 0) {
-			$row = $result->fetch_array();
+			//$row = $result->fetch_array();
 			echo '<p>It is working</p>';
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 			echo '<label>Secret Question</label>';
