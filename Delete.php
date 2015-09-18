@@ -58,7 +58,6 @@ header("location: Login.php");
 		$result = $conn->query($newSql);
 		
 		if($result->num_rows > 0) {
-			
 			while($row = $result->fetch_assoc()) {
 				$id = $row["CONTENTID"];
 				echo '<ul style="list-style-type:none">';
