@@ -1,0 +1,86 @@
+--
+-- Database: `MEDIALYNX`
+--
+CREATE DATABASE IF NOT EXISTS `MEDIALYNX` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `MEDIALYNX`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ACCESSTIME`
+--
+
+CREATE TABLE IF NOT EXISTS `ACCESSTIME` (
+  `CONTENTID` int(10) NOT NULL DEFAULT '0',
+  `LASTPLAYED` datetime NOT NULL,
+  PRIMARY KEY (`CONTENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `CONTENT`
+--
+
+CREATE TABLE IF NOT EXISTS `CONTENT` (
+  `USERID` int(10) DEFAULT NULL,
+  `CONTENTID` int(10) NOT NULL AUTO_INCREMENT,
+  `CONTENTTITLE` varchar(50) NOT NULL,
+  `CONTENTTYPE` varchar(20) NOT NULL,
+  `SIZE` decimal(10,0) NOT NULL,
+  `SYNOPSIS` varchar(500) NOT NULL,
+  PRIMARY KEY (`CONTENTID`),
+  KEY `FK_USERID` (`USERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PLAYLIST`
+--
+
+CREATE TABLE IF NOT EXISTS `PLAYLIST` (
+  `USERID` int(10) DEFAULT NULL,
+  `CONTENTID` int(10) DEFAULT NULL,
+  `PLAYLISTID` int(10) NOT NULL AUTO_INCREMENT,
+  `PLAYLISTNAME` varchar(60) NOT NULL,
+  PRIMARY KEY (`PLAYLISTID`),
+  KEY `FK_USERCONTENT` (`USERID`,`CONTENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `USERS`
+--
+
+CREATE TABLE IF NOT EXISTS `USERS` (
+  `USERID` int(10) NOT NULL AUTO_INCREMENT,
+  `FIRSTNAME` varchar(15) NOT NULL,
+  `LASTNAME` varchar(25) NOT NULL,
+  `EMAIL` varchar(60) NOT NULL,
+  `PASSWORD` varchar(20) NOT NULL,
+  `HASH` varchar(60) NOT NULL,
+  `SECRETQUESTION` varchar(60) NOT NULL,
+  `SECRETANSWERS` varchar(30) NOT NULL,
+  PRIMARY KEY (`USERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Constraints for table `ACCESSTIME`
+--
+ALTER TABLE `ACCESSTIME`
+  ADD CONSTRAINT `FK_CONTENTID` FOREIGN KEY (`CONTENTID`) REFERENCES `CONTENT` (`CONTENTID`);
+
+--
+-- Constraints for table `CONTENT`
+--
+ALTER TABLE `CONTENT`
+  ADD CONSTRAINT `FK_USERID` FOREIGN KEY (`USERID`) REFERENCES `USERS` (`USERID`);
+
+--
+-- Constraints for table `PLAYLIST`
+--
+ALTER TABLE `PLAYLIST`
+  ADD CONSTRAINT `FK_USERCONTENT` FOREIGN KEY (`USERID`, `CONTENTID`) REFERENCES `CONTENT` (`USERID`, `CONTENTID`);
+
