@@ -1,0 +1,11 @@
+For the first sprint, a lot of my early work that I did, shown by example in Register.html,
+ended up being integrated into other's works. The rest of the sprint, I attempted to work on
+a way to recover a users password and uploading files. For the second sprint, the uploading
+script was handed over.
+
+Throughout the course of the first sprint, I have to say that our team did quite a good job
+at communicating with each other. I believe that there is nothing to discuss that we will not 
+forget.
+
+Personally, I learnt a lot about working within a team to design and develop a web application
+and along with that, the potential usefulness of Agile within a company and team environment.
