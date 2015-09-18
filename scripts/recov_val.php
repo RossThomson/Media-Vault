@@ -1,4 +1,31 @@
 <?php
+
+if(isset($_SESSION['email'])){
+header("location: media.php");
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        
+        <title>Password recovery</title>
+        
+        <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+     	<link rel="stylesheet" href="styles/styles.css">
+		<script type="text/javascript" src="scripts/login_val.js"></script>
+        
+    </head>
+
+    <body>
+	<div class="top_bar">
+	
+	
+	<div class="wrapper">
+	<header>
+		<?php include 'header.php'; ?>
+	</header>
+
+<?php
 	$dbname = "MEDIALYNX";
 	$dbhost = "localhost";
 	$dbuser = "root";
@@ -24,9 +51,9 @@
 		} else {
 			echo '<p>It is working</p>';
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
-			echo '<label>Secret Question</label>';
-			echo '<label>'.$q2['SECRETQUESTION'].'</label>';
-			echo '<label>Secret Answer</label><input type = "password" id = "newpass" name = "answer"><br>';
+			echo '<label>Secret Question</label><br>';
+			echo '<label>'.$q2['SECRETQUESTION'].'</label><br>';
+			echo '<label>Secret Answer</label><br><input type = "password" id = "newpass" name = "answer"><br>';
 			echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
 			$answer = $_POST["answer"];
 			if($answer !== $row['SECRETANSWERS']) {
@@ -39,3 +66,9 @@
 		$conn->close();
 	}
 ?>
+</body>
+<footer class="footer_absolute">
+		<span id="jae_design-by">Design by Media lynx</span> 
+		Copyright &copy; Media Lynx 2015.
+</footer>
+</html>

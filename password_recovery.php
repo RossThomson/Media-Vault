@@ -1,6 +1,5 @@
 
 <?php
-include 'scripts/recov_val.php'; // Includes Recovery Script
 
 if(isset($_SESSION['email'])){
 header("location: media.php");
@@ -30,6 +29,11 @@ header("location: media.php");
 		<label>Email:</label><input type = "text" name = "email" id = "email" required onchange ="checkEmail();"><span id = "emailmessage"></span><span id = "InvalidEmail"></span><br>
 		<br><input input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">
 	</form>
+	
+	<footer class="footer_absolute">
+		<span id="jae_design-by">Design by Media lynx</span> 
+		Copyright &copy; Media Lynx 2015.
+	</footer>
 	
 	
 	</body>
