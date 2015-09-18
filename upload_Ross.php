@@ -4,7 +4,8 @@
 
 if ($_FILES["uploadedFile"]["size"] < 10000)
 {
- //if ($_FILES["uploadedFile"]["type"] == "gif")
+  if ($_FILES["uploadedFile"]["type"] == "image/gif")
+
 {
  if ($_FILES["uploadedFile"]["error"] == 0)
 {
