@@ -82,7 +82,7 @@ header("location: Login.php");
 	Choose your file to upload: <input name="uploadedFile" type="file"/>
 	
 	<br />
-	And what would you like to call it? <input name="title" type="text" />
+	<!--And what would you like to call it? <input name="title" type="text" /> -->
 	<input type="submit" value="Upload file" />
 	</form>
 </div>	
