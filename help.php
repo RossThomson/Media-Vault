@@ -39,7 +39,7 @@
 			</tr>
 			<tr>
 				<td>Documents</td>
-				<td>.txt, .doc, .docm, .docx, .eps, .odt, .pdf, .rtf and.xml</td>
+				<td>.txt, .doc, .docm, .docx, .eps, .odt, .pdf, .rtf and .xml</td>
 			</tr>
 		</table>
 		<h3>How do I upload files?</h3>
@@ -53,9 +53,11 @@
 		<p>Unfortunately, Media Lynx only supports one screen per user at this time. 
 		Watch this space, as multiple screens and sharing content with friends is coming soon!</p><br>
 	<h2 class="aboutus_Headings">Contact Us</h2><br>
-		<p>We are here to help and would appreciate your feedback</p>
-		<p>Email us at <a href="mailto:support@medialynx.com?Subject=Help%20page" target"_top">support@medialynx.com</a></p>
-		<p>Or give us a call on 0731380000</p>
+		<p>We are here to help and would appreciate your feedback:</p>
+		<ul>
+			<li>Email us at <a href="mailto:support@medialynx.com?Subject=Help%20page" target"_top">support@medialynx.com</a></li>
+			<li>Call us on +61731380000</li>
+		</ul>
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
