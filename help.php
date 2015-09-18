@@ -18,8 +18,32 @@
 		<p>New users can create an account through the <a href="register.php">registration</a> page</p>
 		<h2>I've forgotten my password! What can I do?</h2>
 		<p>Registered users can recover their password <a href="password_recovery.php">here</a></p>
-		<h2>How can I upload media files?</h2>
-		<p>   Users can upload media files through.............................................</p>
+		<h2>What types of files can I upload to Media Lynx?</h2>
+		<p>Users can upload:</p>
+		<table style="width:100%">
+			<tr>
+				<th>Content</th>
+				<th>Compatible file formats</th>
+			</tr>
+			<tr>
+				<td>Videos</td>
+				<td>.mkv, .flv, .vob, .gif, .avi, .mov, .qt, .wmv, .mp4, .m4p, .m4v, .mpg, .mpeg, .m2v, .m4v and .3gp</td>
+			</tr>
+			<tr>
+				<td>Images</td>
+				<td>.tif, .png, .gif, .jpg, .jpeg, .raw, .bmp, .psd and .psp</td>
+			</tr>
+			<tr>
+				<td>Audio</td>
+				<td>.3gp, .aac, .flac, .m4a, .mp3, .raw, .wav, .wma and .webm</td>
+			</tr>
+			<tr>
+				<td>Documents</td>
+				<td>.txt, .doc, .docm, .docx, .eps, .odt, .pdf, .rtf and.xml</td>
+			</tr>
+		</table>
+		<h2>How do I upload files?</h2>
+		<p>Once logged in, users can upload their own content (</p>
 		<h2>2. I want to change my password.</h2>
 		<p>   Users can change passwords through.............................................</p>
 		<h2>3. How can I withdraw?</h2>
