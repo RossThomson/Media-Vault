@@ -25,14 +25,14 @@
 		$sql = "SELECT * FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql);
 		
-		if($result === null) {
+		/*if($result === null) {
 			echo'<p> this explains everything</p>';
 		}
 		
-		//echo '<p>Ok, this is the result'.$result.'</p>';
-		//echo '<p>Also, the email is '.$email.'</p>';
-		//echo '<p>AND sql thingy too '.$sql.'</p>';
-		
+		echo '<p>Ok, this is the result'.$result.'</p>';
+		echo '<p>Also, the email is '.$email.'</p>';
+		echo '<p>AND sql thingy too '.$sql.'</p>';
+		*/
 		if($result->num_rows > 0) {
 			$row = $result->fetch_array();
 			echo '<p>It is working</p>';
@@ -46,7 +46,7 @@
 				echo "Not the correct answer";
 			}
 		} else {
-			echo '<p>You are not a user, $email. Please <a href = "../register.php"> Register </a>to use our services.</p>';
+			echo '<p>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</p>';
 		}
 		$conn->close();
 	}
