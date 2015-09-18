@@ -77,14 +77,20 @@ header("location: Login.php");
 	</div>
 	<br><br>
 <div id="aboutus_content">	
-	<form enctype="multipart/form-data" action="upload_Ross.php" method="POST">
+	<!--<form enctype="multipart/form-data" action="upload_Ross.php" method="POST">
 	<input type = "hidden" name="MAX_FILE_SIZE" value = "10000"/>
 	Choose your file to upload: <input name="uploadedFile" type="file"/>
 	
 	<br />
-	<!--And what would you like to call it? <input name="title" type="text" /> -->
+	And what would you like to call it? <input name="title" type="text" />
 	<input type="submit" value="Upload file" />
-	</form>
+	</form> -->
+	
+	<form enctype="multipart/form-data" action="upload_Ross.php" method="POST">
+ <input type="hidden" name="MAX_FILE_SIZE" value="10000" />
+Choose a GIF file to upload: <input name="uploadedFile" type="file" /><br />
+<input type="submit" value="Upload File" />
+</form>
 </div>	
 	<br><br><br>
 	<footer class="footer_relative">
