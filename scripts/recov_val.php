@@ -22,9 +22,9 @@
 			die("Connection failed").$conn->connect_error;	
 		}
 
-		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM USER WHERE EMAIL = '$email'";
+		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql);
-			
+				
 		if($result->num_rows > 0) {
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 			echo '<label>Secret Question</label>';
