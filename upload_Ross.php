@@ -2,8 +2,11 @@
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
-$fileType = pathinfo($target_file);
+$filename = basename($_FILES["fileToUpload"]["name"]);
+$filesize = $_FILES["fileToUpload"]["size"];
+$fileType = $_FILES["fileToUpload"]["type"];
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
 
 // Check if image file is a actual image or fake image
 
@@ -34,7 +37,7 @@ if(isset($_POST["submit"])) {
 					
 					
 					 
-					$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$target_file','$filetype','$check','$synopsis')";
+					$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$filename','$filetype','$filesize','$synopsis')";
 					//$sql = "INSERT INTO CONTENT(USERID,CONTENTTYPE) VALUES ('$userid','$file')";
 						
 					$pdo->exec($sql);
