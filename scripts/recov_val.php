@@ -28,6 +28,7 @@
 		$row = $result->fetch_assoc();
 				
 		if($row->num_rows > 0) {
+			echo '<p>It is working</p>'
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 			echo '<label>Secret Question</label>';
 			echo $row["SECRETQUESTION"];
