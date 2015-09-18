@@ -15,7 +15,7 @@ if(isset($_POST["submit"])) {
 
 
 
-	/*$dbhost = "localhost";
+	$dbhost = "localhost";
 	$dbname	= "MEDIALYNX";
 	$dbuser	= "root";
 	$dbpass	= "root";
@@ -47,7 +47,7 @@ if(isset($_POST["submit"])) {
 				}
 
 				$pdo = null;
-*/		
+	
 
  else {
         echo "File is not an image.";
