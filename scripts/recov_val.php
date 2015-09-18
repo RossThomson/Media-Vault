@@ -16,6 +16,8 @@
 		$q2 = $q1->fetch(); 
 		
 		echo "<p> working here </p>";
+		echo "<p>".$q2['SECRETQUESTION']."</p>";
+		echo "<p>".$q2['SECRETANSWER']."</p>";
 		
 		/*$conn = new PDO("mysql:host=$dbserver;dbname=$dbname",$dbuser,$dbpass);
 		/*if($conn->connect_error) {
