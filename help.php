@@ -14,11 +14,11 @@
 	
 	<div id="aboutus_content">			
 	<h2 class="aboutus_Headings">Frequently Asked Questions</h2><br>
-		<h2>How do I create an account on Media Lynx?</h2>
+		<h3>How do I create an account on Media Lynx?</h3>
 		<p>New users can create an account through the <a href="register.php">registration</a> page</p>
-		<h2>I've forgotten my password! What can I do?</h2>
+		<h3>I've forgotten my password! What can I do?</h3>
 		<p>Registered users can recover their password <a href="password_recovery.php">here</a></p>
-		<h2>What types of files can I upload to Media Lynx?</h2>
+		<h3>What types of files can I upload to Media Lynx?</h3>
 		<p>Users can upload:</p>
 		<table style="width:100%">
 			<tr>
@@ -42,14 +42,14 @@
 				<td>.txt, .doc, .docm, .docx, .eps, .odt, .pdf, .rtf and.xml</td>
 			</tr>
 		</table>
-		<h2>How do I upload files?</h2>
+		<h3>How do I upload files?</h3>
 		<p>Once logged in, users can upload their own content <a href="upload.php">here</a></p>
-		<h2>How can I view and remove the files I have uploaded?</h2>
+		<h3>How can I view and remove the files I have uploaded?</h3>
 		<p>Once logged in, users can view a list of their uploaded files and remove items <a href="Delete.php">here</a></p><br>
 	<h2 class="aboutus_Headings">Connectivity Issues</h2><br>
-		<h2>Why can't I connect to Media Lynx?</h2>
+		<h3>Why can't I connect to Media Lynx?</h3>
 		<p>To use Media Lynx, you must have an internet connection, data and a compatible device</p>
-		<h2>Media Lynx says my account is already in use when I try to open my content</h2>
+		<h3>Media Lynx says my account is already in use when I try to open my content</h3>
 		<p>Unfortunately, Media Lynx only supports one screen per user at this time. 
 		Watch this space, as multiple screens and sharing content with friends is coming soon!</p><br>
 	<h2 class="aboutus_Headings">Contact Us</h2><br>
