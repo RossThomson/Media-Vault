@@ -3,7 +3,9 @@ $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
 // Check if image file is a actual image or fake image
+
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
@@ -29,7 +31,7 @@ if(isset($_POST["submit"])) {
 					
 					
 					 
-						$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$_SESSION['userid']','$_FILES["fileToUpload"]["name"]','IMAGE','$_FILES["fileToUpload"]["size"]','synopsisdffee')";
+						$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$_SESSION['userid']','Test','IMAGE','$check','synopsisdffee')";
 						
 					$pdo->exec($sql);
 					session_start();
