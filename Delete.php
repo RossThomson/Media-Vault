@@ -44,7 +44,7 @@ header("location: Login.php");
 		
 		echo"<legend>Your Files, ".$Email."</legend>";
 		
-		$sql = "SELECT USERID FROM USERS WHERE EMAIL = '$Email'";
+		$sql = "SELECT USERID FROM 'USERS' WHERE EMAIL = '$Email'";
 		$user = $conn->query($sql);
 		
 		echo '<ul style="list-style-type:none"><li>'.$user["USERID"].'</li></ul>';

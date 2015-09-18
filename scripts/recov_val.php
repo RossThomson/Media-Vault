@@ -5,34 +5,28 @@
 	$dbpass = "root";
 	
 	$email = "";
-	
-	function test_input($data) {
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
-	}
-	
+		
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 		$email = $_POST['email'];
 		
-		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
+		$conn = new PDO("mysql:host=$dbserver;dbname=$dbname",$dbuser,$dbpass);
 		if($conn->connect_error) {
 			 trigger_error($conn->connect_error);
 		}
 		
-		$sql = "SELECT * FROM USERS WHERE EMAIL = '$email'";
+		$sql = "SELECT * FROM 'USERS' WHERE EMAIL = '$email'";
 		$result = $conn->query($sql);
+		$result2 = $result->fetch();
 		
-		/*if($result === null) {
+		if($result === null) {
 			echo'<p> this explains everything</p>';
+		}else{
+		echo '<p>Ok, this is the result: '.$result.'...stuff</p>';
+		echo '<p>Also, the email is: '.$email.'</p>';
+		echo '<p>AND sql thingy too: '.$sql.'</p>';
 		}
 		
-		echo '<p>Ok, this is the result'.$result.'</p>';
-		echo '<p>Also, the email is '.$email.'</p>';
-		echo '<p>AND sql thingy too '.$sql.'</p>';
-		*/
 		if($result->num_rows > 0) {
 			$row = $result->fetch_array();
 			echo '<p>It is working</p>';
