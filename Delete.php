@@ -43,7 +43,6 @@ header("location: Login.php");
 		}
 		
 		echo"<legend>Your Files, ".$Email."</legend>";
-		echo'<ul style = "list-style-type:none"><li>'.$_SESSION["USERID"].'</li></ul>';
 		
 		$sql = "SELECT USERID FROM USERS WHERE EMAIL = '$Email'";
 		$user = $conn->query($sql);
