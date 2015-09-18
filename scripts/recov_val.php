@@ -21,7 +21,7 @@
 		
 		$sql = "SELECT * FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
-		$result = $result->fetch();
+		$result = $result->fetch_array();
 		
 		echo '<p>Ok, this is the result'.$result.'</p>';
 		echo '<p>Also, the email is '.$email.'</p>';
