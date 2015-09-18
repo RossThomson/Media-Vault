@@ -15,16 +15,16 @@
 	
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
-		$email = test_input($_POST['email']);
+		$email = $_POST['email'];
 		
 		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
 		if(!$conn->connect_error) {
 			die("Connection failed").$conn->connect_error;	
 		}
 
-		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM USER WHERE EMAIL = '$email'";
+		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql);
-			
+				
 		if($result->num_rows > 0) {
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 			echo '<label>Secret Question</label>';
@@ -37,7 +37,7 @@
 				echo "Not the correct answer";
 			}
 		} else {
-			echo '<p>You are not a user. Please <a href = "../Media-Vault/register.php"> Register </a>to use our services.</p>';
+			echo '<p>You are not a user. Please <a href = "../register.php"> Register </a>to use our services.</p>';
 		}
 		$conn -> close();
 	}
