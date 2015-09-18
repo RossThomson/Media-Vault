@@ -30,7 +30,7 @@ header("location: Login.php");
 	<form id = "delform" name = "Delete Form" onsubmit = 'scripts/del_script.php' method = "POST">
 		<fieldset>
 	<?php
-		$dbname = "Media_Lynx";
+		$dbname = "MEDIALYNX";
 		$dbserver = "54.79.17.142";
 		$dbuser = "root";
 		$dbpass = "root";
@@ -43,8 +43,9 @@ header("location: Login.php");
 		}
 		
 		echo"<legend>Your Files, ".$Email."</legend>";
+		echo'<ul style = "list-style-type:none"><li>'.$_SESSION.'</li></ul>';
 		
-		$sql = "SELECT USERID FROM User WHERE email = '$Email'";
+		$sql = "SELECT USERID FROM USERS WHERE EMAIL = '$Email'";
 		$user = $conn->query($sql);
 		
 		echo '<ul style="list-style-type:none"><li>'.$user["USERID"].'</li></ul>';
