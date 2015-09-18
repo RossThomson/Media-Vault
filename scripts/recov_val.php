@@ -21,7 +21,7 @@
 		if($result === null) {
 			echo'<p> this explains everything</p>';
 		}else{
-		//$result2 = $result->fetch_array();
+		$result2 = $result->fetch_array();
 		echo '<p>Ok, this is the result: '.$result2['SECRETQUESTION'].'...stuff</p>';
 		echo '<p>Also, the email is: '.$email.'</p>';
 		echo '<p>AND sql thingy too: '.$sql.'</p>';
