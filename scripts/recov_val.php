@@ -19,12 +19,12 @@
 		
 		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
 		
-		$sql = "SELECT * FROM USERS WHERE EMAIL = '$email'";
+		$sql = "SELECT * FROM USERS WHERE EMAIL = $email";
 		$result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
 		
 		echo '<p>Ok, this is the result'.$result.'</p>';
 		echo '<p>Also, the email is '.$email.'</p>';
-		echo '<p>AND sql thingy too'.$sql.'</p>';
+		echo '<p>AND sql thingy too '.$sql.'</p>';
 		
 		if($result->num_rows > 0) {
 			$row = $result->fetch_array();
