@@ -69,8 +69,10 @@ header("location: media.php");
 		}
 	?>
 	</body>
+	</div>
 <footer class="footer_absolute">
 		<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
 </footer>
+</div>
 </html>
