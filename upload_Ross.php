@@ -19,10 +19,14 @@ if(isset($_POST["submit"])) {
 	$dbname	= "MEDIALYNX";
 	$dbuser	= "root";
 	$dbpass	= "root";
+	
+	session_start();
+	$userid = $_SESSION['userid'];
+	$file = "image";
 
 		try {
 			
-			session_start();
+			
 			
 			
 					$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
@@ -32,11 +36,9 @@ if(isset($_POST["submit"])) {
 					
 					 
 					//	$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$_SESSION['userid']','Test','IMAGE','$check','synopsisdffee')";
-					$sql = "INSERT INTO CONTENT(USERID,CONTENTTYPE) VALUES ('$_SESSION['userid']','IMAGE')";
+					$sql = "INSERT INTO CONTENT(USERID,CONTENTTYPE) VALUES ('$userid','$file')";
 						
 					$pdo->exec($sql);
-					session_start();
-					$_SESSION['error'] = "";
 					header("location: test2.php");
 						
 					 
