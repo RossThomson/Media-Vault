@@ -13,7 +13,7 @@ session_start();
 }
 
 	$dbhost = "localhost";
-	$dbname	= "Media_Lynx";
+	$dbname	= "MEDIALYNX";
 	$dbuser	= "root";
 	$dbpass	= "root";
 	
@@ -32,6 +32,7 @@ session_start();
 		if(password_verify('$password', $hash)) {
 		session_start(); 
 		$_SESSION['email'] = $q2['FIRSTNAME'];
+		$_SESSION['userid'] = $q2['USERID'];
 		$_SESSION['error'] = "";
 		header("location: ../media.php");
 		

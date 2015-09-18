@@ -35,9 +35,42 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    } else {
+	
+	$dbhost = "localhost";
+	$dbname	= "MEDIALYNX";
+	$dbuser	= "root";
+	$dbpass	= "root";
+
+		try {
+			
+			session_start();
+			
+			
+					$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+					$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			
+					
+					
+					 
+						$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$_SESSION['userid']','$_FILES["fileToUpload"]["name"]','$imageFileType','$_FILES["fileToUpload"]["size"]','synopsisdffee')";
+						
+					$pdo->exec($sql);
+					session_start();
+					$_SESSION['error'] = "";
+					header("location: test2.php");
+						
+					 
+				}
+				
+			catch(PDOException $e)
+				{
+					echo $e->getMessage();
+				}
+
+				$pdo = null;
+     //$db->prepare("INSERT INTO blob ( name, image) VALUES ('$imageName', " . $db->quote($imageData) . ")");
+    } 
+	else {
         echo "Sorry, there was an error uploading your file.";
     }
 }
