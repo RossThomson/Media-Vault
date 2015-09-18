@@ -27,10 +27,12 @@ header("location: Login.php");
 				<img src="graphics/logo.jpg">
 			</a> -->
 			<ul>
-				<li><a href="media_doc.php">Doc</a></li>
-				<li><a href="media_photo.php">Photo</a></li>
-				<li><a class="active" href="media_music.php">Music</a></li>
-				<li><a href="media_video.php">Video</a></li>
+				<li><a href="media_playlist.html">Playlist</a></li>
+				<li><a href="media_doc.html">Doc</a></li>
+				<li><a href="media_photo.html">Photo</a></li>
+				<li><a class="active" href="media_music.html">Music</a></li>
+				<li><a href="media_video.html">Video</a></li>
+				<li><a href="media_all.html">All files</a></li>
 			</ul>		
 		</div>
 	</header>
