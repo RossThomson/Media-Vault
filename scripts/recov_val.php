@@ -19,7 +19,7 @@
 		
 		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
 		
-		$sql = "SELECT SECRETQUESTION, SECRETANSWER FROM USERS WHERE EMAIL = '$email'";
+		$sql = "SELECT * FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
 		
 		echo '<p>'.$result.'</p>';
