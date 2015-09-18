@@ -15,7 +15,7 @@
 	
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
-		$email = test_input($_POST['email']);
+		$email = $_POST['email'];
 		
 		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
 		if(!$conn->connect_error) {
