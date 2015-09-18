@@ -22,7 +22,7 @@
 			 trigger_error($conn->connect_error);
 		}
 		
-		$sql = "SELECT * FROM 'USERS' WHERE EMAIL = '$email'";
+		$sql = "SELECT * FROM USERS WHERE EMAIL = '$email'";
 		$result = $conn->query($sql);
 		
 		if($result === null) {
