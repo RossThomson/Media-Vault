@@ -18,9 +18,16 @@
 		$email = $_POST['email'];
 		
 		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
+		if($conn->connect_error) {
+			 trigger_error($conn->connect_error);
+		}
 		
 		$sql = "SELECT * FROM USERS WHERE EMAIL = '$email'";
-		$result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
+		$result = $conn->query($sql);
+		
+		if($result === null) {
+			echo'<p> this explains everything</p>';
+		}
 		
 		echo '<p>Ok, this is the result'.$result.'</p>';
 		echo '<p>Also, the email is '.$email.'</p>';
