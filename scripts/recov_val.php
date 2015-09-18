@@ -21,23 +21,21 @@
 		
 		if($q2['EMAIL'] === null) {
 			echo '<p>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</p>';
-		}
-		
-		/*if($result->num_rows > 0) {
-			//$row = $result->fetch_array();
+		} else {
 			echo '<p>It is working</p>';
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 			echo '<label>Secret Question</label>';
-			//echo $row["SECRETQUESTION"];
+			echo '<label>'.$q2['SECRETQUESTION'].'</label>';
 			echo '<label>Secret Answer</label><input type = "password" id = "newpass" name = "answer"><br>';
 			echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
 			$answer = $_POST["answer"];
-			if($answer !== $row["SECRETANSWER"]) {
+			if($answer !== $row['SECRETANSWERS']) {
 				echo "Not the correct answer";
+			} else {
+				echo 'Time to reset your password, but I am figuring that one out';
 			}
-		} else {
-			echo '<p>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</p>';
-		}*/
+		}
+		
 		$conn->close();
 	}
 ?>
