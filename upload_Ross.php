@@ -15,7 +15,7 @@ if(isset($_POST["submit"])) {
 
 
 
-	$dbhost = "localhost";
+	/*$dbhost = "localhost";
 	$dbname	= "MEDIALYNX";
 	$dbuser	= "root";
 	$dbpass	= "root";
@@ -47,13 +47,15 @@ if(isset($_POST["submit"])) {
 				}
 
 				$pdo = null;
-				
-}
-     //$db->prepare("INSERT INTO blob ( name, image) VALUES ('$imageName', " . $db->quote($imageData) . ")");
-    else {
+*/		
+
+ else {
         echo "File is not an image.";
         $uploadOk = 0;
-    }
+    }		
+}
+
+   
 
 
 ?>
