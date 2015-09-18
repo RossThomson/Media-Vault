@@ -36,7 +36,7 @@
 			echo '<p>It is working</p>';
 			echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 			echo '<label>Secret Question</label>';
-			echo $row["SECRETQUESTION"];
+			//echo $row["SECRETQUESTION"];
 			echo '<label>Secret Answer</label><input type = "password" id = "newpass" name = "answer"><br>';
 			echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
 			$answer = $_POST["answer"];
