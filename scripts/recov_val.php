@@ -1,6 +1,6 @@
 <?php
 	$dbname = "MEDIALYNX";
-	$dbserver = "localhost";
+	$dbhost = "localhost";
 	$dbuser = "root";
 	$dbpass = "root";
 	
@@ -17,33 +17,11 @@
 		
 		echo "<p> working here </p>";
 		echo "<p>".$q2['SECRETQUESTION']."</p>";
-		echo "<p>".$q2['SECRETANSWER']."</p>";
+		echo "<p>".$q2['SECRETANSWERS']."</p>";
 		
-		/*$conn = new PDO("mysql:host=$dbserver;dbname=$dbname",$dbuser,$dbpass);
-		/*if($conn->connect_error) {
-			 trigger_error($conn->connect_error);
+		if($q2['EMAIL'] === null) {
+			echo '<p>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</p>';
 		}
-		
-		$sql = "SELECT * FROM 'USERS' WHERE EMAIL = '$email'";
-		$result = $conn->query($sql);
-		$result2 = $result->fetch();
-		
-		echo '<p>'.$sql.'</p>';
-		
-		echo '<p>'.$result2.'</p>';
-		
-		if($result === null) {
-			echo'<p> this explains everything</p>';
-		}else{
-		//$result2 = $result->fetch_array();
-		echo '<p>Ok, this is the result: '.$result.'...stuff</p>';
-		echo '<p>Also, the email is: '.$email.'</p>';
-		echo '<p>AND sql thingy too: '.$sql.'</p>';
-		$test = $result->fetch();
-		//echo '<p>'.test['SECRETQUESTION'].'</p>';
-		}*/
-		
-		
 		
 		/*if($result->num_rows > 0) {
 			//$row = $result->fetch_array();
