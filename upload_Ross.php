@@ -12,6 +12,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+	$imageData = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
@@ -32,13 +33,13 @@ if(isset($_POST["submit"])) {
 			
 			
 					$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
-					//$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
 			
 					
 					
 					 
-					$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$filename','$filetype','$filesize','$synopsis')";
-					//$sql = "INSERT INTO CONTENT(USERID,CONTENTTYPE) VALUES ('$userid','$file')";
+					$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS, PICTURES) VALUES ('$userid','$filename','$filetype','$filesize','$synopsis', " . $db->quote($imageData) . ")");
+			
 						
 					$pdo->exec($sql);
 					header("location: test2.php");
