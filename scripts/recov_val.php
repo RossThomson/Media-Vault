@@ -15,7 +15,7 @@
 		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$email'");
 		$q2 = $q1->fetch(); 
 		
-		echo "<p> working here </p>"
+		echo "<p> working here </p>";
 		
 		/*$conn = new PDO("mysql:host=$dbserver;dbname=$dbname",$dbuser,$dbpass);
 		/*if($conn->connect_error) {
