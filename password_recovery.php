@@ -26,9 +26,9 @@ header("location: media.php");
 	<header>
 		<?php include 'header.php'; ?>
 	</header>
-	<form id = "RecoverForm" name = "recover_form" action = "scripts/recov_val.php" method = "POST">
-		<label>Email:</label><input type = "text" name = "email" required onchange = "validate_email(this, 'MissingEmail');"><span id = "MissingEmail">*</span><span id = "InvalidEmail">Invalid Email</span>
-		<input input class="btn btn-alt" type = "submit" name = "submit" value = "Submit"><br><br>
+	<form id = "RecoverForm" name = "recover_form" onsubmit = "scripts/login_val.js" action = "scripts/recov_val.php" method = "POST">
+		<label>Email:</label><input type = "text" name = "email" id = "email" required onchange ="checkEmail();"><span id = "emailmessage">*</span><span id = "InvalidEmail"></span>
+		<br><input input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">
 	</form>
 	
 	

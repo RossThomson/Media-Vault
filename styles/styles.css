@@ -270,7 +270,7 @@ input.btn.btn-alt {
     color: gray;
 }
 
-#regform, #loginform, #delform{
+#regform, #loginform, #delform, #RecoverForm{
 display: block;
 width: 40%;
 margin-top: 5%;
