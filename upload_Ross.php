@@ -38,7 +38,7 @@ if(isset($_POST["submit"])) {
 					
 					
 					 
-					$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS, PICTURES) VALUES ('$userid','$filename','$filetype','$filesize','$synopsis')";
+					$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$filename','$filetype','$filesize','$synopsis')";
 			
 						
 					$pdo->exec($sql);
