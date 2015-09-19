@@ -26,7 +26,7 @@ header("location: media.php");
 	
 	<h1>Login To Your Account</h1>
 	
-	<form id = "resetForm" name = "Reset Form" method = "POST">
+	<form id = "recoverForm" name = "Reset Form" method = "POST">
 		<fieldset>
 	<?php
 		$dbname = "MEDIALYNX";
@@ -53,7 +53,7 @@ header("location: media.php");
 				echo '<label>Secret Answer</label><br><input type = "password" id = "newpass" name = "answer"><br>';
 				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
 				$answer = $_POST["answer"];
-				if($answer !== $row['SECRETANSWERS']) {
+				if($answer != $row['SECRETANSWERS']) {
 					echo "Not the correct answer";
 				} else {
 					echo 'Time to reset your password, but I am figuring that one out';
