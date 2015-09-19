@@ -1,6 +1,6 @@
 <?php
 if(isset($_SESSION['email'])){
-header("location: ../media.php");
+header("location: media.php");
 }
 ?>
 
@@ -9,8 +9,8 @@ header("location: ../media.php");
 	<head>
 	<title>Login</title>
 	<meta charset = "utf-8">
-	<link rel="stylesheet" href="../styles/styles.css">
-	<script type="text/javascript" src="login_val.js"></script>
+	<link rel="stylesheet" href="styles/styles.css">
+	<script type="text/javascript" src="scripts/login_val.js"></script>
 	
 	</head>
 	
@@ -18,7 +18,7 @@ header("location: ../media.php");
 	<div class="wrapper">
 	
 			<header>
-				<?php include '../header.php'; ?>
+				<?php include 'header.php'; ?>
 			</header>
 	
 	<!--RECOVERY FORM FOR THE USER TO FILL OUT-->
