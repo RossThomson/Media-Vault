@@ -11,9 +11,6 @@ mysql_select_db($dbname) or die("Can not select the database: ".mysql_error());
 
 Session_start();
 $id = $_SESSION['userid'];
-//$id = '6';
-
-
 
 $query = mysql_query("SELECT * FROM CONTENT WHERE USERID='".$id."'");
  while($row = mysql_fetch_array($query)) {
@@ -21,9 +18,9 @@ $query = mysql_query("SELECT * FROM CONTENT WHERE USERID='".$id."'");
 $imagetype = $row['CONTENTTYPE'];
 
 header('Content-type: "$imagetype"');
-     //echo $row['PICTURES'];
+
 	 
 	  echo $row['PICTURES'];
  }
-  echo $row['PICTURES'];
+
 ?>
