@@ -7,7 +7,7 @@ header("location: media.php");
 <!DOCTYPE html>
 <html>
 	<head>
-	<title>Login</title>
+	<title>Password Recover</title>
 	<meta charset = "utf-8">
 	<link rel="stylesheet" href="styles/styles.css">
 	<script type="text/javascript" src="scripts/login_val.js"></script>
@@ -24,9 +24,9 @@ header("location: media.php");
 	<!--RECOVERY FORM FOR THE USER TO FILL OUT-->
 	<div id="login_form">
 	
-	<h1>Login To Your Account</h1>
+	<h1>Recover Password</h1>
 	
-	<form id = "recoverForm" name = "Reset Form" method = "POST">
+	<form id = "RecoverForm" name = "Reset Form" method = "POST">
 		<fieldset>
 	<?php
 		$dbname = "MEDIALYNX";
