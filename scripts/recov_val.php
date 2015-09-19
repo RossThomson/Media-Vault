@@ -1,31 +1,32 @@
 <?php
-
-if(isset($_SESSION['email'])){
-header("location: media.php");
+if(!isset($_SESSION['email'])){
+header("location: Login.php");
 }
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML>
 <html>
-    <head>
-        
-        <title>Password Reset</title>
-        
-        <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-     	<link rel="stylesheet" href="../styles/styles.css">
-		<script type="text/javascript" src="login_val.js"></script>
-        
-    </head>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>Recover Password</title>
 
-    <body>
-	<div class="top_bar">
-	
-	
-	<div class="wrapper">
+<link rel="stylesheet" href="styles/styles.css">
+
+</head>
+<body>
+
+<div class="wrapper">
 	<header>
 		<?php include 'header.php'; ?>
 	</header>
-
+	
+	<div id="aboutus_content">	
+	<br><br>
+	
+	<h2 class="aboutus_Headings">Password Reset</h2><br>
+	
+	<form id = "resetForm" name = "Reset Form" method = "POST">
+		<fieldset>
 	<?php
 		$dbname = "MEDIALYNX";
 		$dbhost = "localhost";
@@ -43,20 +44,13 @@ header("location: media.php");
 			$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$email'");
 			$q2 = $q1->fetch(); 
 			
-			echo "<p> working here </p>";
-			echo "<p>".$q2['SECRETQUESTION']."</p>";
-			echo "<p>".$q2['SECRETANSWERS']."</p>";
-			
 			if($q2['EMAIL'] === null) {
-				echo '<p>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</p>';
+				echo '<label>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</label>';
 			} else {
-				echo '<p>It is working</p>';
-				echo '<form id = "RenewForm" name = "renew_form" method = "POST">';
 				echo '<label>Secret Question</label><br>';
 				echo '<label>'.$q2['SECRETQUESTION'].'</label><br>';
 				echo '<label>Secret Answer</label><br><input type = "password" id = "newpass" name = "answer"><br>';
 				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
-				echo '</form>'
 				$answer = $_POST["answer"];
 				if($answer !== $row['SECRETANSWERS']) {
 					echo "Not the correct answer";
@@ -68,11 +62,12 @@ header("location: media.php");
 			$conn->close();
 		}
 	?>
-	</body>
-	</div>
+	</fieldset>
+	</form>
 <footer class="footer_absolute">
 		<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
 </footer>
 </div>
+</body>
 </html>
