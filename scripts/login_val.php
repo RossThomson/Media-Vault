@@ -31,7 +31,8 @@ session_start();
 
 		if(password_verify('$password', $hash)) {
 		session_start(); 
-		$_SESSION['email'] = $q2['FIRSTNAME'];
+		$_SESSION['first_name'] = $q2['FIRSTNAME'];
+		$_SESSION['email'] = $q2['EMAIL'];
 		$_SESSION['userid'] = $q2['USERID'];
 		$_SESSION['error'] = "";
 		header("location: ../test2.php");
