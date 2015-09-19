@@ -12,6 +12,11 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		$image = fread($fp, filesize($tmpName));
 		$image = addslashes($image);
 		fclose($fp);
+		
+		if(!get_magic_quotes_gpc())
+			{
+				$fileName = addslashes($fileName);
+			}
 
 		include 'library/config.php';
 		include 'library/opendb.php';
@@ -47,7 +52,7 @@ if(isset($_POST["submit"])) {
 					
 					
 					 
-					$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS, PICTURES) VALUES ('$userid','$filename','$filetype','$filesize','$synopsis', '$image')";
+					$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS, PICTURES) VALUES ('$userid','$filename','$fileType','$filesize','$synopsis', '$image')";
 			
 					include 'library/closedb.php';
 					$pdo->exec($sql);
