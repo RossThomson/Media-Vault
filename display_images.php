@@ -19,6 +19,7 @@ $query = mysql_query("SELECT * FROM CONTENT WHERE CONTENTID='".$id."'");
 $row = mysql_fetch_array($query);
 $content = $row['PICTURES'];
 $imagetype = $row['CONTENTTYPE'];
+
 header('Content-type: "$imagetype"');
      echo $content;
 
