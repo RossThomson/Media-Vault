@@ -22,7 +22,7 @@ $imagetype = $row['CONTENTTYPE'];
 
 header('Content-type: "$imagetype"');
      //echo $row['PICTURES'];
-	  echo "<img src='php/imgView.php?imgId=".$row['PICTURES']."' />";
+	  echo $row['PICTURES'];
  }
 
 ?>
