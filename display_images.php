@@ -18,8 +18,8 @@ $id = '6';
 $query = mysql_query("SELECT * FROM CONTENT WHERE CONTENTID='".$id."'");
 $row = mysql_fetch_array($query);
 $content = $row['PICTURES'];
-
-header('Content-type: image/png');
+$imagetype = $row['CONTENTTYPE'];
+header('Content-type: "$imagetype"');
      echo $content;
 
 
