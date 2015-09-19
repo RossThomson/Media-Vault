@@ -1,8 +1,8 @@
-<?php
-if(!isset($_SESSION['email'])){
-header("location: ../Login.php");
+<!--<?php
+/*if(!isset($_SESSION['email'])){
+header("location: ../media.php");
 }
-?>
+*/?>-->
 
 <!DOCTYPE HTML>
 <html>
