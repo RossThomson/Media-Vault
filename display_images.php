@@ -22,7 +22,8 @@ $imagetype = $row['CONTENTTYPE'];
 
 header('Content-type: "$imagetype"');
      //echo $row['PICTURES'];
-	  echo $row['PICTURES'];
+	 
+	  echo $row['PICTURES'] "<br><br>";
  }
 
 ?>
