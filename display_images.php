@@ -17,11 +17,11 @@ $id = $_SESSION['userid'];
 
 $query = mysql_query("SELECT * FROM CONTENT WHERE USERID='".$id."'");
  while($row = mysql_fetch_array($query)) {
-$content = $row['PICTURES'];
+
 $imagetype = $row['CONTENTTYPE'];
 
 header('Content-type: "$imagetype"');
-     echo $content;
+     echo $row['PICTURES'];
  }
 
 ?>
