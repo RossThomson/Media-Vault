@@ -1,29 +1,30 @@
-<!--<?php
-/*if(!isset($_SESSION['email'])){
+<?php
+if(isset($_SESSION['email'])){
 header("location: ../media.php");
 }
-*/?>-->
+?>
 
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-<title>Recover Password</title>
-
-<link rel="stylesheet" href="../styles/styles.css">
-
-</head>
-<body>
-
-<div class="wrapper">
-	<header>
-		<?php include 'header.php'; ?>
-	</header>
+	<head>
+	<title>Login</title>
+	<meta charset = "utf-8">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<script type="text/javascript" src="login_val.js"></script>
 	
-	<div id="aboutus_content">	
-	<br><br>
+	</head>
 	
-	<h2 class="aboutus_Headings">Password Reset</h2><br>
+	<body>
+	<div class="wrapper">
+	
+			<header>
+				<?php include '../header.php'; ?>
+			</header>
+	
+	<!--RECOVERY FORM FOR THE USER TO FILL OUT-->
+	<div id="login_form">
+	
+	<h1>Login To Your Account</h1>
 	
 	<form id = "resetForm" name = "Reset Form" method = "POST">
 		<fieldset>
