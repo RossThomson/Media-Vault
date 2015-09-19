@@ -10,7 +10,7 @@ mysql_connect($dbhost, $dbuser, $dbpass) or die("Can not connect to database: ".
 mysql_select_db($dbname) or die("Can not select the database: ".mysql_error());
 
 Session_start();
-$id = $_$_SESSION['userid'];
+$id = $_SESSION['userid'];
 //$id = '6';
 
 
