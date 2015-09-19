@@ -20,7 +20,6 @@ header("location: media.php");
     <body>
 	<div class="top_bar">
 	
-	
 	<div class="wrapper">
 	<header>
 		<?php include 'header.php'; ?>
