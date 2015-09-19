@@ -31,7 +31,7 @@ if(isset($_POST["submit"])) {
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
 		
-		$dbhost = "localhost";
+	$dbhost = "localhost";
 	$dbname	= "MEDIALYNX";
 	$dbuser	= "root";
 	$dbpass	= "root";
