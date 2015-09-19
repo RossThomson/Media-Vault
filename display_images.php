@@ -20,7 +20,7 @@ $query = mysql_query("SELECT * FROM CONTENT WHERE USERID='".$id."'");
 
 //$imagetype = $row['CONTENTTYPE'];
 
-header('Content-type: "$row['CONTENTTYPE']"');
+header('Content-type: ''$row["CONTENTTYPE"]'');
      //echo $row['PICTURES'];
 	  echo "<img src='php/imgView.php?imgId=".$row['PICTURES']."' />";
  }
