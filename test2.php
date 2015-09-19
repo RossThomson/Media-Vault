@@ -93,7 +93,7 @@ header("location: Login.php");
 
 </div>	
 
-<div>
+
 
 <?php
 
@@ -122,7 +122,7 @@ header('Content-type: "$imagetype"');
 
 ?>
 
-</div>
+
 	<br><br><br>
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
