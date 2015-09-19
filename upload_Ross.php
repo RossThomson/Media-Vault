@@ -7,6 +7,9 @@ $filesize = $_FILES["fileToUpload"]["size"];
 $fileType = $_FILES["fileToUpload"]["type"];
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
+		$tmpName  = ($_FILES["fileToUpload"]["name"]);  
+		$fp = fopen($tmpName, 'rb'); // read binary
+         
 
 // Check if image file is a actual image or fake image
 
@@ -38,9 +41,9 @@ if(isset($_POST["submit"])) {
 					
 					
 					 
-					$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$filename','$filetype','$filesize','$synopsis')";
+					$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS, PICTURES) VALUES ('$userid','$filename','$filetype','$filesize','$synopsis', '$fp')";
 			
-						
+					$sql->bindParam(1, $fp, PDO::PARAM_LOB);
 					$pdo->exec($sql);
 					header("location: test2.php");
 						
