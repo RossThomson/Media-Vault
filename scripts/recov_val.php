@@ -1,6 +1,6 @@
 <?php
 if(!isset($_SESSION['email'])){
-header("location: Login.php");
+header("location: ../Login.php");
 }
 ?>
 
@@ -10,7 +10,7 @@ header("location: Login.php");
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 <title>Recover Password</title>
 
-<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="../styles/styles.css">
 
 </head>
 <body>
