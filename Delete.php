@@ -43,7 +43,7 @@ header("location: Login.php");
 		$q2 = $q1->fetch(); 
 		$user = $q2['USERID'];
 		
-		echo"<legend>Your Files, ".$name."</legend>";
+		echo"<legend>Your Files, ".$user."</legend>";
 				
 		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
 		$q4 = $q3->fetch();
