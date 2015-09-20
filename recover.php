@@ -31,7 +31,7 @@ header("location: media.php");
 		$dbpass = "root";
 	
 		$email = "";
-			
+		
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		
 			$email = $_POST['email'];
@@ -48,16 +48,16 @@ header("location: media.php");
 				echo '</fieldset></form>';
 			} else {
 				echo '<h1>Recover Password</h1>';
-				echo'<form id = "RecoverForm" name = "Reset Form" method = "POST">
+				echo'<form id = "RecoverForm" name = "Reset Form" method="POST">
 					<fieldset>';
 				echo 'Secret Question';
 				echo '<br>'.$q2['SECRETQUESTION'].'<br>';	
-				echo '<label>Secret Answer</label><br><input type = "password" id = "newpass" name = "answer"><br>';
+				echo '<label>Secret Answer</label><br><input type = "password" id = "Answer" name = "Answer"><br>';
 				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
 				echo '	</fieldset>
 						</form>';
-				$answer = $_POST["answer"];
-				if($answer != $row['SECRETANSWERS']) {
+				$answer = $_POST['Answer'];
+				if($answer != $q2['SECRETANSWERS']) {
 					echo "Not the correct answer";
 				} else {
 					echo 'Time to reset your password, but I am figuring that one out';
