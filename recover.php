@@ -44,12 +44,12 @@ header("location: media.php");
 			if($q2['EMAIL'] === null) {
 				echo '<label>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</label>';
 			} else {
+				echo '<h1>Recover Password</h1>';
 				echo '<h3>Secret Question</h3><br>';
 				echo '<p>'.$q2['SECRETQUESTION'].'</p><br>';
-				echo '<h1>Recover Password</h1>
-	
-					<form id = "RecoverForm" name = "Reset Form" method = "POST">
+				echo'<form id = "RecoverForm" name = "Reset Form" method = "POST">
 					<fieldset>';
+					
 				echo '<label>Secret Answer</label><br><input type = "password" id = "newpass" name = "answer"><br>';
 				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
 				echo '	</fieldset>
