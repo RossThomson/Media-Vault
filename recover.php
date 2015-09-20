@@ -10,8 +10,8 @@ header("location: media.php");
 	<title>Password Recover</title>
 	<meta charset = "utf-8">
 	<link rel="stylesheet" href="styles/styles.css">
-		<script type="text/javascript" src="scripts/rec_script.js"></script>
-	<?php include 'scripts/rec_script.js';?>
+	<script type="text/javascript" src="scripts/login_val.js"></script>
+	
 	</head>
 	
 	<body>
