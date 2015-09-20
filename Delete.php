@@ -46,7 +46,7 @@ header("location: Login.php");
 		echo"<legend>Your Files, ".$name."</legend>";
 				
 		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
-		while($q4 = $q3->fetch();) {
+		while($q4 = $q3->fetch()) {
 			$id = $q4['CONTENTID'];
 			echo '<ul style="list-style-type:none">';
 			echo '	<li><input type = "checkbox" name = "$id"><label>'.$row["CONTENTTITLE"].'</label></li>';
