@@ -48,11 +48,10 @@ header("location: media.php");
 				echo '</fieldset></form>';
 			} else {
 				echo '<h1>Recover Password</h1>';
-				echo '<h3>Secret Question</h3><br>';
-				echo '<p>'.$q2['SECRETQUESTION'].'</p><br>';
 				echo'<form id = "RecoverForm" name = "Reset Form" method = "POST">
 					<fieldset>';
-					
+				echo 'Secret Question';
+				echo '<br>'.$q2['SECRETQUESTION'].'<br>';	
 				echo '<label>Secret Answer</label><br><input type = "password" id = "newpass" name = "answer"><br>';
 				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
 				echo '	</fieldset>
