@@ -53,6 +53,7 @@ header("location: Login.php");
 			echo '	<li>'.$q4["SYNOPSIS"].'</li>';
 			echo '</ul>';
 		}
+		echo '<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">';
 		
 		/*if($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
@@ -70,7 +71,6 @@ header("location: Login.php");
 		
 		$conn->close();
 	?>
-		<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">
 		</fieldset>
 	</form>
 	<footer class="footer_absolute">
