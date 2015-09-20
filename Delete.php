@@ -47,11 +47,12 @@ header("location: Login.php");
 				
 		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
 		$q4 = $q3->fetch();
+		$id = $q4['CONTENTID'];
 		
 		echo'<ul style="list-style-type:none">';
 		foreach($q4 as $value) {
 			echo'<ul style="list-style-type:none">';
-			echo'<li>'.$value.'</li>';
+			echo'<li><input type="checkbox" name="$id">'.$value.'</li>';
 			echo'</ul>';
 		}
 		
