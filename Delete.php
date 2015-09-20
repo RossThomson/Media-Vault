@@ -20,7 +20,22 @@ header("location: Login.php");
 <div class="wrapper">
 	<header>
 		<?php include 'header.php'; ?>
+		<span id="sign_in_info"></span>
+		<div id="media2_header_inside">
+			<!-- <a href="index.php">
+				<img src="graphics/logo.jpg">
+			</a> -->
+			<ul>
+				<li><a href="media_playlist.php">Playlist</a></li>
+				<li><a href="media_doc.php">Doc</a></li>
+				<li><a href="media_photo.php">Photo</a></li>
+				<li><a href="media_music.php">Music</a></li>
+				<li><a class="active" href="media_video.php">Video</a></li>
+				<li><a href="media_all.php">All files</a></li>
+			</ul>		
+		</div>
 	</header>
+</div>
 	
 	<div id="aboutus_content">	
 	<br><br>
