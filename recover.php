@@ -48,7 +48,7 @@ header("location: media.php");
 				echo '</fieldset></form>';
 			} else {
 				echo '<h1>Recover Password</h1>';
-				echo'<form id = "RecoverForm" name = "Reset Form" onsubmit = "scripts/rec_script.js" action = "reset.php" method="POST">
+				echo'<form id = "RecoverForm" name = "Reset Form" onsubmit = "scripts/rec_script.js" action = "reset_pass.php" method="POST">
 					<fieldset>';
 				echo 'Secret Question';
 				echo '<br>'.$q2['SECRETQUESTION'].'<br>';
