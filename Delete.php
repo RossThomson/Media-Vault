@@ -43,17 +43,15 @@ header("location: Login.php");
 		$q2 = $q1->fetch(); 
 		$user = $q2['USERID'];
 		
-		echo"<legend>Your Files, ".$user."</legend>";
+		echo"<legend>Your Files, ".$name."</legend>";
 				
 		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
-		$q4 = $q3->fetch();
-		$id = $q4['CONTENTID'];
-		
-		echo'<ul style="list-style-type:none">';
-		foreach($q4 as $value) {
-			echo'<ul style="list-style-type:none">';
-			echo'<li><input type="checkbox" name="$id">'.$value.'</li>';
-			echo'</ul>';
+		while($q4 = $q3->fetch();) {
+			$id = $q4['CONTENTID'];
+			echo '<ul style="list-style-type:none">';
+			echo '	<li><input type = "checkbox" name = "$id"><label>'.$row["CONTENTTITLE"].'</label></li>';
+			echo '	<li>'.$row["SYNOPSIS"].'</li>';
+			echo '</ul>';
 		}
 		
 		/*if($result->num_rows > 0) {
