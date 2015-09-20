@@ -48,7 +48,7 @@ header("location: media.php");
 				echo '</fieldset></form>';
 			} else {
 				echo '<h1>Recover Password</h1>';
-				echo'<form id = "RecoverForm" name = "Reset Form">
+				echo'<form id = "RecoverForm" name = "Reset Form" method="POST">
 					<fieldset>';
 				echo 'Secret Question';
 				echo '<br>'.$q2['SECRETQUESTION'].'<br>';
@@ -57,6 +57,7 @@ header("location: media.php");
 				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
 				echo '	</fieldset>
 						</form>';
+				$answer = $_POST['Answer'];
 				if($answer != $q2['SECRETANSWERS']) {
 					echo "Not the correct answer";
 				} else {
