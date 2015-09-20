@@ -10,8 +10,8 @@ header("location: media.php");
 	<title>Password Recover</title>
 	<meta charset = "utf-8">
 	<link rel="stylesheet" href="styles/styles.css">
-	<script type="text/javascript" src="scripts/login_val.js"></script>
-	
+		<script type="text/javascript" src="scripts/rec_script.js"></script>
+	<?php include 'scripts/rec_script.js';?>
 	</head>
 	
 	<body>
@@ -53,8 +53,8 @@ header("location: media.php");
 				echo 'Secret Question';
 				echo '<br>'.$q2['SECRETQUESTION'].'<br>';
 				echo '<input type = "hidden" name="trueAnswer" value="'.$q2['SECRETANSWERS'].'" id = "trueAnswer">';
-				echo '<label>Secret Answer</label><br><input type = "password" id = "Answer" name = "Answer" required onkeyup="checkAnswer(); return false;">*<span id="confirmMessage" class="confirmMessage"></span><br>';
-				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit" id = "submit">';
+				echo '<label>Secret Answer</label><br><input type = "password" id = "Answer" name = "Answer" required onkeyup="checkAnswer(); return false;">*<span id="check" class="confirmMessage"></span><br>';
+				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "submit" id = "submit">';
 				echo '	</fieldset>
 						</form>';
 			}
