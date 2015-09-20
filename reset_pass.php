@@ -3,7 +3,7 @@ if(isset($_SESSION['email'])){
 header("location: media.php");
 }
 if($_POST['Answer'] != $_POST['trueAnswer']) {
-header("location: recover.php");
+header("location: password_recovery.php");
 }
 ?>
 
@@ -27,7 +27,7 @@ header("location: recover.php");
 	<!--RECOVERY FORM FOR THE USER TO FILL OUT-->
 	<div id="login_form">
 	<h1>Reset your password</h1>
-	<form id="resetform" name="Reset_form" onsubmit="scripts/register_val.js" action="scripts/reset_script.php"  method="POST">
+	<form id="RecoverForm" name="Reset_form" onsubmit="scripts/register_val.js" action="scripts/reset_script.php"  method="POST">
 		<fieldset>
 		<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
 		<p><label>New Password: </label><input type="password" min = "6" max = "15" id="password" name="password" required>*</p>
