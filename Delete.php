@@ -49,7 +49,11 @@ header("location: Login.php");
 		$q4 = $q3->fetch();
 		
 		echo'<ul style="list-style-type:none">';
-		echo'<li>'.$q4.'</li>';
+		foreach($q2 as $value) {
+			echo'<ul style="list-style-type:none">';
+			echo'<li>'.$value.'</li>';
+			echo'</ul>';
+		}
 		
 		/*if($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
