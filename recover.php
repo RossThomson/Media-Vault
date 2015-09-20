@@ -24,11 +24,7 @@ header("location: media.php");
 	<!--RECOVERY FORM FOR THE USER TO FILL OUT-->
 	<div id="login_form">
 	
-	<h1>Recover Password</h1>
-	
-	<form id = "RecoverForm" name = "Reset Form" method = "POST">
-		<fieldset>
-	<?php
+		<?php
 		$dbname = "MEDIALYNX";
 		$dbhost = "localhost";
 		$dbuser = "root";
@@ -48,10 +44,16 @@ header("location: media.php");
 			if($q2['EMAIL'] === null) {
 				echo '<label>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</label>';
 			} else {
-				echo '<label>Secret Question</label><br>';
-				echo '<label>'.$q2['SECRETQUESTION'].'</label><br>';
+				echo '<h3>Secret Question</h3><br>';
+				echo '<p>'.$q2['SECRETQUESTION'].'</p><br>';
+				echo '<h1>Recover Password</h1>
+	
+					<form id = "RecoverForm" name = "Reset Form" method = "POST">
+					<fieldset>';
 				echo '<label>Secret Answer</label><br><input type = "password" id = "newpass" name = "answer"><br>';
 				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
+				echo '	</fieldset>
+						</form>';
 				$answer = $_POST["answer"];
 				if($answer != $row['SECRETANSWERS']) {
 					echo "Not the correct answer";
@@ -63,8 +65,6 @@ header("location: media.php");
 			$conn->close();
 		}
 	?>
-	</fieldset>
-	</form>
 <footer class="footer_absolute">
 		<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
