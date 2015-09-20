@@ -3,7 +3,7 @@ if(isset($_SESSION['email'])){
 header("location: media.php");
 }
 if($_POST['Answer'] != $_POST['trueAnswer']) {
-header("location: recover.php")
+header("location: recover.php");
 }
 ?>
 
