@@ -44,7 +44,7 @@ header("location: media.php");
 			if($q2['EMAIL'] === null) {
 				echo'<form id = "RecoverForm" name = "Reset Form" method = "POST">
 					<fieldset>';
-				echo '<label>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</label>';
+				echo 'You are not a user, '.$email.'. Please <a href = "register.php"> Register </a>to use our services.';
 				echo '</fieldset></form>';
 			} else {
 				echo '<h1>Recover Password</h1>';
