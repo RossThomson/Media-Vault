@@ -33,6 +33,7 @@ header("location: recover.php");
 		<p><label>New Password: </label><input type="password" min = "6" max = "15" id="password" name="password" required>*</p>
 		<p><label for="cPassword">Confirm Password: </label><input type="password" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;">*<span id="confirmMessage" class="confirmMessage"></span></p>
 		<input type = "hidden" name="<?php $_POST["email"]?>" value="<?php $_POST["email"]?>" id="<?php $_POST["email"]?>">
+		<input class="btn btn-alt" type = "submit" name = "submit" id="submit" value = "Submit">
 		</fieldset>
 	</form>
 	<footer class="footer_absolute">
