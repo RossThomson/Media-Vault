@@ -48,11 +48,12 @@ header("location: media.php");
 				echo '</fieldset></form>';
 			} else {
 				echo '<h1>Recover Password</h1>';
-				echo'<form id = "RecoverForm" name = "Reset Form" onsubmit = "scripts/rec_script.js" method="POST">
+				echo'<form id = "RecoverForm" name = "Reset Form" onsubmit = "scripts/rec_script.js" action = "reset.php" method="POST">
 					<fieldset>';
 				echo 'Secret Question';
 				echo '<br>'.$q2['SECRETQUESTION'].'<br>';
 				echo '<input type = "hidden" name="trueAnswer" value="'.$q2['SECRETANSWERS'].'" id = "trueAnswer">';
+				echo '<input type = "hidden" name="email" value="'.$email.'" id="email">';
 				echo '<label>Secret Answer</label><br><input type = "password" id = "Answer" name = "Answer" required onkeyup="checkAnswer(); return false;">*<span id="check" class="confirmMessage"></span><br>';
 				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "submit" id = "submit">';
 				echo '	</fieldset>
