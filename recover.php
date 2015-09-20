@@ -42,7 +42,10 @@ header("location: media.php");
 			$q2 = $q1->fetch(); 
 			
 			if($q2['EMAIL'] === null) {
+				echo'<form id = "RecoverForm" name = "Reset Form" method = "POST">
+					<fieldset>';
 				echo '<label>You are not a user,'.$email.'. Please <a href = "../register.php"> Register </a>to use our services.</label>';
+				echo '</fieldset></form>';
 			} else {
 				echo '<h1>Recover Password</h1>';
 				echo '<h3>Secret Question</h3><br>';
