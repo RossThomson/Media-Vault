@@ -57,11 +57,13 @@ header("location: media.php");
 				echo '<input class="btn btn-alt" type = "submit" name = "submit" value = "Submit">';
 				echo '	</fieldset>
 						</form>';
-				$answer = $_POST['Answer'];
-				if($answer != $q2['SECRETANSWERS']) {
-					echo "Not the correct answer";
-				} else {
-					echo 'Time to reset your password, but I am figuring that one out';
+				if($_SERVER['REQUEST_METHOD'] == "POST") {
+					$answer = $_POST['Answer'];
+					if($answer != $q2['SECRETANSWERS']) {
+						echo "Not the correct answer";
+					} else {
+						echo 'Time to reset your password, but I am figuring that one out';
+					}
 				}
 			}
 			
