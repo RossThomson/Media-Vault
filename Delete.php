@@ -55,20 +55,6 @@ header("location: Login.php");
 		}
 		echo '<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">';
 		
-		/*if($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-				$id[] = $row["CONTENTID"];
-				echo '<ul style="list-style-type:none">';
-				echo '	<li><input type = "checkbox" name = "$id"><label>'.$row["CONTENTTITLE"].'</label></li>';
-				echo '	<li>'.$row["SYNOPSIS"].'</li>';
-				echo '</ul>';
-			}
-		} else {
-				echo '<ul style="list-style-type:none">';
-				echo '	<li><label>No available content. Please <a href="upload.php">upload</a> files.</label></li>';
-				echo '</ul>';
-		}*/
-		
 		$conn->close();
 	?>
 		</fieldset>
