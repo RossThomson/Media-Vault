@@ -44,16 +44,14 @@ header("location: Login.php");
 		$user = $q2['USERID'];
 		
 		echo"<legend>Your Files, ".$name."</legend>";
-		
-		
 				
 		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
 		$q4 = $q3->fetch();
 		
-		echo'<ul style="list-style-type:none">'
+		echo'<ul style="list-style-type:none">';
 		echo'<li>'.$q4.'</li>';
 		
-		if($result->num_rows > 0) {
+		/*if($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
 				$id[] = $row["CONTENTID"];
 				echo '<ul style="list-style-type:none">';
@@ -65,7 +63,7 @@ header("location: Login.php");
 				echo '<ul style="list-style-type:none">';
 				echo '	<li><label>No available content. Please <a href="upload.php">upload</a> files.</label></li>';
 				echo '</ul>';
-		}
+		}*/
 		
 		$conn->close();
 	?>
