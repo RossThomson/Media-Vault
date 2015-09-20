@@ -31,33 +31,27 @@ header("location: Login.php");
 		<fieldset>
 	<?php
 		$dbname = "MEDIALYNX";
-		$dbserver = "54.79.17.142";
+		$dbhost = "localhost";
 		$dbuser = "root";
 		$dbpass = "root";
 		$name = $_SESSION['first_name'];
 		$Email = $_SESSION['email'];
-		$id = array();
 		
-		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
-		if(!$conn->connect_error) {
-			die("Connection failed".$conn->connect_error);
-		}
+		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+		
+		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$Email'");
+		$q2 = $q1->fetch(); 
+		$user = $q2['USERID'];
 		
 		echo"<legend>Your Files, ".$name."</legend>";
 		
-		$sql = "SELECT USERID FROM 'USERS' WHERE EMAIL = '$Email'";
-		$user = $conn->query($sql);
 		
-		echo '<ul style="list-style-type:none"><li>'.$user["USERID"].'</li></ul>';
+				
+		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
+		$q4 = $q3->fetch();
 		
-		$trySql = "SELECT EMAIL FROM USER WHERE FIRSTNAME = '$Email'";
-		$try = $conn->query($trySql);
-		
-		echo '<ul style="list-style-type:none"><li>'.$try["EMAIL"].'</li></ul>';
-		
-		
-		$newSql = "SELECT * FROM CONTENT WHERE EMAIL = '$Email'";
-		$result = $conn->query($newSql);
+		echo'<ul style="list-style-type:none">'
+		echo'<li>'.$q4.'</li>';
 		
 		if($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
