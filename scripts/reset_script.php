@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			
 			else
 			{ 
-				$sql = "UPDATE USERS SET HASH=$hash WHERE EMAIL=$email";
+				$sql = "UPDATE 'USERS' SET 'HASH'=$hash WHERE 'EMAIL'=$email";
 				
 			$pdo->exec($sql);
 			session_start();
