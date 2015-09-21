@@ -35,9 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			
 			else
 			{ 
-				$sql = "UPDATE 'USERS' SET 'HASH'=$hash WHERE 'EMAIL'=$email";
-				
-			$pdo->exec($sql);
+				$sql = "UPDATE 'USERS' SET 'HASH'='$hash' WHERE 'EMAIL'=$email";
+			
+			$stmt = $pdo->prepare($sql);
+			
+			$stmt->execute();
 			session_start();
 			$_SESSION['error'] = "";
 			header("location: ../register_success.php");
