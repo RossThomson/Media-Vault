@@ -63,7 +63,7 @@ header("location: Login.php");
 				
 		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
 		while($q4 = $q3->fetch()) {
-			if($q4 == null) {
+			if($q4['CONTENTID'] === "") {
 				echo '<ul style="list-style-type:none">';
 				echo '<li>Please upload files first</li>';
 				echo '</ul>';
