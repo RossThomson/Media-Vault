@@ -5,7 +5,7 @@ $filename = basename($_FILES["fileToUpload"]["name"]);
 $filesize = $_FILES["fileToUpload"]["size"];
 $fileType = $_FILES["fileToUpload"]["type"];
 $tmpName  = ($_FILES["fileToUpload"]["tmp_name"]);  
-		
+/*		
 $fp = fopen($tmpName, 'r');
 $image = fread($fp, filesize($tmpName));
 $image = addslashes($image);
@@ -19,7 +19,7 @@ fclose($fp);
 		include 'library/config.php';
 		include 'library/opendb.php';
          
-
+*/
 // Check if image file is a actual image or fake image
 
 if(isset($_POST["submit"])) {
