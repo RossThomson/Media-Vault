@@ -13,7 +13,7 @@ header("location: Login.php");
 <title>Delete files</title>
 
 <link rel="stylesheet" href="styles/styles.css">
-<?php include 'scripts/del_script.php';  //Includes Delete Script?>
+<?php// include 'scripts/del_script.php';?>
 
 </head>
 <body>
