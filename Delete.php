@@ -20,7 +20,23 @@ header("location: Login.php");
 <div class="wrapper">
 	<header>
 		<?php include 'header.php'; ?>
+		<span id="sign_in_info"></span>
+		<div id="media2_header_inside">
+			<!-- <a href="index.php">
+				<img src="graphics/logo.jpg">
+			</a> -->
+			<ul>
+				<li><a href="media_playlist.php">Playlist</a></li>
+				<li><a href="media_doc.php">Doc</a></li>
+				<li><a href="media_photo.php">Photo</a></li>
+				<li><a href="media_music.php">Music</a></li>
+				<li><a href="media_video.php">Video</a></li>
+				<li><a href="media_all.php">All files</a></li>
+				<li><a class = "active" href="Delete.php">Delete</a></li>
+			</ul>		
+		</div>
 	</header>
+</div>
 	
 	<div id="aboutus_content">	
 	<br><br>
@@ -31,51 +47,38 @@ header("location: Login.php");
 		<fieldset>
 	<?php
 		$dbname = "MEDIALYNX";
-		$dbserver = "54.79.17.142";
+		$dbhost = "localhost";
 		$dbuser = "root";
 		$dbpass = "root";
 		$name = $_SESSION['first_name'];
 		$Email = $_SESSION['email'];
-		$id = array();
 		
-		$conn = new mysqli($dbserver,$dbuser,$dbpass,$dbname);
-		if(!$conn->connect_error) {
-			die("Connection failed".$conn->connect_error);
-		}
+		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+		
+		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$Email'");
+		$q2 = $q1->fetch(); 
+		$user = $q2['USERID'];
 		
 		echo"<legend>Your Files, ".$name."</legend>";
-		
-		$sql = "SELECT USERID FROM 'USERS' WHERE EMAIL = '$Email'";
-		$user = $conn->query($sql);
-		
-		echo '<ul style="list-style-type:none"><li>'.$user["USERID"].'</li></ul>';
-		
-		$trySql = "SELECT EMAIL FROM USER WHERE FIRSTNAME = '$Email'";
-		$try = $conn->query($trySql);
-		
-		echo '<ul style="list-style-type:none"><li>'.$try["EMAIL"].'</li></ul>';
-		
-		
-		$newSql = "SELECT * FROM CONTENT WHERE EMAIL = '$Email'";
-		$result = $conn->query($newSql);
-		
-		if($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-				$id[] = $row["CONTENTID"];
+				
+		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
+		while($q4 = $q3->fetch()) {
+			if($q4['CONTENTID'] === "") {
 				echo '<ul style="list-style-type:none">';
-				echo '	<li><input type = "checkbox" name = "$id"><label>'.$row["CONTENTTITLE"].'</label></li>';
-				echo '	<li>'.$row["SYNOPSIS"].'</li>';
+				echo '<li>Please upload files first</li>';
 				echo '</ul>';
+			} else {
+				$id = $q4['CONTENTID'];
+				echo '<ul style="list-style-type:none">';
+				echo '	<li><input type = "checkbox" name = "$id"><label>'.$q4['CONTENTTITLE'].'</label></li>';
+				echo '	<li>'.$q4["SYNOPSIS"].'</li>';
+				echo '</ul>';
+				echo '<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">';
 			}
-		} else {
-				echo '<ul style="list-style-type:none">';
-				echo '	<li><label>No available content. Please <a href="upload.php">upload</a> files.</label></li>';
-				echo '</ul>';
 		}
 		
 		$conn->close();
 	?>
-		<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">
 		</fieldset>
 	</form>
 	<footer class="footer_absolute">

@@ -1,3 +1,3 @@
 <?php
-	echo "WORKING";
+	echo "<p>WORKING</p>";
 ?>
