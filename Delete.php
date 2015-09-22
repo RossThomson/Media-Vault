@@ -76,7 +76,7 @@ header("location: Login.php");
 				echo '	<li>'.$q4["SYNOPSIS"].'</li>';
 				echo '</ul>';
 			}
-			echo '<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">';
+			echo '<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">';	
 		}
 		
 		$conn->close();
