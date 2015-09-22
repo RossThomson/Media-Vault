@@ -13,14 +13,14 @@ Session_start();
 $id = $_SESSION['userid'];
 
 $query = mysql_query("SELECT * FROM CONTENT WHERE USERID='".$id."'");
- while(mysql_fetch_array($query)) {
+ while($row = mysql_fetch_array($query)) {
 
 $imagetype = $row['CONTENTTYPE'];
 
 header('Content-type: "$imagetype"');
 
 	 
-	  echo $row['PICTURES'];
+	  echo $row['PICTURES']. "<br>";
  }
  ?>
 
