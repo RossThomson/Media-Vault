@@ -42,8 +42,8 @@ $imagetype = $row['CONTENTTYPE'];
 
 header('Content-type: "$imagetype"');
 
-	 echo "<img src='getImage.php?id=".$row['PICTURES']."'/>";
-	 // echo $row['PICTURES'];
+	
+	  echo $row['PICTURES'];
  }
 
 ?>
