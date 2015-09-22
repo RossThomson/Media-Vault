@@ -34,6 +34,7 @@ if(isset($_POST["submit"])) {
 		else {
 			echo "upload failed";
 		}
+	}
 		
 	
 ?>
