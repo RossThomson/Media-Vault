@@ -7,13 +7,9 @@
 
 
 
-$currentdir = getcwd();
-//$currentdir = "$currentdir"/uploads/;
-echo "$currentdir";
-$target = 'http://54.79.17.142/var/www/html/Media-Vault/uploads/' . basename($_FILES['photo']['name']);
+$target = '/uploads/' . basename($_FILES['photo']['name']);
 move_uploaded_file($_FILES['photo']['tmp_name'], $target);
-$Check = $_FILES[“myFile”][“error”];
-echo "$Check";
+
 
 
 
