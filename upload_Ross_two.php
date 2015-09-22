@@ -1,33 +1,13 @@
 
 <?php
-if($_FILES['photo']['name'])
-{
+
 	//if no errors...
-	if(!$_FILES['photo']['error'])
-	{
-		//now is the time to modify the future file name and validate the file
-		$new_file_name = ($_FILES['photo']['tmp_name']); //rename file
-		if($_FILES['photo']['size'] > (1024000)) //can't be larger than 1 MB
-		{
-			$valid_file = false;
-			$message = 'Oops!  Your file\'s size is to large.';
-		}
-		
-		//if the file has passed the test
-		if($valid_file)
-		{
+	
 			$currentdir = getcwd();
 			$target = $currentdir .'/uploads/' . basename($_FILES['photo']['name']);
 			move_uploaded_file($_FILES['photo']['tmp_name'], $target);
-			$message = 'Congratulations!  Your file was accepted.';
-		}
-	}
-	//if there is an error...
-	else
-	{
-		//set that to be the returned message
-		$message = 'Ooops!  Your upload triggered the following error:  '.$_FILES['photo']['error'];
-	}
-}
+			echo 'Congratulations!  Your file was accepted.';
+	
+
 
 ?>
