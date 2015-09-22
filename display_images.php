@@ -13,7 +13,7 @@ Session_start();
 $id = $_SESSION['userid'];
 
 $query = mysql_query("SELECT * FROM CONTENT WHERE USERID='".$id."'");
- while($row == mysql_fetch_array($query)) {
+ while(mysql_fetch_array($query)) {
 
 $imagetype = $row['CONTENTTYPE'];
 
