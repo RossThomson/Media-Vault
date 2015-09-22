@@ -70,6 +70,7 @@ header("location: Login.php");
 			} else {
 				$id = $q4['CONTENTID'];
 				echo '<ul style="list-style-type:none">';
+				echo '<li>'.$id.'</li>';
 				echo '	<li><input type = "checkbox" name = "$id"><label>'.$q4['CONTENTTITLE'].'</label></li>';
 				echo '	<li>'.$q4["SYNOPSIS"].'</li>';
 				echo '</ul>';
