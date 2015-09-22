@@ -85,7 +85,7 @@ header("location: Login.php");
 	And what would you like to call it? <input name="title" type="text" />
 	<input type="submit" value="Upload file" />
 	</form> -->
-<form action="upload_Ross.php" method="post" enctype="multipart/form-data">
+<form action="upload_Ross_two.php" method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
