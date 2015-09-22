@@ -7,7 +7,7 @@
 		
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$id = $_POST["id"];
-			echo '<p>$id</p>';
+
 			$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			
