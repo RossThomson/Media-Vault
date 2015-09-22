@@ -9,7 +9,7 @@ $tmpName  = ($_FILES["fileToUpload"]["tmp_name"]);
 
 if(isset($_POST["submit"])) {
 		
-		if(move_uploaded_file($tmpName, $target_dir. "/". $fileName)) {
+		if(move_uploaded_file($tmpName, $target_dir)) {
 			echo "file uploaded";
 		}
 		else {
@@ -17,6 +17,7 @@ if(isset($_POST["submit"])) {
 		}
 	
 }
-		
+
+
 	
 ?>
