@@ -8,7 +8,7 @@
 		if($_FILES["fileToUpload"]["size"] > (1024000)) //can't be larger than 1 MB
 		{
 			$valid_file = false;
-			$message = "Oops!  Your file\'s size is to large.";
+			echo "Oops!  Your file\'s size is to large.";
 		}
 		
 		//if the file has passed the test
@@ -16,7 +16,7 @@
 		{
 			//move it to where we want it to be
 			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "uploads/".$new_file_name);
-			$message = "Congratulations!  Your file was accepted.";
+			echo "Congratulations!  Your file was accepted.";
 		}
 		
 
