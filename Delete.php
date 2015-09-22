@@ -63,20 +63,20 @@ header("location: Login.php");
 		echo"<legend>Your Files, ".$name."</legend>";
 				
 		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
-		while($q4 = $q3->fetch()) {
-			if($q4['CONTENTID'] === "") {
-				echo '<ul style="list-style-type:none">';
-				echo '<li>Please upload files first</li>';
-				echo '</ul>';
-			} else {
+		if($q3->num_rows == 0) {
+			echo '<ul style="list-style-type:none">';
+			echo '<li>Please upload files first</li>';
+			echo '</ul>';
+		} else {
+			while($q4 = $q3->fetch()) {
 				$id = $q4['CONTENTID'];
 				echo '<ul style="list-style-type:none">';
 				echo '<li>'.$id.'</li>';
 				echo '	<li><input type = "checkbox" name = "'.$id.'"><label>'.$q4['CONTENTTITLE'].'</label></li>';
 				echo '	<li>'.$q4["SYNOPSIS"].'</li>';
 				echo '</ul>';
-				echo '<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">';
 			}
+			echo '<input class = "btn btn-alt" type = "submit" id = "submit" name = "Delete" Value = "Delete">';
 		}
 		
 		$conn->close();
