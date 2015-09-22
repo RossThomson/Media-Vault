@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-/*include 'scripts/del_script.php';  Includes Delete Script*/
-
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
 }
@@ -15,6 +13,7 @@ header("location: Login.php");
 <title>Delete files</title>
 
 <link rel="stylesheet" href="styles/styles.css">
+<?php include 'scripts/del_script.php';  //Includes Delete Script?>
 
 </head>
 <body>
