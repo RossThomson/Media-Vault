@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
 }
@@ -78,7 +77,16 @@ header("location: Login.php");
 	</div>
 	<div class="media_divider"></div>
 	</div>
-	<br><br><br>
+	<br><br>
+<div id="aboutus_content">	
+<form action="upload_all.php" method="post" enctype="multipart/form-data">
+    Select a video to upload:
+    <input type="file" name="fileName"/>
+    <input type="submit" value="Submit" name="submit"/>
+</form>
+
+</div>
+<br><br><br>
 	
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
