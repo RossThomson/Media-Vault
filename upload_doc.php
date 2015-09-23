@@ -7,6 +7,21 @@ $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
 $filename = basename($_FILES["fileName"]["name"]);
 $filesize = $_FILES["fileName"]["size"];
 
+if (file_exists($target_file)) {
+	echo "Sorry, file already exists.";
+	$uploadOk = 0;
+}
+
+if ($_FILES["fileName"]["size"] > 5000000) {
+	echo "Sorry, your file is too large.";
+	$uploadOk = 0;
+}
+
+if($FileType != "doc" && $FileType != "txt" && $FileType != "pdf") {
+	echo "Sorry, only DOC, TXT & PDF files are allowed.";
+	$uploadOk = 0;
+}
+
 if(isset($_POST["submit"])) {
 	
 	/* $target_dir = "uploads/";
@@ -16,7 +31,7 @@ if(isset($_POST["submit"])) {
 	$filename = basename($_FILES["fileName"]["name"]);
 	$filesize = $_FILES["fileName"]["size"]; */
 	
-	if (file_exists($target_file)) {
+	/* if (file_exists($target_file)) {
 		echo "Sorry, file already exists.";
 		$uploadOk = 0;
 	}
@@ -29,7 +44,7 @@ if(isset($_POST["submit"])) {
 	if($FileType != "doc" && $FileType != "txt" && $FileType != "pdf") {
 		echo "Sorry, only DOC, TXT & PDF files are allowed.";
 		$uploadOk = 0;
-	}
+	} */
 	
 	$dbhost = "localhost";
 	$dbname	= "MEDIALYNX";
