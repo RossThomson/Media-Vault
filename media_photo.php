@@ -28,8 +28,8 @@ header("location: Login.php");
 			</a> -->
 			<ul>
 				<li><a href="media_playlist.php">Playlist</a></li>
-				<li><a class="active" href="media_doc.php">Doc</a></li>
-				<li><a href="media_photo.php">Photo</a></li>
+				<li><a href="media_doc.php">Doc</a></li>
+				<li><a class="active" href="media_photo.php">Photo</a></li>
 				<li><a href="media_music.php">Music</a></li>
 				<li><a href="media_video.php">Video</a></li>
 				<li><a href="media_all.php">All files</a></li>
@@ -79,7 +79,7 @@ header("location: Login.php");
 	</div>
 	<br><br>
 <div id="aboutus_content">	
-<form action="upload_doc.php" method="post" enctype="multipart/form-data">
+<form action="upload_photo.php" method="post" enctype="multipart/form-data">
     Select a document to upload:
     <input type="file" name="fileName"/>
     <input type="submit" value="Submit" name="submit"/>
