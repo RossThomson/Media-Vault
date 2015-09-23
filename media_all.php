@@ -70,8 +70,8 @@ header("location: Login.php");
 			while($q4 = $q3->fetch()) {
 				$id = $q4['CONTENTID'];
 				echo '<ul style="list-style-type:none">';
-				echo '	<li>'.$q4['CONTENTTITLE'].'</li>';
-				echo '	<li>'.$q4["SYNOPSIS"].'</li>';
+				echo '	<li>'.$q4['CONTENTTITLE'].'</li>';//Need to add a hyperlink to file
+				echo '	<li>'.$q4["SYNOPSIS"].'</li>';//with the content title.
 				echo '</ul>';
 			}
 		}
