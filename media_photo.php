@@ -20,19 +20,17 @@ header("location: Login.php");
 <body>
 <div class="wrapper">
 	<header>
-		<?php include 'header.php'; ?>
+		<?php include 'header.php'; ?>/
 		<span id="sign_in_info"></span>
 		<div id="media2_header_inside">
 			<!-- <a href="index.php">
 				<img src="graphics/logo.jpg">
 			</a> -->
 			<ul>
-				<li><a href="media_playlist.php">Playlist</a></li>
-				<li><a href="media_doc.php">Doc</a></li>
-				<li><a class="active" href="media_photo.php">Photo</a></li>
-				<li><a href="media_music.php">Music</a></li>
-				<li><a href="media_video.php">Video</a></li>
-				<li><a href="media_all.php">All files</a></li>
+				<li><a href="media_doc.html">Doc</a></li>
+				<li><a href="media_photo.html">Photo</a></li>
+				<li><a href="media_music.html">Music</a></li>
+				<li><a class="active" href="media_video.html">Video</a></li>
 			</ul>		
 		</div>
 	</header>
@@ -50,9 +48,9 @@ header("location: Login.php");
 				</tr>
 				<tr class="media_rowA">
 					<td class="media_first"><span class="media_date">09.02.2015</span></td>
-					<td>4.3MB</td>
-					<td>Test.jpg</td>
-					<td><a href="#">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
+					<td>2.8GB</td>
+					<td>Test.avi</td>
+					<td><a href="watch.php">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
 				</tr>
 				<tr class="media_rowB">
 					<td class="media_first"><span class="media_date">N/A</span></td>
@@ -79,20 +77,30 @@ header("location: Login.php");
 	</div>
 	<br><br>
 <div id="aboutus_content">	
-<form action="upload_photo.php" method="post" enctype="multipart/form-data">
-    Select a photo to upload:
-    <input type="file" name="fileName"/>
+	<!--<form enctype="multipart/form-data" action="upload_Ross.php" method="POST">
+	<input type = "hidden" name="MAX_FILE_SIZE" value = "10000"/>
+	Choose your file to upload: <input name="uploadedFile" type="file"/>
+	
+	<br />
+	And what would you like to call it? <input name="title" type="text" />
+	<input type="submit" value="Upload file" />
+	</form> -->
+<form action="upload_Ross_two.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="photo"/>
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
-</div>
-	
+</div>	
+
+
+
+
+
 	<br><br><br>
-	
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
 	</footer>
-
 </body>
 </html>
