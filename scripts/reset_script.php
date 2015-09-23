@@ -28,35 +28,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$result = $pdo->query("SELECT EMAIL FROM  USERS WHERE EMAIL = '$email'");
 			
 			if ($result->rowCount() > 0)
-			{	session_start();
-				$_SESSION['error'] = "Email already registered";
-				header("location: ../register.php");
-			} else if($hash === $result['HASH']) {
-				$_SESSION['error'] = "Passwords are the same";
-				header("location: ../reset_pass.php");
-			}
-			
-			else
-			{
+			{	
+				if($hash == $result['HASH']) {
+					$_SESSION['error'] = "Passwords are the same";
+					header("location: ../reset_pass.php");
+				} else {
+					session_start();
+					$_SESSION['error'] = "Email already registered";
+					header("location: ../register.php");
+				}
+			} else {
 				$sql = "UPDATE USERS SET HASH='$hash' WHERE EMAIL='$email'";
 			
-			$stmt = $pdo->prepare($sql);
+				$stmt = $pdo->prepare($sql);
 			
-			$stmt->execute();
-			session_start();
-			$_SESSION['error'] = "";
-			header("location: ../register_success.php");
-				
+				$stmt->execute();
+				session_start();
+				$_SESSION['error'] = "";
+				header("location: ../register_success.php");
 			} 
 		}
 		
-	catch(PDOException $e)
-		{
+		catch(PDOException $e) {
 			echo $e->getMessage();
 		}
 
 		$pdo = null;
-		
-
-
 }
