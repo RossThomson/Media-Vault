@@ -25,7 +25,7 @@ if ($_FILES["fileName"]["size"] > 500000) {
     $uploadOk = 0;
 }
 // Allow certain file formats
-if($FileType != "mp3"{
+if($FileType != "mp3"){
     echo "Sorry, only MP3 files are allowed.";
     $uploadOk = 0;
 }
