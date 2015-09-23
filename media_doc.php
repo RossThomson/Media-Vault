@@ -80,8 +80,8 @@ header("location: Login.php");
 	<br><br>
 <div id="aboutus_content">	
 <form action="upload_doc.php" method="post" enctype="multipart/form-data">
-    Select document to upload:
-    <input type="file" name="doc"/>
+    Select a document to upload:
+    <input type="file" name="fileName"/>
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
