@@ -67,7 +67,7 @@ if(isset($_POST["submit"])) {
 			
 			include 'library/closedb.php';
 			$pdo->exec($sql);
-			header("location: test2.php");
+			header("location: upload_doc.php");
 		}
 				
 		catch(PDOException $e){
