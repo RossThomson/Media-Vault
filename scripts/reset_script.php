@@ -31,10 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			{	session_start();
 				$_SESSION['error'] = "Email already registered";
 				header("location: ../register.php");
+			} else if($hash === $result['HASH']) {
+				$_SESSION['error'] = "Passwords are the same";
+				header("location: ../reset_pass.php");
 			}
 			
 			else
-			{ 
+			{
 				$sql = "UPDATE USERS SET HASH='$hash' WHERE EMAIL='$email'";
 			
 			$stmt = $pdo->prepare($sql);
