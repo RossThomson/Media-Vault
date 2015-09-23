@@ -43,12 +43,12 @@ if ($uploadOk == 0) {
     }
 }
 
-if(isset($_POST["submit"])) {
+/* if(isset($_POST["submit"])) {
     //$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 	//$imageData = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
     //if($check !== false) {
         //echo "File is an image - " . $check["mime"] . ".";
-        //$uploadOk = 1;
+        //$uploadOk = 1; */
 		
 	$dbhost = "localhost";
 	$dbname	= "MEDIALYNX";
@@ -87,7 +87,7 @@ if(isset($_POST["submit"])) {
 
 				$pdo = null;
 	
-    } 
+    //} 
 
 
  /* else {
