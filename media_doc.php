@@ -77,8 +77,17 @@ header("location: Login.php");
 	</div>
 	<div class="media_divider"></div>
 	</div>
-	<br><br><br>
+	<br><br>
+<div id="aboutus_content">	
+<form action="upload_Ross_two.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="photo"/>
+    <input type="submit" value="Submit" name="submit"/>
+</form>
+
+</div>
 	
+	<br><br><br>
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
