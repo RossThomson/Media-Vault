@@ -20,13 +20,13 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["fileName"]["size"] > 500000) {
+if ($_FILES["fileName"]["size"] > 5000000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
 // Allow certain file formats
-if($FileType != "mp3"){
-    echo "Sorry, only MP3 files are allowed.";
+if($FileType != "mp3") {
+    echo "Sorry, only DOC, TXT & PDF files are allowed.";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
