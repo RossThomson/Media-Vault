@@ -3,6 +3,8 @@ $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileName"]["name"]);
 $uploadOk = 1;
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$filename = basename($_FILES["fileName"]["name"]);
+$filesize = $_FILES["fileName"]["size"];
 
 if (file_exists($target_file)) {
     echo "Sorry, file already exists.";
