@@ -37,10 +37,10 @@ header("location: Login.php");
 		</div>
 	</header>
 </div>
-<div id="aboutus_content">	
-	<br><br>
+<div id="aboutus_content">
+<br>
 	
-	<h2 class="aboutus_Headings">Your Files</h2><br>
+	<h2 class="aboutus_Headings">Your Files</h2>
 	
 	<form id = "delform" name = "Files Form">
 		<fieldset>
