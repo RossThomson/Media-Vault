@@ -1,4 +1,34 @@
 <?php
+
+if(isset($_POST["submit"])) {
+	$dbhost = "localhost";
+	$dbname	= "MEDIALYNX";
+	$dbuser	= "root";
+	$dbpass	= "root";
+	
+	session_start();
+	$userid = $_SESSION['userid'];
+	//$file = "image";
+	$synopsis = "description";
+
+		try {
+			$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+		
+			$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$filename','$FileType','$filesize','$synopsis')";
+			
+			include 'library/closedb.php';
+			$pdo->exec($sql);
+			header("location: upload_doc.php");
+		}
+				
+		catch(PDOException $e){
+			echo $e->getMessage();
+		}
+
+		$pdo = null;
+	
+}
+
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileName"]["name"]);
 $uploadOk = 1;
@@ -43,13 +73,7 @@ if ($uploadOk == 0) {
     }
 }
 
-if(isset($_POST["submit"])) {
-    /* $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-	$imageData = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1; */
-		
+/* if(isset($_POST["submit"])) {
 	$dbhost = "localhost";
 	$dbname	= "MEDIALYNX";
 	$dbuser	= "root";
@@ -76,12 +100,5 @@ if(isset($_POST["submit"])) {
 
 		$pdo = null;
 	
-} 
-
-
- /* else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }	 */	
-
+} */ 
 ?>
