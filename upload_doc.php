@@ -3,8 +3,8 @@ $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileName"]["name"]);
 $uploadOk = 1;
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
-$filename = basename($_FILES["fileToUpload"]["name"]);
-$filesize = $_FILES["fileToUpload"]["size"];
+$filename = basename($_FILES["fileName"]["name"]);
+$filesize = $_FILES["fileName"]["size"];
 // Check if image file is a actual image or fake image
 /* if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["doc"]["tmp_name"]);
