@@ -22,6 +22,16 @@ if($FileType != "doc" && $FileType != "txt" && $FileType != "pdf") {
 	$uploadOk = 0;
 }
 
+if ($uploadOk == 0) {
+	echo "Sorry, your file was not uploaded.";
+} else {
+	if (move_uploaded_file($_FILES["fileName"]["tmp_name"], $target_file)) {
+		echo "The file ". basename( $_FILES["fileName"]["name"]). " has been uploaded.";
+	} else {
+		echo "Sorry, there was an error uploading your file.";
+	}
+}
+
 if(isset($_POST["submit"])) {
 	
 	/* $target_dir = "uploads/";
@@ -62,7 +72,7 @@ if(isset($_POST["submit"])) {
 			
 			include 'library/closedb.php';
 			$pdo->exec($sql);
-			header("location: upload_doc.php");
+			//header("location: upload_doc.php");
 		}
 				
 		catch(PDOException $e){
@@ -83,7 +93,7 @@ if(isset($_POST["submit"])) {
 	} */	
 }
 
-if ($uploadOk == 0) {
+/* if ($uploadOk == 0) {
 	echo "Sorry, your file was not uploaded.";
 } else {
 	if (move_uploaded_file($_FILES["fileName"]["tmp_name"], $target_file)) {
@@ -91,7 +101,7 @@ if ($uploadOk == 0) {
 	} else {
 		echo "Sorry, there was an error uploading your file.";
 	}
-}
+} */
 
 /* $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileName"]["name"]);
