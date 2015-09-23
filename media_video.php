@@ -79,7 +79,7 @@ header("location: Login.php");
 	</div>
 	<br><br>
 <div id="aboutus_content">	
-<form action="upload_all.php" method="post" enctype="multipart/form-data">
+<form action="upload_movie.php" method="post" enctype="multipart/form-data">
     Select a video to upload:
     <input type="file" name="fileName"/>
     <input type="submit" value="Submit" name="submit"/>

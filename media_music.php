@@ -77,6 +77,16 @@ header("location: Login.php");
 	</div>
 	<div class="media_divider"></div>
 	</div>
+	<br><br>
+<div id="aboutus_content">	
+<form action="upload_music.php" method="post" enctype="multipart/form-data">
+    Select a document to upload:
+    <input type="file" name="fileName"/>
+    <input type="submit" value="Submit" name="submit"/>
+</form>
+
+</div>
+	
 	<br><br><br>
 	
 	<footer class="footer_relative">
