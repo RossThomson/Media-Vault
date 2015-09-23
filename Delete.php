@@ -40,9 +40,9 @@ header("location: Login.php");
 </div>
 	
 	<div id="aboutus_content">	
-	<br><br>
+	<br>
 	
-	<h2 class="aboutus_Headings">Your Files</h2><br>
+	<h2 class="aboutus_Headings">Your Files</h2>
 	
 	<form id = "delform" name = "Delete Form" onsubmit = 'scripts/del_script.php' method = "POST">
 		<fieldset>
