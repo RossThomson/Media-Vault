@@ -63,8 +63,9 @@ header("location: Login.php");
 		echo"<legend>Your Files, ".$name."</legend>";
 				
 		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
-		$q5 = $q3->fetch();
-		if($q5->num_rows == 0) {
+		$q5 = $q3->rowCount();
+		echo '<ul style="list-style-type:none"><li>'.$q5.'</li></ul>';
+		if($q5 == 0) {
 			echo '<ul style="list-style-type:none">';
 			echo '<li>Please <a href="upload.php">upload</a> files first</li>';
 			echo '</ul>';
