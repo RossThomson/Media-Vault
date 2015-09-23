@@ -3,6 +3,10 @@ $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["photo"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$FileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$filename = basename($_FILES["fileName"]["name"]);
+$filesize = $_FILES["fileName"]["size"];
+
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["photo"]["tmp_name"]);
@@ -40,5 +44,32 @@ if ($uploadOk == 0) {
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
+}
+
+if(isset($_POST["submit"])) {
+	$dbhost = "localhost";
+	$dbname	= "MEDIALYNX";
+	$dbuser	= "root";
+	$dbpass	= "root";
+	
+	session_start();
+	$userid = $_SESSION['userid'];
+	$synopsis = "description";
+
+		try {
+			$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+		
+			$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$filename','$FileType','$filesize','$synopsis')";
+			
+			include 'library/closedb.php';
+			$pdo->exec($sql);
+			//header("location: upload_doc.php");
+		}
+				
+		catch(PDOException $e){
+			echo $e->getMessage();
+		}
+
+		$pdo = null;
 }
 ?>
