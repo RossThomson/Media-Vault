@@ -387,7 +387,7 @@ font-size: 20px;
 	border-left:1px solid #bbb;
 	border-right:1px solid #bbb;
 	margin:0 auto;
-	width:1000px;
+	width:1100px;
 }
 #media2_header_inside h1 {
 	color:#fff;
@@ -405,7 +405,7 @@ font-size: 20px;
 	float:center; 
 	height:100px;
 	list-style:none;
-	width:800px;
+	width:900px;
 }
 #media2_header_inside ul li {
 	/* background-position:center; */
