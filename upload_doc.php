@@ -57,7 +57,7 @@ if ($uploadOk == 0) {
 	
 	session_start();
 	$userid = $_SESSION['userid'];
-	$file = "image";
+	//$file = "image";
 	$synopsis = "description";
 
 		try {
