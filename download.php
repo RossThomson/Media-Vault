@@ -15,7 +15,7 @@
         exit;
     }
     
-    $query = "select name, hash from ftp where num=".$_GET['num'];
+    $query = "select name, hash from CONTENT where num=".$_GET['num'];
     $result = $db->query($query);
     if(!$result)
     {
@@ -24,7 +24,7 @@
     }
     $result = $result->fetch_assoc();
     
-    $dir = "./files/";
+    $dir = "uploads";
     $filename = $result['name'];
     $filehash = $result['hash'];
     
