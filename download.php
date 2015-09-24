@@ -15,7 +15,7 @@
         exit;
     }
     
-    $query = "select CONTENTID from CONTENT where num=".$_GET['num'];
+    $query = "select * from CONTENT where num=".$_GET['num'];
     $result = $db->query($query);
     if(!$result)
     {
