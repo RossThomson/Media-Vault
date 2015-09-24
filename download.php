@@ -2,9 +2,9 @@
  
     header("Content-type: text/html; charset=utf-8");
  
-    if(!$_GET['CONTENTID'])
+    if(!$_GET['num'])
     {
-        echo "<script>alert('wrong access;;');";
+        echo "<script>alert('wrong access');";
         echo "history.back();</script>";
     }
     
