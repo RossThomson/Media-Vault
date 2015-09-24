@@ -46,7 +46,7 @@ if ($uploadOk == 0) {
     }
 }
 
-if(isset($_POST["submit"])) {
+if(isset($_POST["submit"]) && upload == 1) {
 	$dbhost = "localhost";
 	$dbname	= "MEDIALYNX";
 	$dbuser	= "root";
