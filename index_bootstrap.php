@@ -38,13 +38,13 @@ header("location: media.php");
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="index_bootstrap.php"><img src="graphics/logo_bootstrap.jpg"></a><a class="navbar-brand" href="index_bootstrap.php">Media Lynx</a>
+		  <img class="navbar-brand" href="http://getbootstrap.com/examples/navbar-fixed-top/#" <a="" src="graphics/logo.png">Media Lynx</img>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index_bootstrap.php">Home</a></li>
-            <li><a href="about.php"><img src="graphics/about.jpg"></a><a href="about.php">About</a></li>
-            <li><a href="help.php"><img src="graphics/help.jpg"></a><a href="help.php">Help</a></li>
+            <li><a href="about.php"><img src="graphics/about.png"></a><a href="about.php">About</a></li>
+            <li><a href="help.php"><img src="graphics/help.png"></a><a href="help.php">Help</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
