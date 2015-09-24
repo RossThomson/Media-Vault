@@ -58,11 +58,36 @@ if ($uploadOk == 0) {
 		  $thumbnail_height = 100;    
 		}
 		
-		$imagemagickPath = "/usr/local/bin";
-		
-		exec("$imagemagickPath/convert -geometry " .    
-		"{$thumbnail_width}x{$thumbnail_height} " .    
-		"$target_dir/$filename $target_dir/tb_$filename");
+		$gd_function_suffix = array(      
+		  'image/pjpeg' => 'JPEG',     
+		  'image/jpeg' => 'JPEG',     
+		  'image/gif' => 'GIF',     
+		  'image/bmp' => 'WBMP',     
+		  'image/x-png' => 'PNG'     
+								);
+								
+			$function_suffix = $gd_function_suffix[$filetype];     
+			$function_to_read = 'ImageCreateFrom' . $function_suffix;     
+			$function_to_write = 'Image' . $function_suffix;     
+				 
+			// Read the source file     
+			$source_handle = $function_to_read($target_dir . '/' . $filename );      
+						 
+			if ($source_handle) {     
+			  // Let's create a blank image for the thumbnail     
+			  $destination_handle = ImageCreate($thumbnail_width, $thumbnail_height);     
+				 
+			  // Now we resize it     
+			  ImageCopyResized($destination_handle, $source_handle,     
+				0, 0, 0, 0, $thumbnail_width, $thumbnail_height,     
+				$size[0], $size[1]);     
+			}     
+				 
+			// Let's save the thumbnail     
+				 
+			$function_to_write($destination_handle, $target_dir . '/tb_' . $filename);     
+			ImageDestroy($destination_handle);						
+											
 		
     }//end if statement 
 	
