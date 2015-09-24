@@ -51,7 +51,7 @@ header("location: Login.php");
 		$Email = $_SESSION['email'];
 		
 		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
-		@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX'); // test
+		$db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX'); // test
 		
 		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$Email'");
 		$q2 = $q1->fetch(); 
