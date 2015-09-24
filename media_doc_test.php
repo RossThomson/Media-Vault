@@ -69,11 +69,11 @@ header("location: Login.php");
 					{
 						$row = $result->fetch_assoc();
 						echo "<tr>";
-						echo "<td align='center'>".$row['num']."</td>";
+						echo "<td align='center'>".$row['CONTENTID']."</td>";
 						echo "<td align='left'>
 					<a href='./download.php?num=".$row['num']."'>".$row['name']."</a></td>";
-						echo "<td align='center'>".$row['time']."</td>";
-						echo "<td align='center'>".$row['down']."</td>";
+						echo "<td align='center'>".$row['SIZE']."</td>";
+						echo "<td align='center'>".$row['SIZE']."</td>";
 						echo "<td align='center'>
 					<a href='./delete.php?num=".$row['num']."'>DEL</a></td>";
 						echo "</tr>";
