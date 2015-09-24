@@ -56,7 +56,7 @@ header("location: Login.php");
 		$q2 = $q1->fetch(); 
 		$user = $q2['USERID'];
 		
-		echo"<legend>Your Files, ".$name."</legend>";
+		echo"<legend>Your document files, ".$name."</legend>";
 				
 		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
 		$rows = $q3->rowCount();
@@ -69,7 +69,7 @@ header("location: Login.php");
 				$id = $q4['CONTENTID'];
 				echo '<ul style="list-style-type:none">';
 				echo '	<li>'.$q4['CONTENTTITLE'].'</li>';//Need to add a hyperlink to file
-				echo '	<li>'.$q4["SYNOPSIS"].'</li>';//with the content title.
+				//echo '	<li>'.$q4["SYNOPSIS"].'</li>';//with the content title.
 				echo '</ul>';
 			}
 		}
