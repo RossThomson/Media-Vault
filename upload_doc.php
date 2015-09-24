@@ -6,6 +6,7 @@ $uploadOk = 1;
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
 $filename = basename($_FILES["fileName"]["name"]);
 $filesize = $_FILES["fileName"]["size"];
+$synopsis = $_POST['ref']; // test
 
 if (file_exists($target_file)) {
 	echo "Sorry, file already exists.";
@@ -40,7 +41,7 @@ if(isset($_POST["submit"])) {
 	
 	session_start();
 	$userid = $_SESSION['userid'];
-	$synopsis = "description";
+	//$synopsis = "description";
 
 		try {
 			$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
@@ -57,6 +58,8 @@ if(isset($_POST["submit"])) {
 		}
 
 		$pdo = null;
+		echo "<script>alert('uploaded');";
+		echo "history.back();</script>";
 }
 
 ?>

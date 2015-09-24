@@ -15,7 +15,7 @@
         exit;
     }
     
-    $query = "select CONTENTTITLE from CONTENT";
+    $query = "select CONTENTTITLE from CONTENT where CONTENTID=".$_GET['num'];
     $result = $db->query($query);
     if(!$result)
     {
@@ -26,32 +26,33 @@
     
     $dir = "uploads/";
     $filename = $result['CONTENTTITLE'];
+    //$filehash = $result['hash'];
     
-    if(file_exists($dir.$filehash))
+    if(file_exists($dir.$filename))
     {
             header("Content-Type: Application/octet-stream");
             header("Content-Disposition: attachment; filename=".$filename);
             header("Content-Transfer-Encoding: binary");
-            header("Content-Length: ".filesize($dir.$filehash));
+            header("Content-Length: ".filesize($dir.$filename));
  
-            $fp = fopen($dir.$filehash, "rb");
+            $fp = fopen($dir.$filename, "rb");
             while(!feof($fp))
             {
                 echo fread($fp, 1024);
             }
             fclose($fp);
             
-            //$query = "update ftp set down=(down+1) where num=".$_GET['num'];
+            /* $query = "update ftp set down=(down+1) where num=".$_GET['num'];
             $result = $db->query($query);
             if(!$result)
             {    
                 echo "down counter update error";
                 exit;
-            }
+            } */
     }
     else
     {
-            echo "<script>alert('No file);";
+            echo "<script>alert('no file);";
             echo "history.back();</script>";
             exit;
     }

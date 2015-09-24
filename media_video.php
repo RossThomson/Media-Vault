@@ -42,15 +42,16 @@ header("location: Login.php");
 		<div class="media_content">
 			<br><br><br><br>		
 			<?php
-				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
-				if(mysqli_connect_errno())
-				{
-					echo "DB connect error";
-				}		
-        
-				$query = "select * from CONTENT";
-				$result = $db->query($query);
-				$num_result = $result->num_rows;
+				$Email = $_SESSION['email'];
+			
+				$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+				
+				$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$Email'");
+				$q2 = $q1->fetch(); 
+				$user = $q2['USERID'];
+				
+				$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID='$user'");
+				$row = $q3->rowCount();
 			?>
 	
 			<table border='1' align="center">
@@ -66,21 +67,25 @@ header("location: Login.php");
 				</thead>
 				<tbody>
 					<?php
-						for($i=0; $i<$num_result; $i++)
-						{
-							$row = $result->fetch_assoc();
+					if($rows == 0) {
+						echo '<tr>';
+						echo '<td align="center">Please upload files first</td>';
+						echo '</tr>';
+					} else {
+						while($q4 = $q3->fetch()) {
 							echo "<tr>";
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
-						<a href='./download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
-						<a href='./delete.php?num=".$row['num']."'>DEL</a></td>";
+						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
 						}
-						$db->close();
+					}
+					$conn=null;
 					?>
 				</tbody>
 			</table>			
@@ -93,6 +98,8 @@ header("location: Login.php");
 <form action="upload_movie.php" method="post" enctype="multipart/form-data">
     Select a video to upload:
     <input type="file" name="fileName"/>
+	<br />
+	Description: <input name="ref" type="text" />
     <input type="submit" value="Submit" name="submit"/>
 </form>
 

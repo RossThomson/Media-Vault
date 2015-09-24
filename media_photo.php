@@ -73,12 +73,12 @@ header("location: Login.php");
 							echo "<tr>";
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
-						<a href='./download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
-						<a href='./delete.php?num=".$row['num']."'>DEL</a></td>";
+						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
 						}
 						$db->close();
@@ -94,6 +94,8 @@ header("location: Login.php");
 <form action="upload_Ross_two.php" method="post" enctype="multipart/form-data">
     Select an image to upload:
     <input type="file" name="photo"/>
+	<br />
+	Description: <input name="ref" type="text" />
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
