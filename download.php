@@ -15,7 +15,7 @@
         exit;
     }
     
-    $query = "select * from CONTENT";
+    $query = "select CONTENTTITLE from CONTENT";
     $result = $db->query($query);
     if(!$result)
     {
