@@ -42,37 +42,46 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>		
-			<table align="center">
-				<tr>
-					<th class="media_first"><strong>upload</strong> date</th>
-					<th><strong>size</strong></th>
-					<th><strong>file</strong> name</th>
-					<th><strong>function</strong></th>
-				</tr>
-				<tr class="media_rowA">
-					<td class="media_first"><span class="media_date">09.02.2015</span></td>
-					<td>1.2MB</td>
-					<td>Test.txt</td>
-					<td><a href="#">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
-				</tr>
-				<tr class="media_rowB">
-					<td class="media_first"><span class="media_date">N/A</span></td>
-					<td>N/A</td>
-					<td>N/A</td>
-					<td><a href="#">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
-				</tr>
-				<tr class="media_rowA">
-					<td class="media_first"><span class="media_date">N/A</span></td>
-					<td>N/A</td>
-					<td>N/A</td>
-					<td><a href="#">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
-				</tr>
-				<tr class="media_rowB">
-					<td class="media_first"><span class="media_date">N/A</span></td>
-					<td>N/A</td>
-					<td>N/A</td>
-					<td><a href="#">watch</a> &nbsp &nbsp &nbsp <a href="#">download</a> &nbsp &nbsp &nbsp <a href="#">remove</a> &nbsp &nbsp &nbsp <a href="#">modify</a>
-				</tr>
+			<?php
+				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
+        
+				$query = "select * from CONTENT";
+				$result = $db->query($query);
+				$num_result = $result->num_rows;
+			?>
+	
+			<table border='1' align="center">
+				<thead>
+					<tr>
+						<th width="50">NUM</th>
+						<th width="250">FILE</th>
+						<th width="100">TYPE</th>
+						<th width="150">SIZE</th>
+						<th width="50">DEL</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						for($i=0; $i<$num_result; $i++)
+						{
+							$row = $result->fetch_assoc();
+							echo "<tr>";
+							echo "<td align='center'>".$row['CONTENTID']."</td>";
+							echo "<td align='left'>
+						<a href='./download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
+							echo "<td align='center'>".$row['SIZE']."</td>";
+							echo "<td align='center'>
+						<a href='./delete.php?num=".$row['num']."'>DEL</a></td>";
+							echo "</tr>";
+						}
+						$db->close();
+					?>
+				</tbody>
 			</table>			
 		</div>
 	</div>
