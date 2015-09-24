@@ -40,7 +40,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["photo"]["name"]). " has been uploaded.";
+        echo "The file ". $filename). " has been uploaded.";
 		
 		  
     
