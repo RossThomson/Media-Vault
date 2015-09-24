@@ -42,45 +42,17 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>
-	    <?php
-		$dbname = "MEDIALYNX";
-		$dbhost = "localhost";
-		$dbuser = "root";
-		$dbpass = "root";
-		$name = $_SESSION['first_name'];
-		$Email = $_SESSION['email'];
-		
-		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
-		$db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX'); // test
-		
-		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$Email'");
-		$q2 = $q1->fetch(); 
-		$user = $q2['USERID'];
-		
-		$query = "select * from CONENT"
-		$result = $conn->query($query); // test
-        $num_result = $result->num_rows; // test
-		
-		echo"<legend>Your document files, ".$name."</legend>";
-			
-		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
-		$rows = $q3->rowCount();
-		if($rows == 0) {
-			echo '<ul style="list-style-type:none">';
-			echo '<li>Please <a href="upload.php">upload</a> files first</li>';
-			echo '</ul>';
-		} else {
-			while($q4 = $q3->fetch()) {
-				$id = $q4['CONTENTID'];
-				echo '<ul style="list-style-type:none">';
-				echo '	<li>'.$q4['CONTENTTITLE'].'</li>';//Need to add a hyperlink to file
-				//echo '	<li>'.$q4["SYNOPSIS"].'</li>';//with the content title.
-				echo '</ul>';
-			}
-		}
-		
-		//$conn->close();
-	?>
+	<?php
+        @ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+        if(mysqli_connect_errno())
+        {
+            echo "DB connect error";
+        }
+        
+        $query = "select * from MEDIALYNX";
+        $result = $db->query($query);
+        $num_result = $result->num_rows;
+    ?>
 	
 	<table border='1' align="center">
         <thead>
