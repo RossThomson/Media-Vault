@@ -94,6 +94,8 @@ header("location: Login.php");
 <form action="upload_doc.php" method="post" enctype="multipart/form-data">
     Select a document to upload:
     <input type="file" name="fileName"/>
+	<br />
+	Description: <input name="ref" type="text" />
     <input type="submit" value="Submit" name="submit"/>
 </form>
 

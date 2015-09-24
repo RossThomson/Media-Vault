@@ -94,6 +94,8 @@ header("location: Login.php");
 <form action="upload_Ross_two.php" method="post" enctype="multipart/form-data">
     Select an image to upload:
     <input type="file" name="photo"/>
+	<br />
+	Description: <input name="ref" type="text" />
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
