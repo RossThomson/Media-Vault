@@ -30,7 +30,7 @@
     if(file_exists($dir.$filename))
     {
             header("Content-Type: Application/octet-stream");
-            header("Content-Disposition: attachment; filename=".$filename);
+            header("Content-Disposition: attachment; filename="./$filename);
             header("Content-Transfer-Encoding: binary");
             header("Content-Length: ".filesize($dir.$filename));
  
