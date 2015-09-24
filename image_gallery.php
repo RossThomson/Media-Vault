@@ -8,7 +8,7 @@
 	session_start();
 	$userid = $_SESSION['userid'];
 	
-    $db = new mysqli('$dbhost', '$dbuser', '$dbpass', '$dbname');
+    $db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 	if(mysqli_connect_errno())
 	{
 		echo "DB connect error";
