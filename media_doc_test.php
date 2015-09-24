@@ -42,46 +42,42 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>
-	<?php
-		@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
-        if(mysqli_connect_errno())
-        {
-            echo "DB connect error";
-        }
-        
-        $query = "select * from ftp";
-        $result = $db->query($query);
-        $num_result = $result->num_rows;
+	    <?php
+		$dbname = "MEDIALYNX";
+		$dbhost = "localhost";
+		$dbuser = "root";
+		$dbpass = "root";
+		$name = $_SESSION['first_name'];
+		$Email = $_SESSION['email'];
+		
+		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+		
+		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$Email'");
+		$q2 = $q1->fetch(); 
+		$user = $q2['USERID'];
+		
+		echo"<legend>Your Files, ".$name."</legend>";
+				
+		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
+		$rows = $q3->rowCount();
+		if($rows == 0) {
+			echo '<ul style="list-style-type:none">';
+			echo '<li>Please <a href="upload.php">upload</a> files first</li>';
+			echo '</ul>';
+		} else {
+			while($q4 = $q3->fetch()) {
+				$id = $q4['CONTENTID'];
+				echo '<ul style="list-style-type:none">';
+				echo '	<li>'.$q4['CONTENTTITLE'].'</li>';//Need to add a hyperlink to file
+				echo '	<li>'.$q4["SYNOPSIS"].'</li>';//with the content title.
+				echo '</ul>';
+			}
+		}
+		
+		$conn->close();
 	?>
-		<table border='1' align="center">
-			<thead>
-				<tr>
-					<th width="50">NUM</th>
-					<th width="250">FILE</th>
-					<th width="200">TYPE</th>
-					<th width="70">SIZE</th>
-					<th width="50">DEL</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php
-					for($i=0; $i<$num_result; $i++)
-					{
-						$row = $result->fetch_assoc();
-						echo "<tr>";
-						echo "<td align='center'>".$row['CONTENT/SIZE']."</td>";
-						echo "<td align='left'>
-					<a href='./download.php?num=".$row['num']."'>".$row['name']."</a></td>";
-						echo "<td align='center'>".$row['SIZE']."</td>";
-						echo "<td align='center'>".$row['SIZE']."</td>";
-						echo "<td align='center'>
-					<a href='./delete.php?num=".$row['num']."'>DEL</a></td>";
-						echo "</tr>";
-					}
-					$db->close();
-				?>
-			</tbody>	
-		</table>
+	
+	
 		</div>
 	</div>
 	<div class="media_divider"></div>
