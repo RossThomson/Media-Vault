@@ -15,7 +15,7 @@
 	}
 	
 	$query = "select * from CONTENT 
-	WHERE USERID = '$userid'";
+	WHERE CONTENTTYPE = 'image' AND USERID = '$userid'";
 	$result = $db->query($query);
 	$num_result = $result->num_rows;
 	
