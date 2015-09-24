@@ -77,7 +77,7 @@ header("location: Login.php");
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
-						<a href='delete.php?num=".$row['num']."'>DEL</a></td>";
+						<a href='delete_jae.php?num=".$row['num']."'>DEL</a></td>";
 							echo "</tr>";
 						}
 						$db->close();
