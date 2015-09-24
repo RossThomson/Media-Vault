@@ -24,7 +24,7 @@
     }
     $result = $result->fetch_assoc();
     
-    $dir = "uploads/";
+    $dir = "./uploads/";
     $filename = $result['name'];
     $filehash = $result['hash'];
     
