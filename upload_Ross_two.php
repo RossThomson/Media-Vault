@@ -41,7 +41,32 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["photo"]["name"]). " has been uploaded.";
-    } else {
+		
+		  
+    
+		// Wide Image    
+		if($filesize[0] > $filesize[1])    
+		{     
+		 $thumbnail_width = 100;     
+		 $thumbnail_height = (int)(100 * $filesize[1] / $filesize[0]);     
+		}     
+			
+		// Tall Image    
+		else    
+		{    
+		  $thumbnail_width = (int)(100 * $filesize[0] / $filesize[1]);    
+		  $thumbnail_height = 100;    
+		}
+		
+		$imagemagickPath = "/usr/local/bin";
+		
+		exec("$imagemagickPath/convert -geometry " .    
+		"{$thumbnail_width}x{$thumbnail_height} " .    
+		"$target_dir/$filename $target_dir/tb_$filename");
+		
+    }//end if statement 
+	
+	else {
         echo "Sorry, there was an error uploading your file.";
 		$uploadOk = 0;
     }
