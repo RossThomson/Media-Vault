@@ -57,6 +57,7 @@ header("location: Login.php");
 		$q2 = $q1->fetch(); 
 		$user = $q2['USERID'];
 		
+		$query = "select * from CONENT"
 		$result = $conn->query($query); // test
         $num_result = $result->num_rows; // test
 		
