@@ -49,7 +49,7 @@ header("location: Login.php");
             echo "DB connect error";
         }
         
-        $query = "select * from MEDIALYNX";
+        $query = "select * from CONTENT";
         $result = $db->query($query);
         $num_result = $result->num_rows;
     ?>
