@@ -57,7 +57,7 @@ header("location: Login.php");
 		$q2 = $q1->fetch(); 
 		$user = $q2['USERID'];
 		
-		$result = $db->query($query); // test
+		$result = $conn->query($query); // test
         $num_result = $result->num_rows; // test
 		
 		echo"<legend>Your document files, ".$name."</legend>";
