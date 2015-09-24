@@ -23,7 +23,7 @@ header("location: media.php");
 		<link rel="icon" href="http://getbootstrap.com/favicon.ico">
 		<title>Media Lynx</title>
 		<!-- Bootstrap core CSS -->
-		<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 	</head>
@@ -38,13 +38,13 @@ header("location: media.php");
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href"index_bootstrap.php"><img src="graphics/logo.jpg"<a class="navbar-brand" href="http://getbootstrap.com/examples/navbar-fixed-top/#">Media Lynx</a>
+          <a href="index_bootstrap.php"><img src="graphics/logo_bootstrap.jpg"></a><a class="navbar-brand" href="index_bootstrap.php">Media Lynx</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index_bootstrap.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="help.php">Help</a></li>
+            <li><a href="about.php"><img src="graphics/about.jpg"></a><a href="about.php">About</a></li>
+            <li><a href="help.php"><img src="graphics/help.jpg"></a><a href="help.php">Help</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
