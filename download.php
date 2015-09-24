@@ -15,7 +15,7 @@
         exit;
     }
     
-    $query = "select CONTENTTITLE from CONTENT";
+    $query = "select CONTENTTITLE from CONTENT where CONTENTID";
     $result = $db->query($query);
     if(!$result)
     {
