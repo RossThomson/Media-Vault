@@ -2,11 +2,11 @@
  
     header("Content-type: text/html; charset=utf-8");
  
-    /* if(!$_GET['num'])
+    if(!$_GET['num'])
     {
         echo "<script>alert('wrong access');";
         echo "history.back();</script>";
-    } */
+    }
     
     @ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
     if(mysqli_connect_errno())
@@ -15,7 +15,7 @@
         exit;
     }
     
-    $query = "select * from CONTENT";
+    $query = "select CONTENTTITLE from CONTENT where num=".$_GET['num'];
     $result = $db->query($query);
     if(!$result)
     {
@@ -28,14 +28,14 @@
     $filename = $result['CONTENTTITLE'];
     //$filehash = $result['hash'];
     
-    if(file_exists($dir.$filehash))
+    if(file_exists($dir.$filename))
     {
             header("Content-Type: Application/octet-stream");
             header("Content-Disposition: attachment; filename=".$filename);
-            //header("Content-Transfer-Encoding: binary");
+            header("Content-Transfer-Encoding: binary");
             header("Content-Length: ".filesize($dir.$filename));
  
-            $fp = fopen($dir.$filename/*, "rb"*/);
+            $fp = fopen($dir.$filename, "rb");
             while(!feof($fp))
             {
                 echo fread($fp, 1024);

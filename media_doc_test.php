@@ -73,7 +73,7 @@ header("location: Login.php");
                     echo "<tr>";
                     echo "<td align='center'>".$row['CONTENTID']."</td>";
                     echo "<td align='left'>
-                <a href='download.php'>".$row['CONTENTTITLE']."</a></td>";
+                <a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
                     echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
                     echo "<td align='center'>".$row['SIZE']."</td>";
 					echo "<td align='center'>".$row['SYNOPSIS']."</td>";
