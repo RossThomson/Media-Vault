@@ -27,14 +27,14 @@
     $dir = "uploads/";
     $filename = $result['CONTENTTITLE'];
     
-    if(file_exists($dir.$filehash))
+    if(file_exists($dir))
     {
             header("Content-Type: Application/octet-stream");
             header("Content-Disposition: attachment; filename=".$filename);
             header("Content-Transfer-Encoding: binary");
-            header("Content-Length: ".filesize($dir.$filehash));
+            header("Content-Length: ".filesize($dir));
  
-            $fp = fopen($dir.$filehash, "rb");
+            $fp = fopen($dir, "rb");
             while(!feof($fp))
             {
                 echo fread($fp, 1024);
