@@ -15,7 +15,7 @@
         exit;
     }
     
-    $query = "select CONTENTTITLE from CONTENT where num=".$_GET['num'];
+    $query = "select name, hash from ftp where num=".$_GET['num'];
     $result = $db->query($query);
     if(!$result)
     {
