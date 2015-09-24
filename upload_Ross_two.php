@@ -72,7 +72,7 @@ if ($uploadOk == 0) {
 			$function_to_write = 'Image' . $function_suffix;     
 				 
 			// Read the source file     
-			$source_handle = $function_to_read($target_dir . '/' . $filename );      
+			$source_handle = $function_to_read($target_dir. $filename );      
 						 
 			if ($source_handle) {     
 			  // Let's create a blank image for the thumbnail     
@@ -86,7 +86,7 @@ if ($uploadOk == 0) {
 				 
 			// Let's save the thumbnail     
 				 
-			$function_to_write($destination_handle, $target_dir . '/tb_' . $filename);     
+			$function_to_write($destination_handle, $target_dir . 'tb_' . $filename);     
 			ImageDestroy($destination_handle);						
 											
 		
