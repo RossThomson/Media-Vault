@@ -24,7 +24,7 @@
     }
     $result = $result->fetch_assoc();
     
-    $dir = "uploads/";
+    $dir = "./uploads/";
     $filename = $result['CONTENTTITLE'];
     
     if(file_exists($dir.$filename))
