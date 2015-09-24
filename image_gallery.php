@@ -20,16 +20,11 @@
 	$num_result = $result->num_rows;
 	
 	if (empty($num_result))      
-    $result_final = "t<tr><td>No Category found</td></tr>n";      
-  else {      
-    while ($row = mysql_fetch_array($result)) {      
-      $result_array[] =      
-        "<a href='uploads/. $row['CONTENTTITLE'] .      
-        "'><img src='" . $uploads/. $row['CONTENTTITLE'] .      
-        "' border='0' alt='" . $row[CONTENTTITLE] . "' /></a>"";      
-    }
-  
-  echo $result_array;
+    echo "nothing here"; 
+  else {
+	  echo '$num_result';
+  }      
+   
 	
 
   
