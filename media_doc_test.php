@@ -51,13 +51,17 @@ header("location: Login.php");
 		$Email = $_SESSION['email'];
 		
 		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+		@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX'); // test
 		
 		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$Email'");
 		$q2 = $q1->fetch(); 
 		$user = $q2['USERID'];
 		
+		$result = $db->query($query); // test
+        $num_result = $result->num_rows; // test
+		
 		echo"<legend>Your document files, ".$name."</legend>";
-				
+			
 		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
 		$rows = $q3->rowCount();
 		if($rows == 0) {
@@ -74,8 +78,38 @@ header("location: Login.php");
 			}
 		}
 		
-		$conn->close();
+		//$conn->close();
 	?>
+	
+	<table border='1' align="center">
+        <thead>
+            <tr>
+                <th width="50">NUM</th>
+                <th width="250">FILE</th>
+                <th width="200">TYPE</th>
+                <th width="70">SIZE</th>
+                <th width="50">DEL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                for($i=0; $i<$num_result; $i++)
+                {
+                    $row = $result->fetch_assoc();
+                    echo "<tr>";
+                    echo "<td align='center'>".$row['num']."</td>";
+                    echo "<td align='left'>
+                <a href='./download.php?num=".$row['num']."'>".$row['name']."</a></td>";
+                    echo "<td align='center'>".$row['time']."</td>";
+                    echo "<td align='center'>".$row['down']."</td>";
+                    echo "<td align='center'>
+                <a href='./delete.php?num=".$row['num']."'>DEL</a></td>";
+                    echo "</tr>";
+                }
+                $db->close();
+            ?>
+        </tbody>
+    </table>
 	
 	
 		</div>
