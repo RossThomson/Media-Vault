@@ -43,10 +43,11 @@ if ($uploadOk == 0) {
         echo "The file ". basename( $_FILES["photo"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
+		$uploadOk = 0;
     }
 }
 
-if(isset($_POST["submit"]) && upload == 1) {
+if(isset($_POST["submit"]) && $uploadOk == 1) {
 	$dbhost = "localhost";
 	$dbname	= "MEDIALYNX";
 	$dbuser	= "root";
