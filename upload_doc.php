@@ -6,7 +6,7 @@ $uploadOk = 1;
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
 $filename = basename($_FILES["fileName"]["name"]);
 $filesize = $_FILES["fileName"]["size"];
-$synopsis = $_POST['title']; // test
+$synopsis = $_POST['ref']; // test
 
 if (file_exists($target_file)) {
 	echo "Sorry, file already exists.";
