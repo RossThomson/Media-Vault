@@ -50,7 +50,7 @@ header("location: Login.php");
 				$q2 = $q1->fetch(); 
 				$user = $q2['USERID'];
 				
-				$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID='$user'";
+				$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID='$user'");
 				$row = $q3->rowCount();
 			?>
 	
@@ -67,27 +67,25 @@ header("location: Login.php");
 				</thead>
 				<tbody>
 					<?php
-						for($i=0; $i<$num_result; $i++)
-						{
-						if($rows == 0) {
-							echo '<tr>';
-							echo '<td align="center">Please upload files first</td>';
-							echo '</tr>';
-						} else {
-							while($q4 = $q3->fetch()) {
-								echo "<tr>";
-								echo "<td align='center'>".$row['CONTENTID']."</td>";
-								echo "<td align='left'>
-							<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
-								echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
-								echo "<td align='center'>".$row['SIZE']."</td>";
-								echo "<td align='center'>".$row['SYNOPSIS']."</td>";
-								echo "<td align='center'>
-							<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
-								echo "</tr>";
-							}
+					if($rows == 0) {
+						echo '<tr>';
+						echo '<td align="center">Please upload files first</td>';
+						echo '</tr>';
+					} else {
+						while($q4 = $q3->fetch()) {
+							echo "<tr>";
+							echo "<td align='center'>".$row['CONTENTID']."</td>";
+							echo "<td align='left'>
+						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
+							echo "<td align='center'>".$row['SIZE']."</td>";
+							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
+							echo "<td align='center'>
+						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+							echo "</tr>";
 						}
-						$conn=null;
+					}
+					$conn=null;
 					?>
 				</tbody>
 			</table>			
