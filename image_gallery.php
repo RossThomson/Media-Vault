@@ -22,7 +22,7 @@
 	if (empty($num_result))      
     echo "nothing here"; 
   else {
-	  echo '$num_result';
+	  echo $num_result;
   }      
    
 	
