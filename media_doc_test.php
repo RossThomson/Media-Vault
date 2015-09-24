@@ -59,8 +59,8 @@ header("location: Login.php");
             <tr>
                 <th width="50">NUM</th>
                 <th width="250">FILE</th>
-                <th width="200">TYPE</th>
-                <th width="70">SIZE</th>
+                <th width="100">TYPE</th>
+                <th width="150">SIZE</th>
                 <th width="50">DEL</th>
             </tr>
         </thead>
