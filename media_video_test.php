@@ -69,7 +69,7 @@ header("location: Login.php");
             		
 					$tmp=$row['address'];
 					$output.="<video width='880' height='480' controls>
-					<source src='".$row['address']."' type='video/mp4'></video><br/>".$row['CONTENTTITLE']."<br/><br/>
+					<source src='"uploads/aabb.mp4"' type='video/mp4'></video><br/>".$row['CONTENTTITLE']."<br/><br/>
 			
 					<form  method='post' action='/images/delete.php' >
 					<input name='id' type='hidden' value='$row[id]' />
@@ -83,8 +83,6 @@ header("location: Login.php");
 		}
 	
 	?>
-	
-	
 		</div>
 	</div>
 	<div class="media_divider"></div>
