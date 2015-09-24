@@ -25,7 +25,7 @@
     $result = $result->fetch_assoc();
     
     $dir = "./uploads/";
-    $filename = $result['name'];
+    $filename = $result['CONTENTTITLE'];
     $filehash = $result['hash'];
     
     if(file_exists($dir.$filehash))
