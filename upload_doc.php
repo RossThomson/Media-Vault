@@ -58,7 +58,7 @@ if(isset($_POST["submit"])) {
 		}
 
 		$pdo = null;
-		echo "<script>alert('file deleted');";
+		echo "<script>alert('uploaded');";
 		echo "history.back();</script>";
 }
 
