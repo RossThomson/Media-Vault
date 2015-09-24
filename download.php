@@ -2,11 +2,11 @@
  
     header("Content-type: text/html; charset=utf-8");
  
-    if(!$_GET['num'])
+    /* if(!$_GET['num'])
     {
         echo "<script>alert('wrong access');";
         echo "history.back();</script>";
-    }
+    } */
     
     @ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
     if(mysqli_connect_errno())
@@ -24,7 +24,7 @@
     }
     $result = $result->fetch_assoc();
     
-    $dir = "./uploads/";
+    $dir = "uploads/";
     $filename = $result['CONTENTTITLE'];
     
     if(file_exists($dir.$filename))
