@@ -15,7 +15,7 @@
         exit;
     }
     
-    $query = "select name, hash from CONTENT where num=".$_GET['num'];
+    $query = "select * from CONTENT";
     $result = $db->query($query);
     if(!$result)
     {
@@ -42,13 +42,13 @@
             }
             fclose($fp);
             
-            $query = "update ftp set down=(down+1) where num=".$_GET['num'];
+            /* $query = "update ftp set down=(down+1) where num=".$_GET['num'];
             $result = $db->query($query);
             if(!$result)
             {    
                 echo "down counter update error";
                 exit;
-            }
+            } */
     }
     else
     {
