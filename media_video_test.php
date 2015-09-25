@@ -53,7 +53,7 @@ header("location: Login.php");
 					$output = 'There was no search result';
 				} else {
 					while($row = mysql_fetch_array($query)){
-						$fileaddress="uploads/";
+						$fileaddress='/var/www/html/Media-Vault/uploads/papa.mp4';
 						$fileid=$row['CONTENTID'];
 						$file=pathinfo($fileaddress);
 						$filetype=$file['extension'];
@@ -61,12 +61,12 @@ header("location: Login.php");
 						if( $filetype=='mp4'){			
 							$name = $row['CONTENTTITLE'];
 							$id=$row['CONTENTID'];            		
-							$tmp="uploads/";
+							$tmp=$fileaddress;
 							$output.="<video width='880' height='480' controls>
-							<source src='"uploads/"' type='video/mp4'></video><br/>".$row['CONTENTTITLE']."<br/><br/>
+							<source src='/var/www/html/Media-Vault/uploads/papa.mp4' type='video/mp4'></video><br/>".$row['CONTENTTITLE']."<br/><br/>
 			
 							<form  method='post' action='/images/delete.php' >
-							<input name='id' type='hidden' value='$row[id]' />
+							<input name='id' type='hidden' value='$row[CONTENTID]' />
 							<input type='submit' value='Delete'><br>
 							</form>";
 			  
