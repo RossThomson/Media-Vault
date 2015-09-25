@@ -48,7 +48,7 @@ header("location: Login.php");
 					echo "DB connect error";
 				}		
         
-				$query = "select * from CONTENT";
+				$query = "select * from CONTENT WHERE CONTENTTYPE = 'IMAGE' AND USERID = '$userid'";
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
 			?>
