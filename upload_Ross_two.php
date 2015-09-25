@@ -57,7 +57,7 @@ if ($uploadOk == 0) {
 	    
 	exec("$imagemagickPath/convert -geometry " .    
   "{$thumbnail_width}x{$thumbnail_height} " .    
-	"{$target_file} {$target_dir 'tb_'.$filename}");	
+	"$target_file $target_dir.'tb_'.$filename");	
 						
 							
 		
