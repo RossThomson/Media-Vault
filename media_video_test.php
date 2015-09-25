@@ -41,49 +41,51 @@ header("location: Login.php");
 	<!-- </div> -->
 	<div class="media_divider"></div>
 		<div class="media_content">
-			<br><br><br><br>
-	<?php
-		$conn=mysql_connect("localhost","root","root");
-		mysql_select_db("MEDIALYNX",$conn);
-		mysql_query("set names utf8");
-		$output = '';
-		
-		$query = mysql_query("SELECT * FROM CONTENT") or die("could not search");
-		$count = mysql_num_rows($query);
-		
-		if($count == 0){
-			$output = 'There was no search result';
-		} else {
-			while($row = mysql_fetch_array($query)){
-				//$fileaddress=$row['address'];
-				$fileid=$row['CONTENTID'];
-				$filename = $row['CONTENTTITLE'];
-				$dir= "uploads/"
-				$file=pathinfo($dir.$filename);
-				$filetype=$file['extension'];
-
-				if( $filetype=='mp4'){
-
-			
-					$name = $row['CONTENTTITLE'];
-					$id=$row['CONTENTID'];
-            		
-					//$tmp=$row['address'];
-					$output.="<video width='880' height='480' controls>
-					<source src='".$file."' type='video/mp4'></video><br/>".$row['CONTENTTITLE']."<br/><br/>
-			
-					<form  method='post' action='/images/delete.php' >
-					<input name='id' type='hidden' value='$row[id]' />
-					<input type='submit' value='Delete'><br>
-					</form>";
-			  
-					//$output .= "<div><a href='$tmp' target='blank'><img src='$tmp'><br>".$name."</a></div>";
-				}
-			
-			}
-		}
+			<br><br><br><br>		
+			<?php
+				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
+				
+				$userid = $_SESSION['userid'];
+				$query = "select * from CONTENT where USERID = '$userid'";				
+				$result = $db->query($query);
+				$num_result = $result->num_rows;
+			?>
 	
-	?>
+			<table border='1' align="center">
+				<thead>
+					<tr>
+						<th width="50">NUM</th>
+						<th width="250">FILE</th>
+						<th width="100">TYPE</th>
+						<th width="150">SIZE</th>
+						<th width="200">SYNOPSIS</th>
+						<th width="50">DEL</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						for($i=0; $i<$num_result; $i++)
+						{
+							$row = $result->fetch_assoc();
+							echo "<tr>";
+							echo "<td align='center'>".$row['CONTENTID']."</td>";
+							echo "<td align='left'>
+						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
+							echo "<td align='center'>".$row['SIZE']."</td>";
+							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
+							echo "<td align='center'>
+						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+							echo "</tr>";
+						}
+						$db->close();
+					?>
+				</tbody>
+			</table>			
 		</div>
 	</div>
 	<div class="media_divider"></div>
@@ -93,6 +95,8 @@ header("location: Login.php");
 <form action="upload_doc.php" method="post" enctype="multipart/form-data">
     Select a document to upload:
     <input type="file" name="fileName"/>
+	<br />
+	Description: <input name="ref" type="text" />
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
