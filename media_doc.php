@@ -48,8 +48,9 @@ header("location: Login.php");
 				{
 					echo "DB connect error";
 				}		
-        
-				$query = "select * from CONTENT";
+				session_start();
+				$userid = $_SESSION['userid'];
+				$query = "select * from CONTENT where CONTENTTYPE = 'DOC' and USERID = '$userid'";				
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
 			?>
