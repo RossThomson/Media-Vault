@@ -49,19 +49,14 @@ if ($uploadOk == 0) {
 		
 		  
     
-		// Wide Image    
-		if($filesize[0] > $filesize[1])    
-		{     
+ 
+	 
+		 
 		 $thumbnail_width = 100;     
-		 $thumbnail_height = (int)(100 * $filesize[1] / $filesize[0]);     
-		}     
+		 $thumbnail_height = 100;   
+	    
 			
-		// Tall Image    
-		else    
-		{    
-		  $thumbnail_width = (int)(100 * $filesize[0] / $filesize[1]);    
-		  $thumbnail_height = 100;    
-		}
+	
 		
 		$gd_function_suffix [] = array(      
 		  'image/pjpeg' => 'JPEG',     
@@ -75,20 +70,20 @@ if ($uploadOk == 0) {
 			
 			//$function_to_read = ImageCreateFrom($Filetype);
 					
-			//$function_to_write = 'Image' . $function_suffix;     
+			$function_to_write = 'Image' . $function_suffix;     
 				 
 			// Read the source file     
 			$source_handle = $target_dir. $filename;      
 						 
-			if ($source_handle) {     
+		   
 			  // Let's create a blank image for the thumbnail     
-			  $destination_handle = ImageCreate($thumbnail_width, $thumbnail_height);     
+		$destination_handle = ImageCreate($thumbnail_width, $thumbnail_height);     
 				 
 			  // Now we resize it     
 			  ImageCopyResized($destination_handle, $source_handle,     
 				0, 0, 0, 0, $thumbnail_width, $thumbnail_height,     
-				$filesize[0], $filesize[1]);     
-			}     
+				$filesize['width'], $filesize['height']);     
+			     
 				 
 			// Let's save the thumbnail     
 				 
