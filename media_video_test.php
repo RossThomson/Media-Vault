@@ -40,10 +40,50 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>		
-			<video src="uploads/papa.mp4" controls autoplay >
-</video>
-
-			
+			<?php
+				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
+				
+				$userid = $_SESSION['userid'];
+				$query = "select * from CONTENT where CONTENTTYPE = 'VIDEO' and USERID = '$userid'";				
+				$result = $db->query($query);
+				$num_result = $result->num_rows;
+			?>
+	
+			<table border='1' align="center">
+				<thead>
+					<tr>
+						<th width="50">NUM</th>
+						<th width="250">FILE</th>
+						<th width="100">TYPE</th>
+						<th width="150">SIZE</th>
+						<th width="200">SYNOPSIS</th>
+						<th width="50">DEL</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						for($i=0; $i<$num_result; $i++)
+						{
+							$row = $result->fetch_assoc();
+							echo "<tr>";
+							echo "<td align='center'>".$row['CONTENTID']."</td>";
+							echo "<td align='left'>
+						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
+							echo "<td align='center'>".$row['SIZE']."</td>";
+							echo "<td align='center'>""<video src="uploads/.$row['CONTENTTITLE'].mp4" controls autoplay >"</td>";
+							echo "<td align='center'>
+						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+							echo "</tr>";
+						}
+						$db->close();
+					?>
+				</tbody>
+			</table>			
 		</div>
 	</div>
 	<div class="media_divider"></div>
