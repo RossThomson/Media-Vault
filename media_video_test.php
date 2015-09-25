@@ -41,34 +41,39 @@ header("location: Login.php");
 		<div class="media_content">
 			<br><br><br><br>		
 			<?php
-				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
-				if(mysqli_connect_errno())
-				{
-					echo "DB connect error";
-				}		
-				
-				$userid = $_SESSION['userid'];
-				$query = "select * from CONTENT where CONTENTTYPE = 'VIDEO' and USERID = '$userid'";				
-				$result = $db->query($query);
-				$num_result = $result->num_rows;
+				$conn=mysql_connect("localhost","root","root");
+				mysql_select_db("MEDIALYNX",$conn);
+				mysql_query("set names utf8");
 				
 				$output = '';
-				while($row = mysql_fetch_array($query)){
-					$filetype = $row['CONTENTTYPE'];					
-					if($filetype == 'VIDEO'){
-						$filename = $row['CONTENTTITLE'];
-						$id = $row['CONTENTID'];
-						$output.="<video width='880' height='480' controls>
-						<source src='".$row['CONTENTTITLE']."' type='video/mp4'></video><br/>".$row['CONTENTID']."<br/><br/>
-						
-						<form  method='post' action='/images/delete.php' >
-						<input name='id' type='hidden' value='$row[id]' />
-						<input type='submit' value='Delete'><br>
-						</form>";
-					}	
-				}
-				
-				
+
+				$query = mysql_query("SELECT * FROM upload") or die("could not search");
+				$count = mysql_num_rows($query);
+				if($count == 0){
+					$output = 'There was no search result';
+				} else {
+					while($row = mysql_fetch_array($query)){
+						$fileaddress=$row['address'];
+						$fileid=$row['id'];
+						$file=pathinfo($fileaddress);
+						$filetype=$file['extension'];
+
+						if( $filetype=='mp4'){			
+							$name = $row['name'];
+							$id=$row['id'];            		
+							$tmp=$row['address'];
+							$output.="<video width='880' height='480' controls>
+							<source src='".$row['address']."' type='video/mp4'></video><br/>".$row['name']."<br/><br/>
+			
+							<form  method='post' action='/images/delete.php' >
+							<input name='id' type='hidden' value='$row[id]' />
+							<input type='submit' value='Delete'><br>
+							</form>";
+			  
+							//$output .= "<div><a href='$tmp' target='blank'><img src='$tmp'><br>".$name."</a></div>";
+						}		
+					}
+				}				
 			?>
 
 			
