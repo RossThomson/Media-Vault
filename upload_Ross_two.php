@@ -71,9 +71,9 @@ if ($uploadOk == 0) {
 		  'image/x-png' => 'PNG'     
 								);
 								
-			$function_suffix = $gd_function_suffix[$Filetype];     
-			$function_to_read = 'ImageCreateFrom' . $function_suffix;     
-			$function_to_write = 'Image' . $function_suffix;     
+			//$function_suffix = $gd_function_suffix[$Filetype];     
+			//$function_to_read = 'ImageCreateFrom' . $function_suffix;     
+			//$function_to_write = 'Image' . $function_suffix;     
 				 
 			// Read the source file     
 			$source_handle = $function_to_read($target_dir. $filename );      
