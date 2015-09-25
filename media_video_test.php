@@ -75,7 +75,7 @@ header("location: Login.php");
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
-							echo "<td align='center'>""<video src="uploads/.$row['CONTENTTITLE'].mp4" controls autoplay >"</td>";
+							echo "<td align='center'>"<video src="uploads/.$row['CONTENTTITLE'].mp4" controls autoplay></td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
