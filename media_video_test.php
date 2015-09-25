@@ -65,10 +65,7 @@ header("location: Login.php");
 					</tr>
 				</thead>
 				<tbody>
-					<?php
-						$target_dir = "uploads/";
-						$target_file = $target_dir .$row['CONTENTTITLE'].; 
-						$target_extention = ".mp4";
+					<?php						
 						for($i=0; $i<$num_result; $i++)
 						{
 							$row = $result->fetch_assoc();
@@ -79,7 +76,7 @@ header("location: Login.php");
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>
-						"<video scr= "$target_file.$target_extention" controls autoplay>" </video></td>";	
+						<video scr= "" controls autoplay> </video></td>";	
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
