@@ -55,9 +55,9 @@ if ($uploadOk == 0) {
 		 $thumbnail_width = 100;     
 		 $thumbnail_height = 100;   
 	    
-		exec("$imagemagickPath/convert -geometry " .    
+	exec("$imagemagickPath/convert -geometry " .    
   "{$thumbnail_width}x{$thumbnail_height} " .    
-  "$target_dir $filename $target_dir tb_$filename");	
+	"{$target_file} {$target_dir tb_$filename}");	
 						
 							
 		
@@ -84,7 +84,7 @@ if(isset($_POST["submit"]) && $uploadOk == 1) {
 		
 			$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$filename','IMAGE','$filesize','$synopsis')";
 			
-			include 'library/closedb.php';
+			
 			$pdo->exec($sql);
 			//header("location: upload_doc.php");
 		}
