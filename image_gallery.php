@@ -24,14 +24,15 @@
 	if (empty($num_result))      
      $result_final = "t<tr><td>No Photo found</td></tr>n";     
   else {
-	  $file = $row['CONTENTTITLE'];
-	  $result_final .= "<tr>nt<td align='center'>       
-      <br />       
-      <img src='$target_dir/$file' border='0'       
-        alt='$photo_caption' />       
-      <br />       
-      $photo_caption       
-      </td></tr>";     
+	 while ($row = mysql_fetch_array($result)) {      
+      $result_array[] =      
+        "<a href='viewgallery.php?cid=$cid&pid=" . $row[0] .      
+        "'><img src='" . $images_dir . "/tb_" . $row[2] .      
+        "' border='0' alt='" . $row[1] . "' /></a>";      
+    }      
+    mysql_free_result($result);        
+      
+    $result_final = "<tr>n";      
   }      
    
 	
