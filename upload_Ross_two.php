@@ -63,7 +63,7 @@ if ($uploadOk == 0) {
 		  $thumbnail_height = 100;    
 		}
 		
-		$gd_function_suffix = array(      
+		$gd_function_suffix [] = array(      
 		  'image/pjpeg' => 'JPEG',     
 		  'image/jpeg' => 'JPEG',     
 		  'image/gif' => 'GIF',     
