@@ -40,41 +40,8 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>		
-			<?php
-				$conn=mysql_connect("localhost","root","root");
-				mysql_select_db("MEDIALYNX",$conn);
-				mysql_query("set names utf8");
-				
-				$output = '';
-
-				$query = mysql_query("SELECT * FROM CONTENT") or die("could not search");
-				$count = mysql_num_rows($query);
-				if($count == 0){
-					$output = 'There was no search result';
-				} else {
-					while($row = mysql_fetch_array($query)){
-						$fileaddress='/var/www/html/Media-Vault/uploads/papa.mp4';
-						$fileid=$row['CONTENTID'];
-						$file=pathinfo($fileaddress);
-						$filetype=$file['extension'];
-
-						if( $filetype=='mp4'){			
-							$name = $row['CONTENTTITLE'];
-							$id=$row['CONTENTID'];            		
-							$tmp=$fileaddress;
-							$output.="<video width='880' height='480' controls>
-							<source src='/var/www/html/Media-Vault/uploads/papa.mp4' type='video/mp4'></video><br/>".$row['CONTENTTITLE']."<br/><br/>
-			
-							<form  method='post' action='/images/delete.php' >
-							<input name='id' type='hidden' value='$row[CONTENTID]' />
-							<input type='submit' value='Delete'><br>
-							</form>";
-			  
-							//$output .= "<div><a href='$tmp' target='blank'><img src='$tmp'><br>".$name."</a></div>";
-						}		
-					}
-				}				
-			?>
+			<video src="uploads/papa.mp4" controls autoplay >
+</video>
 
 			
 		</div>
