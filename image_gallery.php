@@ -22,7 +22,7 @@
 	$num_result = $result->num_rows;
 	
 	if (empty($num_result))      
-     $result_final = "t<tr><td>No Photo found</td></tr>n";     
+     echo "no results found";   
   else {
 	 while ($row = mysql_fetch_array($result)) {      
     echo $row['CONTENTTITLE'];    
