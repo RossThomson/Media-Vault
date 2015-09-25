@@ -42,16 +42,16 @@ header("location: Login.php");
 		<div class="media_content">
 			<br><br><br><br>		
 			<?php
-				$Email = $_SESSION['email'];
-			
-				$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
-				
-				$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$Email'");
-				$q2 = $q1->fetch(); 
-				$user = $q2['USERID'];
-				
-				$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID='$user'");
-				$row = $q3->rowCount();
+				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
+				session_start();
+				$userid = $_SESSION['userid'];
+				$query = "select * from CONTENT where CONTENTTYPE = 'VIDEO' and USERID = '$userid'";				
+				$result = $db->query($query);
+				$num_result = $result->num_rows;
 			?>
 	
 			<table border='1' align="center">
@@ -67,12 +67,9 @@ header("location: Login.php");
 				</thead>
 				<tbody>
 					<?php
-					if($rows == 0) {
-						echo '<tr>';
-						echo '<td align="center">Please upload files first</td>';
-						echo '</tr>';
-					} else {
-						while($q4 = $q3->fetch()) {
+						for($i=0; $i<$num_result; $i++)
+						{
+							$row = $result->fetch_assoc();
 							echo "<tr>";
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
@@ -84,8 +81,7 @@ header("location: Login.php");
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
 						}
-					}
-					$conn=null;
+						$db->close();
 					?>
 				</tbody>
 			</table>			
