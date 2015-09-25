@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
 }
@@ -32,58 +33,64 @@ header("location: Login.php");
 				<li><a href="media_music.php">Music</a></li>
 				<li><a href="media_video.php">Video</a></li>
 				<li><a class="active" href="media_all.php">All files</a></li>
-				<li><a href="Delete.php">Delete</a></li>
 			</ul>		
 		</div>
 	</header>
 </div>
-<div id="aboutus_content">
-<br>
-	
-	<h2 class="aboutus_Headings">Your Files</h2>
-	
-	<form id = "delform" name = "Files Form">
-		<fieldset>
-	<?php
-		$dbname = "MEDIALYNX";
-		$dbhost = "localhost";
-		$dbuser = "root";
-		$dbpass = "root";
-		$name = $_SESSION['first_name'];
-		$Email = $_SESSION['email'];
-		
-		$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
-		
-		$q1 = $conn->query("SELECT * FROM USERS WHERE EMAIL = '$Email'");
-		$q2 = $q1->fetch(); 
-		$user = $q2['USERID'];
-		
-		echo"<legend>Your Files, ".$name."</legend>";
+	<!-- </div> -->
+	<div class="media_divider"></div>
+		<div class="media_content">
+			<br><br><br><br>		
+			<?php
+				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
 				
-		$q3 = $conn->query("SELECT * FROM CONTENT WHERE USERID = '$user'");
-		$rows = $q3->rowCount();
-		if($rows == 0) {
-			echo '<ul style="list-style-type:none">';
-			echo '<li>Please <a href="upload.php">upload</a> files first</li>';
-			echo '</ul>';
-		} else {
-			while($q4 = $q3->fetch()) {
-				$id = $q4['CONTENTID'];
-				echo '<ul style="list-style-type:none">';
-				echo '	<li>'.$q4['CONTENTTITLE'].'</li>';//Need to add a hyperlink to file
-				echo '	<li>'.$q4["SYNOPSIS"].'</li>';//with the content title.
-				echo '</ul>';
-			}
-		}
-		
-		$conn->close();
-	?>
-		</fieldset>
-	</form>
-
-
-
-
+				$userid = $_SESSION['userid'];
+				$query = "select * from CONTENT where USERID = '$userid'";				
+				$result = $db->query($query);
+				$num_result = $result->num_rows;
+			?>
+	
+			<table border='1' align="center">
+				<thead>
+					<tr>
+						<th width="50">NUM</th>
+						<th width="250">FILE</th>
+						<th width="100">TYPE</th>
+						<th width="150">SIZE</th>
+						<th width="200">SYNOPSIS</th>
+						<th width="50">DEL</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						for($i=0; $i<$num_result; $i++)
+						{
+							$row = $result->fetch_assoc();
+							echo "<tr>";
+							echo "<td align='center'>".$row['CONTENTID']."</td>";
+							echo "<td align='left'>
+						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
+							echo "<td align='center'>".$row['SIZE']."</td>";
+							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
+							echo "<td align='center'>
+						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+							echo "</tr>";
+						}
+						$db->close();
+					?>
+				</tbody>
+			</table>			
+		</div>
+	</div>
+	<div class="media_divider"></div>
+	</div>
+	<br><br>
+	<br><br><br>
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
@@ -91,4 +98,3 @@ header("location: Login.php");
 
 </body>
 </html>
-
