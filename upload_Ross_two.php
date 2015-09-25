@@ -10,7 +10,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
 $filename = basename($_FILES["photo"]["name"]);
 $filesize = $_FILES["photo"]["size"];
-$synopsis = $_POST['ref'];
+//$synopsis = $_POST['ref'];
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -71,7 +71,7 @@ if ($uploadOk == 0) {
 		  'image/x-png' => 'PNG'     
 								);
 								
-			$function_suffix = $gd_function_suffix[$filetype];     
+			$function_suffix = $gd_function_suffix[$Filetype];     
 			$function_to_read = 'ImageCreateFrom' . $function_suffix;     
 			$function_to_write = 'Image' . $function_suffix;     
 				 
@@ -85,7 +85,7 @@ if ($uploadOk == 0) {
 			  // Now we resize it     
 			  ImageCopyResized($destination_handle, $source_handle,     
 				0, 0, 0, 0, $thumbnail_width, $thumbnail_height,     
-				$size[0], $size[1]);     
+				$filesize[0], $filesize[1]);     
 			}     
 				 
 			// Let's save the thumbnail     
@@ -110,7 +110,7 @@ if(isset($_POST["submit"]) && $uploadOk == 1) {
 	
 	session_start();
 	$userid = $_SESSION['userid'];
-	//$synopsis = "description";
+	$synopsis = "description";
 
 		try {
 			$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
