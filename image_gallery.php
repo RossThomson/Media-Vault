@@ -21,14 +21,17 @@
 	$result = $db->query($query);
 	$num_result = $result->num_rows;
 	
-	if (empty($num_result))      
-     echo "no results found";   
+	if (empty($num_result)) {      
+     echo "no results found"; 
+	}	 
+	 
   else {
 	 while ($row = mysql_fetch_array($result)) {      
     echo $row['CONTENTTITLE'];    
-    }      
+    }
+  }	
   
-  }      
+        
    
 	
 
