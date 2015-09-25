@@ -23,7 +23,11 @@
 	
 	if (empty($num_result)) {      
      echo "no results found"; 
-	}	 
+	}
+
+else {
+	echo $num_result;
+}	
 	 
 
   
