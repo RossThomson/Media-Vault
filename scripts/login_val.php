@@ -35,7 +35,7 @@ session_start();
 		$_SESSION['email'] = $q2['EMAIL'];
 		$_SESSION['userid'] = $q2['USERID'];
 		$_SESSION['error'] = "";
-		header("location: ../test2.php");
+		header("location: ../media_all.php");
 		
 
 		}

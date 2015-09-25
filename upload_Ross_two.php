@@ -10,7 +10,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
 $filename = basename($_FILES["photo"]["name"]);
 $filesize = $_FILES["photo"]["size"];
-//$synopsis = $_POST['ref'];
+$synopsis = $_POST['ref'];
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -94,7 +94,7 @@ if(isset($_POST["submit"]) && $uploadOk == 1) {
 	
 	session_start();
 	$userid = $_SESSION['userid'];
-	$synopsis = "description";
+	
 
 		try {
 			$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
@@ -103,7 +103,7 @@ if(isset($_POST["submit"]) && $uploadOk == 1) {
 			
 			
 			$pdo->exec($sql);
-			//header("location: upload_doc.php");
+			
 		}
 				
 		catch(PDOException $e){
@@ -111,5 +111,7 @@ if(isset($_POST["submit"]) && $uploadOk == 1) {
 		}
 
 		$pdo = null;
+		
+		header('Refresh: 3; URL= media_photo.php'); 
 }
 ?>
