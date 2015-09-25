@@ -72,11 +72,13 @@ if ($uploadOk == 0) {
 								);
 								
 			//$function_suffix = $gd_function_suffix[$Filetype];     
-			//$function_to_read = 'ImageCreateFrom' . $function_suffix;     
+			
+			//$function_to_read = ImageCreateFrom($Filetype);
+					
 			//$function_to_write = 'Image' . $function_suffix;     
 				 
 			// Read the source file     
-			$source_handle = $function_to_read($target_dir. $filename );      
+			$source_handle = $target_dir. $filename;      
 						 
 			if ($source_handle) {     
 			  // Let's create a blank image for the thumbnail     
