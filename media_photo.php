@@ -33,7 +33,6 @@ header("location: Login.php");
 				<li><a href="media_music.php">Music</a></li>
 				<li><a href="media_video.php">Video</a></li>
 				<li><a href="media_all.php">All files</a></li>
-				<li><a href="Delete.php">Delete</a></li>
 			</ul>		
 		</div>
 	</header>

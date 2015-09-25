@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
 }
@@ -28,12 +27,11 @@ header("location: Login.php");
 			</a> -->
 			<ul>
 				<li><a href="media_playlist.php">Playlist</a></li>
-				<li><a class="active" href="media_doc.php">Doc</a></li>
+				<li><a href="media_doc.php">Doc</a></li>
 				<li><a href="media_photo.php">Photo</a></li>
 				<li><a href="media_music.php">Music</a></li>
-				<li><a href="media_video.php">Video</a></li>
+				<li><a class="active" href="media_video.php">Video</a></li>
 				<li><a href="media_all.php">All files</a></li>
-				<li><a href="Delete.php">Delete</a></li>
 			</ul>		
 		</div>
 	</header>
@@ -50,50 +48,20 @@ header("location: Login.php");
 				}		
 				
 				$userid = $_SESSION['userid'];
-				$query = "select * from CONTENT where USERID = '$userid'";				
+				$query = "select * from CONTENT where CONTENTTYPE = 'VIDEO' and USERID = '$userid'";				
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
 			?>
-	
-			<table border='1' align="center">
-				<thead>
-					<tr>
-						<th width="50">NUM</th>
-						<th width="250">FILE</th>
-						<th width="100">TYPE</th>
-						<th width="150">SIZE</th>
-						<th width="200">SYNOPSIS</th>
-						<th width="50">DEL</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-						for($i=0; $i<$num_result; $i++)
-						{
-							$row = $result->fetch_assoc();
-							echo "<tr>";
-							echo "<td align='center'>".$row['CONTENTID']."</td>";
-							echo "<td align='left'>
-						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
-							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
-							echo "<td align='center'>".$row['SIZE']."</td>";
-							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
-							echo "<td align='center'>
-						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
-							echo "</tr>";
-						}
-						$db->close();
-					?>
-				</tbody>
-			</table>			
+
+			
 		</div>
 	</div>
 	<div class="media_divider"></div>
 	</div>
 	<br><br>
 <div id="aboutus_content">	
-<form action="upload_doc.php" method="post" enctype="multipart/form-data">
-    Select a document to upload:
+<form action="upload_movie.php" method="post" enctype="multipart/form-data">
+    Select a video to upload:
     <input type="file" name="fileName"/>
 	<br />
 	Description: <input name="ref" type="text" />
@@ -101,8 +69,8 @@ header("location: Login.php");
 </form>
 
 </div>
+<br><br><br>
 	
-	<br><br><br>
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
