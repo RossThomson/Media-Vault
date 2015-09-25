@@ -41,14 +41,14 @@ if(isset($_POST["submit"])) {
 	
 	session_start();
 	$userid = $_SESSION['userid'];
-	//$synopsis = "description";
+	$type = "MUSIC";
 
 		try {
 			$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
 		
-			$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$filename','$FileType','$filesize','$synopsis')";
+			$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$filename','$type','$filesize','$synopsis')";
 			
-			include 'library/closedb.php';
+			//include 'library/closedb.php';
 			$pdo->exec($sql);
 			//header("location: upload_doc.php");
 		}

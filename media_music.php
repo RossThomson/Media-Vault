@@ -49,7 +49,8 @@ header("location: Login.php");
 					echo "DB connect error";
 				}		
         
-				$query = "select * from CONTENT";
+				$userid = $_SESSION['userid'];
+				$query = "select * from CONTENT where CONTENTTYPE = 'MUSIC' and USERID = '$userid'";
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
 			?>
