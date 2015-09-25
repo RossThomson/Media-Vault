@@ -24,7 +24,7 @@
 	if (empty($num_result))      
      $result_final = "t<tr><td>No Photo found</td></tr>n";     
   else {
-	  $file = row['CONTENTTITLE'];
+	  $file = $row['CONTENTTITLE'];
 	  $result_final .= "<tr>nt<td align='center'>       
       <br />       
       <img src='$target_dir/$file' border='0'       
