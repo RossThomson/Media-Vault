@@ -40,7 +40,7 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>		
-			<video src="54.79.17.142/Media-Vault/uploads/papa.mp4" controls autoplay >
+			<video src="uploads/papa.mp4" controls autoplay >
 </video>
 
 			
