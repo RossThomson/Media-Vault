@@ -51,6 +51,19 @@ header("location: Login.php");
 				$query = "select * from CONTENT where CONTENTTYPE = 'VIDEO' and USERID = '$userid'";				
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
+				
+				$output = '';
+				while($row = mysql_fetch_array($query)){
+					$filetype = $row['CONTENTTYPE'];					
+					if($filetype == 'VIDEO'){
+						$filename = $row['CONTENTTITLE'];
+						$id = $row['CONTENTID'];
+						$output.="<video width='880' height='480' controls>
+						<source src='".$row['CONTENTTITLE']."' type='video/mp4'></video><br/>".$row['CONTENTID']."<br/><br/>
+					}	
+				}
+				
+				
 			?>
 
 			
