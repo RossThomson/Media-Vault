@@ -49,7 +49,7 @@ if(isset($_POST["submit"])) {
 		
 			$sql = "INSERT INTO CONTENT(USERID, CONTENTTITLE, CONTENTTYPE, SIZE, SYNOPSIS) VALUES ('$userid','$filename','$type','$filesize','$synopsis')";
 			
-			include 'library/closedb.php';
+			//include 'library/closedb.php';
 			$pdo->exec($sql);
 			//header("location: upload_doc.php");
 		}
