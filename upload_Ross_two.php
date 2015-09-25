@@ -53,7 +53,7 @@ if ($uploadOk == 0) {
     $thumbnail_image = "tb_".$filename;
 	
 	$newtarget_file = $target_dir.$thumbnail_image;
-	echo $newtarget_file;
+	
 	
 		// Wide Image    
 		if($size[0] > $size[1])    
@@ -111,7 +111,7 @@ if(isset($_POST["submit"]) && $uploadOk == 1) {
 		}
 
 		$pdo = null;
-		
-		header('Refresh: 3; URL= media_photo.php'); 
+		echo "<script>alert('uploaded');";
+		echo "history.back();</script>";
 }
 ?>
