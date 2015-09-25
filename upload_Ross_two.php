@@ -50,7 +50,11 @@ if ($uploadOk == 0) {
 		  
     $imagemagickPath = "/usr/local/bin";
 	$size = GetImageSize($target_file);    
-    
+    $thumbnail_image = "tb_".$filename;
+	
+	$newtarget_file = $target_dir.$thumbnail_image;
+	echo $newtarget_file;
+	
 		// Wide Image    
 		if($size[0] > $size[1])    
 		{     
@@ -70,7 +74,7 @@ if ($uploadOk == 0) {
 	    
 	exec("$imagemagickPath/convert -geometry " .    
   "{$thumbnail_width}x{$thumbnail_height} " .    
-	"$target_file $target_dir.'tb_'.$filename");	
+	"$target_file $newtarget_file");	
 						
 							
 		
