@@ -16,7 +16,7 @@ $synopsis = $_POST['ref'];
 if(isset($_POST["submit"])) {
     $check = $filesize;
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
+   
         $uploadOk = 1;
     } else {
         echo "File is not an image.";
