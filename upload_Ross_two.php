@@ -49,11 +49,24 @@ if ($uploadOk == 0) {
 		
 		  
     $imagemagickPath = "/usr/local/bin";
- 
-	 
-		 
+	$size = GetImageSize($target_file);    
+    
+		// Wide Image    
+		if($size[0] > $size[1])    
+		{     
 		 $thumbnail_width = 100;     
-		 $thumbnail_height = 100;   
+		 $thumbnail_height = (int)(100 * $size[1] / $size[0]);     
+		}     
+			
+		// Tall Image    
+		else    
+		{    
+		  $thumbnail_width = (int)(100 * $size[0] / $size[1]);    
+		  $thumbnail_height = 100;    
+		}
+ 
+		 
+
 	    
 	exec("$imagemagickPath/convert -geometry " .    
   "{$thumbnail_width}x{$thumbnail_height} " .    
