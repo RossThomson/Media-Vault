@@ -63,7 +63,7 @@ header("location: Login.php");
 							$id=$row['CONTENTID'];            		
 							$tmp=$fileaddress;
 							$output.="<video width='880' height='480' controls>
-							<source src='"$fileaddress"' type='video/mp4'></video><br/>".$row['CONTENTTITLE']."<br/><br/>
+							<source src='/var/www/html/Media-Vault/uploads/papa.mp4' type='video/mp4'></video><br/>".$row['CONTENTTITLE']."<br/><br/>
 			
 							<form  method='post' action='/images/delete.php' >
 							<input name='id' type='hidden' value='$row[CONTENTID]' />
