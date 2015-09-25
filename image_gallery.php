@@ -25,11 +25,7 @@
      echo "no results found"; 
 	}	 
 	 
-  else {
-	 while ($row = mysql_fetch_array($result)) {      
-    echo $row['CONTENTTITLE'];    
-    }
-  }	
+
   
         
    
