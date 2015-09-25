@@ -42,6 +42,10 @@ header("location: Login.php");
 		<div class="media_content">
 			<br><br><br><br>		
 			<?php
+			
+			session_start();
+			$userid = $_SESSION['userid'];
+			
 				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
 				if(mysqli_connect_errno())
 				{
