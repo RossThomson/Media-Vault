@@ -1,4 +1,8 @@
 <?php
+
+// Report all errors
+error_reporting(E_ALL);
+
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["photo"]["name"]);
 $uploadOk = 1;
