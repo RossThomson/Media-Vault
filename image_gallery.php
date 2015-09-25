@@ -25,11 +25,9 @@
      $result_final = "t<tr><td>No Photo found</td></tr>n";     
   else {
 	 while ($row = mysql_fetch_array($result)) {      
-      $show = "'><img src='" . $target_dir . "/" . $row[CONTENTTITLE]. "' border='0' alt='" "' /></a>";      
+    echo $row['CONTENTTITLE'];    
     }      
-    mysql_free_result($result);        
-      
-    $result_final = "<tr>n";      
+  
   }      
    
 	
