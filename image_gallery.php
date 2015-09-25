@@ -27,6 +27,7 @@
 
 else {
 	echo $num_result;
+	echo $num_result['CONTENTTITLE'];
 }	
 	 
 
