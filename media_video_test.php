@@ -47,7 +47,7 @@ header("location: Login.php");
 				
 				$output = '';
 
-				$query = mysql_query("SELECT * FROM upload") or die("could not search");
+				$query = mysql_query("SELECT * FROM CONTENT") or die("could not search");
 				$count = mysql_num_rows($query);
 				if($count == 0){
 					$output = 'There was no search result';
