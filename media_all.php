@@ -90,17 +90,6 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 	</div>
 	<br><br>
-<div id="aboutus_content">	
-<form action="upload_doc.php" method="post" enctype="multipart/form-data">
-    Select a document to upload:
-    <input type="file" name="fileName"/>
-	<br />
-	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit"/>
-</form>
-
-</div>
-	
 	<br><br><br>
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
