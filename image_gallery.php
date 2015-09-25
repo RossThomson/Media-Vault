@@ -26,9 +26,9 @@
   else {
 	 while ($row = mysql_fetch_array($result)) {      
       $result_array[] =      
-        "<a href='viewgallery.php?cid=$cid&pid=" . $row[0] .      
-        "'><img src='" . $images_dir . "/tb_" . $row[2] .      
-        "' border='0' alt='" . $row[1] . "' /></a>";      
+        "<a href='$target_dir/.$row['CONTENTTITLE']" .      
+        "'><img src='" . $target_dir . "/" . $row[CONTENTTITLE] .      
+        "' border='0' alt='" "' /></a>";      
     }      
     mysql_free_result($result);        
       
