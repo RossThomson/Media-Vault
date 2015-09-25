@@ -66,7 +66,7 @@ header("location: Login.php");
 							<source src='".$row['CONTENTTITLE']."' type='video/mp4'></video><br/>".$row['CONTENTTITLE']."<br/><br/>
 			
 							<form  method='post' action='/images/delete.php' >
-							<input name='id' type='hidden' value='$row[id]' />
+							<input name='id' type='hidden' value='$row[CONTENTID]' />
 							<input type='submit' value='Delete'><br>
 							</form>";
 			  
