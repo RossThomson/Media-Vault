@@ -1,7 +1,7 @@
 <?php
 
 // Report all errors
-error_reporting(E_ALL);
+
 
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["photo"]["name"]);
@@ -45,7 +45,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
-        echo "The file ". $filename). " has been uploaded.";
+        echo "The file ". $filename. " has been uploaded.";
 		
 		  
     
@@ -92,7 +92,7 @@ if ($uploadOk == 0) {
 				 
 			$function_to_write($destination_handle, $target_dir . 'tb_' . $filename);     
 			ImageDestroy($destination_handle);						
-											
+							
 		
     }//end if statement 
 	
