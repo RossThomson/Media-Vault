@@ -60,6 +60,11 @@ header("location: Login.php");
 						$id = $row['CONTENTID'];
 						$output.="<video width='880' height='480' controls>
 						<source src='".$row['CONTENTTITLE']."' type='video/mp4'></video><br/>".$row['CONTENTID']."<br/><br/>
+						
+						<form  method='post' action='/images/delete.php' >
+						<input name='id' type='hidden' value='$row[id]' />
+						<input type='submit' value='Delete'><br>
+						</form>";
 					}	
 				}
 				
