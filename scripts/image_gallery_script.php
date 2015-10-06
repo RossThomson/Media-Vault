@@ -27,7 +27,7 @@
         
 				$query = "select * from CONTENT WHERE CONTENTTYPE = 'IMAGE' AND USERID = '$userid'";
 				$result = $db->query($query);
-				$row = $result->fetch_assoc();
+				
 	
 	
 	function getPictures() {
@@ -35,7 +35,9 @@
 		if ( $handle = opendir("./uploads/") ) {
 			$lightbox = rand();
 			echo '<ul id="pictures">';
-			while ( ($file == readdir($handle.$row['CONTENTTITLE']))) {
+			while  ($row) {
+				$row = $result->fetch_assoc();
+				$file = $row['CONTENTTITLE'];
 				if ( !is_dir($file) ) {
 					$split = explode('.', $file); 
 					$ext = $split[count($split) - 1];
@@ -71,12 +73,13 @@
 						}
 						imagedestroy($new);
 						imagedestroy($src);
+						$row ++;
 					}
 					echo '<li><a href="./uploads/'.$file.'" rel="lightbox['.$lightbox.']">';
 					echo '<img src="./uploads/thumbs/'.$file.'" alt="" />';
 					echo '</a></li>';
 				}
-				//$row ++;
+				
 			}
 			echo '</ul>';
 		}
