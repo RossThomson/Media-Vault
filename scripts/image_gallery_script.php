@@ -57,7 +57,7 @@
 						imagedestroy($new);
 						imagedestroy($src);
 					}
-					echo '<li><a href="./uploads/thumbs/'.$file.'" rel="lightbox['.$lightbox.']">';
+					echo '<li><a href="'.$file.'" rel="lightbox['.$lightbox.']">';
 					echo '<img src="./uploads/thumbs/'.$file.'" alt="" />';
 					echo '</a></li>';
 				}
