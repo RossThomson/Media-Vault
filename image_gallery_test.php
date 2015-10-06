@@ -59,5 +59,12 @@ img {
 <script type="text/javascript" src="js/prototype.js"></script>
 <script type="text/javascript" src="js/scriptaculous.js?load=effects,builder"></script>
 <script type="text/javascript" src="js/lightbox.js"></script>
+
+<br><br><br>
+	<footer class="footer_relative">
+	<span id="jae_design-by">Design by Media lynx</span> 
+		Copyright &copy; Media Lynx 2015.
+	</footer>
+
 </body>
 </html>

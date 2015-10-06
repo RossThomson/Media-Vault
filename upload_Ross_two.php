@@ -111,7 +111,8 @@ if(isset($_POST["submit"]) && $uploadOk == 1) {
 		}
 
 		$pdo = null;
+		header("location: image_gallery_test.php");
 		echo "<script>alert('uploaded');";
-		echo "history.back();</script>";
+						
 }
 ?>
