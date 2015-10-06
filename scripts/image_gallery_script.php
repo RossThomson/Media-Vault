@@ -35,9 +35,11 @@
 		if ( $handle = opendir("./uploads/") ) {
 			$lightbox = rand();
 			echo '<ul id="pictures">';
-			while ($row = $result->fetch_assoc()) {
-				
+			$i = 0;
+			while ($i < $result->num_rows;()) {
+				$row = $result->fetch_assoc();
 				$file = $row["CONTENTTITLE"];
+				echo $file = $row["CONTENTTITLE"];
 				if ( !is_dir($file) ) {
 					$split = explode('.', $file); 
 					$ext = $split[count($split) - 1];
@@ -79,7 +81,7 @@
 					echo '<img src="./uploads/thumbs/'.$file.'" alt="" />';
 					echo '</a></li>';
 				}
-				
+				$i++;
 			}
 			echo '</ul>';
 		}
