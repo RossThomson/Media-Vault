@@ -32,11 +32,11 @@
 					}
 					if ( ! file_exists('./uploads/thumbs/'.$file) ) {
 						if ( $type == 'jpg' ) {
-							$src = imagecreatefromjpeg($file);
+							$src = imagecreatefromjpeg('./uploads/'.$file);
 						} else if ( $type == 'png' ) {
-							$src = imagecreatefrompng($file);
+							$src = imagecreatefrompng('./uploads/'.$file);
 						} else if ( $type == 'gif' ) {
-							$src = imagecreatefromgif($file);
+							$src = imagecreatefromgif('./uploads/'.$file);
 						}
 						if ( ($oldW = imagesx($src)) < ($oldH = imagesy($src)) ) {
 							$newW = $oldW * ($max_width / $oldH);
@@ -57,7 +57,7 @@
 						imagedestroy($new);
 						imagedestroy($src);
 					}
-					echo '<li><a href="'.$file.'" rel="lightbox['.$lightbox.']">';
+					echo '<li><a href="./uploads/'.$file.'" rel="lightbox['.$lightbox.']">';
 					echo '<img src="./uploads/thumbs/'.$file.'" alt="" />';
 					echo '</a></li>';
 				}
