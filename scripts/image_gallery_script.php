@@ -1,0 +1,68 @@
+<?php
+	# SETTINGS
+	$max_width = 100;
+	$max_height = 100;
+	
+	function getPictureType($ext) {
+		if ( preg_match('/jpg|jpeg/i', $ext) ) {
+			return 'jpg';
+		} else if ( preg_match('/png/i', $ext) ) {
+			return 'png';
+		} else if ( preg_match('/gif/i', $ext) ) {
+			return 'gif';
+		} else {
+			return '';
+		}
+	}
+	
+	function getPictures() {
+		global $max_width, $max_height;
+		if ( $handle = opendir(".") ) {
+			$lightbox = rand();
+			echo '<ul id="pictures">';
+			while ( ($file = readdir($handle)) !== false ) {
+				if ( !is_dir($file) ) {
+					$split = explode('.', $file); 
+					$ext = $split[count($split) - 1];
+					if ( ($type = getPictureType($ext)) == '' ) {
+						continue;
+					}
+					if ( ! is_dir('thumbs') ) {
+						mkdir('thumbs');
+					}
+					if ( ! file_exists('thumbs/'.$file) ) {
+						if ( $type == 'jpg' ) {
+							$src = imagecreatefromjpeg($file);
+						} else if ( $type == 'png' ) {
+							$src = imagecreatefrompng($file);
+						} else if ( $type == 'gif' ) {
+							$src = imagecreatefromgif($file);
+						}
+						if ( ($oldW = imagesx($src)) < ($oldH = imagesy($src)) ) {
+							$newW = $oldW * ($max_width / $oldH);
+							$newH = $max_height;
+						} else {
+							$newW = $max_width;
+							$newH = $oldH * ($max_height / $oldW);
+						}
+						$new = imagecreatetruecolor($newW, $newH);
+						imagecopyresampled($new, $src, 0, 0, 0, 0, $newW, $newH, $oldW, $oldH);
+						if ( $type == 'jpg' ) {
+							imagejpeg($new, 'thumbs/'.$file);
+						} else if ( $type == 'png' ) {
+							imagepng($new, 'thumbs/'.$file);
+						} else if ( $type == 'gif' ) {
+							imagegif($new, 'thumbs/'.$file);
+						}
+						imagedestroy($new);
+						imagedestroy($src);
+					}
+					echo '<li><a href="'.$file.'" rel="lightbox['.$lightbox.']">';
+					echo '<img src="thumbs/'.$file.'" alt="" />';
+					echo '</a></li>';
+				}
+			}
+			echo '</ul>';
+		}
+	}
+?>
