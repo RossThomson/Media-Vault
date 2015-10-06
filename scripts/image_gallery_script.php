@@ -17,7 +17,7 @@
 	
 	function getPictures() {
 		global $max_width, $max_height;
-		if ( $handle = opendir(".") ) {
+		if ( $handle = opendir("/uploads/") ) {
 			$lightbox = rand();
 			echo '<ul id="pictures">';
 			while ( ($file = readdir($handle)) !== false ) {
