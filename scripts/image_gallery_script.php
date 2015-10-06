@@ -35,8 +35,8 @@
 		if ( $handle = opendir("./uploads/") ) {
 			$lightbox = rand();
 			echo '<ul id="pictures">';
-			while  ($row) {
-				$row = $result->fetch_assoc();
+			while ($row = $result->fetch_assoc()) {
+				
 				$file = $row['CONTENTTITLE'];
 				if ( !is_dir($file) ) {
 					$split = explode('.', $file); 
@@ -73,7 +73,7 @@
 						}
 						imagedestroy($new);
 						imagedestroy($src);
-						$row ++;
+					
 					}
 					echo '<li><a href="./uploads/'.$file.'" rel="lightbox['.$lightbox.']">';
 					echo '<img src="./uploads/thumbs/'.$file.'" alt="" />';
