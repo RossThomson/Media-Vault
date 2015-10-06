@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$userfolder = $dir.$firstname.$lastname;
 				
 					
-					mkdir('$userfolder');
+					mkdir("$userfolder");
  
  
 					
