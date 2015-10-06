@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
 					if($dir)
  
-					exec("chmod ".$dir." 777");
+					exec("chmod "." 777".$dir);
 					session_start();
 					$_SESSION['error'] = "";
 					header("location: ../register_success.php");
