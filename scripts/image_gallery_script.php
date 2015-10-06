@@ -27,10 +27,10 @@
 					if ( ($type = getPictureType($ext)) == '' ) {
 						continue;
 					}
-					if ( ! is_dir('thumbs') ) {
+					if ( ! is_dir('./uploads/thumbs') ) {
 						mkdir('thumbs');
 					}
-					if ( ! file_exists('thumbs/'.$file) ) {
+					if ( ! file_exists('./uploads/thumbs/'.$file) ) {
 						if ( $type == 'jpg' ) {
 							$src = imagecreatefromjpeg($file);
 						} else if ( $type == 'png' ) {
@@ -48,17 +48,17 @@
 						$new = imagecreatetruecolor($newW, $newH);
 						imagecopyresampled($new, $src, 0, 0, 0, 0, $newW, $newH, $oldW, $oldH);
 						if ( $type == 'jpg' ) {
-							imagejpeg($new, 'thumbs/'.$file);
+							imagejpeg($new, './uploads/thumbs/'.$file);
 						} else if ( $type == 'png' ) {
-							imagepng($new, 'thumbs/'.$file);
+							imagepng($new, './uploads/thumbs/'.$file);
 						} else if ( $type == 'gif' ) {
-							imagegif($new, 'thumbs/'.$file);
+							imagegif($new, './uploads/thumbs/'.$file);
 						}
 						imagedestroy($new);
 						imagedestroy($src);
 					}
-					echo '<li><a href="'.$file.'" rel="lightbox['.$lightbox.']">';
-					echo '<img src="thumbs/'.$file.'" alt="" />';
+					echo '<li><a href="./uploads/'.$file.'" rel="lightbox['.$lightbox.']">';
+					echo '<img src="./uploads/thumbs/'.$file.'" alt="" />';
 					echo '</a></li>';
 				}
 			}
