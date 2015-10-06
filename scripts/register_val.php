@@ -44,11 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$pdo->exec($sql);
 					
 				
-					$dir = mkdir($dir);
+					mkdir("./Test", "777");
  
-					if($dir)
- 
-					exec("chmod "." 777".$dir);
+					
 					session_start();
 					$_SESSION['error'] = "";
 					header("location: ../register_success.php");
