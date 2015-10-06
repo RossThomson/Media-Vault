@@ -42,6 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWERS, HASH) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer','$hash')";
 						
 					$pdo->exec($sql);
+					$oldmask = umask(0);
+					mkdir('$dir.$firstname.$lastname', 0777);
+					umask($oldmask);
 					mkdir('$dir.$firstname.$lastname');
 					session_start();
 					$_SESSION['error'] = "";
