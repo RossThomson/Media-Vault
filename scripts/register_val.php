@@ -3,7 +3,7 @@
 // define variables and set to empty values
 
 $firstname = $lastname = $email= $secretanswer = $password = $secretquestion = "";
-
+$dir = "./uploads/";
 function validate_form($data) {
 	   $data = trim($data);
 	   $data = stripslashes($data);
@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWERS, HASH) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer','$hash')";
 						
 					$pdo->exec($sql);
+					mkdir('$dir.$firstname.$lastname');
 					session_start();
 					$_SESSION['error'] = "";
 					header("location: ../register_success.php");
