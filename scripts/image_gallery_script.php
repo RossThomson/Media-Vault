@@ -15,12 +15,27 @@
 		}
 	}
 	
+	
+	session_start();
+			$userid = $_SESSION['userid'];
+			
+				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
+        
+				$query = "select * from CONTENT WHERE CONTENTTYPE = 'IMAGE' AND USERID = '$userid'";
+				$result = $db->query($query);
+				$row = $result->fetch_assoc();
+	
+	
 	function getPictures() {
 		global $max_width, $max_height;
 		if ( $handle = opendir("./uploads/") ) {
 			$lightbox = rand();
 			echo '<ul id="pictures">';
-			while ( ($file = readdir($handle)) !== false ) {
+			while ( ($file = readdir($handle.$row['CONTENTTITLE'])) !== false ) {
 				if ( !is_dir($file) ) {
 					$split = explode('.', $file); 
 					$ext = $split[count($split) - 1];
@@ -61,6 +76,7 @@
 					echo '<img src="./uploads/thumbs/'.$file.'" alt="" />';
 					echo '</a></li>';
 				}
+				//$row ++;
 			}
 			echo '</ul>';
 		}
