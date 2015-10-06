@@ -15,31 +15,12 @@
 		}
 	}
 	
-	
-	session_start();
-			$userid = $_SESSION['userid'];
-			
-				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
-				if(mysqli_connect_errno())
-				{
-					echo "DB connect error";
-				}		
-        
-				$query = "select * from CONTENT WHERE CONTENTTYPE = 'IMAGE' AND USERID = '$userid'";
-				$result = $db->query($query);
-				
-	
-	
 	function getPictures() {
 		global $max_width, $max_height;
 		if ( $handle = opendir("./uploads/") ) {
 			$lightbox = rand();
 			echo '<ul id="pictures">';
-			$i = 0;
-			while ($i < $result->num_rows;()) {
-				$row = $result->fetch_assoc();
-				$file = $row["CONTENTTITLE"];
-				echo $file = $row["CONTENTTITLE"];
+			while ( ($file = readdir($handle)) !== false ) {
 				if ( !is_dir($file) ) {
 					$split = explode('.', $file); 
 					$ext = $split[count($split) - 1];
@@ -75,13 +56,11 @@
 						}
 						imagedestroy($new);
 						imagedestroy($src);
-					
 					}
 					echo '<li><a href="./uploads/'.$file.'" rel="lightbox['.$lightbox.']">';
 					echo '<img src="./uploads/thumbs/'.$file.'" alt="" />';
 					echo '</a></li>';
 				}
-				$i++;
 			}
 			echo '</ul>';
 		}
