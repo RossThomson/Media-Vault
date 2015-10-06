@@ -35,7 +35,7 @@
 		if ( $handle = opendir("./uploads/") ) {
 			$lightbox = rand();
 			echo '<ul id="pictures">';
-			while ( ($file = readdir($handle.$row['CONTENTTITLE'])) !== false ) {
+			while ( ($file == readdir($handle.$row['CONTENTTITLE']))) {
 				if ( !is_dir($file) ) {
 					$split = explode('.', $file); 
 					$ext = $split[count($split) - 1];
