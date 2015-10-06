@@ -32,11 +32,11 @@
 					}
 					if ( ! file_exists('./uploads/thumbs/'.$file) ) {
 						if ( $type == 'jpg' ) {
-							$src = imagecreatefromjpeg('./uploads/thumbs/'.$file);
+							$src = imagecreatefromjpeg($file);
 						} else if ( $type == 'png' ) {
-							$src = imagecreatefrompng('./uploads/thumbs/'.$file);
+							$src = imagecreatefrompng($file);
 						} else if ( $type == 'gif' ) {
-							$src = imagecreatefromgif('./uploads/thumbs/'.$file);
+							$src = imagecreatefromgif($file);
 						}
 						if ( ($oldW = imagesx($src)) < ($oldH = imagesy($src)) ) {
 							$newW = $oldW * ($max_width / $oldH);
