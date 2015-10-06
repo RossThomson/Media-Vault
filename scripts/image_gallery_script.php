@@ -37,7 +37,7 @@
 			echo '<ul id="pictures">';
 			while ($row = $result->fetch_assoc()) {
 				
-				$file = $row['CONTENTTITLE'];
+				$file = $row["CONTENTTITLE"];
 				if ( !is_dir($file) ) {
 					$split = explode('.', $file); 
 					$ext = $split[count($split) - 1];
