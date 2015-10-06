@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$pdo->exec($sql);
 					
 				
-					mkdir("./Test", "777");
+					mkdir("/Test/", "0777");
  
 					
 					session_start();
