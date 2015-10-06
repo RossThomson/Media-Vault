@@ -27,7 +27,7 @@
 					if ( ($type = getPictureType($ext)) == '' ) {
 						continue;
 					}
-					if ( ! is_dir('./uploads/thumbs') ) {
+					if ( ! is_dir('thumbs') ) {
 						mkdir('thumbs');
 					}
 					if ( ! file_exists('./uploads/thumbs/'.$file) ) {
