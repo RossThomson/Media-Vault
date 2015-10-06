@@ -44,8 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$pdo->exec($sql);
 					
 				
-					
-					mkdir("./uploads/testing");
+					chdir('./uploads/');
+					mkdir("testingtesting");
  
  
 					
