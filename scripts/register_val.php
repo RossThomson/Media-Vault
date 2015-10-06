@@ -45,6 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					
 				
 					mkdir("/Test/", "0777");
+					mkdir("/Testing");
+ 
  
 					
 					session_start();
