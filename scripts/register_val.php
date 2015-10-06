@@ -3,7 +3,8 @@
 // define variables and set to empty values
 
 $firstname = $lastname = $email= $secretanswer = $password = $secretquestion = "";
-$dir = "./uploads/Test";
+$dir = "/var/www/html/Media-Vault/uploads/";
+
 function validate_form($data) {
 	   $data = trim($data);
 	   $data = stripslashes($data);
@@ -43,9 +44,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						
 					$pdo->exec($sql);
 					
+					$userfolder = $dir.$firstname.$lastname;
 				
 					
-					mkdir("/var/www/html/Media-Vault/uploads/Test");
+					mkdir('$userfolder');
  
  
 					
