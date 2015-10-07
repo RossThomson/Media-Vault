@@ -3,7 +3,7 @@
 // Report all errors
 
 
-$target_dir = "uploads/RossThomson/";
+
 $target_file = $target_dir . basename($_FILES["photo"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -11,6 +11,27 @@ $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
 $filename = basename($_FILES["photo"]["name"]);
 $filesize = $_FILES["photo"]["size"];
 $synopsis = $_POST['ref'];
+
+
+session_start();
+	$userid = $_SESSION['userid'];
+	@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
+        
+				$query = "select * from USERS WHERE USERID = '$userid'";
+				$result = $db->query($query);
+				$row = $result->fetch_assoc();
+				
+	$firstname = $row['FIRSTNAME'];
+	$lastname = $row['LASTNAME'];
+	
+	$dir = "uploads/";
+	$target_dir = $dir.$firstname.$lastname."/";
+
+
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
