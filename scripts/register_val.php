@@ -45,9 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$pdo->exec($sql);
 					
 					$userfolder = $dir.$firstname.$lastname;
-				
+					$userthumbs = $userfolder."/thumbs";
 					
 					mkdir("$userfolder");
+					mkdir("$userthumbs");
  
  
 					
