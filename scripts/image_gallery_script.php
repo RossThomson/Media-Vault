@@ -18,8 +18,8 @@
 	$lastname = $row['LASTNAME'];
 	
 	$dir = "./uploads/";
-	$userdir = $dir.$firstname.$lastname;
-	$userdirthumbs = $userdir."/thumbs";
+	$userdir = $dir.$firstname.$lastname."/";
+	$userdirthumbs = $userdir."thumbs/";
 	
 	function getPictureType($ext) {
 		if ( preg_match('/jpg|jpeg/i', $ext) ) {
@@ -45,9 +45,7 @@
 					if ( ($type = getPictureType($ext)) == '' ) {
 						continue;
 					}
-					if ( ! is_dir("$userdirthumbs") ) {
-						mkdir("$userdirthumbs");
-					}
+					
 					if ( ! file_exists($userdirthumbs.$file) ) {
 						if ( $type == 'jpg' ) {
 							$src = imagecreatefromjpeg($userdir.$file);
@@ -66,17 +64,17 @@
 						$new = imagecreatetruecolor($newW, $newH);
 						imagecopyresampled($new, $src, 0, 0, 0, 0, $newW, $newH, $oldW, $oldH);
 						if ( $type == 'jpg' ) {
-							imagejpeg($new, $userdirthumbs."/".$file);
+							imagejpeg($new, $userdirthumbs.$file);
 						} else if ( $type == 'png' ) {
-							imagepng($new, $userdirthumbs."/".$file);
+							imagepng($new, $userdirthumbs.$file);
 						} else if ( $type == 'gif' ) {
-							imagegif($new, $userdirthumbs."/".$file);
+							imagegif($new, $userdirthumbs.$file);
 						}
 						imagedestroy($new);
 						imagedestroy($src);
 					}
-					echo '<li><a href="'$userdir.$file.'" rel="lightbox['.$lightbox.']">';
-					echo '<img src="'$userdirthumbs."/".$file'" alt="" />';
+					echo '<li><a href="'$userdir.$file'" rel="lightbox['.$lightbox.']">';
+					echo '<img src="'$userdirthumbs.$file'" alt="" />';
 					echo '</a></li>';
 				}
 			}
