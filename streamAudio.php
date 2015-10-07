@@ -9,6 +9,7 @@
         echo "history.back();</script>";
     }
 	$pod = PHP->Connect();
+	echo 'Still working';
 	
 	$dir = dirname($_SERVER['DOCUMENT_ROOT']).'';
 	$filename = $_GET['file'];
@@ -17,7 +18,10 @@
 	$extension = "mp3";
 	$mime_type = "audio/mpeg, audio/x-mpeg, audio/x-mpeg-3, audio/mpeg3";
 
+	echo 'This works too';
+	
 	if(file_exists($file)){
+		echo 'And here too';
 		header('Content-type: {$mime_type}');
 		header('Content-length: ' . filesize($file));
 		header('Content-Disposition: filename="' . $filename.'"');
