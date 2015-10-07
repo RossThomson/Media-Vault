@@ -1,16 +1,5 @@
 <?php
 
-// Report all errors
-
-
-
-$target_file = $target_dir . basename($_FILES["photo"]["name"]);
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-$FileType = pathinfo($target_file,PATHINFO_EXTENSION);
-$filename = basename($_FILES["photo"]["name"]);
-$filesize = $_FILES["photo"]["size"];
-$synopsis = $_POST['ref'];
 
 
 session_start();
@@ -29,7 +18,20 @@ session_start();
 	$lastname = $row['LASTNAME'];
 	
 	$dir = "uploads/";
-	$target_dir = $dir.$firstname.$lastname."/";
+	$target_dir = $dir.$firstname.$lastname;
+
+
+
+
+$target_file = $target_dir . basename($_FILES["photo"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$FileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$filename = basename($_FILES["photo"]["name"]);
+$filesize = $_FILES["photo"]["size"];
+$synopsis = $_POST['ref'];
+
+
 
 
 
