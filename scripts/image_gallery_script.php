@@ -38,7 +38,7 @@
 		
 		
 		global $max_width, $max_height;
-		if ( $handle = opendir($userdir) ) {
+		if ( $handle = opendir("$userdir") ) {
 			$lightbox = rand();
 			echo '<ul id="pictures">';
 			while ( ($file = readdir($handle)) !== false ) {
@@ -49,13 +49,13 @@
 						continue;
 					}
 					
-					if ( ! file_exists('$userdirthumbs.$file') ) {
+					if ( ! file_exists($userdirthumbs.$file) ) {
 						if ( $type == 'jpg' ) {
-							$src = imagecreatefromjpeg('$userdir.$file');
+							$src = imagecreatefromjpeg($userdir.$file);
 						} else if ( $type == 'png' ) {
-							$src = imagecreatefrompng('$userdir.$file');
+							$src = imagecreatefrompng($userdir.$file);
 						} else if ( $type == 'gif' ) {
-							$src = imagecreatefromgif('$userdir.$file');
+							$src = imagecreatefromgif($userdir.$file);
 						}
 						if ( ($oldW = imagesx($src)) < ($oldH = imagesy($src)) ) {
 							$newW = $oldW * ($max_width / $oldH);
@@ -67,16 +67,16 @@
 						$new = imagecreatetruecolor($newW, $newH);
 						imagecopyresampled($new, $src, 0, 0, 0, 0, $newW, $newH, $oldW, $oldH);
 						if ( $type == 'jpg' ) {
-							imagejpeg($new, '$userdirthumbs.$file');
+							imagejpeg($new, $userdirthumbs.$file);
 						} else if ( $type == 'png' ) {
-							imagepng($new, '$userdirthumbs.$file');
+							imagepng($new, $userdirthumbs.$file);
 						} else if ( $type == 'gif' ) {
-							imagegif($new, '$userdirthumbs.$file');
+							imagegif($new, $userdirthumbs.$file);
 						}
 						imagedestroy($new);
 						imagedestroy($src);
 					}
-					echo '<li><a href= "./uploads/RossTest/'.$file.'" rel="lightbox['.$lightbox.']">';
+					echo '<li><a href= "'$userdir.$file'" rel="lightbox['.$lightbox.']">';
 					echo '<img src="./uploads/RossTest/thumbs/'.$file.'" alt="" />';
 					echo '</a></li>';
 				}
