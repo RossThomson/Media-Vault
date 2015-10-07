@@ -46,7 +46,7 @@
 						continue;
 					}
 					
-					if ( ! file_exists($userdirthumbs.$file) ) {
+					if ( ! file_exists('./uploads/RossTest/thumbs/'.$file) ) {
 						if ( $type == 'jpg' ) {
 							$src = imagecreatefromjpeg($userdir.$file);
 						} else if ( $type == 'png' ) {
@@ -64,11 +64,11 @@
 						$new = imagecreatetruecolor($newW, $newH);
 						imagecopyresampled($new, $src, 0, 0, 0, 0, $newW, $newH, $oldW, $oldH);
 						if ( $type == 'jpg' ) {
-							imagejpeg($new, $userdirthumbs.$file);
+							imagejpeg($new, './uploads/RossTest/thumbs/'.$file);
 						} else if ( $type == 'png' ) {
-							imagepng($new, $userdirthumbs.$file);
+							imagepng($new, './uploads/RossTest/thumbs/'.$file);
 						} else if ( $type == 'gif' ) {
-							imagegif($new, $userdirthumbs.$file);
+							imagegif($new, './uploads/RossTest/thumbs/'.$file);
 						}
 						imagedestroy($new);
 						imagedestroy($src);
