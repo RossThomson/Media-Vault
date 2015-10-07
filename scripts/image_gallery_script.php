@@ -76,7 +76,7 @@
 						imagedestroy($new);
 						imagedestroy($src);
 					}
-					echo '<li><a href= "$userdir.$file" rel="lightbox['.$lightbox.']">';
+					echo '<li><a href= "' . $userdir.$file . '" rel="lightbox['.$lightbox.']">';
 					echo '<img src="' . $userdirthumbs.$file . '" alt="" />';
 					echo '</a></li>';
 				}
