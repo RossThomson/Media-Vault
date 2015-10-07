@@ -79,7 +79,7 @@ header("location: Login.php");
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
-						<a href='streamAudio.php?file=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+						<a href='streamAudio.php?file=".$row['CONTENTTITLE']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
