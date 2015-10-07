@@ -17,7 +17,7 @@
 	$dir = dirname($_SERVER['DOCUMENT_ROOT']).'/var/www/html/Media-Vault/uploads';
 	$filename = $_GET['file'];
 	$file = $dir."/".$filename;
-
+	echo $file;
 	$extension = "mp3";
 	$mime_type = "audio/mpeg, audio/x-mpeg, audio/x-mpeg-3, audio/mpeg3";
 
