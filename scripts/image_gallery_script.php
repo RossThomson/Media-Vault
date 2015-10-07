@@ -2,7 +2,22 @@
 	# SETTINGS
 	$max_width = 100;
 	$max_height = 100;
-	session_start();
+	
+	
+	function getPictureType($ext) {
+		if ( preg_match('/jpg|jpeg/i', $ext) ) {
+			return 'jpg';
+		} else if ( preg_match('/png/i', $ext) ) {
+			return 'png';
+		} else if ( preg_match('/gif/i', $ext) ) {
+			return 'gif';
+		} else {
+			return '';
+		}
+	}
+	
+	function getPictures() {
+		session_start();
 	$userid = $_SESSION['userid'];
 	@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
 				if(mysqli_connect_errno())
@@ -20,20 +35,8 @@
 	$dir = "./uploads/";
 	$userdir = $dir.$firstname.$lastname."/";
 	$userdirthumbs = $userdir."thumbs/";
-	
-	function getPictureType($ext) {
-		if ( preg_match('/jpg|jpeg/i', $ext) ) {
-			return 'jpg';
-		} else if ( preg_match('/png/i', $ext) ) {
-			return 'png';
-		} else if ( preg_match('/gif/i', $ext) ) {
-			return 'gif';
-		} else {
-			return '';
-		}
-	}
-	
-	function getPictures() {
+		
+		
 		global $max_width, $max_height;
 		if ( $handle = opendir($userdir) ) {
 			$lightbox = rand();
@@ -74,7 +77,7 @@
 						imagedestroy($src);
 					}
 					echo '<li><a href= "./uploads/RossTest/'.$file.'" rel="lightbox['.$lightbox.']">';
-					echo '<img src="./uploads/RossTest/'.$file.'" alt="" />';
+					echo '<img src="./uploads/RossTest/thumbs/'.$file.'" alt="" />';
 					echo '</a></li>';
 				}
 			}
