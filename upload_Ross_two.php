@@ -18,7 +18,7 @@ session_start();
 	$lastname = $row['LASTNAME'];
 	
 	$dir = "uploads/";
-	$target_dir = $dir.$firstname.$lastname;
+	$target_dir = $dir.$firstname.$lastname."/";
 
 
 
