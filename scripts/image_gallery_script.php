@@ -17,7 +17,7 @@
 	}
 	
 	function getPictures() {
-		session_start();
+		//session_start();
 	$userid = $_SESSION['userid'];
 	@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
 				if(mysqli_connect_errno())
