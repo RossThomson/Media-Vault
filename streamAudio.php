@@ -1,4 +1,6 @@
 <?php
+	include 'phpClass';
+	
 	PHP = new ServerConn();
 
 	if(!$_GET['file'])
