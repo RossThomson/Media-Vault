@@ -2,6 +2,24 @@
 	# SETTINGS
 	$max_width = 100;
 	$max_height = 100;
+	session_start();
+	$userid = $_SESSION['userid'];
+	@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
+        
+				$query = "select * from USERS WHERE USERID = '$userid'";
+				$result = $db->query($query);
+				$row = $result->fetch_assoc();
+				
+	$firstname = $row['FIRSTNAME'];
+	$lastname = $row['LASTNAME'];
+	
+	$dir = "./uploads/";
+	$userdir = $dir.$firstname.$lastname;
+	$userdirthumbs = $userdir."/thumbs";
 	
 	function getPictureType($ext) {
 		if ( preg_match('/jpg|jpeg/i', $ext) ) {
@@ -17,7 +35,7 @@
 	
 	function getPictures() {
 		global $max_width, $max_height;
-		if ( $handle = opendir("./uploads/") ) {
+		if ( $handle = opendir("$userdir") ) {
 			$lightbox = rand();
 			echo '<ul id="pictures">';
 			while ( ($file = readdir($handle)) !== false ) {
@@ -27,16 +45,16 @@
 					if ( ($type = getPictureType($ext)) == '' ) {
 						continue;
 					}
-					if ( ! is_dir('thumbs') ) {
-						mkdir('thumbs');
+					if ( ! is_dir("$userdirthumbs") ) {
+						mkdir("$userdirthumbs");
 					}
-					if ( ! file_exists('./uploads/thumbs/'.$file) ) {
+					if ( ! file_exists($userdirthumbs.$file) ) {
 						if ( $type == 'jpg' ) {
-							$src = imagecreatefromjpeg('./uploads/'.$file);
+							$src = imagecreatefromjpeg($userdir.$file);
 						} else if ( $type == 'png' ) {
-							$src = imagecreatefrompng('./uploads/'.$file);
+							$src = imagecreatefrompng($userdir.$file);
 						} else if ( $type == 'gif' ) {
-							$src = imagecreatefromgif('./uploads/'.$file);
+							$src = imagecreatefromgif($userdir.$file);
 						}
 						if ( ($oldW = imagesx($src)) < ($oldH = imagesy($src)) ) {
 							$newW = $oldW * ($max_width / $oldH);
@@ -48,17 +66,17 @@
 						$new = imagecreatetruecolor($newW, $newH);
 						imagecopyresampled($new, $src, 0, 0, 0, 0, $newW, $newH, $oldW, $oldH);
 						if ( $type == 'jpg' ) {
-							imagejpeg($new, './uploads/thumbs/'.$file);
+							imagejpeg($new, $userdirthumbs."/".$file);
 						} else if ( $type == 'png' ) {
-							imagepng($new, './uploads/thumbs/'.$file);
+							imagepng($new, $userdirthumbs."/".$file);
 						} else if ( $type == 'gif' ) {
-							imagegif($new, './uploads/thumbs/'.$file);
+							imagegif($new, $userdirthumbs."/".$file);
 						}
 						imagedestroy($new);
 						imagedestroy($src);
 					}
-					echo '<li><a href="./uploads/'.$file.'" rel="lightbox['.$lightbox.']">';
-					echo '<img src="./uploads/thumbs/'.$file.'" alt="" />';
+					echo '<li><a href="'$userdir.$file.'" rel="lightbox['.$lightbox.']">';
+					echo '<img src="'$userdirthumbs."/".$file'" alt="" />';
 					echo '</a></li>';
 				}
 			}
