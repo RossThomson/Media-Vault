@@ -35,7 +35,7 @@
 	
 	function getPictures() {
 		global $max_width, $max_height;
-		if ( $handle = opendir("$userdir") ) {
+		if ( $handle = opendir($userdir) ) {
 			$lightbox = rand();
 			echo '<ul id="pictures">';
 			while ( ($file = readdir($handle)) !== false ) {
@@ -64,11 +64,11 @@
 						$new = imagecreatetruecolor($newW, $newH);
 						imagecopyresampled($new, $src, 0, 0, 0, 0, $newW, $newH, $oldW, $oldH);
 						if ( $type == 'jpg' ) {
-							imagejpeg($new, './uploads/RossTest/thumbs/'.$file);
+							imagejpeg($new, $userdirthumbs.$file);
 						} else if ( $type == 'png' ) {
-							imagepng($new, './uploads/RossTest/thumbs/'.$file);
+							imagepng($new, $userdirthumbs.$file);
 						} else if ( $type == 'gif' ) {
-							imagegif($new, './uploads/RossTest/thumbs/'.$file);
+							imagegif($new, $userdirthumbs.$file);
 						}
 						imagedestroy($new);
 						imagedestroy($src);
