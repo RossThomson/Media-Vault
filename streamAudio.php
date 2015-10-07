@@ -1,5 +1,5 @@
 <?php
-	include 'phpClass';
+	include 'phpClass.php';
 	
 	PHP = new ServerConn();
 
@@ -8,7 +8,7 @@
         echo "<script>alert('wrong access');";
         echo "history.back();</script>";
     }
-	$pod = PHP->connect();
+	$pod = PHP->Connect();
 	
 	$dir = dirname($_SERVER['DOCUMENT_ROOT']).'';
 	$filename = $_GET['file'];
