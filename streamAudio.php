@@ -1,15 +1,18 @@
 <?php
-	include 'phpClass.php';
-	
-	PHP = new ServerConn();
-
 	if(!$_GET['file'])
     {
         echo "<script>alert('wrong access');";
         echo "history.back();</script>";
     }
-	$pod = PHP->Connect();
-	echo 'Still working';
+	$dbhost = "localhost";
+	$dbname	= "MEDIALYNX";
+	$dbuser	= "root";
+	$dbpass	= "root";
+	try {
+		$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+	} catch(PDOException $e){
+		echo $e->getMessage();
+	}
 	
 	$dir = dirname($_SERVER['DOCUMENT_ROOT']).'';
 	$filename = $_GET['file'];
