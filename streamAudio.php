@@ -14,7 +14,7 @@
 		echo $e->getMessage();
 	}
 	
-	$dir = dirname($_SERVER['DOCUMENT_ROOT']).'html/Media-Vault/uploads';
+	$dir = dirname($_SERVER['DOCUMENT_ROOT']).'/html/Media-Vault/uploads';
 	$filename = $_GET['file'];
 	$file = $dir."/".$filename;
 	echo $file;
