@@ -41,11 +41,11 @@ img {
 				<img src="graphics/logo.jpg">
 			</a> -->
 			<ul>
-				<li><a href="media_playlist.php">Playlist</a></li>
-				<li><a href="media_doc.php">Doc</a></li>
+				<li><a href="media_playlist.php">Playlists</a></li>
+				<li><a href="media_doc.php">Docs</a></li>
 				<li><a class="active" href="image_gallery_test.php">Photos</a></li>
 				<li><a href="media_music.php">Music</a></li>
-				<li><a href="media_video.php">Video</a></li>
+				<li><a href="media_video.php">Videos</a></li>
 				<li><a href="media_all.php">All files</a></li>
 			</ul>		
 		</div>
