@@ -3,13 +3,13 @@
 
 
    
-function checkMusicFile() {
+function checkMusicFile(form) {
 	var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"]; 
-    var arrInputs = document.getElementById("fileName");
+    var arrInputs = form.getElementsByTagName("input");
     for (var i = 0; i < arrInputs.length; i++) {
-        var oInput = arrInputs[i];
-        if (oInput.type == "file") {
-            var sFileName = oInput.value;
+        var Input = arrInputs[i];
+        if (Input.type == "file") {
+            var sFileName = Input.value;
             if (sFileName.length > 0) {
                 var blnValid = false;
                 for (var j = 0; j < _validFileExtensions.length; j++) {
