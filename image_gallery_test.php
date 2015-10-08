@@ -5,6 +5,7 @@
 <title>Pictures</title>
 <link rel="stylesheet" href="styles/lightbox.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="styles/styles.css">
+<script type="text/javascript" src="scripts/upload_val.js"></script>
 <?php include 'scripts/image_gallery_script.php'; ?>
 <style type="text/css">
 #pictures li {
@@ -43,9 +44,9 @@ img {
 </div>
 
 <div id="aboutus_content">	
-<form action="upload_Ross_two.php" method="post" enctype="multipart/form-data">
+<form action="upload_Ross_two.php" method="post" enctype="multipart/form-data" onsubmit="checkMusicFile()">
     Select an image to upload:
-    <input type="file" name="photo"/>
+    <input type="file" name="photo" id="fileName"/>
 	<br />
 	Description: <input name="ref" type="text" />
     <input type="submit" value="Submit" name="submit"/>
