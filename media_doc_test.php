@@ -64,10 +64,15 @@ header("location: Login.php");
                 <th width="150">SIZE</th>
 				<th width="200">SYNOPSIS</th>
                 <th width="50">DEL</th>
+				<th width="50">View</th>
             </tr>
         </thead>
         <tbody>
             <?php
+				$dir="uploads/";
+				$name=$row['CONTENTTITLE'];
+				$source = $dir.$name;
+			
                 for($i=0; $i<$num_result; $i++)
                 {
                     $row = $result->fetch_assoc();
@@ -80,6 +85,8 @@ header("location: Login.php");
 					echo "<td align='center'>".$row['SYNOPSIS']."</td>";
                     echo "<td align='center'>
                 <a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+					echo "<td align='center'>
+				<a href='uploads/".$row['CONTENTTITLE']."'>View</a></td>";
                     echo "</tr>";
                 }
                 $db->close();
