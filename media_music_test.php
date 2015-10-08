@@ -80,7 +80,7 @@ header("location: Login.php");
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
-							<audio src= 'uploads/".$row['CONTENTTITLE']."'controls></audio></td>";
+						<audio src= 'uploads/".$row['CONTENTTITLE']."'controls></audio></td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
