@@ -62,6 +62,7 @@ header("location: Login.php");
 						<th width="200">SYNOPSIS</th>
 						<th width="200">Thumbnail</th>
 						<th width="50">DEL</th>
+						<th width="50">View</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -83,6 +84,8 @@ header("location: Login.php");
 							<video src= 'uploads/".$row['CONTENTTITLE']."' width = '150' height = '150' controls></video></td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+							echo "<td align='center'>
+						<a href='uploads/".$row['CONTENTTITLE']."'>View</a></td>";
 							echo "</tr>";
 						}
 						$db->close();
