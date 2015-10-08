@@ -14,6 +14,7 @@ header("location: Login.php");
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> -->
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
     <link rel="stylesheet" href="styles/styles.css">
+	<script type="text/javascript" src="scripts/upload_val.js"></script>
 </head>
 
 <body>
@@ -96,7 +97,7 @@ header("location: Login.php");
 	</div>
 	<br><br>
 <div id="aboutus_content">	
-<form action="upload_movie.php" method="post" enctype="multipart/form-data">
+<form action="upload_movie.php" method="post" enctype="multipart/form-data" onsubmit="return checkVideoFile(this);">
     Select a video to upload:
     <input type="file" name="fileName"/>
 	<br />

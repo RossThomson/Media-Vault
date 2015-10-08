@@ -18,7 +18,7 @@ if ($_FILES["fileName"]["size"] > 5000000) {
 }
 
 if($FileType != "mp4" && $FileType != "mpeg" && $FileType != "avi") {
-    echo "Sorry, only DOC, TXT & PDF files are allowed.";
+    echo "Sorry, only mp4, mpeg & avi files are allowed.";
     $uploadOk = 0;
 }
 
