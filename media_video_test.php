@@ -60,7 +60,7 @@ header("location: Login.php");
 						<th width="250">FILE</th>
 						<th width="100">TYPE</th>
 						<th width="150">SIZE</th>
-						<th width="200">SYNOPSIS</th>
+						<th width="200">Thumbnail</th>
 						<th width="50">DEL</th>
 					</tr>
 				</thead>
@@ -80,7 +80,7 @@ header("location: Login.php");
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>
-							<video src= 'uploads/$name' controls autoplay></video></td>";	
+							<video src= 'uploads/".$row['CONTENTTITLE']."' controls autoplay></video></td>";	
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
