@@ -60,7 +60,6 @@ header("location: Login.php");
 					<tr>
 						<th width="50">NUM</th>
 						<th width="250">FILE</th>
-						<th width="100">TYPE</th>
 						<th width="150">SIZE</th>
 						<th width="200">SYNOPSIS</th>
 						<th width="250">STREAM</th>
@@ -76,11 +75,10 @@ header("location: Login.php");
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
-							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
-						<a href='streamAudio.php?file=".$row['CONTENTTITLE']."'>".$row['CONTENTTITLE']."</a></td>";
+						<audio src= 'uploads/".$row['CONTENTTITLE']."'controls></audio></td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
