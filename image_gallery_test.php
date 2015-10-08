@@ -44,7 +44,7 @@ img {
 </div>
 
 <div id="aboutus_content">	
-<form action="upload_Ross_two.php" method="post" enctype="multipart/form-data" onsubmit="return checkMusicFile(this);">
+<form action="upload_Ross_two.php" method="post" enctype="multipart/form-data" onsubmit="return checkImageFile(this);">
     Select an image to upload:
     <input type="file" name="photo"/>
 	<br />
