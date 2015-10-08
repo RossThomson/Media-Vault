@@ -21,7 +21,7 @@ function checkMusicFile(form) {
                 }
                 
                 if (!blnValid) {
-                    alert("Sorry, " + sFileName + " is invalid, allowed extensions are: " + _validFileExtensions.join(", "));
+                    alert("Sorry not a valid image file is invalid.  Allowed extensions are: " + _validFileExtensions.join(", "));
                     return false;
                 }
             }
