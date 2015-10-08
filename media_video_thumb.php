@@ -71,23 +71,31 @@ header("location: Login.php");
 						for($i=0; $i<$num_result; $i++)
 						{
 							$row = $result->fetch_assoc();
+							//open video for thumbnail
+							$videoFile= fopen("/uploads/".$userDir['FIRSTNAME']."".$userDir['LASTNAME']."/".$row['CONTENTTITLE']"","w");
 							
-							//display a thumbnail for every row
+							//generate a thumbnail for every row
 							$ffmpeg = FFMpeg\FFMpeg::create();
-							$video = $ffmpeg->open('<a href='download.php?num=".$row['CONTENTID']."'></a>');
+							$video = $ffmpeg->open('".$videoFile"');
 							$frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(1));
-							$frame->save('uploads\".$userDir['FIRSTNAME']."".$userDir['LASTNAME']."\thumb".$row['CONTENTTITLE'].".jpg');
-							
+							$thumbDir = "uploads/".$userDir['FIRSTNAME']."".$userDir['LASTNAME']."*/thumb".$row['CONTENTTITLE']"";
+							$frame->save('$thumbDir."*.jpg"');
+							$images = glob($thumbDir."*.jpg");
 							echo "<tr>";
+
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
-							echo "<td align='center'><a href='uploads\".$userDir['FIRSTNAME']."".$userDir['LASTNAME']."\thumb".$row['CONTENTTITLE'].".jpg'></a></td>";
+							//display thumbnail
+							echo "<td align='center'><img src='".$images."' />";
 							echo "<td align='left'><a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."'</a></td>";
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
-						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+							<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
+
+							//close video
+							fclose($videoFile)
 						}
 						$db->close();
 					?>
@@ -99,7 +107,7 @@ header("location: Login.php");
 	</div>
 	<br><br>
 <div id="aboutus_content">	
-<form action="upload_movie.php" method="post" enctype="multipart/form-data">
+<form action="upload_movie_thumb.php" method="post" enctype="multipart/form-data">
     Select a video to upload:
     <input type="file" name="fileName"/>
 	<br />
