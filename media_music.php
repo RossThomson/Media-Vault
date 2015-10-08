@@ -96,7 +96,7 @@ header("location: Login.php");
 	<br><br>
 <div id="aboutus_content">	
 <form action="upload_music.php" method="post" enctype="multipart/form-data" onsubmit="return checkMusicFile(this);">
-    Select a music to upload:
+    Select a music file to upload:
     <input type="file" name="fileName"/>
 	<br />
 	Description: <input name="ref" type="text" />
