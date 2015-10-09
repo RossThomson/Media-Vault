@@ -12,7 +12,7 @@ exit;
 $con = mysql_connect("localhost", "root", "root");
 mysql_select_db("MEDIALYNX");
 mysql_query("CONTENT");
-$query = "select * from CONTENT where CONTENTTITLE '%$key%' limit 0,10";
+$query = "select * from CONTENT where CONTENTTITLE like '%$key%' limit 0,10";
 $result = mysql_query($query, $con);;
  
 $total = mysql_num_rows($result);
