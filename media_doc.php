@@ -86,10 +86,10 @@ header("location: Login.php");
         
 				$query = "select * from USERS WHERE USERID = '$userid'";
 				$result = $db->query($query);
-				$row = $result->fetch_assoc();
+				$row1 = $result->fetch_assoc();
 				
-					$firstname = $row['FIRSTNAME'];
-					$lastname = $row['LASTNAME'];
+					$firstname = $row1['FIRSTNAME'];
+					$lastname = $row1['LASTNAME'];
 	
 					$dir = "uploads/";
 					$userdir = $dir.$firstname.$lastname."/";
