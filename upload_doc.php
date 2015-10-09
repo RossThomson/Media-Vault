@@ -4,7 +4,7 @@ session_start();
 	
 	$firstname  = $_SESSION['first_name'];
 	$lastname = $_SESSION['last_name'];
-	
+	$userid = $_SESSION['userid'];
 	$dir = "uploads/";
 	$target_dir = $dir.$firstname.$lastname."/";
 
