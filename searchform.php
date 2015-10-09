@@ -9,6 +9,6 @@
 <option value=Type>Synopsis</option>
 </select>
 <input type=text name=key size=20>
-<input type=submit value=검색>
+<input type=submit value=Search>
 </td>
 </html>
