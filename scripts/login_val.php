@@ -45,7 +45,7 @@ session_start();
 		
 		}
 		
-		$conn = null;
+		//$conn = null;
 	}
 
 ?>
