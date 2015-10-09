@@ -76,9 +76,29 @@ header("location: Login.php");
 				</thead>
 				<tbody>
 					<?php
-						$dir="uploads/";
+							session_start();
+							$userid = $_SESSION['userid'];
+							@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
+        
+				$query = "select * from USERS WHERE USERID = '$userid'";
+				$result = $db->query($query);
+				$row = $result->fetch_assoc();
+				
+					$firstname = $row['FIRSTNAME'];
+					$lastname = $row['LASTNAME'];
+	
+					$dir = "uploads/";
+					$userdir = $dir.$firstname.$lastname."/";
+					
+					
+					
+					
 						$name=$row['CONTENTTITLE'];
-						$source = $dir.$name;
+						$source = $userdir.$name;
 					
 						for($i=0; $i<$num_result; $i++)
 						{
