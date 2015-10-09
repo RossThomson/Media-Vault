@@ -37,11 +37,16 @@ echo("<tr><td colspan=5 align=center>No search result.</td></tr>");
 $counter=1;
 while($counter<$total):
 //echo "<td> ".$row['CONTENTTITLE']."</td>";
-echo $file_name=mysql_result($result,$counter,"CONTENTTITLE");
+/* echo $file_name=mysql_result($result,$counter,"CONTENTTITLE");
 echo $file_type=mysql_result($result,$counter,"CONTENTTYPE");
 echo $file_size=mysql_result($result,$counter,"SIZE");
 echo $synopsis=mysql_result($result,$counter,"SYNOPSIS");
-echo $counter = $counter + 1;
+$counter = $counter + 1; */
+echo mysql_result($result,$counter,"CONTENTTITLE");
+echo mysql_result($result,$counter,"CONTENTTYPE");
+echo mysql_result($result,$counter,"SIZE");
+echo mysql_result($result,$counter,"SYNOPSIS");
+$counter = $counter + 1;
 endwhile;
 echo("</table>");
 }
