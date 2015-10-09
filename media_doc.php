@@ -39,6 +39,15 @@ header("location: Login.php");
 	</header>
 </div>
 	<!-- </div> -->
+	
+	<form class="upload_form" action="upload_doc.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
+    Select a document to upload:
+    <input type="file" name="fileName"/>
+	<br />
+	Description: <input name="ref" type="text" />
+    <input type="submit" value="Submit" name="submit"/>
+</form>
+	
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>		
@@ -95,13 +104,7 @@ header("location: Login.php");
 	</div>
 	<br><br>
 
-<form class="upload_form" action="upload_doc.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
-    Select a document to upload:
-    <input type="file" name="fileName"/>
-	<br />
-	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit"/>
-</form>
+
 
 
 	
