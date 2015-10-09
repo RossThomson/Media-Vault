@@ -1,6 +1,24 @@
 <?php
 
-$target_dir = "uploads/";
+session_start();
+	$userid = $_SESSION['userid'];
+	@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
+        
+				$query = "select * from USERS WHERE USERID = '$userid'";
+				$result = $db->query($query);
+				$row = $result->fetch_assoc();
+				
+	$firstname = $row['FIRSTNAME'];
+	$lastname = $row['LASTNAME'];
+	
+	$dir = "uploads/";
+	$target_dir = $dir.$firstname.$lastname."/";
+
+
 $target_file = $target_dir . basename($_FILES["fileName"]["name"]);
 $uploadOk = 1;
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
