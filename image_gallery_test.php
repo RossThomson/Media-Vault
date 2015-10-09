@@ -19,9 +19,9 @@ header("location: Login.php");
 <style type="text/css">
 #pictures li {
 	float:left;
-	height:<?php echo ($max_height); ?>px;
+	height: 20px;
 	list-style:none outside;
-	width:<?php echo ($max_width); ?>px;
+	width: 20px;
 	text-align:center;
 }
 img {
