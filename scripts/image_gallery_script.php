@@ -1,7 +1,7 @@
 <?php
 	# SETTINGS
-	$max_width = 100;
-	$max_height = 100;
+	$max_width = 200;
+	$max_height = 200;
 	
 	
 	function getPictureType($ext) {
