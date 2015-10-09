@@ -28,6 +28,9 @@ margin-right: auto;
 .upload_form {
 	display: inline-block;
     text-align: center;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #jae_design-by {
