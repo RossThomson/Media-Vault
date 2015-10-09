@@ -1,4 +1,4 @@
-<?
+<?php
 $field=$_POST['field'];
 $key = $_POST['key'];
 if(!$key){
