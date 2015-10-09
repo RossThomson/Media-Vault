@@ -32,6 +32,7 @@ session_start();
 		if(password_verify('$password', $hash)) {
 		session_start(); 
 		$_SESSION['first_name'] = $q2['FIRSTNAME'];
+		$_SESSION['last_name'] = $q2['LASTNAME'];
 		$_SESSION['email'] = $q2['EMAIL'];
 		$_SESSION['userid'] = $q2['USERID'];
 		$_SESSION['error'] = "";

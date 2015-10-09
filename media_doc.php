@@ -76,29 +76,17 @@ header("location: Login.php");
 				</thead>
 				<tbody>
 					<?php
-							session_start();
-							$userid = $_SESSION['userid'];
-							@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
-				if(mysqli_connect_errno())
-				{
-					echo "DB connect error";
-				}		
-        
-				$query = "select * from USERS WHERE USERID = '$userid'";
-				$result = $db->query($query);
-				$row1 = $result->fetch_assoc();
-				
-					$firstname = $row1['FIRSTNAME'];
-					$lastname = $row1['LASTNAME'];
-	
-					$dir = "uploads/";
-					$userdir = $dir.$firstname.$lastname."/";
+							
+				$firstname  = $_SESSION['first_name'];
+				$lastname = $_SESSION['last_name'];
+				$dir = "uploads/";
+				$userdir = $dir.$firstname.$lastname."/";
 					
 					
 					
 					
-						$name=$row['CONTENTTITLE'];
-						$source = $userdir.$name;
+						
+						
 					
 						for($i=0; $i<$num_result; $i++)
 						{
@@ -111,7 +99,7 @@ header("location: Login.php");
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "<td align='center'>
-						<a href='".$userdir.$source."'>View</a></td>";
+						<a href='".$userdir.$row['CONTENTTITLE']."'>View</a></td>";
 							echo "</tr>";
 						}
 						$db->close();
