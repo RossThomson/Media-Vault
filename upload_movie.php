@@ -12,10 +12,10 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 
-/*if ($_FILES["fileName"]["size"] > 5000000) {
+if ($_FILES["fileName"]["size"] > 5368709120) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
-}*/
+}
 
 if($FileType != "mp4" && $FileType != "mpeg" && $FileType != "avi") {
     echo "Sorry, only mp4, mpeg & avi files are allowed.";

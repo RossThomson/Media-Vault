@@ -1,9 +1,5 @@
 <?php    
  
- session_start();
-$firstname  = $_SESSION['first_name'];
-$lastname = $_SESSION['last_name'];
- 
     if(!$_GET['num'])
     {
         echo "<script>alert('wrong access');";
@@ -27,11 +23,9 @@ $lastname = $_SESSION['last_name'];
     $result = $result->fetch_assoc();
     
     $dir = "uploads/";
-	$userdir = $dir.$firstname.$lastname."/";
-					
     $filename = $result['CONTENTTITLE'];
     
-    if(!unlink($userdir.$filename))
+    if(!unlink($dir.$filename))
     {
             echo "file delete error";
             exit;

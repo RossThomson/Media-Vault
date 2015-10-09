@@ -1,7 +1,5 @@
 <?php
 session_start();
-$firstname  = $_SESSION['first_name'];
-$lastname = $_SESSION['last_name'];
 
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
@@ -17,7 +15,6 @@ header("location: Login.php");
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> -->
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
     <link rel="stylesheet" href="styles/styles.css">
-	<script type="text/javascript" src="scripts/upload_val.js"></script>
 </head>
 
 <body>
@@ -30,26 +27,17 @@ header("location: Login.php");
 				<img src="graphics/logo.jpg">
 			</a> -->
 			<ul>
-				<li><a href="media_playlist.php">Playlists</a></li>
-				<li><a class="active" href="media_doc.php">Docs</a></li>
+				<li><a href="media_playlist.php">Playlist</a></li>
+				<li><a class="active" href="media_doc.php">Doc</a></li>
 				<li><a href="image_gallery_test.php">Photos</a></li>
 				<li><a href="media_music.php">Music</a></li>
-				<li><a href="media_video.php">Videos</a></li>
+				<li><a href="media_video.php">Video</a></li>
 				<li><a href="media_all.php">All files</a></li>
 			</ul>		
 		</div>
 	</header>
 </div>
 	<!-- </div> -->
-	
-	<form class="upload_form" action="upload_doc.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
-    Select a document to upload:
-    <input type="file" name="fileName"/>
-	<br />
-	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit"/>
-</form>
-	
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>		
@@ -69,38 +57,28 @@ header("location: Login.php");
 			<table border='1' align="center">
 				<thead>
 					<tr>
+						<th width="50">NUM</th>
 						<th width="250">FILE</th>
+						<th width="100">TYPE</th>
 						<th width="150">SIZE</th>
 						<th width="200">SYNOPSIS</th>
 						<th width="50">DEL</th>
-						<th width="50">View</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php
-						
-				
-				$dir = "uploads/";
-				$userdir = $dir.$firstname.$lastname."/";
-					
-					
-					
-					
-						
-						
-					
 						for($i=0; $i<$num_result; $i++)
 						{
 							$row = $result->fetch_assoc();
 							echo "<tr>";
+							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
-							echo "<td align='center'>
-						<a href='".$userdir.$row['CONTENTTITLE']."'>View</a></td>";
 							echo "</tr>";
 						}
 						$db->close();
@@ -112,12 +90,18 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 	</div>
 	<br><br>
+<div id="aboutus_content">	
+<form action="upload_doc.php" method="post" enctype="multipart/form-data">
+    Select a document to upload:
+    <input type="file" name="fileName"/>
+	<br />
+	Description: <input name="ref" type="text" />
+    <input type="submit" value="Submit" name="submit"/>
+</form>
 
-
-
-
+</div>
 	
-
+	<br><br><br>
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
