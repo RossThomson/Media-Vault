@@ -92,7 +92,7 @@ function checkVideoFile(form) {
 
 
 function checkDocFile(form) {
-	var _validFileExtensions = [".doc", ".pdf", ".docx", ".csv", ".txt", ".ppt"]; 
+	var _validFileExtensions = [".doc", ".pdf", ".docx", ".csv", ".txt", ".ppt", ".pptx"]; 
     var arrInputs = form.getElementsByTagName("input");
     for (var i = 0; i < arrInputs.length; i++) {
         var Input = arrInputs[i];
@@ -109,7 +109,7 @@ function checkDocFile(form) {
                 }
                 
                 if (!blnValid) {
-                    alert("Sorry not a valid video file.  Allowed extensions are: " + _validFileExtensions.join(", "));
+                    alert("Sorry not a valid document file.  Allowed extensions are: " + _validFileExtensions.join(", "));
                     return false;
                 }
             }
