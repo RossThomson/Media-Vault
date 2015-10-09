@@ -38,8 +38,17 @@ session_start();
 		$_SESSION['error'] = "";
 		header("location: ../media_all.php");
 		
-
-		}
+		$firstname = $q2['FIRSTNAME'];
+		$userid = $q2['USERID'];
+		
+		$searchTable = "DROP TABLE IF EXISTS '".$userid."-".$firstname."';
+						CREATE TABLE '' (
+						'Item' varchar(256),
+						'TimeAccessed' TIMESTAMP,
+						) DEFAULT CHARSET=utf8;";
+		
+		$conn->exec($searchTable);
+		} catch(PDOException $e) {echo $e."<br>".$searchTable."<br>";}
 		
 		else{
 			session_start(); 
@@ -47,6 +56,8 @@ session_start();
 			header("location: ../Login.php");
 		
 		}
+		
+		$conn = null;
 	}
 
 ?>
