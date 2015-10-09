@@ -10,18 +10,9 @@ exit;
 }
  
 $con = mysql_connect("localhost", "root", "root");
-if (mysql_error()) {
-echo 'DB connection error - ' . mysql_error();
-}
 mysql_select_db("MEDIALYNX");
-if (mysql_error()) {
-echo 'DB name error - ' . mysql_error();
-}
 mysql_query("CONTENT");
-$query = "select * from CONTENT where CONTENTTITLE like '%$key%' limit 0,10";
-if (mysql_error()) {
-echo 'query error - ' . mysql_error();
-}
+$query = "select * from CONTENT where CONTENTTITLE like '$key' limit 0,10";
 $result = mysql_query($query, $con);;
  
 $total = mysql_num_rows($result);
@@ -43,13 +34,18 @@ echo("
 if (!$total){
 echo("<tr><td colspan=5 align=center>No search result.</td></tr>");
 } else {
-$counter = 0;
+$counter=1;
 while($counter<$total):
 //echo "<td> ".$row['CONTENTTITLE']."</td>";
-$CONTENTTITLE=mysql_result($result,$counter,"CONTENTTITLE");
-$CONTENTTYPE=mysql_result($result,$counter,"CONTENTTYPE");
-$SIZE=mysql_result($result,$counter,"SIZE");
-$SYNOPSIS=mysql_result($result,$counter,"SYNOPSIS");
+/* echo $file_name=mysql_result($result,$counter,"CONTENTTITLE");
+echo $file_type=mysql_result($result,$counter,"CONTENTTYPE");
+echo $file_size=mysql_result($result,$counter,"SIZE");
+echo $synopsis=mysql_result($result,$counter,"SYNOPSIS");
+$counter = $counter + 1; */
+echo mysql_result($result,$counter,"CONTENTTITLE");
+echo mysql_result($result,$counter,"CONTENTTYPE");
+echo mysql_result($result,$counter,"SIZE");
+echo mysql_result($result,$counter,"SYNOPSIS");
 $counter = $counter + 1;
 endwhile;
 echo("</table>");
