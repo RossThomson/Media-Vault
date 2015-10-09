@@ -38,6 +38,16 @@ header("location: Login.php");
 	</header>
 </div>
 	<!-- </div> -->
+	
+	<form class="upload_form" action="upload_movie.php" method="post" enctype="multipart/form-data" onsubmit="return checkVideoFile(this);">
+    Select a video to upload:
+    <input type="file" name="fileName"/>
+	<br />
+	Description: <input name="ref" type="text" />
+    <input type="submit" value="Submit" name="submit"/>
+</form>
+	
+	
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>		
@@ -97,13 +107,7 @@ header("location: Login.php");
 	</div>
 	<br><br>
 	
-<form class="upload_form" action="upload_movie.php" method="post" enctype="multipart/form-data" onsubmit="return checkVideoFile(this);">
-    Select a video to upload:
-    <input type="file" name="fileName"/>
-	<br />
-	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit"/>
-</form>
+
 
 
 
