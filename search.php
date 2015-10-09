@@ -36,7 +36,7 @@ echo("<tr><td colspan=5 align=center>No search result.</td></tr>");
 } else {
 $counter=1;
 while($counter<$total):
-echo "<td> ".$row['CONTENTTITLE']."</td>"
+echo "<td> ".$row['CONTENTTITLE']."</td>";
 //$file_name=mysql_result($result,$counter,"CONTENTTITLE");
 $file_type=mysql_result($result,$counter,"CONTENTTYPE");
 $file_size=mysql_result($result,$counter,"SIZE");
