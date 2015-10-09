@@ -36,10 +36,10 @@ echo("<tr><td colspan=5 align=center>No search result.</td></tr>");
 } else {
 $counter=1;
 while($counter<$total):
-$case_alias_year=mysql_result($result,$counter,"CONTENTTITLE");
-$student_grade=mysql_result($result,$counter,"CONTENTTYPE");
-$student_div=mysql_result($result,$counter,"SIZE");
-$student_no=mysql_result($result,$counter,"SYNOPSIS");
+$file_name=mysql_result($result,$counter,"CONTENTTITLE");
+$file_type=mysql_result($result,$counter,"CONTENTTYPE");
+$file_size=mysql_result($result,$counter,"SIZE");
+$synopsis=mysql_result($result,$counter,"SYNOPSIS");
 $counter = $counter + 1;
 endwhile;
 echo("</table>");
