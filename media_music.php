@@ -90,8 +90,8 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 	</div>
 	<br><br>
-<div id="aboutus_content">	
-<form action="upload_music.php" method="post" enctype="multipart/form-data" onsubmit="return checkMusicFile(this);">
+
+<form  class="upload_form" action="upload_music.php" method="post" enctype="multipart/form-data" onsubmit="return checkMusicFile(this);">
     Select a music file to upload:
     <input type="file" name="fileName"/>
 	<br />
@@ -99,9 +99,9 @@ header("location: Login.php");
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
-</div>
+
 	
-	<br><br><br>	
+
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
