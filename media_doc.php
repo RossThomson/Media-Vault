@@ -92,7 +92,7 @@ header("location: Login.php");
 					$lastname = $row['LASTNAME'];
 	
 					$dir = "uploads/";
-					$userdir = $dir.$firstname.$lastname."/";
+					$userdir = $dir.$firstname.$lastname;
 					
 					
 					
