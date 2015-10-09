@@ -1,10 +1,10 @@
 <?
-$field=$_POST['field'];
+$field=$_POST['CONTENTTITLE'];
 $key = $_POST['key'];
  
 if(!$key){
  echo("<script>
- window.alert('검색어를 입력');
+ window.alert('Enter the key words');
  history.go(-1);
  </script>");
  exit;
