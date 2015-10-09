@@ -36,9 +36,9 @@ session_start();
 		$_SESSION['email'] = $q2['EMAIL'];
 		$_SESSION['userid'] = $q2['USERID'];
 		$_SESSION['error'] = "";
-		/*header("location: ../media_all.php");
+		header("location: ../media_all.php");
 		
-		$firstname = $q2['FIRSTNAME'];
+		/*$firstname = $q2['FIRSTNAME'];
 		$userid = $q2['USERID'];
 		
 		$searchTable = "DROP TABLE IF EXISTS '".$userid."-".$firstname.";
