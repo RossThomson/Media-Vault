@@ -19,13 +19,13 @@ header("location: Login.php");
 <style type="text/css">
 #pictures li {
 	float:left;
-	height:<?php echo ($max_height + 10); ?>px;
+	height:<?php echo ($max_height); ?>px;
 	list-style:none outside;
-	width:<?php echo ($max_width + 10); ?>px;
+	width:<?php echo ($max_width); ?>px;
 	text-align:center;
 }
 img {
-	border:0;
+	border:1px solid #021a40;
 	outline:none;
 }
 </style>
