@@ -19,7 +19,7 @@ if ($_FILES["fileName"]["size"] > 5000000) {
 	$uploadOk = 0;
 }
 
-if($FileType != "doc" && $FileType != "txt" && $FileType != "pdf") {
+if($FileType != "doc" && $FileType != "txt" && $FileType != "pdf" && $FileType != "docx" && $FileType != "csv" && $FileType != "ppt") {
 	echo "Sorry, only DOC, TXT & PDF files are allowed.";
 	$uploadOk = 0;
 }
