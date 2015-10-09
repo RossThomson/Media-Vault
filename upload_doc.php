@@ -1,19 +1,9 @@
 <?php
 
 session_start();
-	$userid = $_SESSION['userid'];
-	@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
-				if(mysqli_connect_errno())
-				{
-					echo "DB connect error";
-				}		
-        
-				$query = "select * from USERS WHERE USERID = '$userid'";
-				$result = $db->query($query);
-				$row = $result->fetch_assoc();
-				
-	$firstname = $row['FIRSTNAME'];
-	$lastname = $row['LASTNAME'];
+	
+	$firstname  = $_SESSION['first_name'];
+	$lastname = $_SESSION['last_name'];
 	
 	$dir = "uploads/";
 	$target_dir = $dir.$firstname.$lastname."/";
@@ -58,8 +48,8 @@ if(isset($_POST["submit"])) {
 	$dbuser	= "root";
 	$dbpass	= "root";
 	
-	session_start();
-	$userid = $_SESSION['userid'];
+
+
 	$type = "DOC";	
 
 		try {
