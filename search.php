@@ -11,16 +11,16 @@ exit;
  
 $con = mysql_connect("localhost", "root", "root");
 if (mysql_error()) {
-echo 'DB접속오류 - ' . mysql_error();
+echo 'DB connection error - ' . mysql_error();
 }
 mysql_select_db("MEDIALYNX");
 if (mysql_error()) {
-echo 'DB명선택 오류 - ' . mysql_error();
+echo 'DB name error - ' . mysql_error();
 }
 mysql_query("CONTENT");
 $query = "select * from CONTENT where CONTENTTITLE like '$key' limit 0,10";
 if (mysql_error()) {
-echo '쿼리문 오류 - ' . mysql_error();
+echo 'query error - ' . mysql_error();
 }
 $result = mysql_query($query, $con);;
  
