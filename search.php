@@ -18,7 +18,7 @@ if (mysql_error()) {
 echo 'DB name error - ' . mysql_error();
 }
 mysql_query("CONTENT");
-$query = "select * from CONTENT where CONTENTTITLE like '%$key%' limit 0,10";
+$query = "select * from CONTENT where CONTENTTITLE like '%$key%'";
 if (mysql_error()) {
 echo 'query error - ' . mysql_error();
 }
