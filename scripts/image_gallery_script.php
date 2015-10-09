@@ -1,6 +1,7 @@
 <?php
-	
-	
+	# SETTINGS
+	$max_width = 100;
+	$max_height = 100;
 	
 	
 	function getPictureType($ext) {
@@ -16,8 +17,6 @@
 	}
 	
 	function getPictures() {
-		$max_width = 100;
-		$max_height = 100;
 		session_start();
 	$userid = $_SESSION['userid'];
 	@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
