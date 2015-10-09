@@ -24,6 +24,12 @@ margin-left: auto;
 margin-right: auto;
 }
 
+/*Centres upload forma*/
+.upload_form {
+	display: inline-block;
+    text-align: center;
+}
+
 #jae_design-by {
 float: right;
 display:inline;

@@ -53,7 +53,7 @@ img {
 </div>
 
 
-<form action="upload_Ross_two.php" method="post" enctype="multipart/form-data" onsubmit="return checkImageFile(this);">
+<form class="upload_form" action="upload_Ross_two.php" method="post" enctype="multipart/form-data" onsubmit="return checkImageFile(this);">
     Select an image to upload:
     <input type="file" name="photo"/>
 	<br />
