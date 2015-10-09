@@ -26,7 +26,7 @@ margin-right: auto;
 
 /*Centres upload forma*/
 .upload_form {
-	display: inline-block;
+	display: block;
     text-align: center;
 	margin: 0;
 	margin-left: auto;
