@@ -52,7 +52,7 @@ img {
 	</header>
 </div>
 
-<div id="aboutus_content">	
+
 <form action="upload_Ross_two.php" method="post" enctype="multipart/form-data" onsubmit="return checkImageFile(this);">
     Select an image to upload:
     <input type="file" name="photo"/>
@@ -61,7 +61,7 @@ img {
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
-</div>
+
 
 <?php getPictures(); ?>
 
