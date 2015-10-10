@@ -37,6 +37,17 @@ session_start();
 		$_SESSION['userid'] = $q2['USERID'];
 		$_SESSION['error'] = "";
 		header("location: ../media_all.php");
+		try {
+			$table = $q2['UserID']."-".$q2['FIRSTNAME'];
+			$create = "DROP TABLE IF EXISTS `$table`;
+						CREATE TABLE $table(
+						item VARCHAR(256),
+						time TIMESTAMP)CHARSET=utf8;";
+			$conn->exec($create);
+		} catch(PDOException $e) {
+			echo $create."<br>".$e->getMessage();
+		}
+		
 		
 		}else{
 			session_start(); 
