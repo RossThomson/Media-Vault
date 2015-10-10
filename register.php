@@ -9,6 +9,7 @@
 	</head>
 	
 	<body>
+	
 	<div class="wrapper">
 	
 			<header>
@@ -42,7 +43,24 @@
 		<p><label for="cPassword">Confirm Password: </label><input type="password" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;">*<span id="confirmMessage" class="confirmMessage"></span></p>
 		<p><input class="btn btn-alt" type = "submit" name = "submit" id = "submit" value = "Submit">
 		</fieldset>
-	</form>
+		</form>
+<?php
+	If ($FirstName && $LastName && $EmailAddress && $SecretQuestion && $SecretAnswer && $password && $ConfirmPassword )
+	{
+	    $confirmcode = rand();
+		$query = mysql_query("INSERT IN TO 'users' VALUES('','$FirstName','$LastName','$EmailAddress','$SecretQuestion','$SecretAnswer','$password','$ConfirmPassword','0','$confirmcode')");
+	    $message =
+		"
+		Confirm your Email
+		Click the link below to verify your account
+		http://54.79.17.142/index.phps/emailconform.php?FirstName=$FirstName$code=$confirmcode
+	    " ;
+		mail($email,"MediaVault confirm Email",$message,"Form: DoNotReply@mediavault.com");
+		
+		echo "Registration complete! Please confirm your mail ";
+	}
+?>	
+	
 	</div>
 	
 	<footer class="footer_relative">
