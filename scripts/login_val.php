@@ -38,7 +38,7 @@ session_start();
 		$_SESSION['error'] = "";
 		header("location: ../media_all.php");
 		
-		else{
+		}else{
 			session_start(); 
 			$_SESSION['error'] = "Incorrect username or password";
 			header("location: ../Login.php");
