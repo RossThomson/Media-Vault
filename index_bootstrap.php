@@ -42,7 +42,7 @@ header("location: media.php");
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index_bootstrap.php"><img src="graphics/logo.jpg" height="100" width="100">Home</a></li>
+            <li class="active"><a href="index_bootstrap.php"><img src="graphics/logo.jpg" height="100" width="100"></a></li>
             <li><a href="about.php"><img src="graphics/about.png"></a><a href="about.php">About</a></li>
             <li><a href="help.php"><img src="graphics/help.png"></a><a href="help.php">Help</a></li>
           </ul>
