@@ -62,9 +62,26 @@ img {
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
+<div class="media_content">
+
+<table border='1' align="center">
+				<thead>
+					<tr>
+						<th width="50">NUM</th>
+						<th width="250">FILE</th>
+						<th width="100">TYPE</th>
+						<th width="150">SIZE</th>
+						<th width="200">SYNOPSIS</th>
+						<th width="50">DEL</th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php listview(); ?>
+				</tbody>
+			</table>			
+		</div>
 
 
-<?php listview(); ?>
 
 
 
