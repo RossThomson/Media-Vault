@@ -20,8 +20,8 @@ header("location: media.php");
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="http://getbootstrap.com/favicon.ico">
-		<title>Media Lynx</title>
+		<!--<link rel="icon" href="http://getbootstrap.com/favicon.ico">-->
+		<!--<title>Media Lynx</title>-->
 		<!-- Bootstrap core CSS -->
 		<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -42,7 +42,7 @@ header("location: media.php");
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index_bootstrap.php">Home</a></li>
+            <li class="active"><a href="index_bootstrap.php"><img src="graphics/logo.jpg"></a><a href="index_bootstrap.php">Home</a></li>
             <li><a href="about.php"><img src="graphics/about.png"></a><a href="about.php">About</a></li>
             <li><a href="help.php"><img src="graphics/help.png"></a><a href="help.php">Help</a></li>
           </ul>

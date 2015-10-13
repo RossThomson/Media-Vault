@@ -39,11 +39,13 @@ session_start();
 		header("location: ../media_all.php");
 		try {
 			$table = $q2['UserID']."-".$q2['FIRSTNAME'];
-			$create = "DROP TABLE IF EXISTS `$table`;
-						CREATE TABLE $table(
-						item VARCHAR(256),
-						time TIMESTAMP)CHARSET=utf8;";
-			$conn->exec($create);
+			$sql = "CREATE TABLE $table (
+			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+			item VARCHAR(256) NOT NULL,
+			time_accessed TIMESTAMP
+			)";
+
+		$conn->exec($sql);
 		} catch(PDOException $e) {
 			echo $create."<br>".$e->getMessage();
 		}
