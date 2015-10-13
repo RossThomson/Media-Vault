@@ -29,5 +29,5 @@ function listview() {
 							echo "</tr>";
 						}
 						$db->close();
-
+}
 ?>
