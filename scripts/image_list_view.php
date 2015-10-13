@@ -1,6 +1,6 @@
 <?php 
 function listview() {
-	session_start();
+	//session_start();
 			$userid = $_SESSION['userid'];
 			
 				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
