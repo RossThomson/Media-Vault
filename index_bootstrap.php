@@ -23,7 +23,7 @@ header("location: media.php");
 		<!--<link rel="icon" href="http://getbootstrap.com/favicon.ico">-->
 		<!--<title>Media Lynx</title>-->
 		<!-- Bootstrap core CSS -->
-		<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 	</head>
