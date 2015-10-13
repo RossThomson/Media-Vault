@@ -1,5 +1,5 @@
 <?php
-$field=$_POST['field'];
+$field=$_POST['CONTENTTITLE'];
 $key = $_POST['key'];
 if(!$key){
 echo("<script>

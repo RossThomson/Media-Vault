@@ -37,16 +37,27 @@ session_start();
 		$_SESSION['userid'] = $q2['USERID'];
 		$_SESSION['error'] = "";
 		header("location: ../media_all.php");
-		
+		try {
+			$table = $q2['UserID']."-".$q2['FIRSTNAME'];
+			$sql = "CREATE TABLE $table (
+			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+			item VARCHAR(256) NOT NULL,
+			time_accessed TIMESTAMP
+			)";
 
+		$conn->exec($sql);
+		} catch(PDOException $e) {
+			echo $create."<br>".$e->getMessage();
 		}
 		
-		else{
+		
+		}else{
 			session_start(); 
 			$_SESSION['error'] = "Incorrect username or password";
 			header("location: ../Login.php");
 		
 		}
+		
 	}
 
 ?>
