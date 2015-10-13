@@ -99,7 +99,7 @@
  p{orphans:3;widows:3}
  h2,
  h3{page-break-after:avoid}
- .navbar{display:none; background-color: black; color: white}
+ .navbar{display:none}
  .btn>.caret,
  .dropup>.btn>.caret{border-top-color:#000!important}
  .label{border:1px solid #000}
@@ -1867,7 +1867,7 @@
  .list-group-item>.badge{float:right} 
  .list-group-item>.badge+.badge{margin-right:5px} 
  .nav-pills>li>a>.badge{margin-left:3px} 
- .jumbotron{padding-top:30px;padding-bottom:30px;margin-bottom:30px;color:inherit;background-color:#eee} 
+ .jumbotron{padding-top:30px;padding-bottom:30px;margin-bottom:30px;background-color: black; color: white} 
  .jumbotron .h1, 
  .jumbotron h1{color:inherit} 
  .jumbotron p{margin-bottom:15px;font-size:21px;font-weight:200} 
