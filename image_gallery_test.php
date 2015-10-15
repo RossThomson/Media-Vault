@@ -16,7 +16,7 @@ header("location: Login.php");
 <link rel="stylesheet" href="styles/styles.css">
 <script type="text/javascript" src="scripts/upload_val.js"></script>
 <?php include 'scripts/image_gallery_script.php'; ?>
-
+<?php include 'scripts/image_list_view_test.php'; ?>
 <style type="text/css">
 #pictures li {
 	float:left;
