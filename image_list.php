@@ -61,9 +61,10 @@ img {
 	Description: <input name="ref" type="text" />
     <input type="submit" value="Submit" name="submit"/>
 </form>
+
 <div class="toggle_button_div">
 <a href="image_gallery_test.php" class="toggle_button">Image Gallery View</a>
-</div>
+</div><br><br>
 
 <?php listView(); ?>
 
