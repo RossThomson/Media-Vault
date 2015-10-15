@@ -62,7 +62,7 @@ img {
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
-<?php listView(); ?>
+<?php getPictures(); ?>
 
 
 
