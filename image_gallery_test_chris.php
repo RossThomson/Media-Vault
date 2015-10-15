@@ -83,7 +83,7 @@ img {
 -->
 
 <button>Image View Change</button>
-<div class="ImageList">
+<div id = "ImageList" class="ImageList">
 	<p>Testing</p>
 	<?php listView();?>
 </div>
