@@ -13,7 +13,7 @@ header("location: Login.php");
 <script>
 $(document).ready(function(){
 	$("#toggle_button").click(function(){
-		$("ListView").slideToggle("slow");
+		$("#ListView").slideToggle("slow");
 		});
 	});
 </script>
@@ -83,7 +83,7 @@ img {
 
 <a id="toggle_button" class="toggle_button">Image List View</a>
 
-<div id="ImageList" class="ImageList">
+<div id="ListView" class="ImageList">
 	<?php listView();?>
 </div>
 
