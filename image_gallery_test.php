@@ -64,7 +64,7 @@ img {
 
 <button type="button" name="Change" onclick="ChangeList()">Image List View</button>
 <script>
-function ChangeList() {
+/*function ChangeList() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if(xhttp.readyState==4 && xhttp.status==200) {
@@ -73,15 +73,15 @@ function ChangeList() {
 		}
 		xhttp.open("GET","image_list.php",true);
 		xhttp.send();
-}
+}*/
 </script>
-<!--
+
 <div class="toggle_button_div">
 <a href="image_list.php" class="toggle_button">Image List View</a>
 </div>
 
-<?php //getPictures(); ?>
--->
+<?php getPictures(); ?>
+
 
 
 
