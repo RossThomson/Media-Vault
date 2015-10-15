@@ -15,6 +15,7 @@ header("location: Login.php");
 <link rel="stylesheet" href="styles/lightbox.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="styles/styles.css">
 <script type="text/javascript" src="scripts/upload_val.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	$("button").click(function(){
@@ -36,7 +37,7 @@ img {
 	border:1px solid #021a40;
 	outline:none;
 }
-#ImageList{
+.ImageList{
 	display:none;
 }
 </style>
@@ -82,7 +83,7 @@ img {
 -->
 
 <button id="toggle_button" class="toggle_button">Image List View</button>
-<div id="ListView" class="ImageList">
+<div class="ImageList">
 	<p>Testing</p>
 	<?php listView();?>
 </div>
