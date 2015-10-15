@@ -19,8 +19,7 @@ header("location: Login.php");
 <script type="text/javascript">
 $(document).ready(function(){
 	$("button").click(function(){
-		$(".ImageList").toggle();
-		$(".ImageGallery").toggle();
+		$("div").toggle();
 		});
 	});
 </script>
