@@ -16,12 +16,12 @@ header("location: Login.php");
 <link rel="stylesheet" href="styles/styles.css">
 <script type="text/javascript" src="scripts/upload_val.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript">
+<script>
 $(document).ready(function(){
-	$("button").click(function(){
-		$("div").toggle();
-		});
-	});
+    $("button").click(function(){
+        $(this).next(".test1").toggle();
+    });
+});
 </script>
 <?php include 'scripts/image_gallery_script.php'; ?>
 
@@ -83,7 +83,7 @@ img {
 -->
 
 <button>Image View Change</button>
-<div class="ImageList">
+<div class="test1">
 	<p>Testing</p>
 	<?php listView();?>
 </div>
