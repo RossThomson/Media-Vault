@@ -81,7 +81,7 @@ img {
 </div>
 -->
 
-<a id="toggle_button" class="toggle_button">Image List View</a>
+<button id="toggle_button" class="toggle_button">Image List View</a>
 <div id="ListView" class="ImageList">
 	<p>Testing</p>
 	<?php listView();?>
