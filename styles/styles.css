@@ -115,6 +115,9 @@ a:hover{
 
 
 a.toggle_button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
