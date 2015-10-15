@@ -12,8 +12,8 @@ header("location: Login.php");
 <head>
 <script>
 $(document).ready(function(){
-	$(".toggle_button").click(function(){
-		$(this).next(".ImageList").toggle();
+	$("#toggle_button").click(function(){
+		$("ListView").slideToggle("slow");
 		});
 	});
 </script>
@@ -35,6 +35,9 @@ $(document).ready(function(){
 img {
 	border:1px solid #021a40;
 	outline:none;
+}
+#ImageList{
+	display:none;
 }
 </style>
 </head>
@@ -78,9 +81,10 @@ img {
 </div>
 -->
 
-<button class="toggle_button">Image List View</button>
-<div class="ImageList">
-<?php listView();?>
+<a href="image_list.php" id="toggle_button" class="toggle_button">Image List View</a>
+
+<div id="ImageList" class="ImageList">
+	<?php listView();?>
 </div>
 
 <?php getPictures(); ?>
