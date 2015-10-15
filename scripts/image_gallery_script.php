@@ -64,8 +64,8 @@
 							$newW = $max_width;
 							$newH = $oldH * ($max_height / $oldW);
 						}
-						$new = imagecreatetruecolor(50, 50);
-						//imagecopyresampled($new, $src, 0, 0, 0, 0, $newW, $newH, $oldW, $oldH);
+						$new = imagecreatetruecolor($newW, $newH);
+						imagecopyresampled($new, $src, 0, 0, 0, 0, $newW, $newH, $oldW, $oldH);
 						if ( $type == 'jpg' ) {
 							imagejpeg($new, $userdirthumbs.$file);
 						} else if ( $type == 'png' ) {
