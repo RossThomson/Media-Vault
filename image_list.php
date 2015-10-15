@@ -64,7 +64,7 @@ img {
 
 <div class="toggle_button_div">
 <a href="image_gallery_test.php" class="toggle_button">Image Gallery View</a>
-</div><br><br>
+</div><br>
 
 <?php listView(); ?>
 
