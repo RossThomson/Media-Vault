@@ -10,18 +10,18 @@ header("location: Login.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 <head>
-<script>
+<meta http-equiv="Content-Type" content="text/html; charset=UFT-8" />
+<title>Pictures</title>
+<link rel="stylesheet" href="styles/lightbox.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="styles/styles.css">
+<script type="text/javascript" src="scripts/upload_val.js"></script>
+<script type="text/javascript">
 $(document).ready(function(){
 	$("button").click(function(){
 		$(this).next(".ImageList").toggle();
 		});
 	});
 </script>
-<meta http-equiv="Content-Type" content="text/html; charset=UFT-8" />
-<title>Pictures</title>
-<link rel="stylesheet" href="styles/lightbox.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="styles/styles.css">
-<script type="text/javascript" src="scripts/upload_val.js"></script>
 <?php include 'scripts/image_gallery_script.php'; ?>
 
 <style type="text/css">
