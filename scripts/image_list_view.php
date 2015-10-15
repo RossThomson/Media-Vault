@@ -1,6 +1,7 @@
-<?php 
-function listview() {
-	
+	<?php
+function listView() {
+	echo"<div class='media_content'>";
+		
 			$userid = $_SESSION['userid'];
 			
 				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
@@ -12,9 +13,22 @@ function listview() {
 				$query = "select * from CONTENT WHERE CONTENTTYPE = 'IMAGE' AND USERID = '$userid'";
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
-
-
-					for($i=0; $i<$num_result; $i++)
+			
+	
+			echo"<table border='1' align='center'>";
+			echo"	<thead>";
+				echo"	<tr>";
+					echo"	<th width='50'>NUM</th>";
+					echo"	<th width='250'>FILE</th>";
+					echo"	<th width='100'>TYPE</th>";
+					echo"	<th width='150'>SIZE</th>";
+					echo"	<th width='200'>SYNOPSIS</th>";
+					echo"	<th width='50'>DEL</th>";
+					echo"</tr>";
+				echo"</thead>";
+				echo"<tbody>";
+					
+						for($i=0; $i<$num_result; $i++)
 						{
 							$row = $result->fetch_assoc();
 							echo "<tr>";
@@ -29,5 +43,10 @@ function listview() {
 							echo "</tr>";
 						}
 						$db->close();
+				
+				echo"</tbody>";
+			echo"</table>";		
+		echo"</div>";
 }
-?>
+		
+			?>
