@@ -81,14 +81,15 @@ img {
 </div>
 -->
 
-<button id="toggle_button" class="toggle_button">Image List View</a>
+<button id="toggle_button" class="toggle_button">Image List View</button>
 <div id="ListView" class="ImageList">
 	<p>Testing</p>
 	<?php listView();?>
 </div>
 
-<?php getPictures(); ?>
-
+<div>
+	<?php getPictures(); ?>
+</div>
 
 
 
