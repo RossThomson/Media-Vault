@@ -18,7 +18,7 @@ header("location: Login.php");
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $(".toggle_button_div").click(function(){
+    $(".toggle_button").click(function(){
         $(".ImageList").slideToggle();
     });
 });
@@ -82,7 +82,7 @@ img {
 </div>
 -->
 
-<div class="toggle_button_div">Image List View</div>
+<div class="toggle_button_div"><button class = "toggle_button">Image List View</button></div>
 <div id = "ImageList" class="ImageList">
 	<p>Testing</p>
 	<?php listView();?>
