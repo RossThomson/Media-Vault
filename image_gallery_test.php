@@ -63,7 +63,7 @@ img {
 </form>
 
 
-<?php getPictures(); ?>
+<?php listView(); ?>
 
 
 
