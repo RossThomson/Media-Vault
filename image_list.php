@@ -62,7 +62,7 @@ img {
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
-<a href="image_gallery_test.php" class="toggle_button">Image List View</a>
+<a href="image_gallery_test.php" class="toggle_button">Image Gallery View</a>
 
 
 <?php listView(); ?>
