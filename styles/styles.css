@@ -114,13 +114,11 @@ a:hover{
 }
 
 .toggle_button_div {
-	display: block;
-	margin:0;
-	margin-left: auto;
-	margin-right: auto;
+	text-align: center;
 }
 
 a.toggle_button {
+	padding: 7px 20px 8px 20px;
 	text-align: center;
     -webkit-appearance: button;
     -moz-appearance: button;
