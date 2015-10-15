@@ -12,7 +12,7 @@ header("location: Login.php");
 <head>
 <script>
 $(document).ready(function(){
-	$("button").click(function(){
+	$(".toggle_button").click(function(){
 		$(this).next(".ImageList").toggle();
 		});
 	});
