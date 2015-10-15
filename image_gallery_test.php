@@ -16,7 +16,7 @@ header("location: Login.php");
 <link rel="stylesheet" href="styles/styles.css">
 <script type="text/javascript" src="scripts/upload_val.js"></script>
 <?php include 'scripts/image_gallery_script.php'; ?>
-<?php include 'scripts/image_list_view.php'; ?>
+<?php include 'scripts/image_list_view_test.php'; ?>
 <style type="text/css">
 #pictures li {
 	float:left;
@@ -62,24 +62,7 @@ img {
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
-<div class="media_content">
-
-<table border='1' align="center">
-				<thead>
-					<tr>
-						<th width="50">NUM</th>
-						<th width="250">FILE</th>
-						<th width="100">TYPE</th>
-						<th width="150">SIZE</th>
-						<th width="200">SYNOPSIS</th>
-						<th width="50">DEL</th>
-					</tr>
-				</thead>
-				<tbody>
-				<?php listview(); ?>
-				</tbody>
-			</table>			
-		</div>
+<?php listView(); ?>
 
 
 
