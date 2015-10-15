@@ -1,7 +1,7 @@
 	<?php
 function listView() {
-	echo"<div class='media_content'>"
-		echo"	<br><br><br><br>"	
+	echo"<div class='media_content'>";
+		echo"	<br><br><br><br>";
 		
 			
 
@@ -18,18 +18,18 @@ function listView() {
 				$num_result = $result->num_rows;
 			
 	
-			echo"<table border='1' align='center'>"
-			echo"	<thead>"
-				echo"	<tr>"
-					echo"	<th width='50'>NUM</th>"
-					echo"	<th width='250'>FILE</th>"
-					echo"	<th width='100'>TYPE</th>"
-					echo"	<th width='150'>SIZE</th>"
-					echo"	<th width='200'>SYNOPSIS</th>"
-					echo"	<th width='50'>DEL</th>"
-					echo"</tr>"
-				echo"</thead>"
-				echo"<tbody>"
+			echo"<table border='1' align='center'>";
+			echo"	<thead>";
+				echo"	<tr>";
+					echo"	<th width='50'>NUM</th>";
+					echo"	<th width='250'>FILE</th>";
+					echo"	<th width='100'>TYPE</th>";
+					echo"	<th width='150'>SIZE</th>";
+					echo"	<th width='200'>SYNOPSIS</th>";
+					echo"	<th width='50'>DEL</th>";
+					echo"</tr>";
+				echo"</thead>";
+				echo"<tbody>";
 					
 						for($i=0; $i<$num_result; $i++)
 						{
@@ -47,9 +47,9 @@ function listView() {
 						}
 						$db->close();
 				
-				echo"</tbody>"
-			echo"</table>"			
-		echo"</div>"
+				echo"</tbody>";
+			echo"</table>";		
+		echo"</div>";
 }
 		
 			?>
