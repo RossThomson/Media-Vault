@@ -1,10 +1,7 @@
 	<?php
 function listView() {
 	echo"<div class='media_content'>";
-		echo"	<br><br><br><br>";
 		
-			
-
 			$userid = $_SESSION['userid'];
 			
 				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
