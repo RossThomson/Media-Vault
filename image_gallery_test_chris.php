@@ -81,7 +81,7 @@ img {
 </div>
 -->
 
-<a href="image_list.php" id="toggle_button" class="toggle_button">Image List View</a>
+<a id="toggle_button" class="toggle_button">Image List View</a>
 
 <div id="ImageList" class="ImageList">
 	<?php listView();?>
