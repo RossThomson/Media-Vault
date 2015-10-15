@@ -18,8 +18,8 @@ header("location: Login.php");
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $("button").click(function(){
-        $("#ImageList").slideToggle();
+    $(".toggle_button_div").click(function(){
+        $(".ImageList").slideToggle();
     });
 });
 </script>
@@ -37,7 +37,7 @@ img {
 	border:1px solid #021a40;
 	outline:none;
 }
-#ImageList{
+.ImageList{
 	display:none;
 }
 </style>
@@ -82,7 +82,7 @@ img {
 </div>
 -->
 
-<button>Image View Change</button>
+<div class="toggle_button_div">Image List View</div>
 <div id = "ImageList" class="ImageList">
 	<p>Testing</p>
 	<?php listView();?>
