@@ -12,8 +12,8 @@ header("location: Login.php");
 <head>
 <script>
 $(document).ready(function(){
-	$("#toggle_button").click(function(){
-		$(this).next("#ListView").slideToggle("slow");
+	$(".toggle_button").click(function(){
+		$(this).next(".ImageList").slideToggle("slow");
 		});
 	});
 </script>
