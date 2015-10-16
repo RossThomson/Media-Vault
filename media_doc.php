@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+
+	$firstname  = $_SESSION['first_name'];
+	$lastname = $_SESSION['last_name'];
+	$userid = $_SESSION['userid'];
+	$dir = "uploads/";
+	$target_dir = $dir.$firstname.$lastname."/";
+
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
 }
@@ -57,8 +64,7 @@ header("location: Login.php");
         {
             echo "DB connect error";
         }
-		
-        $userid = $_SESSION['userid'];
+
         $query = "select * from CONTENT where CONTENTTYPE = 'DOC' and USERID = '$userid'";
         $result = $db->query($query);
         $num_result = $result->num_rows;
@@ -76,10 +82,7 @@ header("location: Login.php");
         </thead>
         <tbody>
             <?php
-				$firstname = $row['FIRSTNAME'];
-				$lastname = $row['LASTNAME'];	
-				$dir = "uploads/";
-				$userdir = $dir.$firstname.$lastname."/";
+			
 				
                 for($i=0; $i<$num_result; $i++)
                 {
@@ -92,7 +95,7 @@ header("location: Login.php");
                     echo "<td align='center'>
                 <a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 					echo "<td align='center'>
-					<a href='". $userdir.$row['CONTENTTITLE']."'>View</a></td>";
+					<a href='". $target_dir.$row['CONTENTTITLE']."'>View</a></td>";
 
                     echo "</tr>";
                 }
