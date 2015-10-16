@@ -58,7 +58,7 @@ header("location: media.php");
         <h1>Welcome to Media Lynx!</h1>
         <p>It's like Netflix, but for your own content!</p>
         <p>
-          <a class="btn btn-lg btn-primary" href="register.php" role="button">Register now »</a>
+          <a class="btn btn-lg btn-primary" href="register_bootstrap.php" role="button">Register now »</a>
         </p>
       </div>
 		
