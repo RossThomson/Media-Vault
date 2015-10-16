@@ -18,7 +18,7 @@
 				<?php include 'header.php'; ?>
 			</header>
 			<?php
-if (isset($_REQUEST['Submit']))
+if (isset($_POST['Submit']))
 {
 echo "test";
 
