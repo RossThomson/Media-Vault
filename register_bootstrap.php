@@ -7,10 +7,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<!-- Bootstrap core CSS
+		<!-- Bootstrap core CSS-->
 		<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-		Custom styles for this template -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!--Custom styles for this template 
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 		<script type="text/javascript" src="scripts/register_val.js"></script>
 		<?php include 'scripts/register_val.php';?> 
@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="secretanswer" class="col-sm-2control-label">Secret Answer: </label>
+			<label for="secretanswer" class="col-sm-2 control-label">Secret Answer: </label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" name="secretanswer" required>*
 			</div>
