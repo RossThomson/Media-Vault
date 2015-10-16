@@ -32,8 +32,8 @@
 		</div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav">
-            <li><a href="about.php"><img src="graphics/about.png"></a><a href="about.php">About</a></li>
-            <li><a href="help.php"><img src="graphics/help.png"></a><a href="help.php">Help</a></li>
+            <li><a href="about.php"><span class="glyphicon glyphicon-info-sign"></span>About</a></li>
+            <li><a href="help.php"><span class="glyphicon glyphicon-book"></span>Help</a></li>
           </ul>
 		  <ul class="nav navbar-nav navbar-right">
 			<li><a href="<?php echo $login;?>_bootstrap.php"><label class="label-inverse"><?php echo $login;?></label></a></li>
