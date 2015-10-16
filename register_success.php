@@ -23,6 +23,11 @@ if (isset($_REQUEST ['Submit']) and (!empty($_POST['Submit'])))
 echo "test";
 
 }
+else
+{
+	echo "shgjs";
+}
+
 ?>
 
 			<div id = "register_success">
