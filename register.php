@@ -36,26 +36,7 @@
 		<p><input class="btn btn-alt" type = "submit" name = "Submit" id = "Submit" value = "Submit">
 		</fieldset>
 	</form>
-	<?php
-if (isset($_POST['submit']))
-{
-echo "test";
-   session_start();
-   mysql_connect('localhost','root','root');
-   mysql_select_db("MediaLynx");;
 	
-	$FirstName = mysql_real_escape_string($_POST['FirstName']);
-	$LastName = mysql_real_escape_string($_POST['LastName']);
-	$EmailAddress = mysql_real_escape_string($_POST['EmailAddress']);
-	$SecretQuestion = mysql_real_escape_string($_POST['SecretQuestion']);
-	$SecretAnswer = mysql_real_escape_string($_POST['SecretAnswer']);
-	$Password = mysql_real_escape_string($_POST['Password']);
-	$ConfirmPassword = mysql_real_escape_string($_POST['ConfirmPassword']);
-	
-	$enc_password = md5($Password);
-	
-
-?>	
 	</div>
 	
 	<footer class="footer_relative">
