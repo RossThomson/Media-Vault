@@ -49,7 +49,7 @@ if (isset($_POST['submit']))
 {
    session_start();
    mysql_connect('localhost','root','root');
-   mysql_select_db("Media_Lynx");;
+   mysql_select_db("Media-Vault");;
 	
 	$FirstName = mysql_real_escape_string($_POST['FirstName']);
 	$LastName = mysql_real_escape_string($_POST['LastName']);
