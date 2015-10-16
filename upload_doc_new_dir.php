@@ -67,8 +67,8 @@ if(isset($_POST["submit"])) {
 		}
 
 		$pdo = null;
+		header("location: media_doc.php");
 		echo "<script>alert('uploaded');";
-		echo "history.back();</script>";
 }
 
 ?>
