@@ -68,17 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 }
 
-<?php
-if(isset($_Request['email']))
-{
-		$admin_email="ndhimar@yahoo.co.in";
-		$email=$_Request['email'];
-		mail($admin_email,"Test",Hello,"From:".$email);
-		echo("Done")
-}
-}
-
-?>	
+	
 
 
 
