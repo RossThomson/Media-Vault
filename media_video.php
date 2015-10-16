@@ -83,10 +83,7 @@ header("location: Login.php");
 				</thead>
 				<tbody>
 					<?php
-						$dir="uploads/";
-						$name=$row['CONTENTTITLE'];
-						$source = $dir.$name;
-						
+					
 						for($i=0; $i<$num_result; $i++)
 						{
 							$row = $result->fetch_assoc();
