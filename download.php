@@ -24,18 +24,27 @@
     }
     $result = $result->fetch_assoc();
     
-    $dir = "uploads/";
+	session_start();
+	
+	$firstname  = $_SESSION['first_name'];
+	$lastname = $_SESSION['last_name'];
+	$userid = $_SESSION['userid'];
+	$dir = "uploads/";
+	$target_dir = $dir.$firstname.$lastname."/";
+	
+	
+  
     $filename = $result['CONTENTTITLE'];
     //$filehash = $result['hash'];
     
-    if(file_exists($dir.$filename))
+    if(file_exists($target_dir.$filename))
     {
             header("Content-Type: Application/octet-stream");
             header("Content-Disposition: attachment; filename=".$filename);
             header("Content-Transfer-Encoding: binary");
-            header("Content-Length: ".filesize($dir.$filename));
+            header("Content-Length: ".filesize($target_dir.$filename));
  
-            $fp = fopen($dir.$filename, "rb");
+            $fp = fopen($target_dir.$filename, "rb");
             while(!feof($fp))
             {
                 echo fread($fp, 1024);
