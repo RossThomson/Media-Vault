@@ -33,7 +33,13 @@
 		</fieldset>
 	</form>
 	</div>
-	
+	<?php
+if (isset($_POST['submit']))
+{
+echo "test";
+exit();
+}
+?>
 	<footer class="footer_relative">
 		<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
