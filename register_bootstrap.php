@@ -33,43 +33,43 @@
 		<div class="form-group">
 			<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
 			<label for="firstname" class="col-sm-2 control-label">First Name: </label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<input type="text" class="form-control" name="firstname" id="name" required onchange="firstNameVal();">*<span id ="namemessage"></span>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="lastname" class="col-sm-2 control-label">Last name: </label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<input type="text" class="form-control" name="lastname" id="surname" required onchange="surnameVal();">*<span id ="surnamemessage"></span>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="email" class="col-sm-2 control-label">Email Address: </label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<input type="text"class="form-control" name="email" id="email" required onchange ="checkEmail();">*<span id ="emailmessage"></span>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="secretquestion" class="col-sm-2 control-label">Secret Question: </label><br>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<input type="text" class = "form-control" name="secretquestion" required>*
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="secretanswer" class="col-sm-2 control-label">Secret Answer: </label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<input type="text" class="form-control" name="secretanswer" required>*
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="password" class="col-sm-2 control-label">Password: </label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<input type="password" class="form-control" min = "6" max = "15" id="password" name="password" required>*
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="cPassword" class="col-sm-2 control-label">Confirm Password: </label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<input type="password" class="form-control" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;">*<span id="confirmMessage" class="confirmMessage"></span>
 			</div>
 		</div>
