@@ -31,8 +31,8 @@
 	</div>
 	<div class="container">
 	<form class="form-horizontal" role="form" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
+		<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
 		<div class="form-group">
-			<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
 			<label for="firstname" class="col-sm-2 control-label">First Name*: </label>
 			<div class="col-sm-9">
 				<input type="text" class="form-control" name="firstname" id="name" required onchange="firstNameVal();"><span id ="namemessage"></span>
