@@ -37,7 +37,7 @@ header("location: Login.php");
 			<ul>
 				<li><a href="media_playlist.php">Playlists</a></li>
 				<li><a class="active" href="media_doc.php">Docs</a></li>
-				<li><a href="image_gallery_test.php">Photos</a></li>
+				<li><a href="media_photo.php">Photos</a></li>
 				<li><a href="media_music.php">Music</a></li>
 				<li><a href="media_video.php">Videos</a></li>
 				<li><a href="media_all.php">All files</a></li>
@@ -47,7 +47,7 @@ header("location: Login.php");
 </div>
 	
 	<form  class="upload_form" action="upload_doc_new_dir.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
-    Select a doc file to upload:
+    Select a document to upload:
     <input type="file" name="fileName"/>
 	<br />
 	Description: <input name="ref" type="text" />
@@ -92,8 +92,11 @@ header("location: Login.php");
                 <a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
                     echo "<td align='center'>".$row['SIZE']."</td>";
 					echo "<td align='center'>".$row['SYNOPSIS']."</td>";
+
                     echo "<td align='center'>
-                <a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+                <a href='delete_jae.php?num=".$row['CONTENTID']."' onClick=\"return 
+							confirm('are you sure you want to delete??');\">DEL</a></td>";
+
 					echo "<td align='center'>
 					<a href='". $target_dir.$row['CONTENTTITLE']."'>View</a></td>";
 
