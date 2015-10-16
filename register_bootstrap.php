@@ -19,17 +19,16 @@
 		<?php include 'scripts/register_val.php';?> 
 	</head>
 	
-	<body>
+	<body>	
 		
-		
-	<div class="wrapper">
+	<div class="container">
 	
 			<header>
 				<?php include 'header_bootstrap.php'; ?>
 			</header>
 	
 	<!--FORM FOR THE USER TO FILL OUT-->
-	<div id="register_form">
+	<div class="jumbotron">
 	
 	<h1>Register For An Account</h1>
 	<form id="container" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
