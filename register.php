@@ -73,8 +73,7 @@ if (isset($_POST['Submit']))
 
 	
 }
-else
-{	ECHO "else cond";}
+
 ?>	
 	<footer class="footer_relative">
 		<span id="jae_design-by">Design by Media lynx</span> 
