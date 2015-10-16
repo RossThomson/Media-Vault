@@ -10,13 +10,7 @@
 	
 	<body>
 		
-		<?php
-if (isset($_REQUEST ['Submit']) and (!empty($_POST['Submit'])))
-{
-echo "test";
-exit();
-}
-?>
+		
 	<div class="wrapper">
 	
 			<header>
