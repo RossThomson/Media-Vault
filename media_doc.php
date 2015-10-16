@@ -93,7 +93,7 @@ header("location: Login.php");
                 <a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
                     echo "<td align='center'>".$row['SIZE']."</td>";
 					echo "<td align='center'>".$row['SYNOPSIS']."</td>";
-                    echo "<td align='center'><a href='delete_jae.php?num=".$row['CONTENTID']."' class = 'confirmation'>DEL</a></td>";
+                    echo "<td align='center'><a href='delete_jae.php?num=".$row['CONTENTID']."' class = 'confirmation' onclick = 'Confirm()' >DEL</a></td>";
 					echo "<td align='center'>
 					<a href='". $target_dir.$row['CONTENTTITLE']."'>View</a></td>";
 
