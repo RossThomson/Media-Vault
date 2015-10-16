@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					
 					else
 					{ 
-						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWERS, HASH) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer','$hash')";
+						$sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME, EMAIL, SECRETQUESTION, SECRETANSWERS, HASH, confirmcode) VALUES ('$firstname','$lastname','$email','$secretquestion','$secretanswer','$hash','$confirmcode')";
 						
 					$pdo->exec($sql);
 					
