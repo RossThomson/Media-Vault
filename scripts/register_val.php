@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$hash = password_hash('$password', PASSWORD_DEFAULT);
 	
 	$dbhost = "localhost";
-	$dbname	= "MEDIA_LYNX";
+	$dbname	= "MEDIALYNX";
 	$dbuser	= "root";
 	$dbpass	= "root";
 
