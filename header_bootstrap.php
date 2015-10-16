@@ -36,7 +36,7 @@
             <li><a href="help.php"><img src="graphics/help.png"></a><a href="help.php">Help</a></li>
           </ul>
 		  <ul class="nav navbar-nav navbar-right">
-			<li><a href="<?php echo $login;?>_bootstrap.php"><label><?php echo $login;?></label></a></li>
+			<li><a href="<?php echo $login;?>_bootstrap.php"><label class="label-inverse"><?php echo $login;?></label></a></li>
   			<li><span id = "sign_in_info"><?php echo $welcome;?> <?php echo $_SESSION['first_name'];?></span></li>
 		  </ul>
         </div><!--/.nav-collapse -->

@@ -2523,6 +2523,9 @@ label {
   font-weight: bold;
   color: white;
 }
+.label-inverse {
+	color:black;
+}
 input[type="search"] {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
