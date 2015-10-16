@@ -27,6 +27,7 @@
 	<!--FORM FOR THE USER TO FILL OUT-->
 	<div class="jumbotron">	
 	<h1>Register For An Account</h1>
+	<small>Fill in all details with an astrix to sign up for your own personal Media Vault</small>
 	</div>
 	<div class="container">
 	<form class="form-horizontal" role="form" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
@@ -34,43 +35,43 @@
 			<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
 			<label for="firstname" class="col-sm-2 control-label">First Name: </label>
 			<div class="col-sm-9">
-				<input type="text" class="form-control" name="firstname" id="name" required onchange="firstNameVal();">*<span id ="namemessage"></span>
+				<input type="text" class="form-control" name="firstname" id="name" required onchange="firstNameVal();"><p class="col-sm-1">*<span id ="namemessage"></span></p>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="lastname" class="col-sm-2 control-label">Last name: </label>
 			<div class="col-sm-9">
-				<input type="text" class="form-control" name="lastname" id="surname" required onchange="surnameVal();">*<span id ="surnamemessage"></span>
+				<input type="text" class="form-control" name="lastname" id="surname" required onchange="surnameVal();"><p class="col-sm-1">*<span id ="surnamemessage"></span></p>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="email" class="col-sm-2 control-label">Email Address: </label>
 			<div class="col-sm-9">
-				<input type="text"class="form-control" name="email" id="email" required onchange ="checkEmail();">*<span id ="emailmessage"></span>
+				<input type="text"class="form-control" name="email" id="email" required onchange ="checkEmail();"><p class="col-sm-1">*<span id ="emailmessage"></span></p>
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="secretquestion" class="col-sm-2 control-label">Secret Question: </label><br>
+			<label for="secretquestion" class="col-sm-2 control-label">Secret Question: </label>
 			<div class="col-sm-9">
-				<input type="text" class = "form-control" name="secretquestion" required>*
+				<input type="text" class = "form-control" name="secretquestion" required><p class="col-sm-1">*</p>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="secretanswer" class="col-sm-2 control-label">Secret Answer: </label>
 			<div class="col-sm-9">
-				<input type="text" class="form-control" name="secretanswer" required>*
+				<input type="text" class="form-control" name="secretanswer" required><p class="col-sm-1">*</p>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="password" class="col-sm-2 control-label">Password: </label>
 			<div class="col-sm-9">
-				<input type="password" class="form-control" min = "6" max = "15" id="password" name="password" required>*
+				<input type="password" class="form-control" min = "6" max = "15" id="password" name="password" required><p class="col-sm-1">*</p>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="cPassword" class="col-sm-2 control-label">Confirm Password: </label>
 			<div class="col-sm-9">
-				<input type="password" class="form-control" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;">*<span id="confirmMessage" class="confirmMessage"></span>
+				<input type="password" class="form-control" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;"><p class="col-sm-1">*<span id="confirmMessage" class="confirmMessage"></span></p>
 			</div>
 		</div>
 		<div>
