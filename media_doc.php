@@ -47,7 +47,7 @@ header("location: Login.php");
 </div>
 	
 	<form  class="upload_form" action="upload_doc_new_dir.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
-    Select a doc file to upload:
+    Select a document to upload:
     <input type="file" name="fileName"/>
 	<br />
 	Description: <input name="ref" type="text" />
@@ -93,7 +93,11 @@ header("location: Login.php");
                     echo "<td align='center'>".$row['SIZE']."</td>";
 					echo "<td align='center'>".$row['SYNOPSIS']."</td>";
                     echo "<td align='center'>
+<<<<<<< HEAD
                 <a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+=======
+                <a href='delete_jae.php?num=".$row['CONTENTID']."' onclick="return confirm("Are you sure?")">DEL</a></td>";
+>>>>>>> origin/master
 					echo "<td align='center'>
 					<a href='". $target_dir.$row['CONTENTTITLE']."'>View</a></td>";
 
