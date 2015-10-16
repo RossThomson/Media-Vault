@@ -39,7 +39,7 @@
 	
 	</div>
 	<?php
-if (isset($_POST['submit']))
+if (isset($_POST['Submit']))
 {
    session_start();
    mysql_connect('localhost','root','root');
@@ -73,6 +73,8 @@ if (isset($_POST['submit']))
 
 	
 }
+else
+{	ECHO "else cond;}
 ?>	
 	<footer class="footer_relative">
 		<span id="jae_design-by">Design by Media lynx</span> 
