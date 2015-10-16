@@ -19,31 +19,36 @@
 		<?php include 'scripts/register_val.php';?> 
 	</head>
 	
-	<body>
+	<body>	
 		
-		
-	<div class="wrapper">
+	<div class="container">
 	
 			<header>
 				<?php include 'header_bootstrap.php'; ?>
 			</header>
 	
 	<!--FORM FOR THE USER TO FILL OUT-->
-	<div id="register_form">
+	<div class="jumbotron">
 	
 	<h1>Register For An Account</h1>
 	<form id="container" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
 		<fieldset>
 		<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
-		<p><label>First Name: </label>
+		<p><label>First Name: </label><br>
 		<input type="text" name="firstname" id="name" required onchange="firstNameVal();">*<span id ="namemessage"></span></p>
-		<p><label>Last name: </label><input type="text" name="lastname" id="surname" required onchange="surnameVal();">*<span id ="surnamemessage"></span></p>
-		<p><label>Email Address: </label><input type="text" name="email" id="email" required onchange ="checkEmail();">*<span id ="emailmessage"></span></p>
-		<p><label>Secret Question: </label><input type="text" name="secretquestion" required>*</p>
-		<p><label>Secret Answer: </label><input type="text" name="secretanswer" required>*</p>
-		<p><label for="password">Password: </label><input type="password" min = "6" max = "15" id="password" name="password" required>*</p>
-		<p><label for="cPassword">Confirm Password: </label><input type="password" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;">*<span id="confirmMessage" class="confirmMessage"></span></p>
-		<p><input class="btn btn-alt" type = "submit" name = "Submit" id = "Submit" value = "Submit">
+		<p><label>Last name: </label><br>
+		<input type="text" name="lastname" id="surname" required onchange="surnameVal();">*<span id ="surnamemessage"></span></p>
+		<p><label>Email Address: </label><br>
+		<input type="text" name="email" id="email" required onchange ="checkEmail();">*<span id ="emailmessage"></span></p>
+		<p><label>Secret Question: </label><br>
+		<input type="text" name="secretquestion" required>*</p>
+		<p><label>Secret Answer: </label><br>
+		<input type="text" name="secretanswer" required>*</p>
+		<p><label for="password">Password: </label><br>
+		<input type="password" min = "6" max = "15" id="password" name="password" required>*</p>
+		<p><label for="cPassword">Confirm Password: </label><br>
+		<input type="password" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;">*<span id="confirmMessage" class="confirmMessage"></span></p>
+		<p><input class="btn btn-lg btn-primary" type = "submit" name = "Submit" id = "Submit" value = "Submit">
 		</fieldset>
 	</form>
 	</div>
