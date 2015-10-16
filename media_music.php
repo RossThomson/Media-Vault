@@ -72,7 +72,7 @@ header("location: Login.php");
 						<th width="150">SIZE</th>
 						<th width="200">SYNOPSIS</th>
 						<th width="250">STREAM</th>
-						<th width="50">DEL</th>
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -87,8 +87,8 @@ header("location: Login.php");
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
 						<audio src= 'uploads/".$row['CONTENTTITLE']."'controls></audio></td>";
-							echo "<td align='center'>
-						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+						//	echo "<td align='center'>
+						//<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
 						}
 						$db->close();
