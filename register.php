@@ -39,7 +39,7 @@
 	
 	</div>
 	<?php
-if (isset($_POST['submit']))
+if (isset($_POST['Submit']))
 {
    session_start();
    mysql_connect('localhost','root','root');
