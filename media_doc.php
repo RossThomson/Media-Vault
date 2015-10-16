@@ -94,6 +94,7 @@ header("location: Login.php");
                     echo "<td align='center'>".$row['SIZE']."</td>";
 					echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 <<<<<<< HEAD
+<<<<<<< HEAD
                     echo "<td align='center'>
 <<<<<<< HEAD
                 <a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
@@ -102,6 +103,9 @@ header("location: Login.php");
 >>>>>>> origin/master
 =======
                     echo "<td align='center'><a href='delete_jae.php?num=".$row['CONTENTID']."' class = 'confirmation'>DEL</a></td>";
+>>>>>>> origin/master
+=======
+                    echo "<td align='center'><a href='delete_jae.php?num=".$row['CONTENTID']."' class = 'confirmation' onclick = 'Confirm()' >DEL</a></td>";
 >>>>>>> origin/master
 					echo "<td align='center'>
 					<a href='". $target_dir.$row['CONTENTTITLE']."'>View</a></td>";
