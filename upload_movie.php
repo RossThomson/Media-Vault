@@ -1,5 +1,13 @@
 <?php
-$target_dir = "uploads/";
+
+	
+$firstname  = $_SESSION['first_name'];
+$lastname = $_SESSION['last_name'];
+$userid = $_SESSION['userid'];
+$dir = "uploads/";
+$target_dir = $dir.$firstname.$lastname."/";
+
+
 $target_file = $target_dir . basename($_FILES["fileName"]["name"]);
 $uploadOk = 1;
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -39,8 +47,6 @@ if(isset($_POST["submit"])) {
 	$dbuser	= "root";
 	$dbpass	= "root";
 	
-	session_start();
-	$userid = $_SESSION['userid'];
 	$type = "VIDEO";
 
 		try {
