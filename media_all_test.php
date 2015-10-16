@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+$firstname  = $_SESSION['first_name'];
+$lastname = $_SESSION['last_name'];
+$userid = $_SESSION['userid'];
+$dir = "uploads/";
+$target_dir = $dir.$firstname.$lastname."/";
+
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
 }
@@ -27,17 +33,17 @@ header("location: Login.php");
 				<img src="graphics/logo.jpg">
 			</a> -->
 			<ul>
-				<li><a href="media_playlist.php">Playlist</a></li>
-				<li><a href="media_doc.php">Doc</a></li>
-				<li><a href="image_gallery_test.php">Photo</a></li>
+				<li><a href="media_playlist.php">Playlists</a></li>
+				<li><a href="media_doc.php">Docs</a></li>
+				<li><a href="image_gallery_test.php">Photos</a></li>
 				<li><a href="media_music.php">Music</a></li>
-				<li><a href="media_video.php">Video</a></li>
+				<li><a href="media_video.php">Videos</a></li>
 				<li><a class="active" href="media_all.php">All files</a></li>
 			</ul>		
 		</div>
 	</header>
 </div>
-	<!-- </div> -->
+
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>		
