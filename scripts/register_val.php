@@ -67,8 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 	
 }
-mail('ndhimar@yahoo.co.in','Test',Hi)
-echo("Done")
+
 ?>	
 
 
