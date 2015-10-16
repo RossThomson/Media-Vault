@@ -19,7 +19,7 @@
 	
 	?>
 	
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -31,7 +31,7 @@
 		</div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index_bootstrap.php"><img src="graphics/logo.jpg" height="100" width="100"></a></li>
+            <li class="active"><a href="index_bootstrap.php"><img src="graphics/logo.jpg" height="50" width="50"></a></li>
             <li><a href="about.php"><img src="graphics/about.png"></a><a href="about.php">About</a></li>
             <li><a href="help.php"><img src="graphics/help.png"></a><a href="help.php">Help</a></li>
           </ul>
