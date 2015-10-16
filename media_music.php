@@ -1,5 +1,11 @@
 <?php
 session_start();
+	
+	$firstname  = $_SESSION['first_name'];
+	$lastname = $_SESSION['last_name'];
+	$userid = $_SESSION['userid'];
+	$dir = "uploads/";
+	$target_dir = $dir.$firstname.$lastname."/";
 
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
@@ -59,7 +65,7 @@ header("location: Login.php");
 					echo "DB connect error";
 				}		
         
-				$userid = $_SESSION['userid'];
+			
 				$query = "select * from CONTENT where CONTENTTYPE = 'MUSIC' and USERID = '$userid'";
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
@@ -86,7 +92,7 @@ header("location: Login.php");
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>";
-						echo'<audio src=  "' . $userdir.$row['CONTENTTITLE'] . '"  controls></audio></td>';
+						echo'<audio src=  "' . $target_dir.$row['CONTENTTITLE'] . '"  controls></audio></td>';
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
