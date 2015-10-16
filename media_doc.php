@@ -91,6 +91,7 @@ header("location: Login.php");
                     echo "</tr>";
                 }
                 $db->close();
+				//Testing
             ?>
         </tbody>
     </table>	
