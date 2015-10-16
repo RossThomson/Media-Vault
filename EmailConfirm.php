@@ -1,3 +1,20 @@
+
+As a user I want to receive a confirmation email so that I can verify the info I have entered.
+
+Requirements - 
+User must have completed registration process
+Email arrives within 2min of completed registration
+- Notify through email that their account has been created - link to the user media page
+
+
+As a user, I want to be able to make play lists with media files I choose so that I can manage media files efficiently.
+requirements
+-­ field for the name of play list ­ checkbox for selecting
+As a user I should be able to view all of my playlists in one place
+
+
+
+
 <!Doctype html>
 <html>
 <head>
@@ -8,15 +25,19 @@
 <body>
 
 <?php
-require "dbc.php";
+
+session_start();
+mysql_connect('localhost','root','root');
+mysql_select_db("MEDIALYNX");
+
 
 $FirtsName = $_GET['FirstName'];
-Scode = $_GET['code'];
+$code = $_GET['code'];
 
 $query = mysql_query("SELECT * FROM 'users' WHERE 'FirstName = $FirstName'");
 while($row = mysql_fetch_assoc($query))
 {
-    $db_code = $row['confirm_code'];
+    $db_code = $row['confirm-code'];
 }
 if($code == $db_code)
 {
@@ -28,8 +49,7 @@ if($code == $db_code)
 }
 else
 {
-    echo "Username and code dont match";
-}
-
-
-?>
+    echo "UserName and code Don't match";
+}?>
+</body>
+</html>
