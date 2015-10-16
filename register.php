@@ -36,6 +36,39 @@
 		<p><input class="btn btn-alt" type = "submit" name = "Submit" id = "Submit" value = "Submit">
 		</fieldset>
 	</form>
+	<?php
+if (isset($_POST['submit']))
+{
+echo "test";
+   session_start();
+   mysql_connect('localhost','root','root');
+   mysql_select_db("Media_Lynx");;
+	
+	$FirstName = mysql_real_escape_string($_POST['FirstName']);
+	$LastName = mysql_real_escape_string($_POST['LastName']);
+	$EmailAddress = mysql_real_escape_string($_POST['EmailAddress']);
+	$SecretQuestion = mysql_real_escape_string($_POST['SecretQuestion']);
+	$SecretAnswer = mysql_real_escape_string($_POST['SecretAnswer']);
+	$Password = mysql_real_escape_string($_POST['Password']);
+	$ConfirmPassword = mysql_real_escape_string($_POST['ConfirmPassword']);
+	
+	$enc_password = md5($Password);
+	
+	if ($FirstName && $LastName && $EmailAddress && $SecretQuestion && $SecretAnswer && $password && $ConfirmPassword )
+	{
+	    $confirmcode = rand();
+		$query = mysql_query("INSERT IN TO 'users' VALUES('','$FirstName','$LastName','$EmailAddress','$SecretQuestion','$SecretAnswer','$password','$ConfirmPassword','0','$confirmcode')");
+	    $message =
+		"
+		Confirm your Email
+		Click the link below to verify your account
+		http://54.79.17.142/index.phps/emailconfirm.php?FirstName=$FirstName$code=$confirmcode
+	    " ;
+		mail($email,"MediaVault confirm Email",$message,"Form: DoNotReply@mediavault.com");
+		
+		echo "Registration complete! Please confirm your mail ";
+	}
+?>	
 	</div>
 	
 	<footer class="footer_relative">
