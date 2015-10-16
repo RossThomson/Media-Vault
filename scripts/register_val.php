@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 }
 
-?>	
+	
 if(isset($_POST['submit'])){
     $to = "ppriyanka211@yahoo.com"; // this is your Email address
     $from = $_POST['email']; // this is the sender's Email address
