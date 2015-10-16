@@ -23,6 +23,8 @@ header("location: media.php");
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 		<script type="text/javascript" src="scripts/login_val.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</head>
 	
 	<body>
@@ -52,11 +54,11 @@ header("location: media.php");
 				<input type="password" class="form-control" min = "6" max = "15" id="pass" name="password" required>
 			</div>
 		</div>
-		<div class="form-group col-sm-6">
+		<div class="well">
 			<a id="retrieve_password" href="password_recovery.php">Reset Password</a>
 		</div>
 		<div>
-			<input class="btn btn-alt" type = "submit" name = "submit" id="submit" value = "Submit">
+			<input class="btn btn-lg btn-primary" type = "submit" name = "submit" id="submit" value = "Submit">
 		</div>
 		</fieldset>
 	</form>

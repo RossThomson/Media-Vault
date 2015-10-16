@@ -20,6 +20,8 @@ header("location: media.php");
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<!-- Bootstrap core CSS -->
 		<link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 	</head>
@@ -31,13 +33,13 @@ header("location: media.php");
 			<?php include 'header_bootstrap.php'; ?>
 		</header>
 
-	<div class="jumbotron">
-        <h1>Welcome to Media Lynx!</h1>
-        <p>It's like Netflix, but for your own content!</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="register_bootstrap.php" role="button">Register now »</a>
-        </p>
-      </div>
+		<div class="jumbotron">
+			<h1>Welcome to Media Lynx!</h1>
+			<p>It's like Netflix, but for your own content!</p>
+			<p>
+			  <a class="btn btn-lg btn-primary" href="register_bootstrap.php" role="button">Register now »</a>
+			</p>
+		 </div>
 		
 		<footer class="footer_absolute">
 		<span id="jae_design-by">Copyright &copy; Media Lynx 2015</span> 
