@@ -10,21 +10,17 @@
 	</head>
 	
 	<body>
-		
-		
 	<div class="wrapper">
 	
 			<header>
 				<?php include 'header.php'; ?>
 			</header>
-			
-			
 	
 	<!--FORM FOR THE USER TO FILL OUT-->
 	<div id="register_form">
 	
 	<h1>Register For An Account</h1>
-	<form id="regform" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="Post">
+	<form id="regform" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
 		<fieldset>
 		<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
 		<p><label>First Name: </label><input type="text" name="firstname" id="name" required onchange="firstNameVal();">*<span id ="namemessage"></span></p>
@@ -34,12 +30,11 @@
 		<p><label>Secret Answer: </label><input type="text" name="secretanswer" required>*</p>
 		<p><label for="password">Password: </label><input type="password" min = "6" max = "15" id="password" name="password" required>*</p>
 		<p><label for="cPassword">Confirm Password: </label><input type="password" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;">*<span id="confirmMessage" class="confirmMessage"></span></p>
-		<p><input class="btn btn-alt" type = "submit" name = "Submit" id = "Submit" value = "Submit">
+		<p><input class="btn btn-alt" type = "submit" name = "submit" id = "submit" value = "Submit">
 		</fieldset>
 	</form>
-	
 	</div>
-
+	
 	<footer class="footer_relative">
 		<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
