@@ -16,15 +16,7 @@
 			<header>
 				<?php include 'header.php'; ?>
 			</header>
-			<? if(isset($_request ['Submit']))
-			{
-				echo"test1";
-			}
-			else
-			{
-			 echo "test2";	
-			}
-			?>
+			
 			
 	
 	<!--FORM FOR THE USER TO FILL OUT-->
