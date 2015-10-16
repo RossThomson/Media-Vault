@@ -92,11 +92,13 @@ header("location: Login.php");
                     echo "<td align='center'>
                 <a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 					echo "<td align='center'>
+
 				<a href='". $userdir.$row['CONTENTTITLE']."'>View</a></td>";
+
                     echo "</tr>";
                 }
                 $db->close();
-				//Testing
+				//Testing..
             ?>
         </tbody>
     </table>	
