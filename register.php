@@ -74,7 +74,7 @@ if (isset($_POST['submit']))
 	
 }
 else
-{	ECHO "else cond;}
+{	ECHO "else cond";}
 ?>	
 	<footer class="footer_relative">
 		<span id="jae_design-by">Design by Media lynx</span> 
