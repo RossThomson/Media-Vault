@@ -97,9 +97,6 @@ header("location: Login.php");
                 <a href='delete_jae.php?num=".$row['CONTENTID']."' onClick=\"return 
 							confirm('are you sure you want to delete??');\">DEL</a></td>";
 
-                    echo "<td align='center'>
-                <a href='delete_jae.php?num=".$row['CONTENTID']."' onclick="return confirm("Are you sure?")">DEL</a></td>";
-
 					echo "<td align='center'>
 					<a href='". $target_dir.$row['CONTENTTITLE']."'>View</a></td>";
 
