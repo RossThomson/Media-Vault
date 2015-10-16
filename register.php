@@ -16,12 +16,14 @@
 			<header>
 				<?php include 'header.php'; ?>
 			</header>
+			
+			
 	
 	<!--FORM FOR THE USER TO FILL OUT-->
 	<div id="register_form">
 	
 	<h1>Register For An Account</h1>
-	<form id="regform" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
+	<form id="regform" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="Post">
 		<fieldset>
 		<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
 		<p><label>First Name: </label><input type="text" name="firstname" id="name" required onchange="firstNameVal();">*<span id ="namemessage"></span></p>
