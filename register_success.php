@@ -17,6 +17,18 @@
 			<header>
 				<?php include 'header.php'; ?>
 			</header>
+			<?php
+if (isset($_REQUEST ['Submit']) and (!empty($_POST['Submit'])))
+{
+echo "test";
+
+}
+else
+{
+	echo "shgjs";
+}
+
+?>
 
 			<div id = "register_success">
 			<h2> Success!, you are being redirected to the login page</h2>
