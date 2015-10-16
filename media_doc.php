@@ -37,7 +37,7 @@ header("location: Login.php");
 			<ul>
 				<li><a href="media_playlist.php">Playlists</a></li>
 				<li><a class="active" href="media_doc.php">Docs</a></li>
-				<li><a href="image_gallery_test.php">Photos</a></li>
+				<li><a href="media_photo.php">Photos</a></li>
 				<li><a href="media_music.php">Music</a></li>
 				<li><a href="media_video.php">Videos</a></li>
 				<li><a href="media_all.php">All files</a></li>
@@ -93,7 +93,7 @@ header("location: Login.php");
                     echo "<td align='center'>".$row['SIZE']."</td>";
 					echo "<td align='center'>".$row['SYNOPSIS']."</td>";
                     echo "<td align='center'>
-                <a href='delete_jae.php?num=".$row['CONTENTID']."' onclick="return confirm('Are you sure?')">DEL</a></td>";
+                <a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 					echo "<td align='center'>
 					<a href='". $target_dir.$row['CONTENTTITLE']."'>View</a></td>";
 
