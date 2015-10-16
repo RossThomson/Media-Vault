@@ -38,7 +38,15 @@
 	</form>
 	
 	</div>
+	<?php
+if (isset($_POST['submit']))
+{
+   session_start();
+   mysql_connect('localhost','root','root');
+   mysql_select_db("MEDIALYNX");;
 	
+}
+?>	
 	<footer class="footer_relative">
 		<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
