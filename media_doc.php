@@ -23,6 +23,7 @@ header("location: Login.php");
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
     <link rel="stylesheet" href="styles/styles.css">
 	<script type="text/javascript" src="scripts/upload_val.js"></script>
+	<script type="text/javascript" src="scripts/confirm.js"></script>
 </head>
 
 <body>
@@ -92,11 +93,15 @@ header("location: Login.php");
                 <a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
                     echo "<td align='center'>".$row['SIZE']."</td>";
 					echo "<td align='center'>".$row['SYNOPSIS']."</td>";
+<<<<<<< HEAD
                     echo "<td align='center'>
 <<<<<<< HEAD
                 <a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 =======
                 <a href='delete_jae.php?num=".$row['CONTENTID']."' onclick="return confirm("Are you sure?")">DEL</a></td>";
+>>>>>>> origin/master
+=======
+                    echo "<td align='center'><a href='delete_jae.php?num=".$row['CONTENTID']."' class = 'confirmation'>DEL</a></td>";
 >>>>>>> origin/master
 					echo "<td align='center'>
 					<a href='". $target_dir.$row['CONTENTTITLE']."'>View</a></td>";
