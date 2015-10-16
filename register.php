@@ -42,7 +42,7 @@ if (isset($_POST['submit']))
 echo "test";
    session_start();
    mysql_connect('localhost','root','root');
-   mysql_select_db("Media-Vault");;
+   mysql_select_db("MediaLynx");;
 	
 	$FirstName = mysql_real_escape_string($_POST['FirstName']);
 	$LastName = mysql_real_escape_string($_POST['LastName']);
@@ -54,20 +54,7 @@ echo "test";
 	
 	$enc_password = md5($Password);
 	
-	if ($FirstName && $LastName && $EmailAddress && $SecretQuestion && $SecretAnswer && $password && $ConfirmPassword )
-	{
-	    $confirmcode = rand();
-		$query = mysql_query("INSERT IN TO 'users' VALUES('','$FirstName','$LastName','$EmailAddress','$SecretQuestion','$SecretAnswer','$password','$ConfirmPassword','0','$confirmcode')");
-	    $message =
-		"
-		Confirm your Email
-		Click the link below to verify your account
-		http://54.79.17.142/index.phps/emailconfirm.php?FirstName=$FirstName$code=$confirmcode
-	    " ;
-		mail($email,"MediaVault confirm Email",$message,"Form: DoNotReply@mediavault.com");
-		
-		echo "Registration complete! Please confirm your mail ";
-	}
+
 ?>	
 	</div>
 	
