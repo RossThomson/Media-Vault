@@ -38,7 +38,6 @@ header("location: Login.php");
 		</div>
 	</header>
 </div>
-	<!-- </div> -->
 	
 	<form  class="upload_form" action="upload_doc_new_dir.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
     Select a doc file to upload:
