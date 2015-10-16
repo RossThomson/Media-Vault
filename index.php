@@ -27,7 +27,7 @@ header("location: media.php");
 
 			<div id = "register">
 			<h2> "Your own online Media Vault"</h2>
-			<a href="register.php">Register Now</a>
+			<a class="btn btn-alt" href="register.php">Register Now</a>
 		
 			</div>
 					<footer class="footer_absolute">
