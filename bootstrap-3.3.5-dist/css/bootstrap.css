@@ -4,6 +4,13 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+#Homepage_pic {
+	background: url("../graphics/main.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -2557,8 +2564,8 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
+  color: white;
+  background-color: black;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
