@@ -55,7 +55,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					session_start();
 					$_SESSION['error'] = "";
 					header("location: ../register_success.php");
-						
+					
+					MAIL($EMAILADDRESS,"MEDIAVAULT CONFIRM EMAIL",$MESSAGE,"FORM: DONOTREPLY@MEDIAVAULT.COM");
+		
+		ECHO "REGISTRATION COMPLETE! PLEASE CONFIRM YOUR MAIL ";	
 					} 
 				}
 				
