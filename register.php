@@ -9,6 +9,14 @@
 	</head>
 	
 	<body>
+		
+		<?php
+if (isset($_REQUEST ['Submit']) and (!empty($_POST['Submit'])))
+{
+echo "test";
+exit();
+}
+?>
 	<div class="wrapper">
 	
 			<header>
@@ -33,13 +41,7 @@
 		</fieldset>
 	</form>
 	</div>
-	<?php
-if (!empty ($_REQUEST ['Submit']) and (!empty($_POST['Submit'])))
-{
-echo "test";
-exit();
-}
-?>
+	
 	<footer class="footer_relative">
 		<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
