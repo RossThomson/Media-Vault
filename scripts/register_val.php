@@ -50,7 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					mkdir("$userfolder");
 					mkdir("$userthumbs");
  
- 
+ 					session_start();
+					$_SESSION['error'] = "";
+					header("location: ../register_success.php");
 					
 				
 						
