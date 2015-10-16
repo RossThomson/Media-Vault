@@ -1,5 +1,11 @@
 <?php
 session_start();
+	$firstname  = $_SESSION['first_name'];
+	$lastname = $_SESSION['last_name'];
+	$userid = $_SESSION['userid'];
+	$dir = "uploads/";
+	$target_dir = $dir.$firstname.$lastname."/";
+
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
 }
@@ -58,7 +64,7 @@ header("location: Login.php");
 					echo "DB connect error";
 				}		
 				
-				$userid = $_SESSION['userid'];
+				
 				$query = "select * from CONTENT where CONTENTTYPE = 'VIDEO' and USERID = '$userid'";				
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
@@ -89,12 +95,12 @@ header("location: Login.php");
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
-							echo "<td align='center'>
-							<video src= 'uploads/".$row['CONTENTTITLE']."' width = '150' height = '150' controls></video></td>";
+							echo "<td align='center'>";
+							echo'<video src=  "' . $target_dir.$row['CONTENTTITLE'] . '" width = "150" height = "150" controls></video></td>';
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
-							echo "<td align='center'>
-						<a href='uploads/".$row['CONTENTTITLE']."'>View</a></td>";
+							echo "<td align='center'>";
+						echo'<a href="' . $target_dir.$row['CONTENTTITLE'] . '">View</a></td>';
 							echo "</tr>";
 						}
 						$db->close();
