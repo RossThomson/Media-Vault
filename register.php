@@ -29,12 +29,12 @@
 		<p><label>Secret Answer: </label><input type="text" name="secretanswer" required>*</p>
 		<p><label for="password">Password: </label><input type="password" min = "6" max = "15" id="password" name="password" required>*</p>
 		<p><label for="cPassword">Confirm Password: </label><input type="password" id="cPassword" name="cPassword" required onkeyup ="checkPass(); return false;">*<span id="confirmMessage" class="confirmMessage"></span></p>
-		<p><input class="btn btn-alt" type = "submit" name = "submit" id = "submit" value = "Submit">
+		<p><input class="btn btn-alt" type = "submit" name = "Submit" id = "Submit" value = "Submit">
 		</fieldset>
 	</form>
 	</div>
 	<?php
-if (isset($_POST['submit']))
+if (!empty ($_REQUEST ['Submit']) and (!empty($_POST['Submit'])))
 {
 echo "test";
 exit();
