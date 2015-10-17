@@ -19,7 +19,7 @@
 	<!--FORM FOR THE USER TO FILL OUT-->
 	<div id="register_form">
 	
-	<h1>Register For An Account11</h1>
+	<h1>Register For An Account</h1>
 	<form id="regform" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
 		<fieldset>
 		<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
