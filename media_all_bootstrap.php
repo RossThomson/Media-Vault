@@ -66,12 +66,12 @@ header("location: Login.php");
 			<table class="table" border='1' align="center">
 				<thead>
 					<tr>
-						<th width="50">NUM</th>
-						<th width="250">FILE</th>
-						<th width="100">TYPE</th>
-						<th width="150">SIZE</th>
-						<th width="200">SYNOPSIS</th>
-						<th width="50">DEL</th>
+						<th class="col-sm-2">NUM</th>
+						<th class="col-sm-2">FILE</th>
+						<th class="col-sm-2">TYPE</th>
+						<th class="col-sm-2">SIZE</th>
+						<th class="col-sm-2">SYNOPSIS</th>
+						<th class="col-sm-2">DEL</th>
 					</tr>
 				</thead>
 				<tbody>
