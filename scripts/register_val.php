@@ -54,7 +54,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
  					session_start();
 					$_SESSION['error'] = "";
-					header("location: ../register_success.php");
+					
+					//CHange
+					
+			  $to = "$email";
+$subject = "Test mail";
+$message = "Hello! This is a <strong>HTML</strong> test email message.";
+$from = "ppriyanka1708@gmail.com";
+$headers = "From:" . $from\r\n;
+$header .= "MIME-Version: 1.0\r\n";
+$header .= "Content-type: text/html\r\n";
+
+mail($to,$subject,$message,$headers);
+echo "Send Success."
+					//change completed
+				//	header("location: ../register_success.php");
 					
 				
 						
