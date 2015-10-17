@@ -285,7 +285,7 @@ th {
   font-style: normal;
   font-weight: normal;
   line-height: 1;
-  background-color: white;
+  background-color: black;
   
 
   -webkit-font-smoothing: antialiased;
@@ -4050,11 +4050,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
   padding: 10px 15px;
+  background-color: #eee;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eee;
+  background-color: #fff;
 }
 .nav > li.disabled > a {
   color: #777;
