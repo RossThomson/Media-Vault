@@ -1,4 +1,4 @@
-<?php
+d<?php
 
 // define variables and set to empty values
 
@@ -56,19 +56,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$_SESSION['error'] = "";
 					
 					//CHange
-		/*			
+			
 			  $to = "$email";
 $subject = "Test mail";
 $message = "Hello! This is a <strong>HTML</strong> test email message.";
 $from = "ppriyanka1708@gmail.com";
 $headers = "From:" . $from ;
-$header .= "MIME-Version: 1.0\r\n";
-$header .= "Content-type: text/html\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-type: text/html\r\n";
 
 mail($to,$subject,$message,$headers);
-echo "Send Success.";*/
+echo "Send Success.";
 					//change completed
-				header("location: ../register_success.php");
+				//header("location: ../register_success.php");
 					
 				
 						
