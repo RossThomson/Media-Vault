@@ -4040,6 +4040,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  background-color; black;
 }
 .nav > li {
   position: relative;
@@ -4082,7 +4083,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-tabs {
   border-bottom: 1px solid #ddd;
-  background-color: white;
+  background-color: black;
 }
 .nav-tabs > li {
   float: left;
