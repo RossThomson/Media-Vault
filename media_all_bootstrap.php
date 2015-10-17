@@ -20,7 +20,7 @@ header("location: Login.php");
 		<!--<link rel="icon" href="http://getbootstrap.com/favicon.ico">-->
 		<!--<title>Media Lynx</title>-->
 		<!-- Bootstrap core CSS -->
-		<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 		
@@ -30,11 +30,11 @@ header("location: Login.php");
 <div class="container">
 	<header>
 		<?php include 'header_bootstrap.php'; ?>
-		<span id="sign_in_info"></span>
+	</header>
+</div>
+<div class="container-fluid">
+	<span id="sign_in_info"></span>
 		<div id="media2_header_inside">
-			<!-- <a href="index.php">
-				<img src="graphics/logo.jpg">
-			</a> -->
 			<ul>
 				<li><a href="media_playlist.php">Playlists</a></li></li></li>
 				<li><a href="media_doc.php">Docs</a></li></li></li>
@@ -48,7 +48,7 @@ header("location: Login.php");
 </div>
 	<!-- </div> -->
 	<div class="media_divider"></div>
-		<div class="media_content">
+		<div class="table">
 			<br><br><br><br>		
 			<?php
 				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
@@ -62,8 +62,8 @@ header("location: Login.php");
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
 			?>
-	
-			<table border='1' align="center">
+			
+			<table class="table" border='1' align="center">
 				<thead>
 					<tr>
 						<th width="50">NUM</th>
