@@ -52,7 +52,7 @@ template {
   display: none;
 }
 a {
-  background-color: white;
+  background-color: black;
   color: #d3d3d3;
 }
 a:active,
@@ -263,7 +263,8 @@ th {
   }
   .table td,
   .table th {
-    background-color: #fff !important;
+    background-color: black !important;
+	color: white !important;
   }
   .table-bordered th,
   .table-bordered td {

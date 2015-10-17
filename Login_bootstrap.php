@@ -38,7 +38,7 @@ header("location: media.php");
 	<div id="jumbotron">	
 		<h1>Login To Your Account</h1>
 	</div>
-	<form class="form-horizontal" role="form" id="loginform" name="login_form" onsubmit="scripts/login_val.js" action="scripts/login_val.php"  method="post">
+	<form class="form-horizontal" role="form" id="loginform" name="login_form" onsubmit="scripts/login_val.js" action="scripts/login_val_bootstrap.php"  method="post">
 		<fieldset>
 		<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
 		<div class="form-group">

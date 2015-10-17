@@ -34,20 +34,20 @@ header("location: Login.php");
 </div>
 <div class="container-fluid">
 	<span id="sign_in_info"></span>
-		<div id="media2_header_inside">
-			<ul>
-				<li><a href="media_playlist.php">Playlists</a></li></li></li>
-				<li><a href="media_doc.php">Docs</a></li></li></li>
-				<li><a href="image_gallery_test.php">Photos</a></li></li></li>
-				<li><a href="media_music.php">Music</a></li></li></li>
-				<li><a href="media_video.php">Videos</a></li></li></li>
-				<li><a class="active" href="media_all.php">All files</a></li></li></li>
+		<div class = "container">
+			<ul class="nav nav-tabs">
+				<li><a href="media_playlist.php">Playlists</a></li>
+				<li><a href="media_doc.php">Docs</a></li>
+				<li><a href="image_gallery_test.php">Photos</a></li>
+				<li><a href="media_music.php">Music</a></li>
+				<li><a href="media_video.php">Videos</a></li>
+				<li><a class="active" href="media_all.php">All files</a></li>
 			</ul>		
 		</div>
 	</header>
 </div>
 	<!-- </div> -->
-	<div class="media_divider"></div>
+	<div class="container"></div>
 		<div class="table">
 			<br><br><br><br>		
 			<?php
