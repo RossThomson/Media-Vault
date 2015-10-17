@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $subject = "Test mail";
 $message = "Hello! This is a <strong>HTML</strong> test email message.";
 $from = "ppriyanka1708@gmail.com";
-$headers = "From:" . $from\r\n;
+$headers = "From:" . $from ;
 $header .= "MIME-Version: 1.0\r\n";
 $header .= "Content-type: text/html\r\n";
 
