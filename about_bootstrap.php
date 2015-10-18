@@ -26,17 +26,15 @@
 		<!--<img id="MediaLynx-ID" src="./graphics/logo.jpg" class="img-responsive">-->
 	</div>	
 	<div class="container" id="aboutus_content">
-					<h2 class="aboutus_Headings">About us</h2>
-					
-					<p>MediaLynx provides users with a private online media vault, where you can upload all your media files, including music,
-					movies, ebooks and photos.  MediaLynx is a free to use service and provides the perfect secure platform to store and access
-					your media on all your devices.  Join today and see why everyone loves MediaLynx.</p>
-					</div>			
-
-					<footer class="footer_relative">
-					<span id="jae_design-by">Design by Media lynx</span> 
-						Copyright &copy; Media Lynx 2015.
-					</footer>
+		<h2 class="aboutus_Headings">About us</h2>
+			<p>MediaLynx provides users with a private online media vault, where you can upload all your media files, including music,
+			movies, ebooks and photos.  MediaLynx is a free to use service and provides the perfect secure platform to store and access
+			your media on all your devices.  Join today and see why everyone loves MediaLynx.</p>
+			</div>			
+	<footer class="footer_relative">
+		<span id="jae_design-by">Design by Media lynx</span> 
+			Copyright &copy; Media Lynx 2015.
+	</footer>
 	</div>
 </body>
 </html>
