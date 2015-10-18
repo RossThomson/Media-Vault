@@ -23,7 +23,7 @@ body {
 }
 .bodyAbout {
  background-color:white !important;
- background-image: url('graphics/logo.png');
+ background-image: url('../graphics/logo.png');
  background-size: 1440px 800px;
  background-repeat:repeat-y;
 }
