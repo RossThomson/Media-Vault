@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$_SESSION['error'] = "";
 					
 					//CHange
-			require_once('PHPMailer/class.phpmailer.php');
+			require_once('../PHPMailer/class.phpmailer.php');
   $mail = new PHPMailer(); // create a new object
   $mail->IsSMTP(); // enable SMTP
   $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
