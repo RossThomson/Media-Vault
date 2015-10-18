@@ -54,7 +54,7 @@ header("location: media.php");
 				<input type="password" class="form-control" min = "6" max = "15" id="pass" name="password" required>
 			</div>
 		</div>
-		<div class="well">
+		<div class="well" href="password_recovery.php">
 			<a id="retrieve_password" href="password_recovery.php">Reset Password</a>
 		</div>
 		<div>
