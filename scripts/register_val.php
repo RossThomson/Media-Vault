@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    }
 			 
 					//change completed
-				//header("location: ../register_success.php");
+				header("location: ../register_success.php");
 					
 				
 						
