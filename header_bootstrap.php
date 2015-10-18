@@ -32,7 +32,7 @@
 		</div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav">
-            <li><a href="about.php"><span class="glyphicon glyphicon-info-sign"></span>About</a></li>
+            <li><a href="about_bootstrap.php"><span class="glyphicon glyphicon-info-sign"></span>About</a></li>
             <li><a href="help.php"><span class="glyphicon glyphicon-book"></span>Help</a></li>
           </ul>
 		  <ul class="nav navbar-nav navbar-right">
