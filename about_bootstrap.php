@@ -23,7 +23,7 @@
 	</header>
 	<div class="jumbotron">
 		<h1 class="">Welcome to Media Lynx</h1>
-		<img id="MediaLynx-ID" src="./graphics/logo.jpg" class="img-responsive">
+		<!--<img id="MediaLynx-ID" src="./graphics/logo.jpg" class="img-responsive">-->
 	</div>	
 	<div class="container" id="aboutus_content">
 					<h2 class="aboutus_Headings">About us</h2>
