@@ -285,7 +285,8 @@ th {
   font-style: normal;
   font-weight: normal;
   line-height: 1;
-  background-color: black;
+  background-color: white;
+  color: #d3d3d3;
   
 
   -webkit-font-smoothing: antialiased;
