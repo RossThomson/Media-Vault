@@ -16,7 +16,7 @@
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 </head>
-<body>
+<body class="bodyAbout">
 <div class="container-fluid">
 	<header>
 		<?php include 'header_bootstrap.php'; ?>
