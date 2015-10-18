@@ -4919,7 +4919,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   font-size: 75%;
   font-weight: bold;
   line-height: 1;
-  color: #fff;
+  color: #d3d3d3;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
@@ -4927,7 +4927,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 a.label:hover,
 a.label:focus {
-  color: #fff;
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
