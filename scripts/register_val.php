@@ -56,17 +56,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$_SESSION['error'] = "";
 					
 					//CHange
-			
-			  $to = "$email";
-$subject = "Test mail";
-$message = "Hello! This is a <strong>HTML</strong> test email message.";
-$from = "ppriyanka1708@gmail.com";
-$headers = "From:" . $from ;
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/html\r\n";
-
-mail($to,$subject,$message,$headers);
-echo "Send Success."; 
+			require_once('PHPMailer/class.phpmailer.php');
+  $mail = new PHPMailer(); // create a new object
+  $mail->IsSMTP(); // enable SMTP
+  $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+  $mail->SMTPAuth = true; // authentication enabled
+  $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+  $mail->Host = "smtp.gmail.com";
+  $mail->Port = 465; // or 587
+  $mail->IsHTML(true);
+  $mail->Username = "ppriyanka1708@gmail.com";
+  $mail->Password = "Pinky1309";
+  $mail->SetFrom("ppriyanka1708@gmail.com");
+  $mail->Subject = "Registration";
+  $mail->Body = "<h1>Your Registration SuccessFully</h1><a href=#>Click Here For Confirm Registration </a> ";
+  $mail->AddAddress($email);
+   if(!$mail->Send())
+   {
+   echo "Mailer Error: " . $mail->ErrorInfo;
+   }
+   else
+   {
+   echo "Message has been sent";
+   }
+			 
 					//change completed
 				//header("location: ../register_success.php");
 					
