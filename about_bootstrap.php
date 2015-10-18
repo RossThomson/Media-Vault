@@ -17,14 +17,15 @@
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 </head>
 <body>
-<div class="wrapper">
+<div class="container-fluid">
 	<header>
 		<?php include 'header_bootstrap.php'; ?>
 	</header>
-		<h1 class="aboutus_Headings">Welcome to Media Lynx</h1>
-			<img id="aboutus_img" src="./graphics/main.jpg">
-					
-				<div id="aboutus_content">
+	<div class="jumbotron">
+		<h1 class="">Welcome to Media Lynx</h1>
+		<img id="MediaLynx-ID" src="./graphics/logo.jpg" class="img-responsive">
+	</div>	
+	<div class="container" id="aboutus_content">
 					<h2 class="aboutus_Headings">About us</h2>
 					
 					<p>MediaLynx provides users with a private online media vault, where you can upload all your media files, including music,
