@@ -81,7 +81,7 @@ header("location: Login.php");
 						{
 							$row = $result->fetch_assoc();
 						
-							echo '<a href="'. $target_dir.$row['CONTENTTITLE']. ' "><img src="uploads/RossTestTwo/fish.jpg" alt="'.$row['SYNOPSIS'].'"></a>';
+							echo '<a href="'. $target_dir.$row['CONTENTTITLE']. ' "><img src="uploads/RossTestTwo/15 Funniest Arnold Schwarzenegger One-Liners.mp4" alt="'.$row['SYNOPSIS'].'"></a>';
 					
 						
 						}
