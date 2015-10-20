@@ -15,14 +15,11 @@ header("location: Login.php");
 
 <head>
 	<title>Media</title>	
-	<!-- <link rel="shortcut icon" href="graphics/favicon.ico" />
-	<link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen" />
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> -->
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
     <link rel="stylesheet" href="styles/styles.css">
 	<script type="text/javascript" src="scripts/upload_val.js"></script>
 	<script type="text/javascript" src="html5_gallery_free/html5gallery/jquery.js"></script>
-	<!--<script type="text/javascript" src="html5_gallery_free/html5gallery/html5gallery.js"></script> -->
+	<script type="text/javascript" src="html5_gallery_free/html5gallery/html5gallery.js"></script>
 </head>
 
 <body>
@@ -31,9 +28,7 @@ header("location: Login.php");
 		<?php include 'header.php'; ?>
 		<span id="sign_in_info"></span>
 		<div id="media2_header_inside">
-			<!-- <a href="index.php">
-				<img src="graphics/logo.jpg">
-			</a> -->
+		
 			<ul>
 				<li><a href="media_playlist.php">Playlists</a></li>
 				<li><a href="media_doc.php">Docs</a></li>
