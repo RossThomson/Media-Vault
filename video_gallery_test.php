@@ -22,7 +22,7 @@ header("location: Login.php");
     <link rel="stylesheet" href="styles/styles.css">
 	<script type="text/javascript" src="scripts/upload_val.js"></script>
 	<script type="text/javascript" src="html5_gallery_free/html5gallery/jquery.js"></script>
-	<script type="text/javascript" src="html5_gallery_free/html5gallery/html5gallery.js"></script>
+	<script type="text/javascript" src="graphics/logo.jpg"></script>
 </head>
 
 <body>
@@ -58,7 +58,7 @@ header("location: Login.php");
 	
 	<div class="media_divider"></div>
 	
-	<div class="html5gallery" data-width="480" data-height="270" data-showimagetoolbox="always" data-showfullscreenbutton="false" style=" display: block; margin-left: auto; margin-right: auto;" data-skin="mediapage">
+	<div class="html5gallery" data-width="480" data-height="270" data-showimagetoolbox="always" data-responsive="true" style=" display: block; margin-left: auto; margin-right: auto;" data-skin="mediapage" data-watermark="http://html5box.com/images/html5boxlogo.jpg">
 	
 	
 	<?php
@@ -81,7 +81,7 @@ header("location: Login.php");
 						{
 							$row = $result->fetch_assoc();
 						
-							echo '<a href="'. $target_dir.$row['CONTENTTITLE']. ' "><img src="uploads/RossTestTwo/15 Funniest Arnold Schwarzenegger One-Liners.mp4" alt="'.$row['SYNOPSIS'].'"></a>';
+							echo '<a href="'. $target_dir.$row['CONTENTTITLE']. ' "><img src="uploads/RossTestTwo/fish.jpg" alt="'.$row['SYNOPSIS'].'"></a>';
 					
 						
 						}
