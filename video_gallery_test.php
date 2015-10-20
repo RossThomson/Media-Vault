@@ -58,7 +58,7 @@ header("location: Login.php");
 	
 	<div class="media_divider"></div>
 	
-	<div class="html5gallery" data-width="480" data-height="270" style="display:none;">
+	<div class="html5gallery" data-width="480" data-height="270" style="display:none; data-skin="mediapage"">
 	
 	
 	<?php
@@ -87,12 +87,7 @@ header("location: Login.php");
 						}
 						$db->close();
 					?>
-	
-	
-	<!--
-	  <a href="uploads/RossTestTwo/fish.jpg"><img src="uploads/RossTestTwo/fish.jpg" alt="fish"></a>
-	  <a href="uploads/RossTestTwo/images.jpg"><img src="uploads/RossTestTwo/images.jpg" alt="images"></a>
-	  <a href="uploads/RossTestTwo/YASS KITTY YASS.mp4"><img src="uploads/RossTestTwo/YASS KITTY YASS.mp4" alt="Big Buck Bunny 1"></a> -->
+
 </div>
 	<div class="media_divider"></div>
 	</div>
