@@ -57,31 +57,39 @@ header("location: Login.php");
 			<table border='1' align="center">
 				<thead>
 					<tr>
-                    	<th width="50">SELECT
-                        <form id="form1" method="post">
-	  <p>
-	    <input type="checkbox" name="chkbx" id="chkbx" />
-	    <label for="chkbx"></label>
-      </p>
-</form></th>
-						<th width="50">NAME</th>
+                    	<th width="40">SELECT
+                       </th>
+						<th width="50">NUM</th>
 						<th width="250">FILE</th>
 						<th width="100">TYPE</th>
 						<th width="150">SIZE</th>
 						<th width="200">SYNOPSIS</th>
 						<th width="50">DEL</th>
-						
 					</tr>
                     
 				</thead>
+               
 				<tbody>
+                <tr>
+                
 					<?php
+						
+						
 						for($i=0; $i<$num_result; $i++)
 						{
-							$row = $result->fetch_assoc();
 							echo "<tr>";
+						echo "<td align='center'>";
+						echo "<form id='form1' method='post'>";
+	  					echo "<p>";
+	    				echo "<input type='checkbox' name='chkbx' id='chkbx' />";
+	    				echo "<label for='chkbx'>";
+						echo "</label>";
+      					echo "</p>";
+						echo "</form>";
+						echo "</td>";
+							$row = $result->fetch_assoc();
 							echo "<input t";
-							echo "<td align='center'>".$row['SELECT'].
+							
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
@@ -90,9 +98,10 @@ header("location: Login.php");
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
-							echo "</tr>";
+						echo "</tr>";	
 						}
 						$db->close();
+						
 					?>
 				</tbody>
 			</table>			
