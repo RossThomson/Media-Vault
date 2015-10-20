@@ -89,10 +89,10 @@ header("location: Login.php");
 					?>
 	
 	
-	
+	<!--
 	  <a href="uploads/RossTestTwo/fish.jpg"><img src="uploads/RossTestTwo/fish.jpg" alt="fish"></a>
 	  <a href="uploads/RossTestTwo/images.jpg"><img src="uploads/RossTestTwo/images.jpg" alt="images"></a>
-	  <a href="uploads/RossTestTwo/YASS KITTY YASS.mp4"><img src="uploads/RossTestTwo/YASS KITTY YASS.mp4" alt="Big Buck Bunny 1"></a>
+	  <a href="uploads/RossTestTwo/YASS KITTY YASS.mp4"><img src="uploads/RossTestTwo/YASS KITTY YASS.mp4" alt="Big Buck Bunny 1"></a> -->
 </div>
 	<div class="media_divider"></div>
 	</div>
