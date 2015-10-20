@@ -66,19 +66,17 @@ header("location: Login.php");
 						<th width="200">SYNOPSIS</th>
 						<th width="50">DEL</th>
 					</tr>
-                    
 				</thead>
                
 				<tbody>
                 <tr>
                 
 					<?php
-						
-						
+											
 						for($i=0; $i<$num_result; $i++)
 						{
-							echo "<tr>";
-						echo "<td align='center'>";
+						echo "<tr>";
+						echo "<td align='center' padding='20'>";
 						echo "<form id='form1' method='post'>";
 	  					echo "<p>";
 	    				echo "<input type='checkbox' name='chkbx' id='chkbx' />";
@@ -88,14 +86,14 @@ header("location: Login.php");
 						echo "</form>";
 						echo "</td>";
 							$row = $result->fetch_assoc();
-							echo "<input t";
+							
 							
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
-							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
+							//echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 						echo "</tr>";	
