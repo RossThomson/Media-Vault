@@ -59,6 +59,37 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 	
 	<div class="html5gallery" data-width="480" data-height="270" style="display:none;">
+	
+	
+	<?php
+	
+				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+				if(mysqli_connect_errno())
+				{
+					echo "DB connect error";
+				}		
+				
+				
+				$query = "select * from CONTENT where CONTENTTYPE = 'VIDEO' and USERID = '$userid'";				
+				$result = $db->query($query);
+				$num_result = $result->num_rows;
+	
+	
+	
+					
+						for($i=0; $i<$num_result; $i++)
+						{
+							$row = $result->fetch_assoc();
+						
+							echo '<a href="'. $target_dir .'/ '.$row['CONTENTTITLE']. ' "><img src="uploads/RossTestTwo/fish.jpg" alt="fish"></a>'
+					
+						
+						}
+						$db->close();
+					?>
+	
+	
+	
 	  <a href="uploads/RossTestTwo/fish.jpg"><img src="uploads/RossTestTwo/fish.jpg" alt="fish"></a>
 	  <a href="uploads/RossTestTwo/images.jpg"><img src="uploads/RossTestTwo/images.jpg" alt="images"></a>
 	  <a href="uploads/RossTestTwo/YASS KITTY YASS.mp4"><img src="uploads/RossTestTwo/YASS KITTY YASS.mp4" alt="Big Buck Bunny 1"></a>
