@@ -31,10 +31,11 @@
 		  <a href="index_bootstrap.php" class="navbar-brand"><img alt="brand" src="graphics/logo.jpg" class="img-responsive"></a>
 		</div>
         <div class="navbar-collapse collapse" id="navbar">
-          <ul class="nav navbar-nav">
-            <li><a href="about_bootstrap.php"><span class="glyphicon glyphicon-info-sign"></span>About</a></li>
-            <li><a href="help.php"><span class="glyphicon glyphicon-book"></span>Help</a></li>
-          </ul>
+			<div class="col-sm-5 col-md-5 pull-left">
+				<ul class="nav navbar-nav">
+					<li><a href="about_bootstrap.php" data-toggle="modal"><span class="glyphicon glyphicon-info-sign"></span>About</a></li>
+					<li><a href="help.php" data-toggle="modal"><span class="glyphicon glyphicon-book"></span>Help</a></li>
+				</ul>
 		  <ul class="nav navbar-nav navbar-right">
 		    <li><span id = "sign_in_info"><?php echo $welcome;?> <?php echo $_SESSION['first_name'];?></span></li>
 			<li><a href="<?php echo $login;?>_bootstrap.php"><label class="label"><?php echo $login;?></label></a></li>
