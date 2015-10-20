@@ -27,11 +27,11 @@ header("location: Login.php");
 				<img src="graphics/logo.jpg">
 			</a> -->
 			<ul>
-				<li><a href="media_playlist.php">Playlists</a></li>
-				<li><a href="media_doc.php">Docs</a></li>
+				<li><a href="media_playlist.php">Playlist</a></li>
+				<li><a href="media_doc.php">Doc</a></li>
 				<li><a href="image_gallery_test.php">Photos</a></li>
 				<li><a href="media_music.php">Music</a></li>
-				<li><a href="media_video.php">Videos</a></li>
+				<li><a href="media_video.php">Video</a></li>
 				<li><a class="active" href="media_all.php">All files</a></li>
 			</ul>		
 		</div>
@@ -57,12 +57,19 @@ header("location: Login.php");
 			<table border='1' align="center">
 				<thead>
 					<tr>
+						<th width="50">NUM</th>
 						<th width="250">FILE</th>
 						<th width="100">TYPE</th>
 						<th width="150">SIZE</th>
 						<th width="200">SYNOPSIS</th>
 						<th width="50">DEL</th>
 					</tr>
+                    <form id="form1" method="post" action="">
+	  <p>
+	    <input type="checkbox" name="chkbx" id="chkbx" />
+	    <label for="chkbx"></label>
+      </p>
+</form>
 				</thead>
 				<tbody>
 					<?php
@@ -70,6 +77,8 @@ header("location: Login.php");
 						{
 							$row = $result->fetch_assoc();
 							echo "<tr>";
+							echo "<input t";
+							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
@@ -85,6 +94,7 @@ header("location: Login.php");
 			</table>			
 		</div>
 	</div>
+	
 	<div class="media_divider"></div>
 	</div>
 	<br><br>

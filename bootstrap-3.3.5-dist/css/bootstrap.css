@@ -4,6 +4,13 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+#Homepage_pic {
+	background: url("../graphics/main.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -14,6 +21,13 @@ body {
   background-color: black !important;
   color: white;
 }
+.bodyAbout {
+ background-color:white !important;
+ background-image: url('../graphics/logo.png');
+ background-size: 1440px 800px;
+ background-repeat:repeat-y;
+}
+
 article,
 aside,
 details,
@@ -45,7 +59,8 @@ template {
   display: none;
 }
 a {
-  background-color: transparent;
+  background-color: black;
+  color: #d3d3d3;
 }
 a:active,
 a:hover {
@@ -255,7 +270,8 @@ th {
   }
   .table td,
   .table th {
-    background-color: #fff !important;
+    background-color: black !important;
+	color: white !important;
   }
   .table-bordered th,
   .table-bordered td {
@@ -276,6 +292,9 @@ th {
   font-style: normal;
   font-weight: normal;
   line-height: 1;
+  background-color: white;
+  color: #d3d3d3;
+  
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1099,7 +1118,8 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: black;
+  background-color:white;
   text-decoration: none;
 }
 a:hover,
@@ -2513,6 +2533,10 @@ label {
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
+  color: white;
+}
+.label-inverse {
+	color:black;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -2557,8 +2581,8 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
+  color: white;
+  background-color: black;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -3124,20 +3148,20 @@ fieldset[disabled] .btn-default.active {
   background-color: #333;
 }
 .btn-primary {
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  color: black;
+  background-color: white;
+  border-color: #d3d3d3;
 }
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: #286090;
-  border-color: #122b40;
+  background-color: #d3d3d3;
+  border-color: black;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #d3d3d3;
+  border-color: black;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -4025,6 +4049,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  background-color; black;
 }
 .nav > li {
   position: relative;
@@ -4034,11 +4059,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
   padding: 10px 15px;
+  background-color: #eee;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eee;
+  background-color: #fff;
 }
 .nav > li.disabled > a {
   color: #777;
@@ -4067,6 +4093,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-tabs {
   border-bottom: 1px solid #ddd;
+  background-color: black;
 }
 .nav-tabs > li {
   float: left;
@@ -4084,9 +4111,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #555;
+  color: black;
   cursor: default;
-  background-color: #fff;
+  background-color: #d3d3d3;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
@@ -4323,8 +4350,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  height: 50px;
-  padding: 15px 15px;
+  max-height: 100px;
+  max-width: 30%;
+  overflow: visible;
+  padding: 0px 0px;
   font-size: 18px;
   line-height: 20px;
 }
@@ -4898,7 +4927,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   font-size: 75%;
   font-weight: bold;
   line-height: 1;
-  color: #fff;
+  color: #d3d3d3;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
@@ -4906,7 +4935,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 a.label:hover,
 a.label:focus {
-  color: #fff;
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
@@ -5868,7 +5897,8 @@ button.list-group-item-danger.active:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #f5f5f5;
+  background-color: white;
+  color: black;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);

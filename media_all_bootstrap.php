@@ -10,7 +10,7 @@ header("location: Login.php");
 
 <head>
 	<title>Media</title>	
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@ header("location: Login.php");
 		<!--<link rel="icon" href="http://getbootstrap.com/favicon.ico">-->
 		<!--<title>Media Lynx</title>-->
 		<!-- Bootstrap core CSS -->
-		<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 		
@@ -30,25 +30,25 @@ header("location: Login.php");
 <div class="container">
 	<header>
 		<?php include 'header_bootstrap.php'; ?>
-		<span id="sign_in_info"></span>
-		<div id="media2_header_inside">
-			<!-- <a href="index.php">
-				<img src="graphics/logo.jpg">
-			</a> -->
-			<ul>
-				<li><a href="media_playlist.php">Playlists</a></li></li></li>
-				<li><a href="media_doc.php">Docs</a></li></li></li>
-				<li><a href="image_gallery_test.php">Photos</a></li></li></li>
-				<li><a href="media_music.php">Music</a></li></li></li>
-				<li><a href="media_video.php">Videos</a></li></li></li>
-				<li><a class="active" href="media_all.php">All files</a></li></li></li>
+	</header>
+</div>
+<div class="container-fluid">
+	<span id="sign_in_info"></span>
+		<div class = "container">
+			<ul class="nav nav-tabs">
+				<li><a href="media_playlist.php">Playlists</a></li>
+				<li><a href="media_doc.php">Docs</a></li>
+				<li><a href="image_gallery_test.php">Photos</a></li>
+				<li><a href="media_music.php">Music</a></li>
+				<li><a href="media_video.php">Videos</a></li>
+				<li><a class="active" href="media_all.php">All files</a></li>
 			</ul>		
 		</div>
 	</header>
 </div>
 	<!-- </div> -->
-	<div class="media_divider"></div>
-		<div class="media_content">
+	<div class="container"></div>
+		<div class="table">
 			<br><br><br><br>		
 			<?php
 				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
@@ -62,16 +62,16 @@ header("location: Login.php");
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
 			?>
-	
-			<table border='1' align="center">
+			
+			<table class="table" border='1' align="center">
 				<thead>
 					<tr>
-						<th width="50">NUM</th>
-						<th width="250">FILE</th>
-						<th width="100">TYPE</th>
-						<th width="150">SIZE</th>
-						<th width="200">SYNOPSIS</th>
-						<th width="50">DEL</th>
+						<th class="col-sm-2">NUM</th>
+						<th class="col-sm-2">FILE</th>
+						<th class="col-sm-2">TYPE</th>
+						<th class="col-sm-2">SIZE</th>
+						<th class="col-sm-2">SYNOPSIS</th>
+						<th class="col-sm-2">DEL</th>
 					</tr>
 				</thead>
 				<tbody>

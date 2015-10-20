@@ -32,6 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					$result = $pdo->query("SELECT EMAIL FROM  USERS WHERE EMAIL = '$email'");
 					
+					$confirmcode = mt_rand();
+					
 					if ($result->rowCount() > 0)
 					{	session_start();
 						$_SESSION['error'] = "Email already registered";
@@ -50,7 +52,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					mkdir("$userfolder");
 					mkdir("$userthumbs");
  
- 
+ 					session_start();
+					$_SESSION['error'] = "";
+					
+					//CHange
+			require_once('../PHPMailer/class.phpmailer.php');
+  $mail = new PHPMailer(); // create a new object
+  $mail->IsSMTP(); // enable SMTP
+  $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+  $mail->SMTPAuth = true; // authentication enabled
+  $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+  $mail->Host = "smtp.gmail.com";
+  $mail->Port = 465; // or 587
+  $mail->IsHTML(true);
+  $mail->Username = "ppinky1311@gmail.com";
+  $mail->Password = "jayu1309";
+  $mail->SetFrom("ppinky1311@gmail.com");
+  $mail->Subject = "Registration";
+  $mail->Body = "<h1>Your Registration SuccessFully</h1><a href=#>Click Here For Confirm Registration </a> ";
+  $mail->AddAddress($email);
+   if(!$mail->Send())
+   {
+   echo "Mailer Error: " . $mail->ErrorInfo;
+   }
+   else
+   {
+   echo "Message has been sent";
+   }
+			 
+					//change completed
+				header("location: ../register_success.php");
 					
 				
 						
@@ -67,37 +98,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 	
 }
-if (isset($_POST['Submit']))
-{
-   session_start();
-   mysql_connect('localhost','root','root');
-   mysql_select_db("Media_Lynx");
-	$FIRSTNAME = MYSQL_REAL_ESCAPE_STRING($_POST['FIRSTNAME']);
-	$LASTNAME = MYSQL_REAL_ESCAPE_STRING($_POST['LASTNAME']);
-	$EMAILADDRESS = MYSQL_REAL_ESCAPE_STRING($_POST['EMAILADDRESS']);
-	$SECRETQUESTION = MYSQL_REAL_ESCAPE_STRING($_POST['SECRETQUESTION']);
-	$SECRETANSWER = MYSQL_REAL_ESCAPE_STRING($_POST['SECRETANSWER']);
-	$PASSWORD = MYSQL_REAL_ESCAPE_STRING($_POST['PASSWORD']);
-	$CONFIRMPASSWORD = MYSQL_REAL_ESCAPE_STRING($_POST['CONFIRMPASSWORD']);
+
 	
-	$ENC_PASSWORD = MD5($PASSWORD);
-		
-
-	    $CONFIRMCODE = RAND();
-		$QUERY = MYSQL_QUERY("INSERT IN TO 'USERS' VALUES('','$FIRSTNAME','$LASTNAME','$EMAILADDRESS','$SECRETQUESTION','$SECRETANSWER','$PASSWORD','$CONFIRMPASSWORD','0','$CONFIRMCODE')");
-	    $MESSAGE =
-		"
-		CONFIRM YOUR EMAIL
-		CLICK THE LINK BELOW TO VERIFY YOUR ACCOUNT
-		HTTP://54.79.17.142/INDEX.PHPS/EMAILCONFIRM.PHP?FIRSTNAME=$FIRSTNAME$CODE=$CONFIRMCODE
-	    " ;
-		MAIL($EMAIL,"MEDIAVAULT CONFIRM EMAIL",$MESSAGE,"FORM: DONOTREPLY@MEDIAVAULT.COM");
-		
-		ECHO "REGISTRATION COMPLETE! PLEASE CONFIRM YOUR MAIL ";
-}
-
-
-
+?>
 
 
 
