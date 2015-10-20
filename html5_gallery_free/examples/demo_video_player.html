@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>HTML5 Gallery Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Reference to html5gallery.js -->
+<script type="text/javascript" src="../html5gallery/html5gallery.js"></script>
+
+</head>
+
+<body>
+
+<!-- A wrapper DIV to center the Video Player -->
+<div style="text-align:center;">
+
+    <!-- Define the Div for Video Player -->
+    <!-- 1. Add class html5gallery to the Div -->
+    <!-- 2. Define parameters with HTML5 data tags -->
+    <!-- 3. Define video source and title with HTML5 data tags -->
+	<div style="display:none;margin:0 auto;" class="html5gallery" data-html5player="true" data-width="480" data-height="272" data-resizemode="fill" data-showsocialmedia="false" data-src="images/Big_Buck_Bunny.mp4" data-webm="images/Big_Buck_Bunny.webm" data-title="Big Buck Bunny - Copyright Blender Foundation">
+	</div>
+	
+</div>
+
+</div>
+
+<style type="text/css">
+div.guide {margin:12px 24px;}
+div.guide span {color:#ff0000; font:italic 14px Arial, Helvetica, sans-serif;}
+div.guide p {color:#000000; font:14px Arial, Helvetica, sans-serif;}
+div.guide pre {color:#990000;}
+div.guide p.title {color:#df501f; font:18px Arial, Helvetica, sans-serif;}
+</style>
+
+<div class="guide" style="">
+<p class="title">Three Steps to Insert the HTML5 Video Player to Your Web Page</p>
+<p>1. Unzip the downloaded file, copy or upload the folder <span>html5gallery</span> to your web server</p>
+<p>2. Reference the file <span>jquery.js</span> and <span>html5gallery.js</span> which is in the folder <span>html5gallery</span> before the <span>&lt;/head&gt;</span> of your web page. If you already have a jQuery script in your web page, you need to add <span>html5gallery.js</span> after your jQuery file. The minimum required version of jQuery is 1.6.</p>
+<pre>    &lt;script type=&quot;text/javascript&quot; src=&quot;html5gallery/jquery.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;html5gallery/html5gallery.js&quot;&gt;&lt;/script&gt;</pre>
+<p>3. Add a div with class <span>html5gallery</span> to your web page where you want to display the Video Player. Define the size of the Player with HTML5 tag <span>data-width</span> and <span>data-height</span>. Define video file address with tag <span>data-src</span>, define video title with tag <span>data-title</span>. You can also define an alternative WebM or Ogg video for Firefox with data tag <span>data-webm</span> or <span>data-ogg</span>.</p>
+<pre>    &lt;div class=&quot;html5gallery&quot; data-html5player=&quot;true&quot; data-width=&quot;480&quot; data-height=&quot;272&quot; data-src=&quot;images/Big_Buck_Bunny.mp4&quot; data-webm=&quot;images/Big_Buck_Bunny.webm&quot; data-title=&quot;Big Buck Bunny&quot;&gt;
+    &lt;/div&gt;
+</pre>
+<p>4. For more options, view <a href="http://html5box.com/html5gallery/install.php">http://html5box.com/html5gallery/install.php</a></p>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>HTML5 Gallery Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Reference to html5gallery.js -->
+<script type="text/javascript" src="../html5gallery/html5gallery.js"></script>
+
+</head>
+
+<body>
+
+<!-- A wrapper DIV to center the Gallery -->
+<div style="text-align:center;">
+
+    <!-- Define the Div for Gallery -->
+    <!-- 1. Add class html5gallery to the Div -->
+    <!-- 2. Define parameters with HTML5 data tags -->
+	<div style="display:none;margin:0 auto;" class="html5gallery" data-skin="light" data-width="420" data-height="272" data-slideshadow="false" data-resizemode="fill">
+	
+	    <!-- Add images to Gallery -->
+		<a href="images/Tulip_large.jpg"><img src="images/Tulip_small.jpg" alt="Tulips"></a>
+		<a href="images/Colourful_Tulip_large.jpg"><img src="images/Colourful_Tulip_small.jpg" alt="Colourful Tulips"></a>
+		<a href="images/Swan_large.jpg"><img src="images/Swan_small.jpg" alt="Swan on Lake"></a>
+		<a href="images/Red_Tulip_large.jpg"><img src="images/Red_Tulip_small.jpg" alt="Red Tulips"></a>
+		<a href="images/Sakura_Tree_large.jpg"><img src="images/Sakura_Tree_small.jpg" alt="Sakura Trees"></a>
+		
+		<!-- Add videos to Gallery -->
+		<!-- Big Buck Bunny Copyright 2008, Blender Foundation http://www.bigbuckbunny.org -->
+		<a href="images/Big_Buck_Bunny.mp4" data-webm="images/Big_Buck_Bunny.webm"><img src="images/Big_Buck_Bunny.jpg" alt="Big Buck Bunny, Copyright Blender Foundation"></a>
+		
+		<!-- Add Youtube video to Gallery -->
+		<a href="http://www.youtube.com/embed/YE7VzlLtp-4"><img src="http://img.youtube.com/vi/YE7VzlLtp-4/2.jpg" alt="Youtube Video"></a>
+		
+		<!-- Add Vimeo video to Gallery -->
+		<a href="http://player.vimeo.com/video/1084537?title=0&amp;byline=0&amp;portrait=0"><img src="images/Big_Buck_Bunny.jpg" alt="Vimeo Video"></a>
+	
+	</div>
+
+</div>
+
+<style type="text/css">
+div.guide {margin:12px 24px;}
+div.guide span {color:#ff0000; font:italic 14px Arial, Helvetica, sans-serif;}
+div.guide p {color:#000000; font:14px Arial, Helvetica, sans-serif;}
+div.guide pre {color:#990000;}
+div.guide p.title {color:#df501f; font:18px Arial, Helvetica, sans-serif;}
+</style>
+
+<div class="guide" style="">
+<p class="title">Four Steps to Insert the Gallery to Your Web Page</p>
+<p>1. Unzip the downloaded file, copy or upload the folder <span>html5gallery</span> to your web server</p>
+<p>2. Reference the file <span>jquery.js</span> and <span>html5gallery.js</span> which is in the folder <span>html5gallery</span> before the <span>&lt;/head&gt;</span> of your web page. If you already have a jQuery script in your web page, you need to add <span>html5gallery.js</span> after your jQuery file. The minimum required version of jQuery is 1.6.</p>
+<pre>    &lt;script type=&quot;text/javascript&quot; src=&quot;html5gallery/jquery.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;html5gallery/html5gallery.js&quot;&gt;&lt;/script&gt;</pre>
+<p>3. Add a div with class <span>html5gallery</span> to your web page where you want to display the Gallery. Define the size of the Gallery with HTML5 tag <span>data-width</span> and <span>data-height</span>. Specify the Skin with tag <span>data-skin</span>. There are 7 skins to choose from: <span>gallery</span>, <span>mediapage</span>, <span>showcase</span>, <span>darkness</span>, <span>light</span>, <span>vertical</span> and <span>horizontal</span>. To hide all images before the Gallery is loaded, set the div's style to <span>style=&quot;display:none;&quot;</span></p>
+<pre>    &lt;div style=&quot;display:none;&quot; class=&quot;html5gallery&quot; data-skin=&quot;light&quot; data-width=&quot;420&quot; data-height=&quot;272&quot;&gt;
+    &lt;/div&gt;</pre>
+<p>4. Add images and videos to this div to make a Gallery. The thumbnail is specified in the <span>img</span> tag, the full size image is defined in <span>href</span> attribute of the surrounded <span>a</span> tag. The title is defined in <span>alt</span> attribute of <span>img</span> tag.</p>
+<pre>    &lt;div style=&quot;display:none;&quot; class=&quot;html5gallery&quot; data-skin=&quot;light&quot; data-width=&quot;420&quot; data-height=&quot;272&quot;&gt;
+	    
+       &lt;!-- Add images to Gallery --&gt;
+       &lt;a href=&quot;images/Tulip_large.jpg&quot;&gt;&lt;img src=&quot;images/Tulip_small.jpg&quot; alt=&quot;Tulips&quot;&gt;&lt;/a&gt;
+       &lt;a href=&quot;images/Swan_large.jpg&quot;&gt;&lt;img src=&quot;images/Swan_small.jpg&quot; alt=&quot;Swan on Lake&quot;&gt;&lt;/a&gt;
+
+       &lt;!-- Add videos to Gallery --&gt;
+       &lt;a href=&quot;images/Big_Buck_Bunny.mp4&quot;&gt;&lt;img src=&quot;images/Big_Buck_Bunny.jpg&quot; alt=&quot;Big Buck Bunny, Copyright Blender Foundation&quot;&gt;&lt;/a&gt;
+       
+       &lt;!-- Add Youtube video to Gallery --&gt;
+       &lt;a href=&quot;http://www.youtube.com/embed/YE7VzlLtp-4&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/YE7VzlLtp-4/2.jpg&quot; alt=&quot;Youtube Video&quot;&gt;&lt;/a&gt;
+       
+       &lt;!-- Add Vimeo video to Gallery --&gt;
+       &lt;a href=&quot;http://player.vimeo.com/video/1084537?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot;&gt;&lt;img src=&quot;images/Big_Buck_Bunny.jpg&quot; alt=&quot;Vimeo Video&quot;&gt;&lt;/a&gt;
+    
+    &lt;/div&gt;</pre>
+<p>5. For more options, view <a href="http://html5box.com/html5gallery/install.php">http://html5box.com/html5gallery/install.php</a></p>
+</div>
+
+</body>
+
+</html>
