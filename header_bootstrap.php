@@ -36,8 +36,8 @@
             <li><a href="help.php"><span class="glyphicon glyphicon-book"></span>Help</a></li>
           </ul>
 		  <ul class="nav navbar-nav navbar-right">
+		    <li><span id = "sign_in_info"><?php echo $welcome;?> <?php echo $_SESSION['first_name'];?></span></li>
 			<li><a href="<?php echo $login;?>_bootstrap.php"><label class="label"><?php echo $login;?></label></a></li>
-  			<li><span id = "sign_in_info"><?php echo $welcome;?> <?php echo $_SESSION['first_name'];?></span></li>
 		  </ul>
         </div><!--/.nav-collapse -->
       </div>
