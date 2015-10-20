@@ -58,7 +58,7 @@ header("location: Login.php");
 	
 	<div class="media_divider"></div>
 	
-	<div class="html5gallery" data-width="480" data-height="270" style="display:none; data-skin="mediapage"">
+	<div class="html5gallery" data-width="480" data-height="270" style="display:none;" data-skin="mediapage">
 	
 	
 	<?php
