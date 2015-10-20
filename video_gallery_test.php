@@ -22,7 +22,7 @@ header("location: Login.php");
     <link rel="stylesheet" href="styles/styles.css">
 	<script type="text/javascript" src="scripts/upload_val.js"></script>
 	<script type="text/javascript" src="html5_gallery_free/html5gallery/jquery.js"></script>
-	<script type="text/javascript" src="graphics/logo.jpg"></script>
+	<script type="text/javascript" src="html5_gallery_free/html5gallery/html5gallery.js"></script>
 </head>
 
 <body>
@@ -58,7 +58,7 @@ header("location: Login.php");
 	
 	<div class="media_divider"></div>
 	
-	<div class="html5gallery" data-width="480" data-height="270" data-showimagetoolbox="always" data-responsive="true" style=" display: block; margin-left: auto; margin-right: auto;" data-skin="mediapage" data-watermark="http://html5box.com/images/html5boxlogo.jpg">
+	<div class="html5gallery" data-width="480" data-height="270" data-showimagetoolbox="always" data-responsive="true" style=" display: block; margin-left: auto; margin-right: auto;" data-skin="mediapage" data-watermark="graphics/logo.jpg">
 	
 	
 	<?php
