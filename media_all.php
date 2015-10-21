@@ -70,17 +70,18 @@ header("location: Login.php");
 				</thead>
 				<tbody>
 					<?php
-						for($i=0; $i<$num_result; $i++)
-						{
-							$row = $result->fetch_assoc();
-							echo "<tr>";
-							echo "<input t";
-							echo "<td align='center'> <form id="form1" method="post">
+					echo "<td align='center'> <form id="form1" method="post">
 	  <p>
 	    <input type="checkbox" name="chkbx" id="chkbx" />
 	    <label for="chkbx"></label>
       </p>
 </form> " 
+						for($i=1; $i<$num_result; $i++)
+						{
+							$row = $result->fetch_assoc();
+							echo "<tr>";
+							echo "<input t";
+							
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
