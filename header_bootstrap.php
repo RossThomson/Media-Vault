@@ -36,9 +36,9 @@
 					<li><a href="#" data-target = "#aboutModal" data-toggle="modal"><span class="glyphicon glyphicon-info-sign"></span>About</a></li>
 					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span>Help</a>
 					<ul class="dropdown-menu">
-						<li><a href="#" data-target="#helpFAQ">FAQs</a></li>
-						<li><a href="#" data-target="#fileTypes">File Types</a></li>
-						<li><a href="#" data-target="#contactUs">Contact Us</a></li>
+						<li><a href="#" data-target="#helpFAQ" data-toggle="modal">FAQs</a></li>
+						<li><a href="#" data-target="#fileTypes" data-toggle="modal">File Types</a></li>
+						<li><a href="#" data-target="#contactUs" data-toggle="modal">Contact Us</a></li>
 					</ul>
 				</li>
 			</ul>
