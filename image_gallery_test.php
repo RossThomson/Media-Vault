@@ -25,12 +25,7 @@ header("location: Login.php");
 	width:<?php echo ($max_width + 10); ?>px;
 	text-align:center;
 }
-li.img {
-	height: 150px;
-	width: 100px;
-	border:1px solid #021a40;
-	outline:none;
-}
+
 </style>
 </head>
 <body>
