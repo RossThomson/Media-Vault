@@ -52,6 +52,10 @@ header("location: Login.php");
 	Description: <input name="ref" type="text" />
     <input type="submit" value="Submit" name="submit"/>
 </form>
+
+<div class="toggle_button_div">
+<a href="video_gallery_test.php" class="toggle_button">Video Gallery View</a>
+</div>
 	
 	
 	<div class="media_divider"></div>
