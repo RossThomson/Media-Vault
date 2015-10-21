@@ -66,7 +66,6 @@ header("location: Login.php");
 						<th width="200">SYNOPSIS</th>
 						<th width="50">DEL</th>
 					</tr>
-                    
 				</thead>
                
 				<tbody>
