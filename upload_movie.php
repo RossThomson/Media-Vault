@@ -36,6 +36,12 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileName"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileName"]["name"]). " has been uploaded.";
+		
+		$videothumbnail = $target_dir.$fileName."tb".".jpg";
+
+ shell_exec("ffmpeg -i $target_file -deinterlace -an -ss 1 -t 00:00:01 -r 1 -y -vcodec mjpeg -f mjpeg $videothumbnail 2>&1");
+		
+		
     } else {
         echo "Sorry, there was an error uploading your file.";
     }

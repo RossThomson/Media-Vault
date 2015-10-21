@@ -76,10 +76,8 @@ header("location: Login.php");
 						{
 							$row = $result->fetch_assoc();
 						
-							/*echo '<a href="'. $target_dir.$row['CONTENTTITLE']. ' "><img src="'. $target_dir.$row['CONTENTTITLE']. ' " alt="'.$row['SYNOPSIS'].'"></a>';*/
-							
-							echo '<video src=  "' . $target_dir.$row['CONTENTTITLE'] . '"></video>';
-					
+							echo '<a href="'. $target_dir.$row['CONTENTTITLE']. ' "><img src="'. $target_dir.$row['CONTENTTITLE']. ' " alt="'.$row['SYNOPSIS'].'"></a>';
+						
 						
 						}
 						$db->close();
