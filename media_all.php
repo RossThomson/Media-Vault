@@ -90,13 +90,13 @@ header("location: Login.php");
 							$row = $result->fetch_assoc();
 							//echo "<input t";
 							
-							echo "<td align='center' padding='20'>".$row['CONTENTID']."</td>";
-							echo "<td align='left' padding='20'>
+							echo "<td align='center'>".$row['CONTENTID']."</td>";
+							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
-							echo "<td align='center' padding='20'>".$row['CONTENTTYPE']."</td>";
-							echo "<td align='center' padding='20'>".$row['SIZE']."</td>";
-							echo "<td align='center' padding='20'>".$row['SYNOPSIS']."</td>";
-							echo "<td align='center' padding='20'>
+							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
+							echo "<td align='center'>".$row['SIZE']."</td>";
+							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
+							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 						echo "</tr>";	
 						}
