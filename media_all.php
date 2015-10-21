@@ -88,7 +88,7 @@ header("location: Login.php");
 						echo "</form>";
 						echo "</td>";
 							$row = $result->fetch_assoc();
-							echo "<input t";
+							//echo "<input t";
 							
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
