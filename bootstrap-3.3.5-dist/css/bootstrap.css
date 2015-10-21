@@ -6025,6 +6025,10 @@ button.close {
   position: relative;
   padding: 15px;
 }
+.modal-body-inverse {
+  background-color:black;
+  color: white;
+}
 .modal-footer {
   padding: 15px;
   text-align: right;

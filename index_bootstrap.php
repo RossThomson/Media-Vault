@@ -48,7 +48,7 @@ header("location: media.php");
 						<h1>Register</h1>
 						<small>Please fill all areas marked with an *</small>
 					</div>
-					<div class="modal-body">
+					<div class="modal-body-inverse">
 						<form class="form-horizontal" role="form" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
 							<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
 							<div class="form-group">
