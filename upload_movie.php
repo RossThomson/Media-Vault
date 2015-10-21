@@ -41,7 +41,7 @@ if ($uploadOk == 0) {
 		$videothumbnail = $target_dir.$withoutExt."tb".".jpg";
 		
 
- shell_exec("ffmpeg -i ".$target_file." -deinterlace -an -ss 1 -t 00:00:01 -r 1 -y -vcodec mjpeg -f mjpeg ".$videothumbnail." 2>&1");
+ shell_exec("ffmpeg -i $target_file -deinterlace -an -ss 1 -t 00:00:01 -r 1 -y -vcodec mjpeg -f mjpeg $videothumbnail 2>&1");
 		
 		
     } else {
