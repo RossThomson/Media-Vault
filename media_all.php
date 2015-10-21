@@ -72,11 +72,10 @@ header("location: Login.php");
                 <tr>
                 
 					<?php
-						
-						
+											
 						for($i=0; $i<$num_result; $i++)
 						{
-							echo "<tr>";
+							//echo "<tr>";
 						echo "<td align='center' padding='20'>";
 						echo "<form id='form1' method='post'>";
 	  					echo "<p>";
