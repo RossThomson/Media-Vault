@@ -1,7 +1,7 @@
 <html>
 <table>
 <td><td align=center>
-<form method=post action=search.php>
+<form method=post action=search_test.php>
 <select name=field>
 <option value=search>Name</option>
 </select>
