@@ -21,7 +21,7 @@ header("location: media.php");
 		<!-- Bootstrap core CSS -->
 		<link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="./bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+		<script src="./bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 	</head>
