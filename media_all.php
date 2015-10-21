@@ -64,7 +64,7 @@ header("location: Login.php");
 						<th width="200">SYNOPSIS</th>
 						<th width="50">DEL</th>
 					</tr>
-                    <form id="form1" method="post" action="">
+                    <form id="form1" method="post">
 	  <p>
 	    <input type="checkbox" name="chkbx" id="chkbx" />
 	    <label for="chkbx"></label>
