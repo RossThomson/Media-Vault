@@ -26,6 +26,8 @@ header("location: Login.php");
 	text-align:center;
 }
 img {
+	height: 200px;
+	width: 150px;
 	border:1px solid #021a40;
 	outline:none;
 }
