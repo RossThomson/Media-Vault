@@ -70,13 +70,8 @@ header("location: Login.php");
 				</thead>
 				<tbody>
 					<?php
-					echo "<td align='center'> <form id="form1" method="post">
-	  <p>
-	    <input type="checkbox" name="chkbx" id="chkbx" />
-	    <label for="chkbx"></label>
-      </p>
-</form> " 
-						for($i=1; $i<$num_result; $i++)
+					
+						for($i=0; $i<$num_result; $i++)
 						{
 							$row = $result->fetch_assoc();
 							echo "<tr>";
