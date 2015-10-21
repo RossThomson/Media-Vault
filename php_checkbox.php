@@ -3,14 +3,14 @@ define("MYSQLUSER","root");
 define("MYSQLPASS","root");
 define("HOSTNAME","localhost");
 define("MYSQLDB","MEDIALYNX");
-if(isset($_POST['sub']))  
+if(isset($_POST['submit']))  
 {  
 	$conn = new mysqli("localhost", "root", "root", "MEDIALYNX");
 		if($conn -> connect_error) {
 			die('Connect Error: ' . $conn -> connect_error);
 		} 	
 
-$checkbox1=$_POST['techno'];  
+$checkbox1=$_POST['checkbox'];  
 $chk="";  
 foreach($checkbox1 as $chk1)  
    {  
