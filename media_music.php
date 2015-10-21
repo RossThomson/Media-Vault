@@ -89,7 +89,7 @@ header("location: Login.php");
 						{
 							echo "<tr>";
 						echo "<td align='center' padding='20'>";
-						echo "<form action='php_checkbox.php' method='post'>";
+						echo "<form action='' method='post'>";
 	  					echo "<p>";
 	    				echo "<input type='checkbox' name='chkbx[]' id='chkbx' />";
 	    				echo "<label for='chkbx'>";
@@ -114,7 +114,8 @@ header("location: Login.php");
 					?>
 				</tbody>
 			</table>
-            <p><input class="btn btn-alt" type = "submit" name = "submit" id = "submit" value = "Submit">		
+            <p><input class="btn btn-alt" type = "submit" name = "submit" id = "submit" value = "Submit">
+           
 		</div>
 	</div>
 	<div class="media_divider"></div>
