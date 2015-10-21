@@ -26,6 +26,8 @@ header("location: Login.php");
 	text-align:center;
 }
 
+
+
 </style>
 </head>
 <body>
@@ -73,7 +75,9 @@ header("location: Login.php");
 <script type="text/javascript" src="js/prototype.js"></script>
 <script type="text/javascript" src="js/scriptaculous.js?load=effects,builder"></script>
 <script type="text/javascript" src="js/lightbox.js"></script>
-
+<style type="text/css">
+#imageData #bottomNavClose img{ content: url(styles/Gallery_icons/closelabel.gif);} 
+</style>
 <br><br><br>
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
