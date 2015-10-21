@@ -58,12 +58,7 @@ header("location: Login.php");
 				<thead>
 					<tr>
                     	<th width="40">SELECT
-                       <form id="form1" method="post">
-	  <p>
-	    <input type="checkbox" name="chkbx" id="chkbx" />
-	    <label for="chkbx"></label>
-      </p>
-</form> </th>
+                       </th>
 						<th width="50">NUM</th>
 						<th width="250">FILE</th>
 						<th width="100">TYPE</th>
@@ -80,6 +75,12 @@ header("location: Login.php");
 							$row = $result->fetch_assoc();
 							echo "<tr>";
 							echo "<input t";
+							echo "<td align='center'> <form id="form1" method="post">
+	  <p>
+	    <input type="checkbox" name="chkbx" id="chkbx" />
+	    <label for="chkbx"></label>
+      </p>
+</form> " 
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
