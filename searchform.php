@@ -3,7 +3,7 @@
 <td><td align=center>
 <form method=post action=search.php>
 <select name=field>
-<option value=CONTENTTITLE>Name</option>
+<option value=search>Name</option>
 </select>
 <input type=text name=search size=20>
 <input type=submit value=Search>
