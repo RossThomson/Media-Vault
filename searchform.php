@@ -2,7 +2,7 @@
 <table>
 <td><td align=center>
 <form method=post action=search_test.php>
-<select name=field>
+<select name=search>
 <option value=search>Name</option>
 </select>
 <input type=text name=search size=20>
