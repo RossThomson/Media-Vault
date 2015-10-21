@@ -64,18 +64,18 @@ header("location: Login.php");
 						<th width="200">SYNOPSIS</th>
 						<th width="50">DEL</th>
 					</tr>
+                    <form id="form1" method="post" action="">
+	  <p>
+	    <input type="checkbox" name="chkbx" id="chkbx" />
+	    <label for="chkbx"></label>
+      </p>
+</form>
 				</thead>
 				<tbody>
 					<?php
 						for($i=0; $i<$num_result; $i++)
 						{
 							$row = $result->fetch_assoc();
-							echo "<form id='form1' method='post'>
-	  								<p>
-	    							<input type='checkbox' name='chkbx' id='chkbx' />
-	    							<label for='chkbx'></label>
-      								</p>
-									</form>";
 							echo "<tr>";
 							echo "<input t";
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
