@@ -113,7 +113,7 @@ header("location: Login.php");
 					?>
 				</tbody>
 			</table>
-            <input class="btn btn-alt" type = "submit" name = "submit" id="submit" value = "Submit">			
+            <p><input class="btn btn-alt" type = "submit" name = "submit" id = "submit" value = "Submit">		
 		</div>
 	</div>
 	<div class="media_divider"></div>
