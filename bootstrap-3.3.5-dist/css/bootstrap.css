@@ -6014,6 +6014,13 @@ button.close {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
 }
+.modal-header-inverse{
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #d3d3d3;
+  background-color: black;
+  color: white;
+}
 .modal-header .close {
   margin-top: -2px;
 }
@@ -6026,6 +6033,8 @@ button.close {
   padding: 15px;
 }
 .modal-body-inverse {
+  position: relative;
+  padding: 15px;
   background-color:black;
   color: white;
 }
@@ -6034,14 +6043,24 @@ button.close {
   text-align: right;
   border-top: 1px solid #e5e5e5;
 }
-.modal-footer .btn + .btn {
+.modal-footer-inverse {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #d3d3d3;
+  background-color: black;
+  color: white;
+}
+.modal-footer .btn + .btn ,
+.modal-footer-inverse .btn+ .btn{
   margin-bottom: 0;
   margin-left: 5px;
 }
-.modal-footer .btn-group .btn + .btn {
+.modal-footer .btn-group .btn + .btn ,
+.modal-footer-inverse .btn-group .btn + .btn {
   margin-left: -1px;
 }
-.modal-footer .btn-block + .btn-block {
+.modal-footer .btn-block + .btn-block ,
+.modal-footer-inverse .btn-block + .btn-block {
   margin-left: 0;
 }
 .modal-scrollbar-measure {

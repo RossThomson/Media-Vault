@@ -43,7 +43,7 @@ header("location: media.php");
 		<div id="register" class="modal" roll="dialog" tabindex="-1">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
-					<div class=""modal-header">
+					<div class="modal-header-inverse">
 						<button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></button>
 						<h1>Register</h1>
 						<small>Please fill all areas marked with an *</small>
@@ -99,7 +99,7 @@ header("location: media.php");
 							</fieldset>
 						</form>
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer-inverse">
 						<div class="col-sm-12">
 							<button class="btn" data-dismiss="modal">Close</button>
 						</div>
