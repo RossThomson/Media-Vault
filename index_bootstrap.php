@@ -46,9 +46,10 @@ header("location: media.php");
 					<div class=""modal-header">
 						<button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></button>
 						<h1>Register</h1>
+						<small>Please fill all areas marked with an *</small>
 					</div>
 					<div class="modal-body">
-						<form class="form form-horizontal" role="form" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
+						<form class="form-horizontal" role="form" name="Register_form" onsubmit="scripts/register_val.js" action="scripts/register_val.php"  method="post">
 							<p><span id="error_message"><?php session_start(); echo $_SESSION['error'];?></span></p>
 							<div class="form-group">
 								<label for="firstname" class="col-sm-2 control-label">First Name*: </label>
