@@ -78,7 +78,7 @@ header("location: Login.php");
 						for($i=0; $i<$num_result; $i++)
 						{
 							echo "<tr>";
-						echo "<td align='center'>";
+						echo "<td align='center' width='20'>";
 						echo "<form id='form1' method='post'>";
 	  					echo "<p>";
 	    				echo "<input type='checkbox' name='chkbx' id='chkbx' />";
