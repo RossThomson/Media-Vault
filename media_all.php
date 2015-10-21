@@ -57,6 +57,13 @@ header("location: Login.php");
 			<table border='1' align="center">
 				<thead>
 					<tr>
+                    	<th width="40">SELECT
+                        <form id="form1" method="post">
+	  <p>
+	    <input type="checkbox" name="chkbx" id="chkbx" />
+	    <label for="chkbx"></label>
+      </p>
+</form> </th>
 						<th width="50">NUM</th>
 						<th width="250">FILE</th>
 						<th width="100">TYPE</th>
@@ -64,12 +71,7 @@ header("location: Login.php");
 						<th width="200">SYNOPSIS</th>
 						<th width="50">DEL</th>
 					</tr>
-                    <form id="form1" method="post">
-	  <p>
-	    <input type="checkbox" name="chkbx" id="chkbx" />
-	    <label for="chkbx"></label>
-      </p>
-</form>
+                    
 				</thead>
 				<tbody>
 					<?php
