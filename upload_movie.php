@@ -37,7 +37,9 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileName"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileName"]["name"]). " has been uploaded.";
 		
-		$videothumbnail = $target_dir.$fileName."tb".".jpg";
+		$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $fileName);
+		$videothumbnail = $target_dir.$withoutExt."tb".".jpg";
+		
 
  shell_exec("ffmpeg -i $target_file -deinterlace -an -ss 1 -t 00:00:01 -r 1 -y -vcodec mjpeg -f mjpeg $videothumbnail 2>&1");
 		
