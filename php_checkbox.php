@@ -1,29 +1,33 @@
-<?php  
-define("MYSQLUSER","root");
-define("MYSQLPASS","root");
-define("HOSTNAME","localhost");
-define("MYSQLDB","MEDIALYNX");
-if(isset($_POST['submit']))  
-{  
-	$conn = new mysqli("localhost", "root", "root", "MEDIALYNX");
-		if($conn -> connect_error) {
-			die('Connect Error: ' . $conn -> connect_error);
-		} 	
+<?php
+session_start();
+	
 
-$checkbox1=$_POST['checkbox'];  
-$chk="";  
-foreach($checkbox1 as $chk1)  
-   {  
-      $chk .= $chk1.",";  
-   }  
-$in_ch=mysqli_query($con,"insert into PLAYLIST(USERID, CONTENTTITLE, CONTENTTYPE) values ('$chk')");  
-if($in_ch==1)  
-   {  
-      echo'<script>alert("Inserted Successfully")</script>';  
-   }  
-else  
-   {  
-      echo'<script>alert("Failed To Insert")</script>';  
-   }  
-}  
-?>  
+if(isset($_POST["submit"])) {
+	$dbhost = "localhost";
+	$dbname	= "MEDIALYNX";
+	$dbuser	= "root";
+	$dbpass	= "root";
+	
+	
+	$type = "MUSIC";
+
+		try {
+			$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+		
+			$sql = "INSERT INTO PLAYLIST(USERID, CONTENTTITLE, CONTENTTYPE, SIZE) VALUES ('$userid','$filename','$type')";
+			
+			//include 'library/closedb.php';
+			$pdo->exec($sql);
+			//header("location: upload_doc.php");
+		}
+				
+		catch(PDOException $e){
+			echo $e->getMessage();
+		}
+
+		$pdo = null;
+			header("location: media_music.php");
+			echo "<script>alert('Files added to Playlist');";
+		
+}
+?>
