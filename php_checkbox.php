@@ -10,11 +10,11 @@ $userid = $_SESSION['userid'];
 $dir = "uploads/";
 $target_dir = $dir.$firstname.$lastname."/";
 
-$target_file = $target_dir . basename($_FILES["chkbx"]["name"]);
+$target_file = $target_dir . basename($_FILES["checkbox"]["name"]);
 $uploadOk = 1;
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
-$filename = basename($_FILES["chkbx"]["name"]);
-$filesize = $_FILES["chkbx"]["size"];
+$filename = basename($_FILES["checkbox"]["name"]);
+$filesize = $_FILES["checkbox"]["size"];
 $synopsis = $_POST['ref'];
 
 if (file_exists($target_file)) {
@@ -22,7 +22,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 
-if ($_FILES["chkbx"]["size"] > 5000000000) {
+if ($_FILES["checkbox"]["size"] > 5000000000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
@@ -36,8 +36,8 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 
 } else {
-    if (move_uploaded_file($_FILES["chkbx"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["chkbx"]["name"]). " has been uploaded.";
+    if (move_uploaded_file($_FILES["checkbox"]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES["checkbox"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
