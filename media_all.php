@@ -83,7 +83,7 @@ header("location: Login.php");
       					echo "</p>";
 						echo "</form>";
 						echo "</td>";
-						echo "</tr>";
+						
 						for($i=0; $i<$num_result; $i++)
 						{
 							$row = $result->fetch_assoc();
