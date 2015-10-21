@@ -83,11 +83,12 @@ header("location: Login.php");
       					echo "</p>";
 						echo "</form>";
 						echo "</td>";
+						echo "</tr>";
 						for($i=0; $i<$num_result; $i++)
 						{
 							$row = $result->fetch_assoc();
 							echo "<input t";
-							
+							echo "<tr>";
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
