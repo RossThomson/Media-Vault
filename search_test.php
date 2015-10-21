@@ -12,7 +12,7 @@ if(isset($_POST['search'])){
 	else{
 	
     $searchq = $_POST['search'];
-	$searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
+	//$searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
 	
 	$query = mysql_query("SELECT * FROM CONTENT WHERE CONTENTTITLE LIKE '%$searchq%'") or die("could not search");
 	$count = mysql_num_rows($query);
@@ -25,8 +25,8 @@ if(isset($_POST['search'])){
 			 // $tmp=$row['address'];
           $fileid=$row['CONTENTID'];
 
-          $file=pathinfo($fileaddress);
-          $filetype=$file['extension'];
+          //$file=pathinfo($fileaddress);
+          $filetype=$file['CONTENTTYPE'];
 
           if( $filetype=='pdf'){
 
