@@ -1,6 +1,9 @@
 <?php
-include "conn.php";
+$conn=mysql_connect("localhost","root","root");
+mysql_select_db("MEDIALYNX",$conn);
+mysql_query("set names utf8");
 $output = '';
+
 if(isset($_POST['search'])){
 	if($_POST['search']==""){
 	
@@ -11,16 +14,16 @@ if(isset($_POST['search'])){
     $searchq = $_POST['search'];
 	$searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
 	
-	$query = mysql_query("SELECT * FROM upload WHERE name LIKE '%$searchq%'") or die("could not search");
+	$query = mysql_query("SELECT * FROM CONTENT WHERE CONTENTTITLE LIKE '%$searchq%'") or die("could not search");
 	$count = mysql_num_rows($query);
 	if($count == 0){
 		$output = 'There was no search result';
 	} else {
 		while($row = mysql_fetch_array($query)){
-			$name = $row['name'];
-			 $fileaddress=$row['address'];
-			 $tmp=$row['address'];
-          $fileid=$row['id'];
+			$name = $row['CONTENTTITLE'];
+			 // $fileaddress=$row['address'];
+			 // $tmp=$row['address'];
+          $fileid=$row['CONTENTID'];
 
           $file=pathinfo($fileaddress);
           $filetype=$file['extension'];
