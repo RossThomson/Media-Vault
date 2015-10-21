@@ -89,13 +89,13 @@ header("location: Login.php");
 						{
 							echo "<tr>";
 						echo "<td align='center' padding='20'>";
-						echo "<form id='form1' method='post'>";
+						echo "<form action='php_checkbox.php' method='post'>";
 	  					echo "<p>";
 	    				echo "<input type='checkbox' name='chkbx' id='chkbx' />";
 	    				echo "<label for='chkbx'>";
 						echo "</label>";
       					echo "</p>";
-						echo "</form>";
+						
 						echo "</td>";
 							$row = $result->fetch_assoc();
 							
@@ -110,6 +110,7 @@ header("location: Login.php");
 							echo "</tr>";
 						}
 						$db->close();
+						echo "</form>";
 					?>
 				</tbody>
 			</table>
