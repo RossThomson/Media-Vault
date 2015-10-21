@@ -68,13 +68,24 @@ header("location: Login.php");
 					</tr>
                     
 				</thead>
+               
 				<tbody>
+                <tr>
+                
 					<?php
-					
+						echo "<tr>";
+						echo "<td align='center'>";
+						echo "<form id='form1' method='post'>";
+	  					echo "<p>";
+	    				echo "<input type='checkbox' name='chkbx' id='chkbx' />";
+	    				echo "<label for='chkbx'>";
+						echo "</label>";
+      					echo "</p>";
+						echo "</form>";
+						echo "</td>";
 						for($i=0; $i<$num_result; $i++)
 						{
 							$row = $result->fetch_assoc();
-							echo "<tr>";
 							echo "<input t";
 							
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
@@ -85,9 +96,10 @@ header("location: Login.php");
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
-							echo "</tr>";
+							
 						}
 						$db->close();
+						echo "</tr>";
 					?>
 				</tbody>
 			</table>			
