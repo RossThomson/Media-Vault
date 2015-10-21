@@ -58,7 +58,7 @@ header("location: Login.php");
 				<thead>
 					<tr>
                     	<th width="40">SELECT
-                        <form id="form1" method="post">
+                       <form id="form1" method="post">
 	  <p>
 	    <input type="checkbox" name="chkbx" id="chkbx" />
 	    <label for="chkbx"></label>
