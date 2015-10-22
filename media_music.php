@@ -94,7 +94,7 @@ header("location: Login.php");
 							echo "</tr>";
 							echo "<form action='php_checkbox.php' id='form1' method='post'>";
 							echo "<input type = 'submit' name = 'submit' id = 'submit' value = 'Submit'>";
-							echo "</form>";
+							
 						}
 						$db->close();
 					?>
