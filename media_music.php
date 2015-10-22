@@ -109,7 +109,7 @@ header("location: Login.php");
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
 						}
-						$db->close();
+						
 						echo "</form>";
 					?>
 				</tbody>
@@ -118,12 +118,12 @@ header("location: Login.php");
             <?php  
 if(isset($_POST['submit']))  
 {  
-$dbhost="localhost";//host name  
-$dbuser="root"; //database username  
-$word="";//database word  
-$dbname="MEDIALYNX";//database name  
-$tbl_name="PLAYLIST"; //table name  
-$con=mysqli_connect("$dbhost", "$dbuser", "$word","$dbname")or die("cannot connect");//connection string  
+//$dbhost="localhost";//host name  
+//$dbuser="root"; //database username  
+//$word="";//database word  
+//$dbname="MEDIALYNX";//database name  
+//$tbl_name="PLAYLIST"; //table name  
+//$con=mysqli_connect("$dbhost", "$dbuser", "$word","$dbname")or die("cannot connect");//connection string  
 $checkbox1=$_POST['chkbx'];  
 $chk="";  
 foreach($checkbox1 as $chk1)  
@@ -139,7 +139,8 @@ else
    {  
       echo'<script>alert("Failed To Insert")</script>';  
    }  
-}  
+} 
+$db->close(); 
 ?>  		
 		</div>
 	</div>
