@@ -1,6 +1,13 @@
 <?php
 session_start();
 	
+$firstname  = $_SESSION['first_name'];
+$lastname = $_SESSION['last_name'];
+$userid = $_SESSION['userid'];
+$contentid = $_SESSION['contentid'];
+
+
+$filename = basename($_FILES["fileName"]["name"]);
 
 if(isset($_POST["submit"])) {
 	$dbhost = "localhost";
@@ -14,7 +21,7 @@ if(isset($_POST["submit"])) {
 		try {
 			$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);
 		
-			$sql = "INSERT INTO PLAYLIST(USERID, CONTENTTITLE, CONTENTTYPE, SIZE) VALUES ('$userid','$filename','$type')";
+			$sql = "INSERT INTO PLAYLIST(USERID, CONTENTTITLE, CONTENTTYPE) VALUES ('$userid','$filename','$type') where CONTENTID = '$contentid'";
 			
 			//include 'library/closedb.php';
 			$pdo->exec($sql);
