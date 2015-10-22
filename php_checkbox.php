@@ -7,7 +7,7 @@ define("MYSQLDB","MEDIALYNX");
 //make connection to database
 function db_connect()
 {
-	$conn = @new mysqli(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
+	$conn = @new mysqli("localhost","root","root","MEDIALYNX");
 	if($conn -> connect_error) {
 		die('Connect Error: ' . $conn -> connect_error);
 	}
@@ -30,23 +30,17 @@ if(isset($_POST["submit"])) {
 	
 	$type = "MUSIC";
 
-		try {
-			
-		
-			$sql = "INSERT INTO PLAYLIST(USERID, CONTENTTITLE, CONTENTTYPE) VALUES ('$userid','$filename','$type') where CONTENTID = '$contentid'";
-			
-			//include 'library/closedb.php';
-			$pdo->exec($sql);
-			//header("location: upload_doc.php");
-		}
-				
-		catch(PDOException $e){
-			echo $e->getMessage();
-		}
+		$conn = @new mysqli("localhost","root","root","MEDIALYNX");
+	if($conn -> connect_error) {
+		die('Connect Error: ' . $conn -> connect_error);
+	}
 
-		$pdo = null;
-			header("location: media_music.php");
-			echo "<script>alert('Files added to Playlist');";
+			$sql = "INSERT INTO PLAYLIST(USERID, CONTENTTITLE, CONTENTTYPE) VALUES ('$userid','$filename','$type') where CONTENTID = '$contentid'";
+			if ($conn -> query($sql)) {
+				echo "Successful";
+			} else {
+				echo "Failed";
+			}
 		
 }
 ?>
