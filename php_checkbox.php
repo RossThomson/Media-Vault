@@ -16,7 +16,7 @@ foreach($checkbox1 as $chk1)
    {  
       $chk .= $chk1.",";  
    }  
-$in_ch=mysqli_query($con,"insert into PLAYLIST(USERID, CONTENTTITLE, CONTENTTYPE) values ('$chk')");  
+$in_ch = mysqli_query($con,"insert into PLAYLIST(USERID, CONTENTTITLE, CONTENTTYPE) values ('$chk')");
 if($in_ch==1)  
    {  
       echo'<script>alert("Inserted Successfully")</script>';  
