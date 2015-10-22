@@ -119,7 +119,10 @@ header("location: Login.php");
 						$db->close();
 					?>
 				</tbody>
-			</table>			
+			</table>
+            <form  action="php_checkbox.php" id="form1" method="post">
+            <input type = "submit" name = "submit" id = "submit" value = "Submit">
+            </form>			
 		</div>
 	</div>
 	<div class="media_divider"></div>
