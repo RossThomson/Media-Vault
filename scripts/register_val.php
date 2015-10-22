@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $mail->Password = "jayu1309";
   $mail->SetFrom("ppinky1311@gmail.com");
   $mail->Subject = "Registration";
-  $mail->Body = "<h1>Your Registration SuccessFully</h1><a href=#>Click Here For Confirm Registration http://54.79.17.142/Media-Vault/Register.php </a> ";
+  $mail->Body = "<h1>Your Registration SuccessFully</h1><a href='http://54.79.17.142/Media-Vault/Login.php'>Click Here For Confirm Registration </a> ";
   
   $mail->AddAddress($email);
    if(!$mail->Send())
