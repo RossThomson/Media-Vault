@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $mail->IsHTML(true);
   $mail->Username = "media.vault73@gmail.com";
   $mail->Password = "Medialynx";
-  $mail->SetFrom("media.vault@gmail.com");
+  $mail->SetFrom("media.vault73@gmail.com");
   $mail->Subject = "Registration";
   $mail->Body = "<h1>Your Registration SuccessFully</h1><a href=#>Click Here For Confirm Registration </a> ";
   $mail->AddAddress($email);
