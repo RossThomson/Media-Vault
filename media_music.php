@@ -89,9 +89,9 @@ header("location: Login.php");
 						{
 							echo "<tr>";
 						echo "<td align='center' padding='20'>";
-						echo "<form action='php_checkbox.php' method='post'>";
+						echo "<form action='' method='post'>";
 	  					echo "<p>";
-	    				echo "<input type='checkbox' name='chkbx[]' id='chkbx' />";
+	    				echo "<input type='checkbox' name='chbx[]' id='chkbx' />";
 	    				echo "<label for='chkbx'>";
 						echo "</label>";
       					echo "</p>";
@@ -114,7 +114,33 @@ header("location: Login.php");
 					?>
 				</tbody>
 			</table>
-            <p><input class="btn btn-alt" type = "submit" name = "submit" id = "submit" value = "Submit">		
+            <p><input class="btn btn-alt" type = "submit" name = "submit" id = "submit" value = "Submit">
+            <?php  
+if(isset($_POST['submit']))  
+{  
+$dbhost="localhost";//host name  
+$dbuser="root"; //database username  
+$word="";//database word  
+$dbname="MEDIALYNX";//database name  
+$tbl_name="PLAYLIST"; //table name  
+$con=mysqli_connect("$dbhost", "$dbuser", "$word","$dbname")or die("cannot connect");//connection string  
+$checkbox1=$_POST['chkbx'];  
+$chk="";  
+foreach($checkbox1 as $chk1)  
+   {  
+      $chk .= $chk1.",";  
+   }  
+$in_ch=mysqli_query($con,"insert into PLAYLIST(USERID, CONTENTTITLE, CONTENTTYPE) values ('$chk')");  
+if($in_ch==1)  
+   {  
+      echo'<script>alert("Inserted Successfully")</script>';  
+   }  
+else  
+   {  
+      echo'<script>alert("Failed To Insert")</script>';  
+   }  
+}  
+?>  		
 		</div>
 	</div>
 	<div class="media_divider"></div>
