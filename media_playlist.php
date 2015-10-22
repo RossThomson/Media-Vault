@@ -93,7 +93,7 @@ header("location: Login.php");
 	<div class="media_divider"></div>
 	</div>
 	<br><br>
-/**<div id="aboutus_content">	
+<div id="aboutus_content">	
 <form action="upload_Ross_two.php" method="post" enctype="multipart/form-data">
     Select an image to upload:
     <input type="file" name="photo"/>
@@ -102,7 +102,7 @@ header("location: Login.php");
     <input type="submit" value="Submit" name="submit"/>
 </form>
 
-</div>**/
+</div>
 	
 	<br><br><br>
 	<footer class="footer_relative">
