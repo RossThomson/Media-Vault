@@ -10,7 +10,7 @@ if(isset($_POST['submit']))
 			die('Connect Error: ' . $conn -> connect_error);
 		} 	
 
-$checkbox1=$_POST['techno'];  
+$checkbox1=$_POST['checkbox'];  
 $chk="";  
 foreach($checkbox1 as $chk1)  
    {  
