@@ -65,9 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $mail->Host = "smtp.gmail.com";
   $mail->Port = 465; // or 587
   $mail->IsHTML(true);
-  $mail->Username = "ppinky1311@gmail.com";
-  $mail->Password = "jayu1309";
-  $mail->SetFrom("ppinky1311@gmail.com");
+  $mail->Username = "media.vault73@gmail.com";
+  $mail->Password = "Medialynx";
+  $mail->SetFrom("media.vault@gmail.com");
   $mail->Subject = "Registration";
   $mail->Body = "<h1>Your Registration SuccessFully</h1><a href=#>Click Here For Confirm Registration </a> ";
   $mail->AddAddress($email);
