@@ -96,7 +96,9 @@ header("location: Login.php");
 						$db->close();
 					?>
 				</tbody>
-			</table>			
+			</table>	
+            <p><input type = "submit" name = "submit" id = "submit" value = "Submit">
+		
 		</div>
 	</div>
 	<div class="media_divider"></div>

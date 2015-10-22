@@ -3,7 +3,7 @@ define("MYSQLUSER","root");
 define("MYSQLPASS","root");
 define("HOSTNAME","localhost");
 define("MYSQLDB","MEDIALYNX");
-if(isset($_POST['sub']))  
+if(isset($_POST['submit']))  
 {  
 	$conn = new mysqli("localhost", "root", "root", "MEDIALYNX");
 		if($conn -> connect_error) {
