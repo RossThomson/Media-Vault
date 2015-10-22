@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $mail->Password = "Medialynx";
   $mail->SetFrom("media.vault73@gmail.com");
   $mail->Subject = "Registration";
-  $mail->Body = "<h1>Your Registration SuccessFully</h1><a href=#>Click Here For Confirm Registration </a> ";
+  $mail->Body = "<h1>Your Registration SuccessFully</h1><a href=#>Click Here For Confirm Registration http://54.79.17.142/Media-Vault/regiter.php </a> ";
   $mail->AddAddress($email);
    if(!$mail->Send())
    {
