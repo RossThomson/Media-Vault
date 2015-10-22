@@ -65,9 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $mail->Host = "smtp.gmail.com";
   $mail->Port = 465; // or 587
   $mail->IsHTML(true);
-  $mail->Username = "ppinky1311@gmail.com";
-  $mail->Password = "jayu1309";
-  $mail->SetFrom("ppinky1311@gmail.com");
+  $mail->Username = "mediavault703@gmail.com";
+  $mail->Password = "Medialynx";
+  $mail->SetFrom("mediavault703@gmail.com");
   $mail->Subject = "Registration";
   $mail->Body = "<h1>Your Registration SuccessFully</h1><a href='http://54.79.17.142/Media-Vault/Login.php'>Click Here For Confirm Registration </a> ";
   
