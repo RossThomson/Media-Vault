@@ -77,7 +77,7 @@ header("location: Login.php");
 						{
 						echo "<tr>";
 						echo "<td align='center' padding='20'>";
-						echo "<form id='form1' method='post'>";
+						echo "<form action='' id='form1' method='post'>";
 	  					echo "<p>";
 	    				echo "<input type='checkbox' name='chkbx' id='chkbx' />";
 	    				echo "<label for='chkbx'>";
