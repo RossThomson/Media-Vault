@@ -92,15 +92,16 @@ header("location: Login.php");
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 							echo "</tr>";
-							echo "<form action='php_checkbox.php' id='form1' method='post'>";
-							echo "<input type = 'submit' name = 'submit' id = 'submit' value = 'Submit'>";
 							
+						
 						}
 						$db->close();
 					?>
 				</tbody>
 			</table>
-            
+            <form  action="php_checkbox.php" id="form1" method="post">
+            <input type = "submit" name = "submit" id = "submit" value = "Submit">
+            </form>
 		
 		</div>
 	</div>
