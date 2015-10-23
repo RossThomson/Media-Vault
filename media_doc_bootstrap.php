@@ -111,15 +111,15 @@ header("location: Login_bootstrap.php");
         $num_result = $result->num_rows;
     ?>
 	
-	<table border='1' align="center">
+	<table border='1' class="table" align="center">
         <thead>
             <tr>
-				<th class="col-sm-1 table">SELECT</th>
-                <th class="col-sm-2 table">FILE</th>
-                <th class="col-sm-1 table">SIZE</th>
-				<th class="col-sm-2 table">SYNOPSIS</th>
-                <th class="col-sm-1 table">DEL</th>
-				<th class="col-sm-1 table">VIEW</th>
+				<th class="col-lg-1">SELECT</th>
+                <th class="col-lg-2">FILE</th>
+                <th class="col-lg-1">SIZE</th>
+				<th class="col-lg-2">SYNOPSIS</th>
+                <th class="col-lg-1">DEL</th>
+				<th class="col-lg-1">VIEW</th>
             </tr>
         </thead>
         <tbody>
