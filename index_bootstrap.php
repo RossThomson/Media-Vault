@@ -102,7 +102,9 @@ header("location: media.php");
 					</div>
 					<div class="modal-footer-inverse">
 						<div class="col-sm-12">
+						<p>
 							<button class="btn" data-dismiss="modal">Close</button>
+						</p>
 						</div>
 					</div>
 				</div>
