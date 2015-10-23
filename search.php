@@ -1,58 +1,64 @@
 <?php
-$field=$_POST['CONTENTTITLE'];
-$key = $_POST['key'];
-if(!$key){
-echo("<script>
-window.alert('Enter words you would like to search');
-history.go(-1);
-</script>");
-exit;
+include "conn.php";
+
+$output = '';
+if(isset($_POST['search'])){
+	if($_POST['search']==""){
+	
+	$output ="<script>window.alert('Please enter keywords');</script>"; }
+	
+	else{
+	
+    $searchq = $_POST['search'];
+	$searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
+	
+	$query = mysql_query("SELECT * FROM CONTENT WHERE CONTENTTITLE LIKE '%$searchq%'") or die("could not search");
+	$count = mysql_num_rows($query);
+	if($count == 0){
+		$output = 'There was no search result';
+	} else {
+		while($row = mysql_fetch_array($query)){
+			$name = $row['CONTENTTITLE'];
+			//$fileaddress=$row['address'];
+			//$tmp=$row['address'];
+			$fileid=$row['CONTENTID'];
+
+			//$file=pathinfo($fileaddress);
+			$filetype=$file['CONTENTTYPE'];
+
+          if( $filetype=='pdf'){
+
+		  $output .= "<div><a href='$tmp' target='blank'><img src='/img/pdf.png'><br>".$name."</a></div><br/><br/>";
+		  }
+		  if($filetype=='VIDEO'){
+			$output.="<video width='880' height='480' controls>
+            <source src='uploads/JaeSim/ga.mp4' type='video/mp4'></video><br/>".$row['CONTENTTITLE']."<br/><br/>";
+			  
+		  }
+			if($filetype=='mp3'){
+			 $output.="<audio width='300' height='220' controls>
+            <source src='".$row['address']."' type='video/mp4'></audio><br/>".$row['name']."<br/><br/>";
+			}
+			if($filetype=='jpg'){
+			$output .= "<div><a href='$tmp' target='blank'><img src='$tmp'><br>".$name."</a></div><br/><br/>";
+		}
+		
+		}
+	}
 }
- 
-$con = mysql_connect("localhost", "root", "root");
-if (mysql_error()) {
-echo 'DB connection error - ' . mysql_error();
 }
-mysql_select_db("MEDIALYNX");
-if (mysql_error()) {
-echo 'DB name error - ' . mysql_error();
-}
-mysql_query("CONTENT");
-$query = "select * from CONTENT where CONTENTTITLE like '%$key%'";
-if (mysql_error()) {
-echo 'query error - ' . mysql_error();
-}
-$result = mysql_query($query, $con);;
- 
-$total = mysql_num_rows($result);
-echo("
-<table border=0 width=700>
-<tr><td align=center colspan2><h1>Search result</h1></td></tr>
-<tr><td>Key word: $key</td>
-<td align=right><a herf=searchform.php>[List]</a></td></tr>
-");
- 
-echo("
-<table border=1 width=700>
-<tr><td align=center width=50><b>File name</b><td>
-<td align=center width=50><b>Type</b><td>
-<td align=center width=50><b>Size</b><td>
-<td align=center width=50><b>Synopsis</b><td>
-</tr>
-");
-if (!$total){
-echo("<tr><td colspan=5 align=center>No search result.</td></tr>");
-} else {
-$counter = 0;
-while($counter<$total):
-//echo "<td> ".$row['CONTENTTITLE']."</td>";
-$CONTENTTITLE=mysql_result($result,$counter,"CONTENTTITLE");
-$CONTENTTYPE=mysql_result($result,$counter,"CONTENTTYPE");
-$SIZE=mysql_result($result,$counter,"SIZE");
-$SYNOPSIS=mysql_result($result,$counter,"SYNOPSIS");
-$counter = $counter + 1;
-endwhile;
-echo("</table>");
-}
-mysql_close($con);
 ?>
+
+<html>
+<body>
+
+
+<?php 
+
+include "media_all.php"; 
+
+?>
+
+</body>
+</html>
+

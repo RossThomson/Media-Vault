@@ -21,6 +21,7 @@ header("location: Login.php");
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
     <link rel="stylesheet" href="styles/styles.css">
 	<script type="text/javascript" src="scripts/upload_val.js"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
 </head>
 
 <body>
@@ -45,12 +46,16 @@ header("location: Login.php");
 </div>
 	<!-- </div> -->
 	
+	
+
+	
+	
 	<form class="upload_form" action="upload_movie.php" method="post" enctype="multipart/form-data" onsubmit="return checkVideoFile(this);">
     Select a video to upload:
-    <input type="file" name="fileName"/>
+    <input type="file" name="fileName" id="uploadfile"/>
 	<br />
 	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit"/>
+    <input type="submit" id="upload" value="Submit" name="submit"/>
 </form>
 
 <div class="toggle_button_div">
