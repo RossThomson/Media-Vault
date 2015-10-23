@@ -23,6 +23,7 @@ header("location: Login.php");
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
     <link rel="stylesheet" href="styles/styles.css">
 	<script type="text/javascript" src="scripts/upload_val.js"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
 </head>
 
 <body>
@@ -45,13 +46,16 @@ header("location: Login.php");
 		</div>
 	</header>
 </div>
+
+<script type="text/javascript" src="scripts/check_for_empty_field.js"></script>
+			
 	
 	<form  class="upload_form" action="upload_doc_new_dir.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
     Select a document to upload:
-    <input type="file" name="fileName"/>
+    <input type="file" name="fileName" id="uploadfile"/>
 	<br />
 	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit"/>
+    <input type="submit" value="Submit" name="submit" id="upload"/>
 </form>
 
 

@@ -20,6 +20,7 @@ header("location: Login.php");
 	<script type="text/javascript" src="scripts/upload_val.js"></script>
 	<script type="text/javascript" src="html5_gallery_free/html5gallery/jquery.js"></script>
 	<script type="text/javascript" src="html5_gallery_free/html5gallery/html5gallery.js"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
 </head>
 
 <body>
@@ -42,12 +43,14 @@ header("location: Login.php");
 </div>
 	<!-- </div> -->
 	
+	<script type="text/javascript" src="scripts/check_for_empty_field.js"></script>
+	
 	<form class="upload_form" action="upload_movie.php" method="post" enctype="multipart/form-data" onsubmit="return checkVideoFile(this);">
     Select a video to upload:
-    <input type="file" name="fileName"/>
+    <input type="file" name="fileName" id="uploadfile"/>
 	<br />
 	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit"/>
+    <input type="submit" value="Submit" name="submit" id="upload"/>
 </form>
 
 	<div class="toggle_button_div">
