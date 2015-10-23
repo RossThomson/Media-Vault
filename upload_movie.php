@@ -1,6 +1,15 @@
 <?php
 
+
+
 session_start();	
+
+ini_set('upload_max_filesize', '5000M');
+ini_set('post_max_size', '5000M');
+ini_set('max_input_time', 300);
+ini_set('max_execution_time', 300);
+
+
 $firstname  = $_SESSION['first_name'];
 $lastname = $_SESSION['last_name'];
 $userid = $_SESSION['userid'];
@@ -20,10 +29,10 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 
-if ($_FILES["fileName"]["size"] > 5368709120) {
+/*if ($_FILES["fileName"]["size"] > 5368709120) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
-}
+}*/
 
 if($FileType != "mp4" && $FileType != "mpeg" && $FileType != "avi") {
     echo "Sorry, only mp4, mpeg & avi files are allowed.";

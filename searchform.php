@@ -8,4 +8,5 @@
 <input type=text name=key size=20>
 <input type=submit value=search>
 </td>
+</table>
 </html>

@@ -54,7 +54,7 @@ header("location: Login.php");
 				$num_result = $result->num_rows;
 			?>
 			
-			<table>
+			<table align=center>
 				<td><td align=center>
 				<form method=post action=search.php>
 				<select name=field>

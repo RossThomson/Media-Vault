@@ -64,7 +64,7 @@ header("location: Login.php");
 
 
 <div class="toggle_button_div">
-<a href="media_photo.php" class="toggle_button">Image List View</a>
+<a href="image_list.php" class="toggle_button">Image List View</a>
 </div>
 
 <?php getPictures(); ?>

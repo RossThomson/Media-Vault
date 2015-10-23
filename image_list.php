@@ -14,6 +14,7 @@ header("location: Login.php");
 <title>Pictures</title>
 <link rel="stylesheet" href="styles/lightbox.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="styles/styles.css">
+<script src="js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="scripts/upload_val.js"></script>
 <?php include 'scripts/image_gallery_script.php'; ?>
 
@@ -53,13 +54,13 @@ img {
 	</header>
 </div>
 
-
+<script type="text/javascript" src="scripts/check_for_empty_field.js"></script>
 <form class="upload_form" action="upload_Ross_two.php" method="post" enctype="multipart/form-data" onsubmit="return checkImageFile(this);">
     Select an image to upload:
-    <input type="file" name="photo"/>
+    <input type="file" name="photo" id="uploadfile"/>
 	<br />
 	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit"/>
+    <input type="submit" value="Submit" name="submit" id="upload"/>
 </form>
 
 <div class="toggle_button_div">
