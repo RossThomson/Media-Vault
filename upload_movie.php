@@ -1,14 +1,5 @@
 <?php
-
-
-
 session_start();	
-
-ini_set('upload_max_filesize', '5000M');
-ini_set('post_max_size', '5000M');
-ini_set('max_input_time', 300);
-ini_set('max_execution_time', 300);
-
 
 $firstname  = $_SESSION['first_name'];
 $lastname = $_SESSION['last_name'];
