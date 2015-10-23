@@ -29,6 +29,7 @@ header("location: Login.php");
 		<!-- Bootstrap core CSS -->
 		<link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/upload_val.js"></script>
 		<script src="./bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
@@ -55,14 +56,45 @@ header("location: Login.php");
 	</div>
 </div>
 </header>
-	<form  class="upload_form" action="upload_doc_new_dir.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
-    Select a document to upload:
-    <input type="file" name="fileName"/>
-	<br />
-	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit"/>
-</form>
-
+<p>
+	<a href="#" data-toggle = "modal" data-target="#upload" role="button">Upload</a>
+</p>
+<div id="upload" class="modal" roll="dialog" tabindex="-1">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header-inverse"> 
+				<button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></button>
+				<h1>Upload</h1>
+				<small>Please fill all areas</small>
+			</div>
+			<div class="modal-body-inverse">
+			<form  class="form-horizontal" role="form" id="UploadForm" action="upload_doc_new_dir.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
+				<div class="form-group">
+					<label  class="col-sm-2 control-label" for="fileName">Select a document to upload:</label>
+					<div class="col-sm-9">
+						<input class="form-control" id="Document" type="file" name="fileName">
+					</div>
+				</div>
+				<div class="form-group">
+					<label  class="col-sm-2 control-label" for="ref">Description:</label>
+					<div class="col-sm-9">
+						<input class="form-control" name="ref" type="text">
+					</div>
+				</div>
+				<div>
+					<input class="btn btn-lg btn-primary" type = "submit" name = "Submit" id = "Submit" value = "Submit">
+				</div>
+				</fieldset>
+				</form>
+			</div>
+			<div class="modal-footer-inverse">
+				<div class="col-sm-12">
+					<button class="btn" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 	<div class="media_divider"></div>
 		<div class="media_content">
@@ -82,8 +114,7 @@ header("location: Login.php");
 	<table border='1' align="center">
         <thead>
             <tr>
-            <th width="40">SELECT
-                       </th>
+				<th width="40">SELECT</th>
                 <th width="250">FILE</th>
                 <th width="150">SIZE</th>
 				<th width="200">SYNOPSIS</th>
