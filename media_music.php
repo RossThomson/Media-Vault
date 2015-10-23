@@ -1,5 +1,10 @@
 <?php
 session_start();
+	$firstname  = $_SESSION['first_name'];
+	$lastname = $_SESSION['last_name'];
+	$userid = $_SESSION['userid'];
+	$dir = "uploads/";
+	$target_dir = $dir.$firstname.$lastname."/";
 
 if(!isset($_SESSION['email'])){
 header("location: Login.php");
