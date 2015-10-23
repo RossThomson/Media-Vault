@@ -35,7 +35,7 @@ header("location: Login.php");
 
 <div class="wrapper">
 	<header>
-		<?php include 'header_bootstrap.php'; ?>
+		<?php include 'header.php'; ?>
 		<span id="sign_in_info"></span>
 		<div id="media2_header_inside">
 			<!-- <a href="index.php">

@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['email'])){
-header("location: Login.php");
+header("location: Login_bootstrap.php");
 }
 ?>
 
