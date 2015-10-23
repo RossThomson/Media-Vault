@@ -3,8 +3,8 @@ include "conn.php";
 
 $output = '';
 if(isset($_POST['search'])){
-	if($_POST['search']==""){	
-	$output ="<script>window.alert('Please enter keywords');</script>";
+	if($_POST['search']==" "){	
+	$output ="<script>window.alert('Please enter keywords')</script>";
 	} else{
 	
     $searchq = $_POST['search'];
