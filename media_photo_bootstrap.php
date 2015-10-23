@@ -22,7 +22,6 @@ header("location: Login_bootstrap.php");
 		<script type="text/javascript" src="scripts/check_for_empty_field.js"></script>
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
-		<link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body class="bodyMedia">
@@ -44,86 +43,114 @@ header("location: Login_bootstrap.php");
 	</div>
 </div>
 </header>
-	<!-- </div> -->
-	<div class="container"></div>
-		<?php
-		
-		session_start();
-		$userid = $_SESSION['userid'];
-		
-		@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
-			if(mysqli_connect_errno())
-			{
-				echo "DB connect error";
-			}		
-        
-			$query = "select * from CONTENT WHERE CONTENTTYPE = 'IMAGE' AND USERID = '$userid'";
-			$result = $db->query($query);
-			$num_result = $result->num_rows;
-		?>
+<!-- </div> -->
+<div class="container"></div>
+<h1>Upload your Files Here!</h1>
+<p>
+	<a href="#" class="bodyMedia" data-toggle = "modal" data-target="#upload" role="button" >Upload</a>
+</p>
+	<?php
+	
+	session_start();
+	$userid = $_SESSION['userid'];
+	
+	@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+		if(mysqli_connect_errno())
+		{
+			echo "DB connect error";
+		}		
+	
+		$query = "select * from CONTENT WHERE CONTENTTYPE = 'IMAGE' AND USERID = '$userid'";
+		$result = $db->query($query);
+		$num_result = $result->num_rows;
+	?>
 
-		<table border='1' align="center">
-			<thead>
-				<tr>
-                   	<th class="col-lg-1">SELECT</th>
-					<th class="col-lg-1">NUM</th>
-					<th class="col-lg-2">FILE</th>
-					<th class="col-lg-1">TYPE</th>
-					<th class="col-lg-1">SIZE</th>
-					<th class="col-lg-2">SYNOPSIS</th>
-					<th class="col-lg-1">DEL</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php
-					for($i=0; $i<$num_result; $i++)
-					{
-					echo "<tr>";
-						echo "<td align='center' padding='20'>";
-						echo "<form id='form1' method='post'>";
-						echo "<p>";
-						echo "<input type='checkbox' name='chkbx' id='chkbx' />";
-						echo "<label for='chkbx'>";
-						echo "</label>";
-						echo "</p>";
-						echo "</form>";
-					echo "</td>";
-					$row = $result->fetch_assoc();
-							
-						echo "<td align='center'>".$row['CONTENTID']."</td>";
-						echo "<td align='left'>
-						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
-						echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
-						echo "<td align='center'>".$row['SIZE']."</td>";
-						echo "<td align='center'>".$row['SYNOPSIS']."</td>";
-						echo "<td align='center'>
-						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
-						echo "</tr>";
-						}
-						$db->close();
-					?>
-			</tbody>
-		</table>
-			<form  action="php_checkbox.php" id="form1" method="post">
-			<input type = "submit" name = "submit" id = "submit" value = "Submit">
-			</form>			
+	<table border='1' align="center">
+		<thead>
+			<tr>
+				<th class="col-lg-1">SELECT</th>
+				<th class="col-lg-1">NUM</th>
+				<th class="col-lg-2">FILE</th>
+				<th class="col-lg-1">TYPE</th>
+				<th class="col-lg-1">SIZE</th>
+				<th class="col-lg-2">SYNOPSIS</th>
+				<th class="col-lg-1">DEL</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+				for($i=0; $i<$num_result; $i++)
+				{
+				echo "<tr>";
+					echo "<td align='center' padding='20'>";
+					echo "<form id='form1' method='post'>";
+					echo "<p>";
+					echo "<input type='checkbox' name='chkbx' id='chkbx' />";
+					echo "<label for='chkbx'>";
+					echo "</label>";
+					echo "</p>";
+					echo "</form>";
+				echo "</td>";
+				$row = $result->fetch_assoc();
+						
+					echo "<td align='center'>".$row['CONTENTID']."</td>";
+					echo "<td align='left'>
+					<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+					echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
+					echo "<td align='center'>".$row['SIZE']."</td>";
+					echo "<td align='center'>".$row['SYNOPSIS']."</td>";
+					echo "<td align='center'>
+					<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+					echo "</tr>";
+					}
+					$db->close();
+				?>
+		</tbody>
+	</table>
+		<form  action="php_checkbox.php" id="form1" method="post">
+		<input type = "submit" name = "submit" id = "submit" value = "Submit">
+		</form>			
+	</div>
+</div>
+<div class="media_divider"></div>
+</div>
+<br><br>
+<div id="upload" class="modal" roll="dialog" tabindex="-1">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header-inverse"> 
+				<button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></button>
+				<h1>Upload</h1>
+				<small>Please fill all areas</small>
+			</div>
+			<div class="modal-body-inverse">
+			<form  class="form-horizontal" role="form" id="UploadForm" action="upload_Ross_two.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
+				<div class="form-group">
+					<label  class="col-sm-2 control-label" for="photo">Select a photo to upload:</label>
+					<div class="col-sm-9">
+						<input class="form-control" id="Document" type="file" name="photo">
+					</div>
+				</div>
+				<div class="form-group">
+					<label  class="col-sm-2 control-label" for="ref">Description:</label>
+					<div class="col-sm-9">
+						<input class="form-control" name="ref" type="text">
+					</div>
+				</div>
+				<div>
+					<input class="btn btn-lg btn-primary" type = "submit" name = "Submit" id = "Submit" value = "Submit">
+				</div>
+				</fieldset>
+				</form>
+			</div>
+			<div class="modal-footer-inverse">
+				<div class="col-sm-12">
+					<button class="btn" data-dismiss="modal">Close</button>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="media_divider"></div>
-	</div>
-	<br><br>
-<div id="aboutus_content">	
-
-<form action="upload_Ross_two.php" method="post" enctype="multipart/form-data">
-    Select an image to upload:
-    <input type="file" name="photo" id="uploadfile"/>
-	<br />
-	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit" id="upload"/>
-</form>
-
 </div>
-	
 	<br><br><br>
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
