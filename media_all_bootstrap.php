@@ -21,12 +21,14 @@ header("location: Login.php");
 		<!--<title>Media Lynx</title>-->
 		<!-- Bootstrap core CSS -->
 		<link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="./bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 		
 </head>
 
-<body>
+<body class="bodyMedia">
 <div class="container">
 	<header>
 		<?php include 'header_bootstrap.php'; ?>
@@ -34,7 +36,6 @@ header("location: Login.php");
 </div>
 <div class="container-fluid">
 	<div class = "container">
-		
 		<ul class="nav nav-tabs">
 			<li><a class="active" href="media_all_bootstrap.php">All files</a></li>
 			<li><a href="media_playlist.php">Playlists</a></li>

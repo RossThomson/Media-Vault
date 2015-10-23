@@ -21,7 +21,8 @@ body {
   background-color: black !important;
   color: white;
 }
-.bodyAbout {
+.bodyAbout,
+.bodyMedia {
  background-color:white !important;
  background-image: url('../graphics/logo.png');
  background-size: 1440px 800px;
