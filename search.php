@@ -32,7 +32,7 @@ echo("
 </tr>
 ");
 if (!$total){
-echo("<tr><td colspan=5 align=center>검색된 내용이 없습니다.</td></tr>");
+echo("<tr><td colspan=5 align=center>There is no search result</td></tr>");
 } else {
 $counter=0;
 while($counter<$total):
