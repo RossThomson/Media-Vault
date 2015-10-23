@@ -74,9 +74,10 @@
 			<div class = "modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></button>
-					<h3>How do I create an account on Media Lynx?</h3>
+					<h1>Frequently Asked Questions (FAQ)</h1>
 				</div>
-				<div class="modal-body">		
+				<div class="modal-body">	
+					<h3>How do I create an account on Media Lynx?</h3>				
 					<p>New users can create an account through the <a href="register_bootstrap.php">registration</a> page</p>
 					<h3>I've forgotten my password! What can I do?</h3>
 					<p>Registered users can recover their password <a href="password_recovery_bootstrap.php">here</a></p>
