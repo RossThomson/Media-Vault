@@ -1,24 +1,5 @@
 
 //Ensures that the correct user files are uploaded onto the server
-
-
-	
-$(document).ready(function() {
-    $('#upload').bind("click",function() 
-    { 
-        var imgVal = $('#uploadfile').val(); 
-        if(imgVal=='') 
-        { 
-            alert("Empty input file"); 
-            return false; 
-        } 
-
-
-    }); 
-});
-
-
-
    
 function checkImageFile(form) {
 	var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"]; 

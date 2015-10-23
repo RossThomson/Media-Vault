@@ -125,6 +125,9 @@ header("location: Login.php");
 					?>
 				</tbody>
 			</table>
+			
+			<script type="text/javascript" src="scripts/check_for_empty_field.js"></script>
+			
             <form  action="php_checkbox.php" id="form1" method="post">
             <input type = "submit" name = "submit" id = "submit" value = "Submit">
             </form>			
