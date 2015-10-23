@@ -43,7 +43,7 @@ header("location: Login.php");
 	
 <script type="text/javascript" src="scripts/check_for_empty_field.js"></script>
 
-<form action="upload_music.php" method="post" enctype="multipart/form-data">
+<form class="upload_form" action="upload_music.php" method="post" enctype="multipart/form-data">
     Select a music file to upload:
     <input type="file" name="fileName" id="uploadfile"/>
 	<br />
