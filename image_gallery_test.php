@@ -81,7 +81,6 @@ header("location: Login.php");
 </style>
 <br><br><br>
 	<footer class="footer_relative">
-	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
 	</footer>
 
