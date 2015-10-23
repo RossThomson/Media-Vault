@@ -51,8 +51,8 @@ while($counter<$total):
 //$student_grade=mysql_result($result,$counter,"CONTENTTYPE");
 //$student_div=mysql_result($result,$counter,"SIZE");
 //$student_no=mysql_result($result,$counter,"SYNOPSIS");
-echo (mysql_result($result,$counter,"CONTENTTITLE"));
-//echo (. $target_dir.$key .);
+//echo (mysql_result($result,$counter,"CONTENTTITLE"));
+echo '<a href="' . $target_dir.$key . '">'. $key .'</a>';
 
 $counter = $counter + 1;
 endwhile;
