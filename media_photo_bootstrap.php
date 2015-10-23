@@ -22,7 +22,6 @@ header("location: Login_bootstrap.php");
 		<script type="text/javascript" src="scripts/check_for_empty_field.js"></script>
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
-		<link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body class="bodyMedia">
