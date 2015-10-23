@@ -37,7 +37,7 @@ header("location: Login.php");
 <div class="container-fluid">
 	<div class = "container">
 		<ul class="nav nav-tabs">
-			<li><a class="active" href="media_all_bootstrap.php">All files</a></li>
+			<li class="active"><a class="active" href="media_all_bootstrap.php">All files</a></li>
 			<li><a href="media_playlist.php">Playlists</a></li>
 			<li><a href="media_doc.php">Docs</a></li>
 			<li><a href="image_gallery_test.php">Photos</a></li>
