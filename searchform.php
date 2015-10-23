@@ -6,6 +6,6 @@
 <option value=search>Name</option>
 </select>
 <input type=text name=search size=20>
-<input type=submit value=Search>
+<input type=submit value=search>
 </td>
 </html>
