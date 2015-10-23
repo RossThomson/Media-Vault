@@ -12,7 +12,6 @@ header("location: Login.php");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UFT-8" />
 <title>Pictures</title>
-<link rel="stylesheet" href="styles/lightbox.css" type="text/css" media="screen" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->

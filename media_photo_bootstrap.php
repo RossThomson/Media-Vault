@@ -51,7 +51,7 @@ header("location: Login_bootstrap.php");
 </div>
 <h2>Or view your files in a gallery</h2>
 <div class="well-inverse" href="image_gallery_test.php">
-	<a href="image_gallery_test.php" class="body">Image Gallery</a>
+	<a href="image_gallery_test_bootstrap.php" class="body">Image Gallery</a>
 </div>
 	<?php
 	
