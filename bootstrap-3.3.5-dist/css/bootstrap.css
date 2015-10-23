@@ -65,6 +65,8 @@ a {
 a:active,
 a:hover {
   outline: 0;
+  background-color: white;
+  color:#d3d3d3;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -5096,6 +5098,8 @@ a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
   border-color: #337ab7;
+  background-color: #d3d3d3;
+  color: white;
 }
 .thumbnail .caption {
   padding: 9px;

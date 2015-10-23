@@ -33,77 +33,76 @@ header("location: Login.php");
 	</header>
 </div>
 <div class="container-fluid">
-	<span id="sign_in_info"></span>
-		<div class = "container">
-			<ul class="nav nav-tabs">
-				<li><a href="media_playlist.php">Playlists</a></li>
-				<li><a href="media_doc.php">Docs</a></li>
-				<li><a href="image_gallery_test.php">Photos</a></li>
-				<li><a href="media_music.php">Music</a></li>
-				<li><a href="media_video.php">Videos</a></li>
-				<li><a class="active" href="media_all.php">All files</a></li>
-			</ul>		
-		</div>
-	</header>
+	<div class = "container">
+		
+		<ul class="nav nav-tabs">
+			<li><a class="active" href="media_all_bootstrap.php">All files</a></li>
+			<li><a href="media_playlist.php">Playlists</a></li>
+			<li><a href="media_doc.php">Docs</a></li>
+			<li><a href="image_gallery_test.php">Photos</a></li>
+			<li><a href="media_music.php">Music</a></li>
+			<li><a href="media_video.php">Videos</a></li>
+		</ul>		
+	</div>
 </div>
-	<!-- </div> -->
-	<div class="container"></div>
-		<div class="table">
-			<br><br><br><br>		
-			<?php
-				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
-				if(mysqli_connect_errno())
-				{
-					echo "DB connect error";
-				}		
-				
-				$userid = $_SESSION['userid'];
-				$query = "select * from CONTENT where USERID = '$userid'";				
-				$result = $db->query($query);
-				$num_result = $result->num_rows;
-			?>
+</header>
+<!-- </div> -->
+<div class="container"></div>
+	<div class="table">
+		<br><br><br><br>		
+		<?php
+			@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
+			if(mysqli_connect_errno())
+			{
+				echo "DB connect error";
+			}		
 			
-			<table class="table" border='1' align="center">
-				<thead>
-					<tr>
-						<th class="col-sm-2">NUM</th>
-						<th class="col-sm-2">FILE</th>
-						<th class="col-sm-2">TYPE</th>
-						<th class="col-sm-2">SIZE</th>
-						<th class="col-sm-2">SYNOPSIS</th>
-						<th class="col-sm-2">DEL</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-						for($i=0; $i<$num_result; $i++)
-						{
-							$row = $result->fetch_assoc();
-							echo "<tr>";
-							echo "<td align='center'>".$row['CONTENTID']."</td>";
-							echo "<td align='left'>
-						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
-							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
-							echo "<td align='center'>".$row['SIZE']."</td>";
-							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
-							echo "<td align='center'>
-						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
-							echo "</tr>";
-						}
-						$db->close();
-					?>
-				</tbody>
-			</table>			
-		</div>
+			$userid = $_SESSION['userid'];
+			$query = "select * from CONTENT where USERID = '$userid'";				
+			$result = $db->query($query);
+			$num_result = $result->num_rows;
+		?>
+		
+		<table class="table" border='1' align="center">
+			<thead>
+				<tr>
+					<th class="col-sm-2">NUM</th>
+					<th class="col-sm-2">FILE</th>
+					<th class="col-sm-2">TYPE</th>
+					<th class="col-sm-2">SIZE</th>
+					<th class="col-sm-2">SYNOPSIS</th>
+					<th class="col-sm-2">DEL</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+					for($i=0; $i<$num_result; $i++)
+					{
+						$row = $result->fetch_assoc();
+						echo "<tr>";
+						echo "<td align='center'>".$row['CONTENTID']."</td>";
+						echo "<td align='left'>
+					<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
+						echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
+						echo "<td align='center'>".$row['SIZE']."</td>";
+						echo "<td align='center'>".$row['SYNOPSIS']."</td>";
+						echo "<td align='center'>
+					<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
+						echo "</tr>";
+					}
+					$db->close();
+				?>
+			</tbody>
+		</table>			
 	</div>
-	<div class="media_divider"></div>
-	</div>
-	<br><br>
-	<br><br><br>
-	<footer class="footer_relative">
+</div>
+<div class="media_divider"></div>
+</div>
+<br><br>
+<br><br><br>
+<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
 		Copyright &copy; Media Lynx 2015.
 	</footer>
-
 </body>
 </html>
