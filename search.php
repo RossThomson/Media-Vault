@@ -41,6 +41,9 @@ while($counter<$total):
 //$student_div=mysql_result($result,$counter,"SIZE");
 //$student_no=mysql_result($result,$counter,"SYNOPSIS");
 echo (mysql_result($result,$counter,"CONTENTTITLE"));
+echo (mysql_result($result,$counter,"CONTENTTYPE"));
+echo (mysql_result($result,$counter,"SIZE"));
+echo (mysql_result($result,$counter,"SYNOPSIS"));
 
 $counter = $counter + 1;
 endwhile;
