@@ -24,7 +24,7 @@ $con = mysql_connect("localhost", "root", "root");
 mysql_select_db("MEDIALYNX",$con);
 //mysql_query("'$student_name' 'euckr'");
 //$result = mysql_query("select * from CONTENT where CONTENTTITLE like '%$key%' limit 0,10", $con);
-$query = "select * from CONTENT where CONTENTTITLE and USERID = '$userid' like '$key' limit 0,10";
+$query = "select * from CONTENT where CONTENTTITLE like '$key' limit 0,10";
 $result = mysql_query($query, $con); 
 $total = mysql_num_rows($result);
 
