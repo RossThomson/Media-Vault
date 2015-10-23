@@ -111,15 +111,15 @@ header("location: Login_bootstrap.php");
         $num_result = $result->num_rows;
     ?>
 	
-	<table border='1' align="center">
+	<table border='1' class="table" align="center">
         <thead>
             <tr>
-				<th width="40">SELECT</th>
-                <th width="250">FILE</th>
-                <th width="150">SIZE</th>
-				<th width="200">SYNOPSIS</th>
-                <th width="50">DEL</th>
-				<th width="50">View</th>
+				<th class="col-lg-1">SELECT</th>
+                <th class="col-lg-2">FILE</th>
+                <th class="col-lg-1">SIZE</th>
+				<th class="col-lg-2">SYNOPSIS</th>
+                <th class="col-lg-1">DEL</th>
+				<th class="col-lg-1">VIEW</th>
             </tr>
         </thead>
         <tbody>
@@ -159,7 +159,7 @@ header("location: Login_bootstrap.php");
             ?>
         </tbody>
     </table>	
-		</div>
+	</div>
 	</div>
 	<div class="media_divider"></div>
 	</div>

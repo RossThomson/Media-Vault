@@ -22,7 +22,7 @@ header("location: media.php");
 		<link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="./bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="scripts/login_val.js"></script>
+		<script type="text/javascript" src="scripts/register_val.js"></script>
 		<!-- Custom styles for this template -->
 		<link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
 	</head>
@@ -102,7 +102,9 @@ header("location: media.php");
 					</div>
 					<div class="modal-footer-inverse">
 						<div class="col-sm-12">
+						<p>
 							<button class="btn" data-dismiss="modal">Close</button>
+						</p>
 						</div>
 					</div>
 				</div>
