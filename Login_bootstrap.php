@@ -1,9 +1,9 @@
 
 <?php
-include 'scripts/login_val.php'; // Includes Login Script
+include 'scripts/login_val_bootstrap.php'; // Includes Login Script
 
 if(isset($_SESSION['email'])){
-header("location: media.php");
+header("location: media_all_bootstrap.php");
 }
 ?>
 
