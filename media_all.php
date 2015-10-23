@@ -116,10 +116,6 @@ header("location: Login.php");
 					?>
 				</tbody>
 			</table>			
-            <form  action="php_checkbox.php" id="form1" method="post">
-            <input type = "submit" name = "submit" id = "submit" value = "Submit">
-            </form>
-		
 		</div>
 	</div>
 		
