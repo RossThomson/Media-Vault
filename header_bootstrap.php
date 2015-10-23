@@ -20,7 +20,7 @@
 	?>
 	
 	<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -31,7 +31,7 @@
 		  <a href="index_bootstrap.php" class="navbar-brand"><img alt="brand" src="graphics/logo.jpg" class="img-responsive"></a>
 		</div>
         <div class="navbar-collapse collapse" id="navbar">
-			<div class="col-sm-5 col-md-5 pull-left">
+			<div class="col-sm-6 col-md-6 pull-left">
 				<ul class="nav navbar-nav">
 					<li><a href="#" data-target = "#aboutModal" data-toggle="modal"><span class="glyphicon glyphicon-info-sign"></span>About</a></li>
 					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span>Help</a>
