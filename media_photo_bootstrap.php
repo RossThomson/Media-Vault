@@ -49,6 +49,10 @@ header("location: Login_bootstrap.php");
 <div class="well-inverse well-lg" href="#" data-toggle="modal" data-target="#upload">
 	<a href="#" class="body" data-toggle = "modal" data-target="#upload" role="button" >Upload</a>
 </div>
+<h2>Or view your files in a gallery</h2>
+<div class="well-inverse" href="image_gallery_test.php">
+	<a href="image_gallery_test.php" class="body">Image Gallery</a>
+</div>
 	<?php
 	
 	session_start();
@@ -64,7 +68,7 @@ header("location: Login_bootstrap.php");
 		$result = $db->query($query);
 		$num_result = $result->num_rows;
 	?>
-
+<div class="container-fluid">
 	<table border='1' align="center">
 		<thead>
 			<tr>
@@ -110,7 +114,6 @@ header("location: Login_bootstrap.php");
 		<form  action="php_checkbox.php" id="form1" method="post">
 		<input type = "submit" name = "submit" id = "submit" value = "Submit">
 		</form>			
-	</div>
 </div>
 <div class="media_divider"></div>
 </div>
