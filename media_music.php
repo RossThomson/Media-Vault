@@ -27,11 +27,11 @@ header("location: Login.php");
 				<img src="graphics/logo.jpg">
 			</a> -->
 			<ul>
-				<li><a href="media_playlist.php">Playlist</a></li>
-				<li><a href="media_doc.php">Doc</a></li>
+				<li><a href="media_playlist.php">Playlists</a></li>
+				<li><a href="media_doc.php">Docs</a></li>
 				<li><a href="image_gallery_test.php">Photos</a></li>
 				<li><a class="active" href="media_music.php">Music</a></li>
-				<li><a href="media_video.php">Video</a></li>
+				<li><a href="media_video.php">Videos</a></li>
 				<li><a href="media_all.php">All files</a></li>
 			</ul>		
 		</div>
@@ -110,7 +110,7 @@ header("location: Login.php");
 	<br><br>
 <div id="aboutus_content">	
 <form action="upload_music.php" method="post" enctype="multipart/form-data">
-    Select a music to upload:
+    Select a music file to upload:
     <input type="file" name="fileName"/>
 	<br />
 	Description: <input name="ref" type="text" />
