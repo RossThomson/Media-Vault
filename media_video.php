@@ -52,7 +52,7 @@ header("location: Login.php");
 	
 	<form class="upload_form" action="upload_movie.php" method="post" enctype="multipart/form-data" onsubmit="return checkVideoFile(this);">
     Select a video to upload:
-    <input type="file" name="fileName" id="uploadfile" value="512000000/>
+    <input type="file" name="fileName" id="uploadfile"/>
 	<br />
 	Description: <input name="ref" type="text" />
     <input type="submit" id="upload" value="Submit" name="submit"/>
