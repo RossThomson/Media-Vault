@@ -78,7 +78,7 @@ header("location: Login.php");
 						<th width="50">NUM</th>
 						<th width="250">FILE</th>
 						<th width="100">TYPE</th>
-						<th width="150">SIZE</th>
+						<th width="200">STREAMING</th>
 						<th width="200">SYNOPSIS</th>
 						<th width="50">DEL</th>
 					</tr>
@@ -103,7 +103,7 @@ header("location: Login.php");
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
-							echo "<td align='center'>".$row['SIZE']."</td>";
+							echo '<audio src=  "' . $target_dir.$row['CONTENTTITLE'] . '" controls></audio></td>';
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
