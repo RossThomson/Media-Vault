@@ -1,4 +1,15 @@
 <?php
+session_start();
+	$firstname  = $_SESSION['first_name'];
+	$lastname = $_SESSION['last_name'];
+	$userid = $_SESSION['userid'];
+	$dir = "uploads/";
+	$target_dir = $dir.$firstname.$lastname."/";
+
+if(!isset($_SESSION['email'])){
+header("location: Login.php");
+}
+
 //$field=$_POST['field'];
 $key = $_POST['key'];
 if(!$key){
@@ -41,6 +52,7 @@ while($counter<$total):
 //$student_div=mysql_result($result,$counter,"SIZE");
 //$student_no=mysql_result($result,$counter,"SYNOPSIS");
 echo (mysql_result($result,$counter,"CONTENTTITLE"));
+echo (. $target_dir.$key .);
 
 $counter = $counter + 1;
 endwhile;
