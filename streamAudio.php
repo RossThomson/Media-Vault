@@ -1,4 +1,8 @@
 <?php
+session_start();
+$firstname = $row['FIRSTNAME'];
+$lastname = $row['LASTNAME'];
+
 	if(!$_GET['file'])
     {
         echo "<script>alert('wrong access');";
@@ -16,7 +20,7 @@
 	
 	$dir = dirname($_SERVER['DOCUMENT_ROOT']).'/html/Media-Vault/uploads';
 	$filename = $_GET['file'];
-	$file = $dir."/".$filename;
+	$file = $dir."/".$firstname.$lastname."/"$filename;
 	echo $file;
 	$extension = "mp3";
 	$mime_type = "audio/mpeg, audio/x-mpeg, audio/x-mpeg-3, audio/mpeg3";
