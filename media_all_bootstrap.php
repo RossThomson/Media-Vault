@@ -39,7 +39,7 @@ header("location: Login.php");
 		<ul class="nav nav-tabs">
 			<li class="active disabled"><a class="active" href="#">All files</a></li>
 			<li><a href="media_playlist.php">Playlists</a></li>
-			<li><a href="media_doc.php">Docs</a></li>
+			<li><a href="media_doc_bootstrap.php">Docs</a></li>
 			<li><a href="image_gallery_test.php">Photos</a></li>
 			<li><a href="media_music.php">Music</a></li>
 			<li><a href="media_video.php">Videos</a></li>
