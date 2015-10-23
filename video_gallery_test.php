@@ -60,7 +60,7 @@ header("location: Login.php");
 	
 	
 	<div class="media_divider"></div>
-
+	<br>
 	<div class="html5gallery" data-width="500" data-height="300" data-showimagetoolbox="always"  style=" display: block; margin-left: auto; margin-right: auto;" data-skin="mediapage">
 	
 	
