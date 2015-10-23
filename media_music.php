@@ -39,6 +39,21 @@ header("location: Login.php");
 	</header>
 </div>
 	<!-- </div> -->
+	
+	
+<script type="text/javascript" src="scripts/check_for_empty_field.js"></script>
+
+<form action="upload_music.php" method="post" enctype="multipart/form-data">
+    Select a music file to upload:
+    <input type="file" name="fileName" id="uploadfile"/>
+	<br />
+	Description: <input name="ref" type="text" />
+    <input type="submit" value="Submit" name="submit" id="upload"/>
+</form>
+
+	
+	
+	
 	<div class="media_divider"></div>
 		<div class="media_content">
 			<br><br><br><br>		
@@ -100,29 +115,13 @@ header("location: Login.php");
 					?>
 				</tbody>
 			</table>
-            <form  action="php_checkbox.php" id="form1" method="post">
-            <input type = "submit" name = "submit" id = "submit" value = "Submit">
-            </form>
-		
+        		
 		</div>
 	</div>
 	<div class="media_divider"></div>
 	</div>
 	<br><br>
-<div id="aboutus_content">	
-
-<script type="text/javascript" src="scripts/check_for_empty_field.js"></script>
-
-<form action="upload_music.php" method="post" enctype="multipart/form-data">
-    Select a music file to upload:
-    <input type="file" name="fileName" id="uploadfile"/>
-	<br />
-	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit" id="upload"/>
-</form>
-
-</div>
-	
+		
 	<br><br><br>	
 	<footer class="footer_relative">
 	<span id="jae_design-by">Design by Media lynx</span> 
