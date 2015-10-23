@@ -92,24 +92,14 @@ header("location: Login.php");
 					<?php
 						for($i=0; $i<$num_result; $i++)
 						{
-							echo "<tr>";
-						echo "<td align='center' padding='20'>";
-						echo "<form action='' id='form1' method='post'>";
-	  					echo "<p>";
-	    				echo "<input type='checkbox' name='checkbox[]' id='chkbx' />";
-	    				echo "<label for='chkbx'>";
-						echo "</label>";
-      					echo "</p>";
-						echo "</form>";
-						echo "</td>";
+						
 							$row = $result->fetch_assoc();
 							
 							echo "<td align='center'>".$row['CONTENTID']."</td>";
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
-							echo "<td align='center'>
-						<a href='streamAudio.php?file=".$row['CONTENTTITLE']."'>".$row['CONTENTTITLE']."</a></td>";
+							echo'<audio src=  "' . $target_dir.$row['CONTENTTITLE'] . '"  controls></audio></td>';
 							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
