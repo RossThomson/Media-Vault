@@ -47,21 +47,7 @@ header("location: Login.php");
 	<!-- </div> -->
 	
 	
-	<script type="text/javascript">
-$(document).ready(function() {
-    $('#upload').bind("click",function() 
-    { 
-        var imgVal = $('#uploadfile').val(); 
-        if(imgVal=='') 
-        { 
-            alert("empty input file"); 
-            return false; 
-        } 
 
-
-    }); 
-});
-</script>
 	
 	
 	<form class="upload_form" action="upload_movie.php" method="post" enctype="multipart/form-data" onsubmit="return checkVideoFile(this);">
