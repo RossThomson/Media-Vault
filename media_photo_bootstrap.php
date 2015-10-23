@@ -46,7 +46,7 @@ header("location: Login_bootstrap.php");
 <!-- </div> -->
 <div class="container"></div>
 <h1>Upload your Files Here!</h1>
-<div class="well well-lg">
+<div class="well-inverse well-lg" href="#" data-toggle="modal" data-target="#upload">
 	<a href="#" class="body" data-toggle = "modal" data-target="#upload" role="button" >Upload</a>
 </div>
 	<?php
