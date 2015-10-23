@@ -59,7 +59,7 @@ header("location: Login_bootstrap.php");
 <div class="jumbotron">
 <h1>Upload your Files Here!</h1>
 <p>
-	<a href="#" class="bodyMedia" data-toggle = "modal" data-target="#upload" role="button-inverse" >Upload</a>
+	<a href="#" class="bodyMedia" data-toggle = "modal" data-target="#upload" role="button" >Upload</a>
 </p>
 </div>
 <div id="upload" class="modal" roll="dialog" tabindex="-1">
