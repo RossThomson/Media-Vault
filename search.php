@@ -52,7 +52,7 @@ while($counter<$total):
 //$student_div=mysql_result($result,$counter,"SIZE");
 //$student_no=mysql_result($result,$counter,"SYNOPSIS");
 echo (mysql_result($result,$counter,"CONTENTTITLE"));
-echo (. $target_dir.$key .);
+//echo (. $target_dir.$key .);
 
 $counter = $counter + 1;
 endwhile;
