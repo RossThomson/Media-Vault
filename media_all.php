@@ -106,7 +106,7 @@ header("location: Login.php");
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
 							echo "<td align='center'>".$row['SIZE']."</td>";
-							echo "<td align='center'>".$row['SYNOPSIS']."</td>";
+							//echo "<td align='center'>".$row['SYNOPSIS']."</td>";
 							echo "<td align='center'>
 						<a href='delete_jae.php?num=".$row['CONTENTID']."'>DEL</a></td>";
 						echo "</tr>";	
@@ -116,10 +116,6 @@ header("location: Login.php");
 					?>
 				</tbody>
 			</table>			
-            <form  action="php_checkbox.php" id="form1" method="post">
-            <input type = "submit" name = "submit" id = "submit" value = "Submit">
-            </form>
-		
 		</div>
 	</div>
 		
