@@ -21,7 +21,8 @@ body {
   background-color: black !important;
   color: white;
 }
-.bodyAbout {
+.bodyAbout,
+.bodyMedia {
  background-color:white !important;
  background-image: url('../graphics/logo.png');
  background-size: 1440px 800px;
@@ -65,6 +66,8 @@ a {
 a:active,
 a:hover {
   outline: 0;
+  background-color: white;
+  color:#d3d3d3;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -4092,8 +4095,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   max-width: none;
 }
 .nav-tabs {
-  border-bottom: 1px solid #ddd;
-  background-color: black;
+  border-bottom: 1px solid #000;
+  background-color: white;
+  color: black;
 }
 .nav-tabs > li {
   float: left;
@@ -4106,7 +4110,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-radius: 4px 4px 0 0;
 }
 .nav-tabs > li > a:hover {
-  border-color: #eee #eee #ddd;
+  border-color: #000 #000 #fff;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
@@ -4114,7 +4118,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: black;
   cursor: default;
   background-color: #d3d3d3;
-  border: 1px solid #ddd;
+  border: 1px solid #000;
   border-bottom-color: transparent;
 }
 .nav-tabs.nav-justified {
@@ -5096,6 +5100,8 @@ a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
   border-color: #337ab7;
+  background-color: #d3d3d3;
+  color: white;
 }
 .thumbnail .caption {
   padding: 9px;
