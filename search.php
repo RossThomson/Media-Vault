@@ -13,7 +13,8 @@ $con = mysql_connect("localhost", "root", "root");
 mysql_select_db("MEDIALYNX",$con);
 //mysql_query("'$student_name' 'euckr'");
 //$result = mysql_query("select * from CONTENT where CONTENTTITLE like '%$key%' limit 0,10", $con);
-$result = mysql_query("select * from CONTENT where CONTENTTITLE like '%$key%'"); 
+$query = "select * from CONTENT where CONTENTTITLE like '$key' limit 0,10";
+$result = mysql_query($query, $con); 
 $total = mysql_num_rows($result);
 
 echo("
@@ -31,7 +32,7 @@ echo("
 </tr>
 ");
 if (!$total){
-echo("<tr><td colspan=5 align=center>검색된 내용이 없습니다.</td></tr>");
+echo("<tr><td colspan=5 align=center>There is no search result</td></tr>");
 } else {
 $counter=0;
 while($counter<$total):

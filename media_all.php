@@ -40,7 +40,7 @@ header("location: Login.php");
 	<!-- </div> -->
 	<div class="media_divider"></div>
 		<div class="media_content">
-			<br><br><br><br>		
+			<br>		
 			<?php
 				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
 				if(mysqli_connect_errno())
@@ -53,6 +53,19 @@ header("location: Login.php");
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
 			?>
+			
+			<table align=center>
+				<td><td align=center>
+				<form method=post action=search.php>
+				<select name=field>
+				<option value=student_name>File name</option>
+				</select>
+				<input type=text name=key size=20>
+				<input type=submit value=search>
+				</td>
+			<table>
+			
+			<br><br><br>
 	
 			<table border='1' align="center">
 				<thead>
@@ -109,7 +122,7 @@ header("location: Login.php");
 		
 		</div>
 	</div>
-	
+		
 	<div class="media_divider"></div>
 	</div>
 	<br><br>
