@@ -15,15 +15,15 @@ $filename = basename($_FILES["fileName"]["name"]);
 $filesize = $_FILES["fileName"]["size"];
 $synopsis = $_POST['ref'];
 
-if (file_exists($target_file)) {
+/*if (file_exists($target_file)) {
     echo "Sorry, file already exists.";
     $uploadOk = 0;
 }
 
-/*if ($_FILES["fileName"]["size"] > 5368709120) {
+if ($_FILES["fileName"]["size"] > 5368709120) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
-}*/
+}
 
 if($FileType != "mp4" && $FileType != "mpeg" && $FileType != "avi") {
     echo "Sorry, only mp4, mpeg & avi files are allowed.";
@@ -33,7 +33,7 @@ if($FileType != "mp4" && $FileType != "mpeg" && $FileType != "avi") {
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 
-} else {
+}*/ /*else {*/
     if (move_uploaded_file($_FILES["fileName"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileName"]["name"]). " has been uploaded.";
 		
@@ -47,7 +47,7 @@ if ($uploadOk == 0) {
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
-}
+/*}*/
 
 if(isset($_POST["submit"])) {
 	$dbhost = "localhost";
