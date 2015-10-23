@@ -78,8 +78,7 @@ header("location: Login.php");
 			<table border='1' align="center">
 				<thead>
 					<tr>
-                    <th width="40">SELECT
-                       </th>
+                  
 						<th width="50">NUM</th>
 						<th width="250">FILE</th>
 						<th width="100">TYPE</th>
