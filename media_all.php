@@ -53,6 +53,17 @@ header("location: Login.php");
 				$result = $db->query($query);
 				$num_result = $result->num_rows;
 			?>
+			
+			<table>
+				<td><td align=center>
+				<form method=post action=search.php>
+				<select name=field>
+				<option value=student_name>File name</option>
+				</select>
+				<input type=text name=key size=20>
+				<input type=submit value=search>
+				</td>
+			<table>
 	
 			<table border='1' align="center">
 				<thead>
@@ -109,7 +120,7 @@ header("location: Login.php");
 		
 		</div>
 	</div>
-	
+		
 	<div class="media_divider"></div>
 	</div>
 	<br><br>
