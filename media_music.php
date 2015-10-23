@@ -15,6 +15,7 @@ header("location: Login.php");
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> -->
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
     <link rel="stylesheet" href="styles/styles.css">
+	<script src="js/jquery-1.11.3.min.js"></script>
 </head>
 
 <body>
@@ -109,12 +110,15 @@ header("location: Login.php");
 	</div>
 	<br><br>
 <div id="aboutus_content">	
+
+<script type="text/javascript" src="scripts/check_for_empty_field.js"></script>
+
 <form action="upload_music.php" method="post" enctype="multipart/form-data">
     Select a music file to upload:
-    <input type="file" name="fileName"/>
+    <input type="file" name="fileName" id="uploadfile"/>
 	<br />
 	Description: <input name="ref" type="text" />
-    <input type="submit" value="Submit" name="submit"/>
+    <input type="submit" value="Submit" name="submit" id="upload"/>
 </form>
 
 </div>
