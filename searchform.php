@@ -1,4 +1,4 @@
-<form role="search" method="post" action="search.php">
-    <button type="submit"></button>
-    <input type="text" name="search">
+<form method="post" action="search.php">
+    <input name="search" type="text" />
+    <input type="submit" value="Submit" name="submit"/>
 </form>
