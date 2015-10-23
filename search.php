@@ -40,10 +40,7 @@ while($counter<$total):
 //$student_grade=mysql_result($result,$counter,"CONTENTTYPE");
 //$student_div=mysql_result($result,$counter,"SIZE");
 //$student_no=mysql_result($result,$counter,"SYNOPSIS");
-echo (mysql_result($result,$counter,"CONTENTTITLE"));
-echo (mysql_result($result,$counter,"CONTENTTYPE"));
-echo (mysql_result($result,$counter,"SIZE"));
-echo (mysql_result($result,$counter,"SYNOPSIS"));
+echo ("<tr><td colspan=5 align=center>"mysql_result($result,$counter,"CONTENTTITLE")"</td></tr>");
 
 $counter = $counter + 1;
 endwhile;
