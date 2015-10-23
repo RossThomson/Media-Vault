@@ -31,7 +31,7 @@ header("location: Login.php");
 				<img src="graphics/logo.jpg">
 			</a> -->
 			<ul>
-				<li><a href="media_playlist.php">Playlists</a></li>
+				<li><a href="media_playlist.php">TestTest</a></li>
 				<li><a class="active" href="media_doc.php">Docs</a></li>
 				<li><a href="media_photo.php">Photos</a></li>
 				<li><a href="media_music.php">Music</a></li>

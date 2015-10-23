@@ -60,7 +60,7 @@ header("location: Login.php");
 	
 	<div class="media_divider"></div>
 		<div class="media_content">
-			<br><br><br><br>		
+			<br>		
 			<?php
 				@ $db = new mysqli('localhost', 'root', 'root', 'MEDIALYNX');
 				if(mysqli_connect_errno())
