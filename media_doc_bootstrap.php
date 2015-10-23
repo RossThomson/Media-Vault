@@ -57,7 +57,7 @@ header("location: Login.php");
 </div>
 </header>
 <p>
-	<a href="#" data-toggle = "modal" data-target="#upload" role="button">Upload</a>
+	<a href="#" data-toggle = "modal" data-target="#upload" role="button-inverse" >Upload</a>
 </p>
 <div id="upload" class="modal" roll="dialog" tabindex="-1">
 	<div class="modal-dialog modal-lg">
