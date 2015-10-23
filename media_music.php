@@ -79,7 +79,7 @@ header("location: Login.php");
 				<thead>
 					<tr>
                   
-						<th width="50">NUM</th>
+				
 						<th width="250">FILE</th>
 						<th width="100">TYPE</th>
 						<th width="200">STREAMING</th>
@@ -94,7 +94,7 @@ header("location: Login.php");
 						
 							$row = $result->fetch_assoc();
 							
-							echo "<td align='center'>".$row['CONTENTID']."</td>";
+							
 							echo "<td align='left'>
 						<a href='download.php?num=".$row['CONTENTID']."'>".$row['CONTENTTITLE']."</a></td>";
 							echo "<td align='center'>".$row['CONTENTTYPE']."</td>";
