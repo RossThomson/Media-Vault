@@ -114,12 +114,12 @@ header("location: Login_bootstrap.php");
 	<table border='1' align="center">
         <thead>
             <tr>
-				<th width="40">SELECT</th>
-                <th width="250">FILE</th>
-                <th width="150">SIZE</th>
-				<th width="200">SYNOPSIS</th>
-                <th width="50">DEL</th>
-				<th width="50">View</th>
+				<th class="col-sm-1 table">SELECT</th>
+                <th class="col-sm-2 table">FILE</th>
+                <th class="col-sm-1 table">SIZE</th>
+				<th class="col-sm-2 table">SYNOPSIS</th>
+                <th class="col-sm-1 table">DEL</th>
+				<th class="col-sm-1 table">VIEW</th>
             </tr>
         </thead>
         <tbody>
@@ -159,7 +159,7 @@ header("location: Login_bootstrap.php");
             ?>
         </tbody>
     </table>	
-		</div>
+	</div>
 	</div>
 	<div class="media_divider"></div>
 	</div>
