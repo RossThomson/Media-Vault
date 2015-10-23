@@ -49,7 +49,7 @@ header("location: Login_bootstrap.php");
 			<li><a href="media_all_bootstrap.php">All files</a></li>
 			<li><a href="media_playlist.php">Playlists</a></li>
 			<li  class="active disabled"><a class = "active" href="#">Docs</a></li>
-			<li><a href="image_gallery_test.php">Photos</a></li>
+			<li><a href="media_photo_bootstrap.php">Photos</a></li>
 			<li><a href="media_music.php">Music</a></li>
 			<li><a href="media_video.php">Videos</a></li>
 		</ul>		
