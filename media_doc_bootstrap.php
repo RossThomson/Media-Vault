@@ -45,7 +45,7 @@ header("location: Login_bootstrap.php");
 	</div>
 <div class="container-fluid">
 	<div class = "container">
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs nav-justified">
 			<li><a href="media_all_bootstrap.php">All files</a></li>
 			<li><a href="media_playlist.php">Playlists</a></li>
 			<li  class="active disabled"><a class = "active" href="#">Docs</a></li>
@@ -57,7 +57,7 @@ header("location: Login_bootstrap.php");
 </div>
 </header>
 <p>
-	<a href="#" class="bodyMedia" data-toggle = "modal" data-target="#upload" role="button" >Upload</a>
+	<a href="#" class="bodyMedia" data-toggle = "modal" data-target="#upload" role="button-inverse" >Upload</a>
 </p>
 <div id="upload" class="modal" roll="dialog" tabindex="-1">
 	<div class="modal-dialog modal-lg">
