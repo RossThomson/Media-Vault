@@ -1,5 +1,5 @@
 <?php
-$field=$_POST['field'];
+//$field=$_POST['field'];
 $key = $_POST['key'];
 if(!$key){
 echo("<script>
@@ -11,10 +11,11 @@ exit;
  
 $con = mysql_connect("localhost", "root", "root");
 mysql_select_db("MEDIALYNX",$con);
-mysql_query("'$student_name' 'euckr'");
-$result = mysql_query("select * from CONTENT where CONTENTTITLE like '%$key%' limit 0,10", $con);
- 
+//mysql_query("'$student_name' 'euckr'");
+//$result = mysql_query("select * from CONTENT where CONTENTTITLE like '%$key%' limit 0,10", $con);
+$result = mysql_query("select * from CONTENT where CONTENTTITLE like '%$key%'"); 
 $total = mysql_num_rows($result);
+
 echo("
 <table border=0 width=700>
 <tr><td align=center colspan2><h1>Result</h1></td></tr>
