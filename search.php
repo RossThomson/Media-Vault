@@ -60,16 +60,3 @@ echo("</table>");
 }
 mysql_close($con);
 ?>
-
-<html>
-<body>
-
-
-<?php 
-
-include "media_all.php"; 
-
-?>
-
-</body>
-</html>
