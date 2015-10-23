@@ -17,10 +17,11 @@ header("location: Login.php");
 	<title>Media</title>	
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
     <link rel="stylesheet" href="styles/styles.css">
+	<script src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="scripts/upload_val.js"></script>
 	<script type="text/javascript" src="html5_gallery_free/html5gallery/jquery.js"></script>
 	<script type="text/javascript" src="html5_gallery_free/html5gallery/html5gallery.js"></script>
-	<script src="js/jquery-1.11.3.min.js"></script>
+	
 </head>
 
 <body>
