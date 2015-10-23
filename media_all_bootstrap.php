@@ -36,7 +36,7 @@ header("location: Login_bootstrap.php");
 </div>
 <div class="container-fluid">
 	<div class = "container">
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs nav-justified">
 			<li class="active disabled"><a class="active" href="#">All files</a></li>
 			<li><a href="media_playlist.php">Playlists</a></li>
 			<li><a href="media_doc_bootstrap.php">Docs</a></li>
