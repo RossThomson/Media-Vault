@@ -64,25 +64,28 @@ header("location: Login.php");
 		<div class="modal-content">
 			<div class="modal-header-inverse"> 
 				<button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></button>
-				<h1>Register</h1>
-				<small>Please fill all areas marked with an *</small>
+				<h1>Upload</h1>
+				<small>Please fill all areas</small>
 			</div>
 			<div class="modal-body-inverse">
 			<form  class="form-horizontal" role="form" id="UploadForm" action="upload_doc_new_dir.php" method="post" enctype="multipart/form-data" onsubmit="return checkDocFile(this);">
 				<div class="form-group">
-					<label  class="col-sm-2 control-label" for="filename">Select a document to upload:</label>
+					<label  class="col-sm-2 control-label" for="fileName">Select a document to upload:</label>
 					<div class="col-sm-9">
-						<input   class="form-control" id="Document" type="file" name="fileName">
+						<input class="form-control" id="Document" type="file" name="fileName">
 					</div>
 				</div>
 				<div class="form-group">
 					<label  class="col-sm-2 control-label" for="ref">Description:</label>
-					<div>
-						<input class="btn btn-lg btn-primary" type = "submit" name = "Submit" id = "Submit" value = "Submit">
+					<div class="col-sm-9">
+						<input class="form-control" name="ref" type="text">
 					</div>
-					</fieldset>
-					</form>
 				</div>
+				<div>
+					<input class="btn btn-lg btn-primary" type = "submit" name = "Submit" id = "Submit" value = "Submit">
+				</div>
+				</fieldset>
+				</form>
 			</div>
 			<div class="modal-footer-inverse">
 				<div class="col-sm-12">
